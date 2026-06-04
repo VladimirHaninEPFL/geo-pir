@@ -8,4 +8,4 @@
 
 cd /home/hanin/geo-pir
 
-cargo run
+cargo run --release

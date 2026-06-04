@@ -6,15 +6,15 @@ use std::fs::File;
 use std::io::{self, BufRead, BufReader, ErrorKind};
 use std::path::Path;
 
-pub type TravelTime = f64;
+pub type TravelTimeEdge = u16; // travel time in seconds used for edge weights (2 bytes)
 pub type GraphResult<T> = Result<T, Box<dyn Error>>;
-pub type EdgeListGraph = Graph<NodeData, TravelTime, Directed>;
+pub type EdgeListGraph = Graph<NodeData, TravelTimeEdge, Directed>;
 
 #[derive(Debug, Clone)]
 pub struct NodeData {
     pub osmid: String,
-    pub lat: f64,
-    pub lon: f64,
+    pub lat: f32,
+    pub lon: f32,
 }
 
 pub struct GraphContext {
@@ -114,13 +114,13 @@ fn read_edges(
     Ok(())
 }
 
-fn parse_csv_float(record: &csv::StringRecord, index: usize, name: &str) -> io::Result<f64> {
+fn parse_csv_float(record: &csv::StringRecord, index: usize, name: &str) -> io::Result<f32> {
     let value = record
         .get(index)
         .ok_or_else(|| invalid_data(format!("missing {name} in row: {record:?}")))?;
 
     value
-        .parse::<f64>()
+        .parse::<f32>()
         .map_err(|err| invalid_data(format!("invalid {name} value {value:?}: {err}")))
 }
 
@@ -131,7 +131,7 @@ fn find_node(nodes: &HashMap<String, NodeIndex>, id: &str) -> io::Result<NodeInd
         .ok_or_else(|| invalid_data(format!("edge references unknown node id: {id}")))
 }
 
-fn parse_travel_time(attributes: &str) -> io::Result<TravelTime> {
+fn parse_travel_time(attributes: &str) -> io::Result<TravelTimeEdge> {
     let (_, after_key) = attributes
         .split_once("'travelTime':")
         .ok_or_else(|| invalid_data(format!("missing travelTime attribute: {attributes}")))?;
@@ -145,7 +145,7 @@ fn parse_travel_time(attributes: &str) -> io::Result<TravelTime> {
         .trim();
 
     value
-        .parse::<TravelTime>()
+        .parse::<TravelTimeEdge>()
         .map_err(|err| invalid_data(format!("invalid travelTime value {value:?}: {err}")))
 }
 

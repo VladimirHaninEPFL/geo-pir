@@ -1,13 +1,15 @@
-use crate::graph::{NodeData, TravelTime};
+use crate::graph::{NodeData, TravelTimeEdge};
 use crate::server::Server;
 use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
 use std::io;
 
+type TravelTime = u64; // travel time in seconds used for calculating total path cost
+
 pub struct Client {
     server: Server,
     nodes_cache: HashMap<String, NodeData>, // map from osmid to NodeData for caching node information
-    edges_cache: HashMap<String, Vec<(String, TravelTime)>>, // map from osmid to list of (neighbor_osmid, travel_time) for caching outgoing edges
+    edges_cache: HashMap<String, Vec<(String, TravelTimeEdge)>>, // map from osmid to list of (neighbor_osmid, travel_time_edge) for caching outgoing edges
 }
 
 #[derive(Debug, Clone)]
@@ -17,32 +19,30 @@ pub struct AStarResult {
 }
 
 #[derive(Debug, Clone)]
-struct State {
+struct AStarState {
     f: TravelTime, // heuristic estimate from this node to the goal
     g: TravelTime, // cost from the start node to this node
     osmid: String,
 }
 
-impl Eq for State {}
-impl PartialEq for State {
+impl Eq for AStarState {}
+impl PartialEq for AStarState {
     fn eq(&self, other: &Self) -> bool {
         self.f == other.f && self.g == other.g && self.osmid == other.osmid
     }
 }
 
-impl Ord for State {
+impl Ord for AStarState {
     fn cmp(&self, other: &Self) -> Ordering {
         let self_priority = self.f + self.g;
         let other_priority = other.f + other.g;
 
         other_priority
-            .total_cmp(&self_priority)
-            .then_with(|| other.g.total_cmp(&self.g))
-            .then_with(|| self.osmid.cmp(&other.osmid))
+            .cmp(&self_priority)
     }
 }
 
-impl PartialOrd for State {
+impl PartialOrd for AStarState {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         Some(self.cmp(other))
     }
@@ -67,7 +67,7 @@ impl Client {
     }
 
     /// Get outgoing edges from a node, querying the server if not cached
-    fn get_edges_from(&mut self, osmid: &str) -> io::Result<&Vec<(String, TravelTime)>> {
+    fn get_edges_from(&mut self, osmid: &str) -> io::Result<&Vec<(String, TravelTimeEdge)>> {
         if !self.edges_cache.contains_key(osmid) {
             let edges = self.server.get_edges_from(osmid)?;
             self.edges_cache.insert(osmid.to_string(), edges);
@@ -77,31 +77,31 @@ impl Client {
 
     /// Run A* search from start osmid to goal osmid
     pub fn a_star_search(&mut self, start_osmid: &str, goal_osmid: &str) -> io::Result<Option<AStarResult>> {
-        let mut distances: HashMap<String, TravelTime> = HashMap::new();
+        let mut best_cost: HashMap<String, TravelTime> = HashMap::new();
         let mut best_source: HashMap<String, String> = HashMap::new();
         let mut open_set = BinaryHeap::new();
 
-        distances.insert(start_osmid.to_string(), 0.0);
+        best_cost.insert(start_osmid.to_string(), 0);
         let start_heuristic = self.heuristic(start_osmid, goal_osmid)?;
-        open_set.push(State {
+        open_set.push(AStarState {
             f: start_heuristic,
-            g: 0.0,
+            g: 0,
             osmid: start_osmid.to_string(),
         });
 
         while let Some(current_state) = open_set.pop() {
             let curr_osmid = &current_state.osmid;
-            let curr_distance = current_state.g;
+            let curr_cost = current_state.g;
 
             if curr_osmid == goal_osmid {
                 let path = self.reconstruct_path(&best_source, start_osmid, goal_osmid);
                 return Ok(Some(AStarResult {
-                    cost: curr_distance,
+                    cost: curr_cost,
                     path,
                 }));
             }
 
-            if curr_distance > *distances.get(curr_osmid).unwrap_or(&f64::INFINITY) {
+            if curr_cost > *best_cost.get(curr_osmid).unwrap_or(&TravelTime::MAX) {
                 continue;
             }
 
@@ -109,16 +109,16 @@ impl Client {
             let neighbors = neighbors.clone(); // Clone to release the borrow before calling heuristic
             for (neighbor_osmid, travel_time) in neighbors.iter() {
 
-                let proposed_distance = curr_distance + travel_time;
+                let proposed_distance = curr_cost + (*travel_time as TravelTime);
 
-                if !distances.contains_key(neighbor_osmid)
-                    || proposed_distance < *distances.get(neighbor_osmid).unwrap()
+                if !best_cost.contains_key(neighbor_osmid)
+                    || proposed_distance < *best_cost.get(neighbor_osmid).unwrap()
                 {
-                    distances.insert(neighbor_osmid.clone(), proposed_distance);
+                    best_cost.insert(neighbor_osmid.clone(), proposed_distance);
                     best_source.insert(neighbor_osmid.clone(), curr_osmid.clone());
 
                     let heuristic_estimate = self.heuristic(neighbor_osmid, goal_osmid)?;
-                    open_set.push(State {
+                    open_set.push(AStarState {
                         f: heuristic_estimate,
                         g: proposed_distance,
                         osmid: neighbor_osmid.clone(),
@@ -168,8 +168,8 @@ impl Client {
     }
 }
 
-fn haversine_distance_meters(lat1: f64, lon1: f64, lat2: f64, lon2: f64) -> f64 {
-    let to_radians = |degrees: f64| degrees.to_radians();
+fn haversine_distance_meters(lat1: f32, lon1: f32, lat2: f32, lon2: f32) -> f32 {
+    let to_radians = |degrees: f32| degrees.to_radians();
     let phi1 = to_radians(lat1);
     let phi2 = to_radians(lat2);
     let delta_phi = to_radians(lat2 - lat1);
@@ -178,12 +178,12 @@ fn haversine_distance_meters(lat1: f64, lon1: f64, lat2: f64, lon2: f64) -> f64 
     let a = (delta_phi / 2.0).sin().powi(2)
         + phi1.cos() * phi2.cos() * (delta_lambda / 2.0).sin().powi(2);
     let c = 2.0 * a.sqrt().atan2((1.0 - a).sqrt());
-    const EARTH_RADIUS_METERS: f64 = 6_371_000.0;
+    const EARTH_RADIUS_METERS: f32 = 6_371_000.0;
 
     EARTH_RADIUS_METERS * c
 }
 
-fn distance_to_seconds(distance_meters: f64) -> TravelTime {
-    const CAR_SPEED_MPS: f64 = 130.0_f64 / 3.6_f64; // 130 km/h in meters per second
-    distance_meters / CAR_SPEED_MPS
+fn distance_to_seconds(distance_meters: f32) -> TravelTime {
+    const CAR_SPEED_MPS: f32 = 130.0_f32 / 3.6_f32; // 130 km/h in meters per second
+    (distance_meters / CAR_SPEED_MPS) as TravelTime
 }

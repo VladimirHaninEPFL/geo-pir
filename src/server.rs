@@ -1,6 +1,6 @@
 use petgraph::visit::EdgeRef;
 
-use crate::graph::{GraphContext, NodeData, TravelTime};
+use crate::graph::{GraphContext, NodeData, TravelTimeEdge};
 use std::io;
 
 /// The server holds the complete graph and serves queries from clients
@@ -20,11 +20,11 @@ impl Server {
     }
 
     /// Get all outgoing edges from a node (identified by osmid)
-    pub fn get_edges_from(&self, osmid: &str) -> io::Result<Vec<(String, TravelTime)>> {
+    pub fn get_edges_from(&self, osmid: &str) -> io::Result<Vec<(String, TravelTimeEdge)>> {
 
         let source_idx = self.context.get_node_index(osmid)?;
 
-        let edges: Vec<(String, TravelTime)> = self.context.graph
+        let edges: Vec<(String, TravelTimeEdge)> = self.context.graph
             .edges(source_idx)
             .map(|edge| {
                 let target_data = self.context.node(edge.target());

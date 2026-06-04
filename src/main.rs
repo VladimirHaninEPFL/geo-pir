@@ -13,12 +13,14 @@ struct Params<'a> {
     end_node_osmid: &'a str,
 }
 
+#[allow(dead_code)]
 const PARAMS_FRANCE: Params = Params {
     edgelist_path: "./data/France-navigation.edgelist",
     nodes_path: "./data/France-navigation.csv",
     start_node_osmid: "382017",
     end_node_osmid: "313872541",
 };
+#[allow(dead_code)]
 const PARAMS_SWITZERLAND: Params = Params {
     edgelist_path: "./data/Switzerland-navigation.edgelist",
     nodes_path: "./data/Switzerland-navigation.csv",
