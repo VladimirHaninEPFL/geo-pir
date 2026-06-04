@@ -3,27 +3,27 @@ mod graph;
 mod server;
 
 use client::Client;
-use graph::{read_graph, GraphResult};
+use graph::GraphResult;
 use server::Server;
 
 struct Params<'a> {
-    edgelist_path: &'a str,
-    nodes_path: &'a str,
+    country_name: &'a str,
+    approach: &'a str,
     start_node_osmid: &'a str,
     end_node_osmid: &'a str,
 }
 
 #[allow(dead_code)]
 const PARAMS_FRANCE: Params = Params {
-    edgelist_path: "./data/France-navigation.edgelist",
-    nodes_path: "./data/France-navigation.csv",
+    country_name: "France",
+    approach: "node0",
     start_node_osmid: "382017",
     end_node_osmid: "313872541",
 };
 #[allow(dead_code)]
 const PARAMS_SWITZERLAND: Params = Params {
-    edgelist_path: "./data/Switzerland-navigation.edgelist",
-    nodes_path: "./data/Switzerland-navigation.csv",
+    country_name: "Switzerland",
+    approach: "node0",
     start_node_osmid: "312462415",
     end_node_osmid: "312462415",
 };
@@ -32,15 +32,7 @@ fn main() -> GraphResult<()> {
 
     let params = PARAMS_FRANCE; // Change to PARAMS_SWITZERLAND to test with Switzerland data
 
-    let graph_context = read_graph(&params.edgelist_path, &params.nodes_path)?;
-
-    println!(
-        "Loaded graph with {} nodes and {} edges",
-        graph_context.graph.node_count(),
-        graph_context.graph.edge_count()
-    );
-
-    let server = Server::new(graph_context);
+    let server = Server::start(params.country_name, params.approach)?;
     let mut client = Client::new(server);
 
     println!(

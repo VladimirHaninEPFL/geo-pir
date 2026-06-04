@@ -1,6 +1,6 @@
 use petgraph::visit::EdgeRef;
 
-use crate::graph::{GraphContext, NodeData, TravelTimeEdge};
+use crate::graph::{read_graph, GraphContext, GraphResult, NodeData, TravelTimeEdge};
 use std::io;
 
 /// The server holds the complete graph and serves queries from clients
@@ -9,8 +9,23 @@ pub struct Server {
 }
 
 impl Server {
-    pub fn new(context: GraphContext) -> Self {
-        Server { context }
+    pub fn start(
+        country_name: &str,
+        approach: &str,
+    ) -> GraphResult<Self> {
+
+        let edgelist_path = format!("./data/{}-navigation.edgelist", country_name);
+        let nodes_path = format!("./data/{}-navigation.csv", country_name);
+        let context = read_graph(&edgelist_path, &nodes_path)?;
+
+        println!(
+            "Loaded graph on server with {} nodes and {} edges. Using approach: {}",
+            context.graph.node_count(),
+            context.graph.edge_count(),
+            approach
+        );
+
+        Ok(Server { context })
     }
 
     /// Get node information by osmid
