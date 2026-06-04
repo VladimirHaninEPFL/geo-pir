@@ -6,14 +6,31 @@ use client::Client;
 use graph::{read_graph, GraphResult};
 use server::Server;
 
-const EDGELIST_PATH: &str = "data/France-navigation.edgelist";
-const NODES_PATH: &str = "data/France-navigation.csv";
+struct Params<'a> {
+    edgelist_path: &'a str,
+    nodes_path: &'a str,
+    start_node_osmid: &'a str,
+    end_node_osmid: &'a str,
+}
 
-const START_NODE_OSMID: &str = "382017";
-const END_NODE_OSMID: &str = "313872541";
+const PARAMS_FRANCE: Params = Params {
+    edgelist_path: "./data/France-navigation.edgelist",
+    nodes_path: "./data/France-navigation.csv",
+    start_node_osmid: "382017",
+    end_node_osmid: "313872541",
+};
+const PARAMS_SWITZERLAND: Params = Params {
+    edgelist_path: "./data/Switzerland-navigation.edgelist",
+    nodes_path: "./data/Switzerland-navigation.csv",
+    start_node_osmid: "312462415",
+    end_node_osmid: "312462415",
+};
 
 fn main() -> GraphResult<()> {
-    let graph_context = read_graph(EDGELIST_PATH, NODES_PATH)?;
+
+    let params = PARAMS_FRANCE; // Change to PARAMS_SWITZERLAND to test with Switzerland data
+
+    let graph_context = read_graph(&params.edgelist_path, &params.nodes_path)?;
 
     println!(
         "Loaded graph with {} nodes and {} edges",
@@ -26,10 +43,10 @@ fn main() -> GraphResult<()> {
 
     println!(
         "Running A* from {} to {} (client-server architecture)...",
-        START_NODE_OSMID, END_NODE_OSMID
+        params.start_node_osmid, params.end_node_osmid
     );
 
-    match client.a_star_search(START_NODE_OSMID, END_NODE_OSMID)? {
+    match client.a_star_search(&params.start_node_osmid, &params.end_node_osmid)? {
         Some(result) => {
             println!("A* found a path with cost {:.6}", result.cost);
             println!("Path length: {} nodes", result.path.len());
@@ -38,10 +55,18 @@ fn main() -> GraphResult<()> {
         None => {
             println!(
                 "No path found between {} and {}",
-                START_NODE_OSMID, END_NODE_OSMID
+                params.start_node_osmid, params.end_node_osmid
             );
         }
     }
 
     Ok(())
+}
+
+#[test]
+fn test_all() {
+    match main() {
+        Ok(()) => (),
+        Err(e) => panic!("Test failed with error: {}", e),
+    }
 }
