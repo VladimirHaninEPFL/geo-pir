@@ -106,7 +106,7 @@ fn read_edges(
 
         let source_idx = find_node(nodes, source)?;
         let target_idx = find_node(nodes, target)?;
-        let travel_time = parse_travel_time(attributes)?;
+        let travel_time = parse_travel_time(attributes)?.round() as TravelTimeEdge;
 
         graph.add_edge(source_idx, target_idx, travel_time);
     }
@@ -131,7 +131,7 @@ fn find_node(nodes: &HashMap<String, NodeIndex>, id: &str) -> io::Result<NodeInd
         .ok_or_else(|| invalid_data(format!("edge references unknown node id: {id}")))
 }
 
-fn parse_travel_time(attributes: &str) -> io::Result<TravelTimeEdge> {
+fn parse_travel_time(attributes: &str) -> io::Result<f64> {
     let (_, after_key) = attributes
         .split_once("'travelTime':")
         .ok_or_else(|| invalid_data(format!("missing travelTime attribute: {attributes}")))?;
@@ -145,7 +145,7 @@ fn parse_travel_time(attributes: &str) -> io::Result<TravelTimeEdge> {
         .trim();
 
     value
-        .parse::<TravelTimeEdge>()
+        .parse::<f64>()
         .map_err(|err| invalid_data(format!("invalid travelTime value {value:?}: {err}")))
 }
 
