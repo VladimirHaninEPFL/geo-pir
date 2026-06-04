@@ -1,7 +1,7 @@
 use crate::graph::{NodeData, TravelTimeEdge};
 use crate::server::Server;
-use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
+use std::collections::{BinaryHeap, HashMap, HashSet};
 use std::io;
 
 type TravelTime = u64; // travel time in seconds used for calculating total path cost
@@ -16,6 +16,7 @@ pub struct Client {
 pub struct AStarResult {
     pub cost: TravelTime,
     pub path: Vec<String>,
+    pub visited_nodes: HashSet<String>,
 }
 
 #[derive(Debug, Clone)]
@@ -37,8 +38,7 @@ impl Ord for AStarState {
         let self_priority = self.f + self.g;
         let other_priority = other.f + other.g;
 
-        other_priority
-            .cmp(&self_priority)
+        other_priority.cmp(&self_priority)
     }
 }
 
@@ -76,10 +76,15 @@ impl Client {
     }
 
     /// Run A* search from start osmid to goal osmid
-    pub fn a_star_search(&mut self, start_osmid: &str, goal_osmid: &str) -> io::Result<Option<AStarResult>> {
+    pub fn a_star_search(
+        &mut self,
+        start_osmid: &str,
+        goal_osmid: &str,
+    ) -> io::Result<Option<AStarResult>> {
         let mut best_cost: HashMap<String, TravelTime> = HashMap::new();
         let mut best_source: HashMap<String, String> = HashMap::new();
         let mut open_set = BinaryHeap::new();
+        let mut visited_nodes = HashSet::new();
 
         best_cost.insert(start_osmid.to_string(), 0);
         let start_heuristic = self.heuristic(start_osmid, goal_osmid)?;
@@ -93,22 +98,24 @@ impl Client {
             let curr_osmid = &current_state.osmid;
             let curr_cost = current_state.g;
 
+            if curr_cost > *best_cost.get(curr_osmid).unwrap_or(&TravelTime::MAX) {
+                continue;
+            }
+
+            visited_nodes.insert(curr_osmid.clone());
+
             if curr_osmid == goal_osmid {
                 let path = self.reconstruct_path(&best_source, start_osmid, goal_osmid);
                 return Ok(Some(AStarResult {
                     cost: curr_cost,
                     path,
+                    visited_nodes,
                 }));
-            }
-
-            if curr_cost > *best_cost.get(curr_osmid).unwrap_or(&TravelTime::MAX) {
-                continue;
             }
 
             let neighbors = self.get_edges_from(curr_osmid)?;
             let neighbors = neighbors.clone(); // Clone to release the borrow before calling heuristic
             for (neighbor_osmid, travel_time) in neighbors.iter() {
-
                 let proposed_distance = curr_cost + (*travel_time as TravelTime);
 
                 if !best_cost.contains_key(neighbor_osmid)
@@ -130,16 +137,22 @@ impl Client {
         Ok(None)
     }
 
+    pub fn open_graph_viewer(
+        &self,
+        country_name: &str,
+        visited_nodes: &HashSet<String>,
+        optimal_path: &[String],
+    ) -> crate::graph::GraphResult<()> {
+        self.server
+            .open_graph_viewer(country_name, visited_nodes, optimal_path)
+    }
+
     fn heuristic(&mut self, from_osmid: &str, to_osmid: &str) -> io::Result<TravelTime> {
         let from_node = self.get_node(from_osmid)?.clone();
         let to_node = self.get_node(to_osmid)?.clone();
 
-        let distance_meters = haversine_distance_meters(
-            from_node.lat,
-            from_node.lon,
-            to_node.lat,
-            to_node.lon,
-        );
+        let distance_meters =
+            haversine_distance_meters(from_node.lat, from_node.lon, to_node.lat, to_node.lon);
 
         Ok(distance_to_seconds(distance_meters))
     }

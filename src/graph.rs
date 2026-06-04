@@ -1,5 +1,5 @@
-use petgraph::graph::{Graph, NodeIndex};
 use petgraph::Directed;
+use petgraph::graph::{Graph, NodeIndex};
 use std::collections::HashMap;
 use std::error::Error;
 use std::fs::File;
@@ -39,25 +39,25 @@ pub fn read_graph(
     edgelist_path: impl AsRef<Path>,
     nodes_path: impl AsRef<Path>,
 ) -> GraphResult<GraphContext> {
-
     let mut graph = EdgeListGraph::new();
 
     let osmid_idx_map = read_nodes(nodes_path, &mut graph)?;
     read_edges(edgelist_path, &mut graph, &osmid_idx_map)?;
 
-    Ok(GraphContext { graph, osmid_idx_map })
+    Ok(GraphContext {
+        graph,
+        osmid_idx_map,
+    })
 }
 
 fn read_nodes(
     path: impl AsRef<Path>,
     graph: &mut EdgeListGraph,
 ) -> GraphResult<HashMap<String, NodeIndex>> {
-
     let mut nodes = HashMap::<String, NodeIndex>::new();
 
     let mut reader = csv::Reader::from_path(path)?;
     for record in reader.records() {
-
         let record = record?;
         let osmid = record
             .get(0)
@@ -81,11 +81,9 @@ fn read_edges(
     graph: &mut EdgeListGraph,
     nodes: &HashMap<String, NodeIndex>,
 ) -> GraphResult<()> {
-
     let file = File::open(path)?;
     let reader = BufReader::new(file);
     for line in reader.lines() {
-
         let line = line?;
         let line = line.trim();
 

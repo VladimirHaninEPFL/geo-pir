@@ -1,16 +1,19 @@
 mod client;
 mod graph;
 mod server;
+mod viewer;
 
 use client::Client;
 use graph::GraphResult;
 use server::Server;
 
+#[derive(Clone, Copy)]
 struct Params<'a> {
     country_name: &'a str,
     approach: &'a str,
     start_node_osmid: &'a str,
     end_node_osmid: &'a str,
+    open_graph_viewer: bool,
 }
 
 #[allow(dead_code)]
@@ -19,19 +22,24 @@ const PARAMS_FRANCE: Params = Params {
     approach: "node0",
     start_node_osmid: "382017",
     end_node_osmid: "313872541",
+    open_graph_viewer: true,
 };
 #[allow(dead_code)]
 const PARAMS_SWITZERLAND: Params = Params {
     country_name: "Switzerland",
     approach: "node0",
     start_node_osmid: "312462415",
-    end_node_osmid: "312462415",
+    end_node_osmid: "17407050",
+    open_graph_viewer: true,
 };
 
 fn main() -> GraphResult<()> {
+    let params = PARAMS_SWITZERLAND; // Change to PARAMS_SWITZERLAND to test with Switzerland data
 
-    let params = PARAMS_FRANCE; // Change to PARAMS_SWITZERLAND to test with Switzerland data
+    run(params, params.open_graph_viewer)
+}
 
+fn run(params: Params<'_>, open_graph_viewer: bool) -> GraphResult<()> {
     let server = Server::start(params.country_name, params.approach)?;
     let mut client = Client::new(server);
 
@@ -45,6 +53,14 @@ fn main() -> GraphResult<()> {
             println!("A* found a path with cost {:.6}", result.cost);
             println!("Path length: {} nodes", result.path.len());
             println!("Path: {:?}", result.path);
+
+            if open_graph_viewer {
+                client.open_graph_viewer(
+                    params.country_name,
+                    &result.visited_nodes,
+                    &result.path,
+                )?;
+            }
         }
         None => {
             println!(
@@ -59,7 +75,7 @@ fn main() -> GraphResult<()> {
 
 #[test]
 fn test_all() {
-    match main() {
+    match run(PARAMS_SWITZERLAND, false) {
         Ok(()) => (),
         Err(e) => panic!("Test failed with error: {}", e),
     }

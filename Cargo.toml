@@ -5,4 +5,6 @@ edition = "2024"
 
 [dependencies]
 csv = "1"
-petgraph = "0.6"
+eframe = "0.34"
+egui_graphs = "0.30"
+petgraph = "0.8"
