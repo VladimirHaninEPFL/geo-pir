@@ -6,41 +6,57 @@ use client::Client;
 use graph::GraphResult;
 use server::Server;
 
-struct Params<'a> {
-    country_name: &'a str,
-    approach: &'a str,
-    start_node_osmid: &'a str,
-    end_node_osmid: &'a str,
-}
+use std::env;
 
-#[allow(dead_code)]
-const PARAMS_FRANCE: Params = Params {
-    country_name: "France",
-    approach: "node0",
-    start_node_osmid: "382017",
-    end_node_osmid: "313872541",
-};
-#[allow(dead_code)]
-const PARAMS_SWITZERLAND: Params = Params {
-    country_name: "Switzerland",
-    approach: "node0",
-    start_node_osmid: "312462415",
-    end_node_osmid: "276053614",
-};
+// struct Params<'a> {
+//     country_name: &'a str,
+//     approach: &'a str,
+//     start_node_osmid: &'a str,
+//     end_node_osmid: &'a str,
+// }
+
+// #[allow(dead_code)]
+// const PARAMS_FRANCE: Params = Params {
+//     country_name: "France",
+//     approach: "node0",
+//     start_node_osmid: "382017",
+//     end_node_osmid: "313872541",
+// };
+// #[allow(dead_code)]
+// const PARAMS_SWITZERLAND: Params = Params {
+//     country_name: "Switzerland",
+//     approach: "node0",
+//     start_node_osmid: "312462415",
+//     end_node_osmid: "276053614",
+// };
 
 fn main() -> GraphResult<()> {
 
-    let params = PARAMS_SWITZERLAND; // Change to PARAMS_SWITZERLAND to test with Switzerland data
+    // parse command line arguments
+    let args: Vec<String> = env::args().collect();
+    if args.len() != 5 {
+        eprintln!(
+            "Usage: {} <country_name> <approach> <start_node_osmid> <end_node_osmid>",
+            args[0]
+        );
+        std::process::exit(1);
+    }
 
-    let server = Server::start(params.country_name, params.approach)?;
+    let country_name = args.get(1).unwrap();
+    let approach = args.get(2).unwrap();
+    let start_node_osmid = args.get(3).unwrap();
+    let end_node_osmid = args.get(4).unwrap();
+
+    // Start the server and run the A* search
+    let server = Server::start(country_name, approach)?;
     let mut client = Client::new(server);
 
     println!(
         "Running A* from {} to {} (client-server architecture)...",
-        params.start_node_osmid, params.end_node_osmid
+        start_node_osmid, end_node_osmid
     );
 
-    match client.a_star_search(&params.start_node_osmid, &params.end_node_osmid)? {
+    match client.a_star_search(&start_node_osmid, &end_node_osmid)? {
         Some(result) => {
             println!("A* found a path with cost {:.6}", result.cost);
             println!("Path length: {} nodes", result.path.len());
@@ -50,7 +66,7 @@ fn main() -> GraphResult<()> {
         None => {
             println!(
                 "No path found between {} and {}",
-                params.start_node_osmid, params.end_node_osmid
+                start_node_osmid, end_node_osmid
             );
         }
     }

@@ -101,7 +101,7 @@ def main():
     pathPickelFile = sys.argv[2]
     G = pk.load(open(pathPickelFile, "rb"))
 
-    visualiseAStarSearch(G, params)
+    visualiseAStarSearch(G, params, outputPath=f"astar_result_{pathPickelFile}.png")
 
 if __name__ == "__main__":
     main()
