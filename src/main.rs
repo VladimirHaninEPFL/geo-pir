@@ -25,12 +25,12 @@ const PARAMS_SWITZERLAND: Params = Params {
     country_name: "Switzerland",
     approach: "node0",
     start_node_osmid: "312462415",
-    end_node_osmid: "312462415",
+    end_node_osmid: "276053614",
 };
 
 fn main() -> GraphResult<()> {
 
-    let params = PARAMS_FRANCE; // Change to PARAMS_SWITZERLAND to test with Switzerland data
+    let params = PARAMS_SWITZERLAND; // Change to PARAMS_SWITZERLAND to test with Switzerland data
 
     let server = Server::start(params.country_name, params.approach)?;
     let mut client = Client::new(server);
@@ -45,6 +45,7 @@ fn main() -> GraphResult<()> {
             println!("A* found a path with cost {:.6}", result.cost);
             println!("Path length: {} nodes", result.path.len());
             println!("Path: {:?}", result.path);
+            println!("Visited nodes: {:?}", result.visited_nodes);
         }
         None => {
             println!(

@@ -16,6 +16,7 @@ pub struct Client {
 pub struct AStarResult {
     pub cost: TravelTime,
     pub path: Vec<String>,
+    pub visited_nodes: Vec<String>,
 }
 
 #[derive(Debug, Clone)]
@@ -98,6 +99,7 @@ impl Client {
                 return Ok(Some(AStarResult {
                     cost: curr_cost,
                     path,
+                    visited_nodes: self.nodes_cache.keys().cloned().collect(), // Collect visited nodes from the cache keys
                 }));
             }
 
