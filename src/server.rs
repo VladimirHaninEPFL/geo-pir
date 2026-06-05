@@ -1,6 +1,6 @@
 use petgraph::visit::EdgeRef;
 
-use crate::graph::{GraphContext, NodeData, TravelTime};
+use crate::graph::{read_graph, GraphContext, GraphResult, NodeData, TravelTimeEdge};
 use std::io;
 
 /// The server holds the complete graph and serves queries from clients
@@ -9,8 +9,23 @@ pub struct Server {
 }
 
 impl Server {
-    pub fn new(context: GraphContext) -> Self {
-        Server { context }
+    pub fn start(
+        country_name: &str,
+        approach: &str,
+    ) -> GraphResult<Self> {
+
+        let edgelist_path = format!("./data/{}-navigation.edgelist", country_name);
+        let nodes_path = format!("./data/{}-navigation.csv", country_name);
+        let context = read_graph(&edgelist_path, &nodes_path)?;
+
+        println!(
+            "Loaded graph on server with {} nodes and {} edges. Using approach: {}",
+            context.graph.node_count(),
+            context.graph.edge_count(),
+            approach
+        );
+
+        Ok(Server { context })
     }
 
     /// Get node information by osmid
@@ -20,11 +35,11 @@ impl Server {
     }
 
     /// Get all outgoing edges from a node (identified by osmid)
-    pub fn get_edges_from(&self, osmid: &str) -> io::Result<Vec<(String, TravelTime)>> {
+    pub fn get_edges_from(&self, osmid: &str) -> io::Result<Vec<(String, TravelTimeEdge)>> {
 
         let source_idx = self.context.get_node_index(osmid)?;
 
-        let edges: Vec<(String, TravelTime)> = self.context.graph
+        let edges: Vec<(String, TravelTimeEdge)> = self.context.graph
             .edges(source_idx)
             .map(|edge| {
                 let target_data = self.context.node(edge.target());
