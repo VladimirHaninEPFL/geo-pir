@@ -1,22 +1,26 @@
 use petgraph::visit::EdgeRef;
-
-use crate::graph::{read_graph, GraphContext, GraphResult, NodeData, TravelTimeEdge};
+use petgraph::graph::NodeIndex;
+use crate::graph::{read_graph, EdgeListGraph, GraphResult, NodeData, TravelTimeEdge};
+use std::collections::HashMap;
 use std::io;
 
 /// The server holds the complete graph and serves queries from clients
+/// note that the server here has to receive the graph node idx (or the db index of the appraoch)
+/// no osmid are permitted since those are strings
 pub struct Server {
-    context: GraphContext,
+    graph: EdgeListGraph,
 }
 
 impl Server {
     pub fn start(
         country_name: &str,
         approach: &str,
-    ) -> GraphResult<Self> {
+    ) -> GraphResult<(Self, HashMap<String, NodeIndex>)> {
 
         // these files contain the osmid of the nodes and the travel time between them, respectively
         let edgelist_path = format!("./data/{}-navigation.edgelist", country_name);
         let nodes_path = format!("./data/{}-navigation.csv", country_name);
+
         let context = read_graph(&edgelist_path, &nodes_path)?;
 
         println!(
@@ -26,27 +30,24 @@ impl Server {
             approach
         );
 
-        Ok(Server { context })
+        Ok((Server { graph: context.graph }, context.osmid_idx_map))
     }
 
-    /// Get node information by osmid
-    pub fn get_node(&self, osmid: &str) -> io::Result<NodeData> {
-        let index = self.context.get_node_index(osmid)?;
-        Ok(self.context.node(index).clone())
+    /// Get node information by node_idx
+    pub fn get_node_data(&self, node_idx: NodeIndex) -> io::Result<NodeData> {
+        Ok(self.graph[node_idx].clone())
     }
 
-    /// Get all outgoing edges from a node (identified by osmid)
-    pub fn get_edges_from(&self, osmid: &str) -> io::Result<Vec<(String, TravelTimeEdge)>> {
+    /// Get all outgoing edges from a node (identified by node_idx)
+    pub fn get_edges_from(&self, source_node_idx: NodeIndex) -> io::Result<Vec<(NodeIndex, TravelTimeEdge)>> {
 
-        let source_idx = self.context.get_node_index(osmid)?;
-
-        let edges: Vec<(String, TravelTimeEdge)> = self.context.graph
-            .edges(source_idx)
+        let edges: Vec<(NodeIndex, TravelTimeEdge)> = self.graph
+            .edges(source_node_idx)
             .map(|edge| {
-                let target_data = self.context.node(edge.target());
-                (target_data.osmid.clone(), *edge.weight())
+                (edge.target(), *edge.weight())
             })
             .collect();
+
         Ok(edges)
     }
 }

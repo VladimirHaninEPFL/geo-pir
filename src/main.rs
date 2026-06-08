@@ -48,8 +48,8 @@ fn main() -> GraphResult<()> {
     let end_node_osmid = args.get(4).unwrap();
 
     // Start the server and run the A* search
-    let server = Server::start(country_name, approach)?;
-    let mut client = Client::new(server);
+    let (server, osmid_idx_map) = Server::start(country_name, approach)?;
+    let mut client = Client::new(server, osmid_idx_map);
 
     println!(
         "Running A* from {} to {} (client-server architecture) in country {} using approach {}...",

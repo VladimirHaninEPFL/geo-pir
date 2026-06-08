@@ -12,7 +12,7 @@ pub type EdgeListGraph = Graph<NodeData, TravelTimeEdge, Directed>;
 
 #[derive(Debug, Clone)]
 pub struct NodeData {
-    pub osmid: String,
+    // pub osmid: String, // I think we don't need this for the node appraoch
     pub lat: f32,
     pub lon: f32,
 }
@@ -20,19 +20,6 @@ pub struct NodeData {
 pub struct GraphContext {
     pub graph: EdgeListGraph,
     pub osmid_idx_map: HashMap<String, NodeIndex>, // here we map the OSM node IDs to their corresponding NodeIndex in the graph for easy lookup when reading edges
-}
-
-impl GraphContext {
-    pub fn get_node_index(&self, osmid: &str) -> io::Result<NodeIndex> {
-        self.osmid_idx_map
-            .get(osmid)
-            .copied()
-            .ok_or_else(|| invalid_data(format!("unknown node id: {osmid}")))
-    }
-
-    pub fn node(&self, index: NodeIndex) -> &NodeData {
-        &self.graph[index]
-    }
 }
 
 pub fn read_graph(
@@ -66,7 +53,6 @@ fn read_nodes(
         let lon = parse_csv_float(&record, 2, "lon")?;
 
         let index = graph.add_node(NodeData {
-            osmid: osmid.to_owned(),
             lat,
             lon,
         });

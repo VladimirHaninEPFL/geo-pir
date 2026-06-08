@@ -9,9 +9,9 @@
 cd /home/hanin/geo-pir
 
 cargo run --release -- France node0 382017 313872541 > temp-France.txt
-python3 python/visualiseAStarResult.py temp-France.txt data/France-navigation.pickle France
+# python3 python/visualiseAStarResult.py temp-France.txt data/France-navigation.pickle France
 
 cargo run --release -- Switzerland node0 312462415 276053614 > temp-Switzerland.txt
-python3 python/visualiseAStarResult.py temp-Switzerland.txt data/Switzerland-navigation.pickle Switzerland
+# python3 python/visualiseAStarResult.py temp-Switzerland.txt data/Switzerland-navigation.pickle Switzerland
 
 # rm ./temp.txt
