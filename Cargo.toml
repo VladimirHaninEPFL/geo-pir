@@ -6,3 +6,5 @@ edition = "2024"
 [dependencies]
 csv = "1"
 petgraph = "0.6"
+bytemuck = { version = "1.25.0" , features = ["derive"] }
+spiral-rs = { version = "0.2.0", features = ["server"] }

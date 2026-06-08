@@ -1,4 +1,10 @@
 use petgraph::graph::NodeIndex;
+use spiral_rs::{
+    client::{Client, PublicParameters, Query},
+    params::Params,
+    server::{load_db_from_seek, process_query},
+    util::get_seeded_rng,
+};
 
 use crate::graph::{NodeData, TravelTimeEdge};
 use crate::server::Server;
@@ -8,7 +14,7 @@ use std::io::{self, ErrorKind};
 
 type TravelTime = u64; // travel time in seconds used for calculating total path cost
 
-pub struct Client {
+pub struct GeoClient {
     server: Server,
 
     nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
@@ -53,9 +59,9 @@ impl PartialOrd for AStarState {
     }
 }
 
-impl Client {
+impl GeoClient {
     pub fn new(server: Server, osmid_idx_map: HashMap<String, NodeIndex>) -> Self {
-        Client {
+        GeoClient {
             server,
             nodes_cache: HashMap::new(),
             edges_cache: HashMap::new(),

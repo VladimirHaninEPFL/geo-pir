@@ -1,15 +1,17 @@
-use std::{env, vec};
+use std::env;
 
-use client::Client;
+use client::GeoClient;
 use graph::GraphResult;
-use petgraph::graph::NodeIndex;
 use server::Server;
+use spiral_rs::client::{Client, PublicParameters};
 
-use crate::client::AStarResult;
+use crate::{db_params::get_logical_db, spiral::{DerivedPirLayout, make_params}};
 
 mod client;
 mod graph;
 mod server;
+mod spiral;
+mod db_params;
 
 // struct Params<'a> {
 //     country_name: &'a str,
@@ -39,20 +41,34 @@ fn main() -> GraphResult<()> {
     let args: Vec<String> = env::args().collect();
     if args.len() != 5 {
         eprintln!(
-            "Usage: {} <country_name> <approach> <start_node_osmid> <end_node_osmid>",
+            "Usage: {} <country_name> <architecture> <approach> <start_node_osmid> <end_node_osmid>",
             args[0]
         );
         std::process::exit(1);
     }
 
     let country_name = args.get(1).unwrap();
-    let approach = args.get(2).unwrap();
-    let start_node_osmid = args.get(3).unwrap();
-    let end_node_osmid = args.get(4).unwrap();
+    let architecture = args.get(2).unwrap();
+    let approach = args.get(3).unwrap();
+    let start_node_osmid = args.get(4).unwrap();
+    let end_node_osmid = args.get(5).unwrap();
 
-    // Start the server and run the A* search
-    let (server, osmid_idx_map) = Server::start(country_name, approach)?;
-    let mut client = Client::new(server, osmid_idx_map);
+    // intialise spiral protocol
+    let logical_db = get_logical_db(country_name, approach);
+
+    let DerivedPirLayout { params,
+                            records_per_pir_item,
+                            pir_item_capacity_bytes,
+                            packed_items_needed,
+                        } = make_params(&logical_db);
+
+    let mut spiral_client: Client<'_> = Client::init(&params);
+    let public_params: PublicParameters = spiral_client.generate_keys();
+
+    // start the server
+    let (server, osmid_idx_map) = Server::start(country_name, approach, architecture, &params, &logical_db, records_per_pir_item)?;
+
+    let mut client = GeoClient::new(server, osmid_idx_map);
 
     println!(
         "Running A* from {} to {} (client-server architecture) in country {} using approach {}...",
@@ -81,7 +97,11 @@ fn main() -> GraphResult<()> {
 #[test]
 fn test_switzerland_node0() -> GraphResult<()> {
 
+    use petgraph::graph::NodeIndex;
+    use crate::client::AStarResult;
+
     let country_name = "Switzerland";
+    let architecture = "spiral";
     let approach = "node0";
     let start_node_osmid = "312462415";
     let end_node_osmid = "252684128";
@@ -93,8 +113,8 @@ fn test_switzerland_node0() -> GraphResult<()> {
     };
 
     // Start the server and run the A* search
-    let (server, osmid_idx_map) = Server::start(country_name, approach)?;
-    let mut client = Client::new(server, osmid_idx_map);
+    let (server, osmid_idx_map) = Server::start(country_name, approach, architecture)?;
+    let mut client = GeoClient::new(server, osmid_idx_map);
 
     match client.a_star_search(&start_node_osmid, &end_node_osmid)? {
         Some(result) => {
@@ -112,7 +132,11 @@ fn test_switzerland_node0() -> GraphResult<()> {
 #[test]
 fn test_france_node0() -> GraphResult<()> {
 
+    use petgraph::graph::NodeIndex;
+    use crate::client::AStarResult;
+
     let country_name = "France";
+    let architecture = "spiral";
     let approach = "node0";
     let start_node_osmid = "3723996988";
     let end_node_osmid = "2712549945";
@@ -124,8 +148,8 @@ fn test_france_node0() -> GraphResult<()> {
     };
 
     // Start the server and run the A* search
-    let (server, osmid_idx_map) = Server::start(country_name, approach)?;
-    let mut client = Client::new(server, osmid_idx_map);
+    let (server, osmid_idx_map) = Server::start(country_name, approach, architecture)?;
+    let mut client = GeoClient::new(server, osmid_idx_map);
 
     match client.a_star_search(&start_node_osmid, &end_node_osmid)? {
         Some(result) => {
