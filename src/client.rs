@@ -1,10 +1,16 @@
-use crate::graph::{NodeData, TravelTimeEdge};
+use crate::graph::{TravelTimeEdge};
 use crate::server::Server;
 use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
 use std::io;
 
 type TravelTime = u64; // travel time in seconds used for calculating total path cost
+
+#[derive(Debug, Clone)]
+struct NodeData {
+    pub lat: f32,
+    pub lon: f32,
+}
 
 pub struct Client {
     server: Server,
@@ -14,16 +20,16 @@ pub struct Client {
 
 #[derive(Debug, Clone)]
 pub struct AStarResult {
-    pub cost: TravelTime,
-    pub path: Vec<String>,
-    pub visited_nodes: Vec<String>,
+    pub cost: TravelTime, // total cost of the optimal path found by A*
+    pub path: Vec<String>, // list of osmids representing the path from start to goal
+    pub visited_nodes: Vec<String>, // list of osmids of all nodes that were visited during the search (for analysis/visualization)
 }
 
 #[derive(Debug, Clone)]
 struct AStarState {
+    osmid: String,
     f: TravelTime, // heuristic estimate from this node to the goal
     g: TravelTime, // cost from the start node to this node
-    osmid: String,
 }
 
 impl Eq for AStarState {}
@@ -32,17 +38,16 @@ impl PartialEq for AStarState {
         self.f == other.f && self.g == other.g && self.osmid == other.osmid
     }
 }
-
 impl Ord for AStarState {
     fn cmp(&self, other: &Self) -> Ordering {
         let self_priority = self.f + self.g;
         let other_priority = other.f + other.g;
 
+        // note here we reverse the order to make the BinaryHeap a min-heap based on f+g
         other_priority
             .cmp(&self_priority)
     }
 }
-
 impl PartialOrd for AStarState {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         Some(self.cmp(other))
@@ -62,7 +67,11 @@ impl Client {
     fn get_node(&mut self, osmid: &str) -> io::Result<&NodeData> {
         if !self.nodes_cache.contains_key(osmid) {
             let node = self.server.get_node(osmid)?;
-            self.nodes_cache.insert(osmid.to_string(), node);
+            
+            // we dont need the osmid in the NodeData since we already have it as the key in the cache
+            let node_data = NodeData { lat: node.lat, lon: node.lon }; 
+
+            self.nodes_cache.insert(osmid.to_string(), node_data);
         }
         Ok(self.nodes_cache.get(osmid).unwrap())
     }
@@ -78,20 +87,23 @@ impl Client {
 
     /// Run A* search from start osmid to goal osmid
     pub fn a_star_search(&mut self, start_osmid: &str, goal_osmid: &str) -> io::Result<Option<AStarResult>> {
-        let mut best_cost: HashMap<String, TravelTime> = HashMap::new();
-        let mut best_source: HashMap<String, String> = HashMap::new();
-        let mut open_set = BinaryHeap::new();
 
+        let mut best_cost: HashMap<String, TravelTime> = HashMap::new(); // this stores the best known cost to reach each node from the start node
+        let mut best_source: HashMap<String, String> = HashMap::new(); // this stores the best known predecessor of each node on the optimal path from the start node (used for path reconstruction)
+        let mut open_set = BinaryHeap::new(); // this is the priority queue of nodes to explore, ordered by f = g + h
+
+        // initialize the search with the start node
         best_cost.insert(start_osmid.to_string(), 0);
-        let start_heuristic = self.heuristic(start_osmid, goal_osmid)?;
         open_set.push(AStarState {
-            f: start_heuristic,
-            g: 0,
             osmid: start_osmid.to_string(),
+            f: self.heuristic(start_osmid, goal_osmid)?,
+            g: 0,
         });
 
+        // search loop, until there are no more nodes to explore in the open set
         while let Some(current_state) = open_set.pop() {
-            let curr_osmid = &current_state.osmid;
+
+            let curr_osmid: &String = &current_state.osmid;
             let curr_cost = current_state.g;
 
             if curr_osmid == goal_osmid {
@@ -103,15 +115,15 @@ impl Client {
                 }));
             }
 
+            // this happens when we found a better path to this node
             if curr_cost > *best_cost.get(curr_osmid).unwrap_or(&TravelTime::MAX) {
                 continue;
             }
 
-            let neighbors = self.get_edges_from(curr_osmid)?;
-            let neighbors = neighbors.clone(); // Clone to release the borrow before calling heuristic
-            for (neighbor_osmid, travel_time) in neighbors.iter() {
+            let neighbors = self.get_edges_from(curr_osmid)?.clone();
+            for (neighbor_osmid, travel_time_edge) in neighbors.iter() {
 
-                let proposed_distance = curr_cost + (*travel_time as TravelTime);
+                let proposed_distance = curr_cost + (*travel_time_edge as TravelTime);
 
                 if !best_cost.contains_key(neighbor_osmid)
                     || proposed_distance < *best_cost.get(neighbor_osmid).unwrap()
@@ -119,11 +131,10 @@ impl Client {
                     best_cost.insert(neighbor_osmid.clone(), proposed_distance);
                     best_source.insert(neighbor_osmid.clone(), curr_osmid.clone());
 
-                    let heuristic_estimate = self.heuristic(neighbor_osmid, goal_osmid)?;
                     open_set.push(AStarState {
-                        f: heuristic_estimate,
-                        g: proposed_distance,
                         osmid: neighbor_osmid.clone(),
+                        f: self.heuristic(neighbor_osmid, goal_osmid)?,
+                        g: proposed_distance,
                     });
                 }
             }

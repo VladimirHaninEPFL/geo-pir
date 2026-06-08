@@ -95,13 +95,15 @@ def extractAStarResultFromFile(file_path):
 
 def main():
 
-    pathOutput = sys.argv[1]
-    params = extractAStarResultFromFile(pathOutput)
+    pathResult = sys.argv[1]
+    params = extractAStarResultFromFile(pathResult)
 
     pathPickelFile = sys.argv[2]
     G = pk.load(open(pathPickelFile, "rb"))
 
-    visualiseAStarSearch(G, params, outputPath=f"astar_result_{pathPickelFile}.png")
+    nameCountry = sys.argv[3]
+
+    visualiseAStarSearch(G, params, outputPath=f"astar_result_{nameCountry}.png")
 
 if __name__ == "__main__":
     main()

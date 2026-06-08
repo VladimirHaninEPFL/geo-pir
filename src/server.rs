@@ -14,6 +14,7 @@ impl Server {
         approach: &str,
     ) -> GraphResult<Self> {
 
+        // these files contain the osmid of the nodes and the travel time between them, respectively
         let edgelist_path = format!("./data/{}-navigation.edgelist", country_name);
         let nodes_path = format!("./data/{}-navigation.csv", country_name);
         let context = read_graph(&edgelist_path, &nodes_path)?;

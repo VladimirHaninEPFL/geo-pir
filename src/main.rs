@@ -1,12 +1,12 @@
-mod client;
-mod graph;
-mod server;
+use std::env;
 
 use client::Client;
 use graph::GraphResult;
 use server::Server;
 
-use std::env;
+mod client;
+mod graph;
+mod server;
 
 // struct Params<'a> {
 //     country_name: &'a str,
@@ -52,8 +52,8 @@ fn main() -> GraphResult<()> {
     let mut client = Client::new(server);
 
     println!(
-        "Running A* from {} to {} (client-server architecture)...",
-        start_node_osmid, end_node_osmid
+        "Running A* from {} to {} (client-server architecture) in country {} using approach {}...",
+        start_node_osmid, end_node_osmid, country_name, approach
     );
 
     match client.a_star_search(&start_node_osmid, &end_node_osmid)? {
@@ -62,6 +62,7 @@ fn main() -> GraphResult<()> {
             println!("Path length: {} nodes", result.path.len());
             println!("Path: {:?}", result.path);
             println!("Visited nodes: {:?}", result.visited_nodes);
+            println!("Number of visited nodes: {}", result.visited_nodes.len());
         }
         None => {
             println!(
