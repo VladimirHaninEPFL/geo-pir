@@ -1,5 +1,5 @@
 use petgraph::graph::NodeIndex;
-use spiral_rs::client::Client;
+use spiral_rs::client::{Client, PublicParameters};
 
 use crate::{data_entries::{Node0Entry, Node1Entry, Node2Entry, Node3Entry}, graph::{NodeData, TravelTimeEdge}};
 use crate::server::GeoServer;
@@ -10,13 +10,12 @@ use std::io::{self};
 type TravelTime = u64; // travel time in seconds used for calculating total path cost
 
 pub struct GeoClient<'a> {
-    server: GeoServer<'a>,
+    server: &'a GeoServer<'a>,
     approach: &'a str,
 
     pub nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
     pub edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
 
-    records_per_pir_item: usize,
     spiral_client: Client<'a>,
 }
 
@@ -58,17 +57,21 @@ impl PartialOrd for AStarState {
 
 impl<'a> GeoClient<'a> {
     pub fn new(
-        server: GeoServer<'a>, 
+        server: &'a mut GeoServer<'a>, 
         approach: &'a str,
-        records_per_pir_item: usize, 
-        spiral_client: Client<'a>, 
     ) -> Self {
+
+        let mut spiral_client = Client::init(&server.params);
+        let public_params: PublicParameters = spiral_client.generate_keys();
+
+        // send public params to the server
+        server.public_params = Some(public_params);
+
         GeoClient {
             server,
             approach,
             nodes_cache: HashMap::new(),
             edges_cache: HashMap::new(),
-            records_per_pir_item,
             spiral_client,
         }
     }
@@ -80,8 +83,8 @@ impl<'a> GeoClient<'a> {
 
             // * spiral query generation for node0
             let target_idx = node_idx.index();
-            let target_pir_idx = target_idx / self.records_per_pir_item; // this rounds down !
-            let target_idx_clipped = target_pir_idx * self.records_per_pir_item;
+            let target_pir_idx = target_idx / self.server.records_per_pir_item; // this rounds down !
+            let target_idx_clipped = target_pir_idx * self.server.records_per_pir_item;
 
             let query = self.spiral_client.generate_query(target_pir_idx);
             let response = self.server.process_spiral_query(&query);
@@ -90,7 +93,7 @@ impl<'a> GeoClient<'a> {
             let result = self.spiral_client.decode_response(response.as_slice());
 
             // you receive multple entries for spiral
-            for i in 0..self.records_per_pir_item {
+            for i in 0..self.server.records_per_pir_item {
 
                 if self.approach == "node0" {
 

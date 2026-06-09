@@ -1,12 +1,12 @@
-use petgraph::graph::NodeIndex;
 use spiral_rs::aligned_memory::AlignedMemory;
 use spiral_rs::client::{PublicParameters, Query};
+use spiral_rs::gadget::get_bits_per;
 use spiral_rs::params::Params;
 use spiral_rs::server::{load_db_from_seek, process_query};
 use crate::data_entries::{*};
-use crate::graph::{read_graph, EdgeListGraph, GraphResult};
+use crate::graph::{EdgeListGraph, GraphContext, GraphResult, read_graph};
+use crate::spiral::{DerivedPirLayout, make_params};
 
-use std::collections::HashMap;
 use std::io::Cursor;
 
 /// The server holds the complete graph and serves queries from clients
@@ -14,8 +14,9 @@ use std::io::Cursor;
 /// no osmid are permitted since those are strings
 pub struct GeoServer<'a> {
     spiral_db: AlignedMemory<64>,
-    params: &'a Params,
-    public_params: &'a PublicParameters<'a>,
+    pub params: Params,
+    pub public_params: Option<PublicParameters<'a>>,
+    pub records_per_pir_item: usize,
 }
 
 impl<'a> GeoServer<'a> {
@@ -24,9 +25,7 @@ impl<'a> GeoServer<'a> {
         country_name: &str,
         approach: &str,
         architecture: &str,
-        params: &'a Params,
-        public_params: &'a PublicParameters,
-    ) -> GraphResult<(Self, HashMap<String, NodeIndex>, HashMap<NodeIndex, String>)> {
+    ) -> GraphResult<(Self, GraphContext)> {
 
         // these files contain the osmid of the nodes and the travel time between them, respectively
         let edgelist_path = format!("./data/{}-navigation.edgelist", country_name);
@@ -35,19 +34,21 @@ impl<'a> GeoServer<'a> {
         let context = read_graph(&edgelist_path, &nodes_path)?;
 
         // spiral setup
-        let packed_db_bytes = GeoServer::build_packed_database(approach, params, &context.graph);
+        let logical_db = LogicalDatabase{
+            num_records: context.graph.node_count(),
+            record_size_bytes: get_logical_db(country_name, approach).record_size_bytes,
+        };
+
+        let DerivedPirLayout {
+            params,
+            records_per_pir_item,
+        } = make_params(&logical_db);
+
+        let packed_db_bytes = GeoServer::build_packed_database(approach, &params, &context.graph);
         let mut packed_db_reader = Cursor::new(packed_db_bytes);
         let spiral_db = load_db_from_seek(&params, &mut packed_db_reader);
 
-        println!(
-            "Loaded graph on server with {} nodes and {} edges. Using approach: {} and architecture {}",
-            context.graph.node_count(),
-            context.graph.edge_count(),
-            approach,
-            architecture,
-        );
-
-        Ok((GeoServer { spiral_db, params, public_params }, context.osmid_idx_map, context.idx_osmid_map))
+        Ok((GeoServer { spiral_db, params, public_params: None, records_per_pir_item }, context))
     }
     
     pub fn build_packed_database(
@@ -64,8 +65,8 @@ impl<'a> GeoServer<'a> {
 
                 let node_entry = Node0Entry::new(graph, node_idx);
 
-                let start = node_idx.index() * std::mem::size_of::<Node3Entry>();
-                let end = (node_idx.index() + 1) * std::mem::size_of::<Node3Entry>();
+                let start = node_idx.index() * std::mem::size_of::<Node0Entry>();
+                let end = (node_idx.index() + 1) * std::mem::size_of::<Node0Entry>();
                 let record_slice = &mut packed_db[start..end];
                 record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
             }
@@ -128,7 +129,7 @@ impl<'a> GeoServer<'a> {
 
     pub fn process_spiral_query(&self, query: &Query) -> Vec<u8> {
 
-        let response = process_query(self.params, self.public_params, query, self.spiral_db.as_slice());
+        let response = process_query(&self.params, &self.public_params.as_ref().unwrap(), query, self.spiral_db.as_slice());
 
         response
     }
