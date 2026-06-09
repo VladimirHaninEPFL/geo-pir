@@ -66,7 +66,7 @@ fn main() -> GraphResult<()> {
     let public_params: PublicParameters = spiral_client.generate_keys();
 
     // start the server
-    let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &logical_db, records_per_pir_item)?;
+    let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
     let mut client = GeoClient::new(server, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
 
     println!(
@@ -124,7 +124,7 @@ fn test_switzerland_node0() -> GraphResult<()> {
     let public_params: PublicParameters = spiral_client.generate_keys();
 
     // start the server
-    let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &logical_db, records_per_pir_item)?;
+    let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
     let mut client = GeoClient::new(server, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
 
     match client.a_star_search(&start_node_osmid, &end_node_osmid)? {
@@ -171,7 +171,7 @@ fn test_france_node0() -> GraphResult<()> {
     let public_params: PublicParameters = spiral_client.generate_keys();
 
     // start the server
-    let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &logical_db, records_per_pir_item)?;
+    let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
     let mut client = GeoClient::new(server, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
 
     match client.a_star_search(&start_node_osmid, &end_node_osmid)? {

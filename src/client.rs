@@ -15,7 +15,7 @@ use std::io::{self, ErrorKind};
 type TravelTime = u64; // travel time in seconds used for calculating total path cost
 
 pub struct GeoClient<'a> {
-    server: GeoServer,
+    server: GeoServer<'a>,
 
     nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
     edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
@@ -66,7 +66,15 @@ impl PartialOrd for AStarState {
 }
 
 impl<'a> GeoClient<'a> {
-    pub fn new(server: GeoServer, osmid_idx_map: HashMap<String, NodeIndex>, records_per_pir_item: usize, spiral_client: Client<'a>, params :&'a Params, public_params: &'a PublicParameters, logical_db: &'a LogicalDatabase) -> Self {
+    pub fn new(
+        server: GeoServer<'a>, 
+        osmid_idx_map: HashMap<String, NodeIndex>,
+        records_per_pir_item: usize, 
+        spiral_client: Client<'a>, 
+        params :&'a Params, 
+        public_params: &'a PublicParameters, 
+        logical_db: &'a LogicalDatabase,
+    ) -> Self {
         GeoClient {
             server,
             nodes_cache: HashMap::new(),
@@ -97,11 +105,8 @@ impl<'a> GeoClient<'a> {
             let target_pir_idx = target_idx / self.records_per_pir_item; // this rounds down !
             let target_idx_clipped = target_pir_idx * self.records_per_pir_item;
 
-            // here we should'tn have already queried this pir_idx
             let query = self.spiral_client.generate_query(target_pir_idx);
-
-            // * server side query processing
-            let response = process_query(self.params, self.public_params, &query, self.server.spiral_db.as_slice());
+            let response = self.server.process_spiral_query(&query);
 
             // * client side response decoding
             let result = self.spiral_client.decode_response(response.as_slice());
@@ -127,7 +132,6 @@ impl<'a> GeoClient<'a> {
                     .collect();
                 self.edges_cache.insert(NodeIndex::new(target_idx_clipped + i), outgoing_edges);
             }
-            println!("Fetching data of node_idx {} wich has data {:?}", node_idx.index(), self.nodes_cache.get(&node_idx).unwrap());
         }
 
         Ok(self.nodes_cache.get(&node_idx).unwrap())

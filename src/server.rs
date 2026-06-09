@@ -1,8 +1,9 @@
 use petgraph::visit::EdgeRef;
 use petgraph::graph::NodeIndex;
 use spiral_rs::aligned_memory::AlignedMemory;
+use spiral_rs::client::{PublicParameters, Query};
 use spiral_rs::params::Params;
-use spiral_rs::server::load_db_from_seek;
+use spiral_rs::server::{load_db_from_seek, process_query};
 use crate::db_params::{LogicalDatabase, Node0Entry, OutgoingEdge, get_logical_db};
 use crate::graph::{read_graph, EdgeListGraph, GraphResult, NodeData, TravelTimeEdge};
 use crate::spiral::{DerivedPirLayout, make_params};
@@ -13,18 +14,22 @@ use std::io::{self, Cursor};
 /// The server holds the complete graph and serves queries from clients
 /// note that the server here has to receive the graph node idx (or the db index of the appraoch)
 /// no osmid are permitted since those are strings
-pub struct GeoServer {
+pub struct GeoServer<'a> {
     graph: EdgeListGraph,
-    pub spiral_db: AlignedMemory<64>,
+    spiral_db: AlignedMemory<64>,
+    params: &'a Params,
+    public_params: &'a PublicParameters<'a>,
 }
 
-impl GeoServer {
+impl<'a> GeoServer<'a> {
+    
     pub fn start(
         country_name: &str,
         approach: &str,
         architecture: &str,
-        params: &Params,
-        logical_db: &LogicalDatabase,
+        params: &'a Params,
+        public_params: &'a PublicParameters,
+        logical_db: &'a LogicalDatabase,
         records_per_pir_item: usize,
     ) -> GraphResult<(Self, HashMap<String, NodeIndex>, HashMap<NodeIndex, String>)> {
 
@@ -47,7 +52,7 @@ impl GeoServer {
             architecture,
         );
 
-        Ok((GeoServer { graph: context.graph, spiral_db }, context.osmid_idx_map, context.idx_osmid_map))
+        Ok((GeoServer { graph: context.graph, spiral_db, params, public_params }, context.osmid_idx_map, context.idx_osmid_map))
     }
     
     pub fn build_packed_database(
@@ -72,6 +77,9 @@ impl GeoServer {
             let curr_outgoing_edge_entries: Vec<OutgoingEdge> = graph.edges(node_idx).map(|edge| {
                     OutgoingEdge { id_target: edge.target().index() as u32, cost: *edge.weight(), _pad: 0 }
                 }).collect();
+            if curr_outgoing_edge_entries.len() > 4 {
+                println!("Node {:?} has more than 4 outgoing edges ! it has: {}", node_data, curr_outgoing_edge_entries.len());
+            }
 
             let mut outgoing_edge_entries = [OutgoingEdge { id_target: 0, cost: 0, _pad: 0 }; 4];
             for i in 0..4 {
@@ -89,6 +97,13 @@ impl GeoServer {
         }
 
         packed_db
+    }
+
+    pub fn process_spiral_query(&self, query: &Query) -> Vec<u8> {
+
+        let response = process_query(self.params, self.public_params, query, self.spiral_db.as_slice());
+
+        response
     }
 
     /// Get node information by node_idx
