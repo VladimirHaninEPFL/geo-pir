@@ -20,6 +20,7 @@ pub struct NodeData {
 pub struct GraphContext {
     pub graph: EdgeListGraph,
     pub osmid_idx_map: HashMap<String, NodeIndex>, // here we map the OSM node IDs to their corresponding NodeIndex in the graph for easy lookup when reading edges
+    pub idx_osmid_map: HashMap<NodeIndex, String>, // here we map the graph nodeindex to their corresponding osmid. This is used for debugging
 }
 
 pub fn read_graph(
@@ -29,18 +30,19 @@ pub fn read_graph(
 
     let mut graph = EdgeListGraph::new();
 
-    let osmid_idx_map = read_nodes(nodes_path, &mut graph)?;
+    let (osmid_idx_map, idx_osmid_map) = read_nodes(nodes_path, &mut graph)?;
     read_edges(edgelist_path, &mut graph, &osmid_idx_map)?;
 
-    Ok(GraphContext { graph, osmid_idx_map })
+    Ok(GraphContext { graph, osmid_idx_map, idx_osmid_map })
 }
 
 fn read_nodes(
     path: impl AsRef<Path>,
     graph: &mut EdgeListGraph,
-) -> GraphResult<HashMap<String, NodeIndex>> {
+) -> GraphResult<(HashMap<String, NodeIndex>, HashMap<NodeIndex, String>)> {
 
-    let mut nodes = HashMap::<String, NodeIndex>::new();
+    let mut osmid_idx_map  = HashMap::<String, NodeIndex>::new();
+    let mut idx_osmid_map = HashMap::<NodeIndex, String>::new();
 
     let mut reader = csv::Reader::from_path(path)?;
     for record in reader.records() {
@@ -56,10 +58,11 @@ fn read_nodes(
             lat,
             lon,
         });
-        nodes.insert(osmid.to_owned(), index);
+        osmid_idx_map.insert(osmid.to_owned(), index);
+        idx_osmid_map.insert(index, osmid.to_owned());
     }
 
-    Ok(nodes)
+    Ok((osmid_idx_map, idx_osmid_map))
 }
 
 fn read_edges(

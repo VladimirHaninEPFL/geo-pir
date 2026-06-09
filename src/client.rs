@@ -7,7 +7,7 @@ use spiral_rs::{
 };
 
 use crate::graph::{NodeData, TravelTimeEdge};
-use crate::server::Server;
+use crate::server::GeoServer;
 use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
 use std::io::{self, ErrorKind};
@@ -15,7 +15,7 @@ use std::io::{self, ErrorKind};
 type TravelTime = u64; // travel time in seconds used for calculating total path cost
 
 pub struct GeoClient {
-    server: Server,
+    server: GeoServer,
 
     nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
     edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
@@ -60,7 +60,7 @@ impl PartialOrd for AStarState {
 }
 
 impl GeoClient {
-    pub fn new(server: Server, osmid_idx_map: HashMap<String, NodeIndex>) -> Self {
+    pub fn new(server: GeoServer, osmid_idx_map: HashMap<String, NodeIndex>) -> Self {
         GeoClient {
             server,
             nodes_cache: HashMap::new(),

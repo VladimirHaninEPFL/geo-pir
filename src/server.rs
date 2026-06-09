@@ -13,12 +13,12 @@ use std::io::{self, Cursor};
 /// The server holds the complete graph and serves queries from clients
 /// note that the server here has to receive the graph node idx (or the db index of the appraoch)
 /// no osmid are permitted since those are strings
-pub struct Server {
+pub struct GeoServer {
     graph: EdgeListGraph,
-    spiral_db: AlignedMemory<64>,
+    pub spiral_db: AlignedMemory<64>,
 }
 
-impl Server {
+impl GeoServer {
     pub fn start(
         country_name: &str,
         approach: &str,
@@ -26,7 +26,7 @@ impl Server {
         params: &Params,
         logical_db: &LogicalDatabase,
         records_per_pir_item: usize,
-    ) -> GraphResult<(Self, HashMap<String, NodeIndex>)> {
+    ) -> GraphResult<(Self, HashMap<String, NodeIndex>, HashMap<NodeIndex, String>)> {
 
         // these files contain the osmid of the nodes and the travel time between them, respectively
         let edgelist_path = format!("./data/{}-navigation.edgelist", country_name);
@@ -35,7 +35,7 @@ impl Server {
         let context = read_graph(&edgelist_path, &nodes_path)?;
 
         // spiral setup
-        let packed_db_bytes = Server::build_packed_database(params, logical_db, records_per_pir_item, &context.graph);
+        let packed_db_bytes = GeoServer::build_packed_database(params, logical_db, records_per_pir_item, &context.graph);
         let mut packed_db_reader = Cursor::new(packed_db_bytes);
         let spiral_db = load_db_from_seek(&params, &mut packed_db_reader);
 
@@ -47,7 +47,7 @@ impl Server {
             architecture,
         );
 
-        Ok((Server { graph: context.graph, spiral_db }, context.osmid_idx_map))
+        Ok((GeoServer { graph: context.graph, spiral_db }, context.osmid_idx_map, context.idx_osmid_map))
     }
     
     pub fn build_packed_database(
@@ -59,27 +59,32 @@ impl Server {
 
         let mut packed_db = vec![0u8; params.num_items() * params.db_item_size];
 
-        for logical_idx in 0..logical_db.num_records {
+        for node_idx in graph.node_indices() {
 
-            let pir_idx = logical_idx / records_per_pir_item;
-            let slot_idx = logical_idx % records_per_pir_item;
+            let pir_idx = node_idx.index() / records_per_pir_item;
+            let slot_idx = node_idx.index() % records_per_pir_item;
 
             let offset = pir_idx * params.db_item_size + slot_idx * logical_db.record_size_bytes;
             let record_slice = &mut packed_db[offset..offset + logical_db.record_size_bytes];
 
-            let node_data = graph[NodeIndex::new(0)].clone();
+            let node_data = graph[node_idx].clone();
+
+            let curr_outgoing_edge_entries: Vec<OutgoingEdge> = graph.edges(node_idx).map(|edge| {
+                    OutgoingEdge { id_target: edge.target().index() as u32, cost: *edge.weight(), _pad: 0 }
+                }).collect();
+
+            let mut outgoing_edge_entries = [OutgoingEdge { id_target: 0, cost: 0, _pad: 0 }; 4];
+            for i in 0..4 {
+                if i < curr_outgoing_edge_entries.len() {
+                    outgoing_edge_entries[i] = curr_outgoing_edge_entries[i]
+                }
+            };
 
             let node_entry: Node0Entry = Node0Entry {
                 latitude: node_data.lat,
                 longitude: node_data.lon,
-                outgoing_edges: [
-                    OutgoingEdge { id_target: 0 as u32 + 1, cost: 100, _pad: 0 },
-                    OutgoingEdge { id_target: 0 as u32 + 2, cost: 200, _pad: 0 },
-                    OutgoingEdge { id_target: 0 as u32 + 3, cost: 300, _pad: 0 },
-                    OutgoingEdge { id_target: 0 as u32 + 4, cost: 400, _pad: 0 },
-                ],
+                outgoing_edges: outgoing_edge_entries
             };
-
             record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
         }
 
