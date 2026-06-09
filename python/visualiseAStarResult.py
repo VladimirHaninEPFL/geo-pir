@@ -79,12 +79,14 @@ def extractAStarResultFromFile(file_path):
         path = []
 
     # Extract visited nodes array
-    visited_match = re.search(r"Visited nodes:\s*\[(.*?)\]", text, re.DOTALL)
+    visited_match = re.search(r"Visited nodes: \s*\[(.*?)\]", text, re.DOTALL)
     if visited_match:
         visited_str = visited_match.group(1)
-        visited_nodes = re.findall(r'"(\d+)"', visited_str)
+        visited_nodes = re.findall(r"(\d+)", visited_str)
     else:
         visited_nodes = []
+    print(f"Found {len(visited_nodes)} visited nodes")
+    print(f"Visited nodes: {visited_nodes}")
 
     return {
         "start_node": int(start_node),

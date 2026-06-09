@@ -3,15 +3,15 @@ use std::env;
 use client::GeoClient;
 use graph::GraphResult;
 use server::GeoServer;
-use spiral_rs::{client::{Client, PublicParameters}, server::process_query};
+use spiral_rs::{client::{Client, PublicParameters}};
 
-use crate::{db_params::{Node0Entry, get_logical_db}, spiral::{DerivedPirLayout, make_params}};
+use crate::{data_entries::get_logical_db, spiral::{DerivedPirLayout, make_params}};
 
 mod client;
 mod graph;
 mod server;
 mod spiral;
-mod db_params;
+mod data_entries;
 
 
 fn main() -> GraphResult<()> {
@@ -46,14 +46,14 @@ fn main() -> GraphResult<()> {
 
     // start the server
     let (server, osmid_idx_map, idx_osmid_map) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
-    let mut client = GeoClient::new(server, approach, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
+    let mut client = GeoClient::new(server, approach, records_per_pir_item, spiral_client);
 
     println!(
         "Running A* from {} to {} (client-server architecture) in country {} using approach {}...",
-        start_node_osmid, end_node_osmid, country_name, approach
+        start_node_osmid, end_node_osmid, country_name, approach    
     );
 
-    match client.a_star_search(&start_node_osmid, &end_node_osmid)? {
+    match client.a_star_search(*osmid_idx_map.get(start_node_osmid).unwrap(), *osmid_idx_map.get(end_node_osmid).unwrap())? {
         Some(result) => {
             println!("A* found a path with cost {:.6}", result.cost);
             println!("Path length: {} nodes", result.path.len());
@@ -109,10 +109,15 @@ fn test_switzerland_node0() -> GraphResult<()> {
     let public_params: PublicParameters = spiral_client.generate_keys();
 
     // start the server
-    let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
-    let mut client = GeoClient::new(server, approach, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
+    let (server, osmid_idx_map, idx_osmid_map) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
+    let mut client = GeoClient::new(server, approach, records_per_pir_item, spiral_client);
 
-    match client.a_star_search(&start_node_osmid, &end_node_osmid)? {
+    println!(
+        "Running A* from {} to {} (client-server architecture) in country {} using approach {}...",
+        start_node_osmid, end_node_osmid, country_name, approach    
+    );
+
+    match client.a_star_search(*osmid_idx_map.get(start_node_osmid).unwrap(), *osmid_idx_map.get(end_node_osmid).unwrap())? {
         Some(result) => {
             assert!(result.cost == expected_result.cost);
             assert!(result.path == expected_result.path);
@@ -156,10 +161,15 @@ fn test_france_node0() -> GraphResult<()> {
     let public_params: PublicParameters = spiral_client.generate_keys();
 
     // start the server
-    let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
-    let mut client = GeoClient::new(server, approach, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
+    let (server, osmid_idx_map, idx_osmid_map) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
+    let mut client = GeoClient::new(server, approach, records_per_pir_item, spiral_client);
 
-    match client.a_star_search(&start_node_osmid, &end_node_osmid)? {
+    println!(
+        "Running A* from {} to {} (client-server architecture) in country {} using approach {}...",
+        start_node_osmid, end_node_osmid, country_name, approach    
+    );
+
+    match client.a_star_search(*osmid_idx_map.get(start_node_osmid).unwrap(), *osmid_idx_map.get(end_node_osmid).unwrap())? {
         Some(result) => {
             assert!(result.cost == expected_result.cost);
             assert!(result.path == expected_result.path);

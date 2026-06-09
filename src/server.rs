@@ -4,7 +4,7 @@ use spiral_rs::aligned_memory::AlignedMemory;
 use spiral_rs::client::{PublicParameters, Query};
 use spiral_rs::params::Params;
 use spiral_rs::server::{load_db_from_seek, process_query};
-use crate::db_params::{*};
+use crate::data_entries::{*};
 use crate::graph::{read_graph, EdgeListGraph, GraphResult, NodeData, TravelTimeEdge};
 use crate::spiral::{DerivedPirLayout, make_params};
 
@@ -40,7 +40,7 @@ impl<'a> GeoServer<'a> {
         let context = read_graph(&edgelist_path, &nodes_path)?;
 
         // spiral setup
-        let packed_db_bytes = GeoServer::build_packed_database(approach, params, logical_db, records_per_pir_item, &context.graph);
+        let packed_db_bytes = GeoServer::build_packed_database(approach, params, &context.graph);
         let mut packed_db_reader = Cursor::new(packed_db_bytes);
         let spiral_db = load_db_from_seek(&params, &mut packed_db_reader);
 
@@ -58,8 +58,6 @@ impl<'a> GeoServer<'a> {
     pub fn build_packed_database(
         approach: &str,
         params: &Params,
-        logical_db: &LogicalDatabase,
-        records_per_pir_item: usize,
         graph: &EdgeListGraph,
     ) -> Vec<u8> {
 

@@ -43,9 +43,9 @@ impl Node0Entry {
             }
         };
 
-        if outgoing_edges_graph.len() > 4 {
-            println!("Node with index {:?} has more than 4 outgoing edges ! it has: {}", node_idx, outgoing_edges_graph.len());
-        }
+        // if outgoing_edges_graph.len() > 4 {
+        //     println!("Node with index {:?} has more than 4 outgoing edges ! it has: {}", node_idx, outgoing_edges_graph.len());
+        // }
 
         let node_data = graph[node_idx].clone();
 

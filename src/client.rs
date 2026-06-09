@@ -1,12 +1,7 @@
 use petgraph::graph::NodeIndex;
-use spiral_rs::{
-    client::{Client, PublicParameters, Query},
-    params::Params,
-    server::{load_db_from_seek, process_query},
-    util::get_seeded_rng,
-};
+use spiral_rs::client::Client;
 
-use crate::{db_params::{LogicalDatabase, Node0Entry, Node1Entry, Node2Entry, Node3Entry, OutgoingEdge}, graph::{NodeData, TravelTimeEdge}};
+use crate::{data_entries::{LogicalDatabase, Node0Entry, Node1Entry, Node2Entry, Node3Entry, OutgoingEdge}, graph::{NodeData, TravelTimeEdge}};
 use crate::server::GeoServer;
 use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
@@ -21,13 +16,8 @@ pub struct GeoClient<'a> {
     pub nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
     pub edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
 
-    osmid_idx_map: HashMap<String, NodeIndex>, // this is sothat the client can know how to search the graph when given two osm id as input to the search
-    
     records_per_pir_item: usize,
     spiral_client: Client<'a>,
-    params: &'a Params,
-    public_params: &'a PublicParameters<'a>,
-    logical_db: &'a LogicalDatabase,
 }
 
 #[derive(Debug, Clone)]
@@ -70,32 +60,17 @@ impl<'a> GeoClient<'a> {
     pub fn new(
         server: GeoServer<'a>, 
         approach: &'a str,
-        osmid_idx_map: HashMap<String, NodeIndex>,
         records_per_pir_item: usize, 
         spiral_client: Client<'a>, 
-        params :&'a Params, 
-        public_params: &'a PublicParameters, 
-        logical_db: &'a LogicalDatabase,
     ) -> Self {
         GeoClient {
             server,
             approach,
             nodes_cache: HashMap::new(),
             edges_cache: HashMap::new(),
-            osmid_idx_map,
             records_per_pir_item,
             spiral_client,
-            params,
-            public_params,
-            logical_db,
         }
-    }
-
-    pub fn get_node_index(&self, osmid: &str) -> io::Result<NodeIndex> {
-        self.osmid_idx_map
-            .get(osmid)
-            .copied()
-            .ok_or_else(|| invalid_data(format!("unknown node id: {osmid}")))
     }
 
     /// Get node information, querying the server if not cached
@@ -159,22 +134,15 @@ impl<'a> GeoClient<'a> {
         Ok(self.nodes_cache.get(&node_idx).unwrap())
     }
 
-    /// Get outgoing edges from a node, querying the server if not cached
+    /// Get outgoing edges from a node
     fn get_edges_from(&mut self, node_idx: NodeIndex) -> io::Result<&Vec<(NodeIndex, TravelTimeEdge)>> {
-
-        if !self.edges_cache.contains_key(&node_idx) {
-            let edges = self.server.get_edges_from(node_idx)?;
-            self.edges_cache.insert(node_idx, edges);
-        }
+        assert!(self.edges_cache.contains_key(&node_idx)); // this should never happen ! you must always have known the data of an edge before requesting its out edges
 
         Ok(self.edges_cache.get(&node_idx).unwrap())
     }
 
     /// Run A* search from start osmid to goal osmid
-    pub fn a_star_search(&mut self, start_osmid: &str, goal_osmid: &str) -> io::Result<Option<AStarResult>> {
-
-        let start_node_idx = self.get_node_index(start_osmid)?;
-        let goal_node_idx = self.get_node_index(goal_osmid)?;
+    pub fn a_star_search(&mut self, start_node_idx: NodeIndex, goal_node_idx: NodeIndex) -> io::Result<Option<AStarResult>> {
 
         let mut best_cost: HashMap<NodeIndex, TravelTime> = HashMap::new(); // this stores the best known cost to reach each node from the start node
         let mut best_source: HashMap<NodeIndex, NodeIndex> = HashMap::new(); // this stores the best known predecessor of each node on the optimal path from the start node (used for path reconstruction)
