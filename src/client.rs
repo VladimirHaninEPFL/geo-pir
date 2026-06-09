@@ -6,7 +6,7 @@ use spiral_rs::{
     util::get_seeded_rng,
 };
 
-use crate::graph::{NodeData, TravelTimeEdge};
+use crate::{db_params::{LogicalDatabase, Node0Entry}, graph::{NodeData, TravelTimeEdge}};
 use crate::server::GeoServer;
 use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
@@ -14,13 +14,19 @@ use std::io::{self, ErrorKind};
 
 type TravelTime = u64; // travel time in seconds used for calculating total path cost
 
-pub struct GeoClient {
+pub struct GeoClient<'a> {
     server: GeoServer,
 
     nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
     edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
 
-    osmid_idx_map: HashMap<String, NodeIndex>, // this is sothat the client can know how to search the 
+    osmid_idx_map: HashMap<String, NodeIndex>, // this is sothat the client can know how to search the graph when given two osm id as input to the search
+    
+    records_per_pir_item: usize,
+    spiral_client: Client<'a>,
+    params: &'a Params,
+    public_params: &'a PublicParameters<'a>,
+    logical_db: &'a LogicalDatabase,
 }
 
 #[derive(Debug, Clone)]
@@ -59,13 +65,18 @@ impl PartialOrd for AStarState {
     }
 }
 
-impl GeoClient {
-    pub fn new(server: GeoServer, osmid_idx_map: HashMap<String, NodeIndex>) -> Self {
+impl<'a> GeoClient<'a> {
+    pub fn new(server: GeoServer, osmid_idx_map: HashMap<String, NodeIndex>, records_per_pir_item: usize, spiral_client: Client<'a>, params :&'a Params, public_params: &'a PublicParameters, logical_db: &'a LogicalDatabase) -> Self {
         GeoClient {
             server,
             nodes_cache: HashMap::new(),
             edges_cache: HashMap::new(),
             osmid_idx_map,
+            records_per_pir_item,
+            spiral_client,
+            params,
+            public_params,
+            logical_db,
         }
     }
 
@@ -80,8 +91,43 @@ impl GeoClient {
     fn get_node_data(&mut self, node_idx: NodeIndex) -> io::Result<&NodeData> {
 
         if !self.nodes_cache.contains_key(&node_idx) {
-            let node = self.server.get_node_data(node_idx)?;
-            self.nodes_cache.insert(node_idx, node);
+
+            // * spiral query generation for node0
+            let target_idx = node_idx.index();
+            let target_pir_idx = target_idx / self.records_per_pir_item; // this rounds down !
+            let target_idx_clipped = target_pir_idx * self.records_per_pir_item;
+
+            // here we should'tn have already queried this pir_idx
+            let query = self.spiral_client.generate_query(target_pir_idx);
+
+            // * server side query processing
+            let response = process_query(self.params, self.public_params, &query, self.server.spiral_db.as_slice());
+
+            // * client side response decoding
+            let result = self.spiral_client.decode_response(response.as_slice());
+
+            // you receive multple entries for spiral
+            for i in 0..self.records_per_pir_item {
+
+                let recovered_record = &result[i * self.logical_db.record_size_bytes..(i+1) * self.logical_db.record_size_bytes];
+
+                // now insert the data in the local cache
+                let node0_entry: &Node0Entry = bytemuck::from_bytes(recovered_record);
+
+                let node_data = NodeData { lat: node0_entry.latitude, lon: node0_entry.longitude };
+                self.nodes_cache.insert(NodeIndex::new(target_idx_clipped + i), node_data);
+
+                let outgoing_edges = node0_entry.outgoing_edges.iter()
+                    .filter(|outgoing_edge| outgoing_edge.id_target != 0 && outgoing_edge.cost != 0)
+                    .map(|outgoing_edge| {
+                        let neighbour_node_idx = NodeIndex::new(outgoing_edge.id_target as usize);
+                        let travel_time_edge = outgoing_edge.cost;
+                        (neighbour_node_idx, travel_time_edge)
+                    })
+                    .collect();
+                self.edges_cache.insert(NodeIndex::new(target_idx_clipped + i), outgoing_edges);
+            }
+            println!("Fetching data of node_idx {} wich has data {:?}", node_idx.index(), self.nodes_cache.get(&node_idx).unwrap());
         }
 
         Ok(self.nodes_cache.get(&node_idx).unwrap())
