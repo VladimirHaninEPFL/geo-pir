@@ -4,7 +4,7 @@ use spiral_rs::aligned_memory::AlignedMemory;
 use spiral_rs::client::{PublicParameters, Query};
 use spiral_rs::params::Params;
 use spiral_rs::server::{load_db_from_seek, process_query};
-use crate::db_params::{LogicalDatabase, Node0Entry, OutgoingEdge, get_logical_db};
+use crate::db_params::{*};
 use crate::graph::{read_graph, EdgeListGraph, GraphResult, NodeData, TravelTimeEdge};
 use crate::spiral::{DerivedPirLayout, make_params};
 
@@ -40,7 +40,7 @@ impl<'a> GeoServer<'a> {
         let context = read_graph(&edgelist_path, &nodes_path)?;
 
         // spiral setup
-        let packed_db_bytes = GeoServer::build_packed_database(params, logical_db, records_per_pir_item, &context.graph);
+        let packed_db_bytes = GeoServer::build_packed_database(approach, params, logical_db, records_per_pir_item, &context.graph);
         let mut packed_db_reader = Cursor::new(packed_db_bytes);
         let spiral_db = load_db_from_seek(&params, &mut packed_db_reader);
 
@@ -56,47 +56,81 @@ impl<'a> GeoServer<'a> {
     }
     
     pub fn build_packed_database(
+        approach: &str,
         params: &Params,
         logical_db: &LogicalDatabase,
         records_per_pir_item: usize,
         graph: &EdgeListGraph,
     ) -> Vec<u8> {
 
-        let mut packed_db = vec![0u8; params.num_items() * params.db_item_size];
+        if approach == "node0" {
+            
+            let mut packed_db = vec![0u8; params.num_items() * params.db_item_size];
 
-        for node_idx in graph.node_indices() {
+            for node_idx in graph.node_indices() {
 
-            let pir_idx = node_idx.index() / records_per_pir_item;
-            let slot_idx = node_idx.index() % records_per_pir_item;
+                let node_entry = Node0Entry::new(graph, node_idx);
 
-            let offset = pir_idx * params.db_item_size + slot_idx * logical_db.record_size_bytes;
-            let record_slice = &mut packed_db[offset..offset + logical_db.record_size_bytes];
-
-            let node_data = graph[node_idx].clone();
-
-            let curr_outgoing_edge_entries: Vec<OutgoingEdge> = graph.edges(node_idx).map(|edge| {
-                    OutgoingEdge { id_target: edge.target().index() as u32, cost: *edge.weight(), _pad: 0 }
-                }).collect();
-            if curr_outgoing_edge_entries.len() > 4 {
-                println!("Node {:?} has more than 4 outgoing edges ! it has: {}", node_data, curr_outgoing_edge_entries.len());
+                let start = node_idx.index() * std::mem::size_of::<Node3Entry>();
+                let end = (node_idx.index() + 1) * std::mem::size_of::<Node3Entry>();
+                let record_slice = &mut packed_db[start..end];
+                record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
             }
 
-            let mut outgoing_edge_entries = [OutgoingEdge { id_target: 0, cost: 0, _pad: 0 }; 4];
-            for i in 0..4 {
-                if i < curr_outgoing_edge_entries.len() {
-                    outgoing_edge_entries[i] = curr_outgoing_edge_entries[i]
-                }
-            };
+            return packed_db;
+        }
+        else if approach == "node1" {
 
-            let node_entry: Node0Entry = Node0Entry {
-                latitude: node_data.lat,
-                longitude: node_data.lon,
-                outgoing_edges: outgoing_edge_entries
-            };
-            record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
+            let mut packed_db = vec![0u8; params.num_items() * params.db_item_size];
+
+            for node_idx in graph.node_indices() {
+
+                let node_entry = Node1Entry::new(graph, node_idx);
+
+                let start = node_idx.index() * std::mem::size_of::<Node1Entry>();
+                let end = (node_idx.index() + 1) * std::mem::size_of::<Node1Entry>();
+                let record_slice = &mut packed_db[start..end];
+                record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
+            }
+
+            return packed_db;
+        }
+        else if approach == "node2" {
+
+            let mut packed_db = vec![0u8; params.num_items() * params.db_item_size];
+
+            for node_idx in graph.node_indices() {
+
+                let node_entry = Node2Entry::new(graph, node_idx);
+
+                let start = node_idx.index() * std::mem::size_of::<Node2Entry>();
+                let end = (node_idx.index() + 1) * std::mem::size_of::<Node2Entry>();
+                let record_slice = &mut packed_db[start..end];
+                record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
+            }
+
+            return packed_db;
+        }
+        else if approach == "node3" {
+
+            let mut packed_db = vec![0u8; params.num_items() * params.db_item_size];
+
+            for node_idx in graph.node_indices() {
+
+                let node_entry = Node3Entry::new(graph, node_idx);
+
+                let start = node_idx.index() * std::mem::size_of::<Node3Entry>();
+                let end = (node_idx.index() + 1) * std::mem::size_of::<Node3Entry>();
+                let record_slice = &mut packed_db[start..end];
+                record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
+            }
+
+            return packed_db;
+        }
+        else {
+            return vec![];
         }
 
-        packed_db
     }
 
     pub fn process_spiral_query(&self, query: &Query) -> Vec<u8> {

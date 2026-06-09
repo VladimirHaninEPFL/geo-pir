@@ -13,27 +13,6 @@ mod server;
 mod spiral;
 mod db_params;
 
-// struct Params<'a> {
-//     country_name: &'a str,
-//     approach: &'a str,
-//     start_node_osmid: &'a str,
-//     end_node_osmid: &'a str,
-// }
-
-// #[allow(dead_code)]
-// const PARAMS_FRANCE: Params = Params {
-//     country_name: "France",
-//     approach: "node0",
-//     start_node_osmid: "382017",
-//     end_node_osmid: "313872541",
-// };
-// #[allow(dead_code)]
-// const PARAMS_SWITZERLAND: Params = Params {
-//     country_name: "Switzerland",
-//     approach: "node0",
-//     start_node_osmid: "312462415",
-//     end_node_osmid: "276053614",
-// };
 
 fn main() -> GraphResult<()> {
 
@@ -66,8 +45,8 @@ fn main() -> GraphResult<()> {
     let public_params: PublicParameters = spiral_client.generate_keys();
 
     // start the server
-    let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
-    let mut client = GeoClient::new(server, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
+    let (server, osmid_idx_map, idx_osmid_map) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
+    let mut client = GeoClient::new(server, approach, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
 
     println!(
         "Running A* from {} to {} (client-server architecture) in country {} using approach {}...",
@@ -78,8 +57,14 @@ fn main() -> GraphResult<()> {
         Some(result) => {
             println!("A* found a path with cost {:.6}", result.cost);
             println!("Path length: {} nodes", result.path.len());
-            println!("Path: {:?}", result.path);
-            println!("Visited nodes: {:?}", result.visited_nodes);
+
+            println!("Path: {:?}", result.path.iter().map(|graph_idx| {
+                idx_osmid_map.get(graph_idx).unwrap()
+            }).collect::<Vec<_>>());
+            println!("Visited nodes: {:?}", result.visited_nodes.iter().map(|graph_idx| {
+                idx_osmid_map.get(graph_idx).unwrap()
+            }).collect::<Vec<_>>());
+
             println!("Number of visited nodes: {}", result.visited_nodes.len());
         }
         None => {
@@ -125,7 +110,7 @@ fn test_switzerland_node0() -> GraphResult<()> {
 
     // start the server
     let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
-    let mut client = GeoClient::new(server, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
+    let mut client = GeoClient::new(server, approach, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
 
     match client.a_star_search(&start_node_osmid, &end_node_osmid)? {
         Some(result) => {
@@ -172,7 +157,7 @@ fn test_france_node0() -> GraphResult<()> {
 
     // start the server
     let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
-    let mut client = GeoClient::new(server, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
+    let mut client = GeoClient::new(server, approach, osmid_idx_map, records_per_pir_item, spiral_client, &params, &public_params, &logical_db);
 
     match client.a_star_search(&start_node_osmid, &end_node_osmid)? {
         Some(result) => {

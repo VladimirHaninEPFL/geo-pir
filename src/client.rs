@@ -6,7 +6,7 @@ use spiral_rs::{
     util::get_seeded_rng,
 };
 
-use crate::{db_params::{LogicalDatabase, Node0Entry}, graph::{NodeData, TravelTimeEdge}};
+use crate::{db_params::{LogicalDatabase, Node0Entry, Node1Entry, Node2Entry, Node3Entry, OutgoingEdge}, graph::{NodeData, TravelTimeEdge}};
 use crate::server::GeoServer;
 use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
@@ -16,9 +16,10 @@ type TravelTime = u64; // travel time in seconds used for calculating total path
 
 pub struct GeoClient<'a> {
     server: GeoServer<'a>,
+    approach: &'a str,
 
-    nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
-    edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
+    pub nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
+    pub edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
 
     osmid_idx_map: HashMap<String, NodeIndex>, // this is sothat the client can know how to search the graph when given two osm id as input to the search
     
@@ -68,6 +69,7 @@ impl PartialOrd for AStarState {
 impl<'a> GeoClient<'a> {
     pub fn new(
         server: GeoServer<'a>, 
+        approach: &'a str,
         osmid_idx_map: HashMap<String, NodeIndex>,
         records_per_pir_item: usize, 
         spiral_client: Client<'a>, 
@@ -77,6 +79,7 @@ impl<'a> GeoClient<'a> {
     ) -> Self {
         GeoClient {
             server,
+            approach,
             nodes_cache: HashMap::new(),
             edges_cache: HashMap::new(),
             osmid_idx_map,
@@ -114,23 +117,42 @@ impl<'a> GeoClient<'a> {
             // you receive multple entries for spiral
             for i in 0..self.records_per_pir_item {
 
-                let recovered_record = &result[i * self.logical_db.record_size_bytes..(i+1) * self.logical_db.record_size_bytes];
+                if self.approach == "node0" {
 
-                // now insert the data in the local cache
-                let node0_entry: &Node0Entry = bytemuck::from_bytes(recovered_record);
+                    let start = i * std::mem::size_of::<Node0Entry>();
+                    let end = (i+1) * std::mem::size_of::<Node0Entry>();
+                    let recovered_record = &result[start..end];
 
-                let node_data = NodeData { lat: node0_entry.latitude, lon: node0_entry.longitude };
-                self.nodes_cache.insert(NodeIndex::new(target_idx_clipped + i), node_data);
+                    let node0_entry: &Node0Entry = bytemuck::from_bytes(recovered_record);
+                    node0_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
+                }
+                else if self.approach == "node1" {
 
-                let outgoing_edges = node0_entry.outgoing_edges.iter()
-                    .filter(|outgoing_edge| outgoing_edge.id_target != 0 && outgoing_edge.cost != 0)
-                    .map(|outgoing_edge| {
-                        let neighbour_node_idx = NodeIndex::new(outgoing_edge.id_target as usize);
-                        let travel_time_edge = outgoing_edge.cost;
-                        (neighbour_node_idx, travel_time_edge)
-                    })
-                    .collect();
-                self.edges_cache.insert(NodeIndex::new(target_idx_clipped + i), outgoing_edges);
+                    let start = i * std::mem::size_of::<Node1Entry>();
+                    let end = (i+1) * std::mem::size_of::<Node1Entry>();
+                    let recovered_record = &result[start..end];
+
+                    let node1_entry: &Node1Entry = bytemuck::from_bytes(recovered_record);
+                    node1_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
+                }
+                else if self.approach == "node2" {
+
+                    let start = i * std::mem::size_of::<Node2Entry>();
+                    let end = (i+1) * std::mem::size_of::<Node2Entry>();
+                    let recovered_record = &result[start..end];
+
+                    let node2_entry: &Node2Entry = bytemuck::from_bytes(recovered_record);
+                    node2_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
+                }
+                else if self.approach == "node3" {
+
+                    let start = i * std::mem::size_of::<Node3Entry>();
+                    let end = (i+1) * std::mem::size_of::<Node3Entry>();
+                    let recovered_record = &result[start..end];
+
+                    let node3_entry: &Node3Entry = bytemuck::from_bytes(recovered_record);
+                    node3_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
+                };
             }
         }
 
