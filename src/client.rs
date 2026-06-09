@@ -1,11 +1,11 @@
 use petgraph::graph::NodeIndex;
 use spiral_rs::client::Client;
 
-use crate::{data_entries::{LogicalDatabase, Node0Entry, Node1Entry, Node2Entry, Node3Entry, OutgoingEdge}, graph::{NodeData, TravelTimeEdge}};
+use crate::{data_entries::{Node0Entry, Node1Entry, Node2Entry, Node3Entry}, graph::{NodeData, TravelTimeEdge}};
 use crate::server::GeoServer;
 use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
-use std::io::{self, ErrorKind};
+use std::io::{self};
 
 type TravelTime = u64; // travel time in seconds used for calculating total path cost
 
@@ -255,8 +255,4 @@ fn haversine_distance_meters(lat1: f32, lon1: f32, lat2: f32, lon2: f32) -> f32 
 fn distance_to_seconds(distance_meters: f32) -> TravelTime {
     const CAR_SPEED_MPS: f32 = 130.0_f32 / 3.6_f32; // 130 km/h in meters per second
     (distance_meters / CAR_SPEED_MPS) as TravelTime
-}
-
-fn invalid_data(message: String) -> io::Error {
-    io::Error::new(ErrorKind::InvalidData, message)
 }

@@ -3,6 +3,8 @@ use petgraph::{graph::NodeIndex, visit::EdgeRef};
 
 use crate::{client::GeoClient, graph::{EdgeListGraph, NodeData}};
 
+
+
 #[repr(C)]
 #[derive(Debug, PartialEq, Eq, Clone, Copy, Pod, Zeroable)]
 pub struct OutgoingEdge {
@@ -16,6 +18,8 @@ impl OutgoingEdge {
         OutgoingEdge { id_target: 0, cost: 0, _pad: 0 }
     }
 }
+
+
 
 #[repr(C)]
 #[derive(Debug, Clone, Copy, Pod, Zeroable)]
@@ -81,6 +85,8 @@ impl Node0Entry {
 
 }
 
+
+
 #[repr(C)]
 #[derive(Debug, Clone, Copy, Pod, Zeroable)]
 pub struct Node1Entry {
@@ -136,6 +142,8 @@ impl Node1Entry {
             });
     }
 }
+
+
 
 
 #[repr(C)]
@@ -194,6 +202,8 @@ impl Node2Entry {
     }
 }
 
+
+
 #[repr(C)]
 #[derive(Debug, Clone, Copy, Pod, Zeroable)]
 pub struct Node3Entry {
@@ -224,10 +234,6 @@ impl Node3Entry {
         };
 
         node1_entry
-    }
-
-    pub fn empty() -> Self {
-        Node3Entry { node0_entry: Node0Entry::empty(), neighbours: [Node2Entry::empty(); 4] }
     }
 
     pub fn extract_to_graph(&self, graph_idx_recovered_record: NodeIndex, geo_client: &mut GeoClient) {

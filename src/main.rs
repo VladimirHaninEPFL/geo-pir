@@ -37,15 +37,13 @@ fn main() -> GraphResult<()> {
 
     let DerivedPirLayout { params,
                            records_per_pir_item,
-                           pir_item_capacity_bytes: _,
-                           packed_items_needed: _,
                          } = make_params(&logical_db);
 
     let mut spiral_client = Client::init(&params);
     let public_params: PublicParameters = spiral_client.generate_keys();
 
     // start the server
-    let (server, osmid_idx_map, idx_osmid_map) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
+    let (server, osmid_idx_map, idx_osmid_map) = GeoServer::start(country_name, approach, architecture, &params, &public_params)?;
     let mut client = GeoClient::new(server, approach, records_per_pir_item, spiral_client);
 
     println!(
@@ -101,15 +99,13 @@ fn test_switzerland_node0() -> GraphResult<()> {
 
     let DerivedPirLayout { params,
                            records_per_pir_item,
-                           pir_item_capacity_bytes: _,
-                           packed_items_needed: _,
                          } = make_params(&logical_db);
 
     let mut spiral_client = Client::init(&params);
     let public_params: PublicParameters = spiral_client.generate_keys();
 
     // start the server
-    let (server, osmid_idx_map, idx_osmid_map) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
+    let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &public_params)?;
     let mut client = GeoClient::new(server, approach, records_per_pir_item, spiral_client);
 
     println!(
@@ -153,15 +149,13 @@ fn test_france_node0() -> GraphResult<()> {
 
     let DerivedPirLayout { params,
                            records_per_pir_item,
-                           pir_item_capacity_bytes: _,
-                           packed_items_needed: _,
                          } = make_params(&logical_db);
 
     let mut spiral_client = Client::init(&params);
     let public_params: PublicParameters = spiral_client.generate_keys();
 
     // start the server
-    let (server, osmid_idx_map, idx_osmid_map) = GeoServer::start(country_name, approach, architecture, &params, &public_params, &logical_db, records_per_pir_item)?;
+    let (server, osmid_idx_map, _) = GeoServer::start(country_name, approach, architecture, &params, &public_params)?;
     let mut client = GeoClient::new(server, approach, records_per_pir_item, spiral_client);
 
     println!(

@@ -1,21 +1,18 @@
-use petgraph::visit::EdgeRef;
 use petgraph::graph::NodeIndex;
 use spiral_rs::aligned_memory::AlignedMemory;
 use spiral_rs::client::{PublicParameters, Query};
 use spiral_rs::params::Params;
 use spiral_rs::server::{load_db_from_seek, process_query};
 use crate::data_entries::{*};
-use crate::graph::{read_graph, EdgeListGraph, GraphResult, NodeData, TravelTimeEdge};
-use crate::spiral::{DerivedPirLayout, make_params};
+use crate::graph::{read_graph, EdgeListGraph, GraphResult};
 
 use std::collections::HashMap;
-use std::io::{self, Cursor};
+use std::io::Cursor;
 
 /// The server holds the complete graph and serves queries from clients
 /// note that the server here has to receive the graph node idx (or the db index of the appraoch)
 /// no osmid are permitted since those are strings
 pub struct GeoServer<'a> {
-    graph: EdgeListGraph,
     spiral_db: AlignedMemory<64>,
     params: &'a Params,
     public_params: &'a PublicParameters<'a>,
@@ -29,8 +26,6 @@ impl<'a> GeoServer<'a> {
         architecture: &str,
         params: &'a Params,
         public_params: &'a PublicParameters,
-        logical_db: &'a LogicalDatabase,
-        records_per_pir_item: usize,
     ) -> GraphResult<(Self, HashMap<String, NodeIndex>, HashMap<NodeIndex, String>)> {
 
         // these files contain the osmid of the nodes and the travel time between them, respectively
@@ -52,7 +47,7 @@ impl<'a> GeoServer<'a> {
             architecture,
         );
 
-        Ok((GeoServer { graph: context.graph, spiral_db, params, public_params }, context.osmid_idx_map, context.idx_osmid_map))
+        Ok((GeoServer { spiral_db, params, public_params }, context.osmid_idx_map, context.idx_osmid_map))
     }
     
     pub fn build_packed_database(
@@ -136,23 +131,5 @@ impl<'a> GeoServer<'a> {
         let response = process_query(self.params, self.public_params, query, self.spiral_db.as_slice());
 
         response
-    }
-
-    /// Get node information by node_idx
-    pub fn get_node_data(&self, node_idx: NodeIndex) -> io::Result<NodeData> {
-        Ok(self.graph[node_idx].clone())
-    }
-
-    /// Get all outgoing edges from a node (identified by node_idx)
-    pub fn get_edges_from(&self, source_node_idx: NodeIndex) -> io::Result<Vec<(NodeIndex, TravelTimeEdge)>> {
-
-        let edges: Vec<(NodeIndex, TravelTimeEdge)> = self.graph
-            .edges(source_node_idx)
-            .map(|edge| {
-                (edge.target(), *edge.weight())
-            })
-            .collect();
-
-        Ok(edges)
     }
 }

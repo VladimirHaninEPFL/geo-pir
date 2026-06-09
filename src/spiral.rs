@@ -63,8 +63,6 @@ fn choose_db_dimensions(packed_items_needed: usize) -> (usize, usize, usize) {
 pub struct DerivedPirLayout {
     pub params: Params,
     pub records_per_pir_item: usize,
-    pub pir_item_capacity_bytes: usize,
-    pub packed_items_needed: usize,
 }
 
 pub fn  make_params(logical_db: &LogicalDatabase) -> DerivedPirLayout {
@@ -77,7 +75,7 @@ pub fn  make_params(logical_db: &LogicalDatabase) -> DerivedPirLayout {
         .record_size_bytes
         .div_ceil(single_instance_capacity_bytes);
 
-    let (item_capacity_bytes, records_per_pir_item, packed_db_item_size) = loop {
+    let (records_per_pir_item, packed_db_item_size) = loop {
 
         let item_capacity_bytes = pir_item_capacity_bytes(PIR_N, instances, PT_MODULUS);
         let records_per_pir_item =
@@ -86,7 +84,6 @@ pub fn  make_params(logical_db: &LogicalDatabase) -> DerivedPirLayout {
 
         if packed_item_roundtrips(packed_db_item_size, instances) {
             break (
-                item_capacity_bytes,
                 records_per_pir_item,
                 packed_db_item_size,
             );
@@ -121,7 +118,5 @@ pub fn  make_params(logical_db: &LogicalDatabase) -> DerivedPirLayout {
     DerivedPirLayout {
         params,
         records_per_pir_item,
-        pir_item_capacity_bytes: item_capacity_bytes,
-        packed_items_needed,
     }
 }
