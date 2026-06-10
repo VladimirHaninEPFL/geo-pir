@@ -1,6 +1,5 @@
 use spiral_rs::aligned_memory::AlignedMemory;
 use spiral_rs::client::{PublicParameters, Query};
-use spiral_rs::gadget::get_bits_per;
 use spiral_rs::params::Params;
 use spiral_rs::server::{load_db_from_seek, process_query};
 use crate::data_entries::{*};
@@ -11,12 +10,12 @@ use std::io::Cursor;
 
 /// The server holds the complete graph and serves queries from clients
 /// note that the server here has to receive the graph node idx (or the db index of the appraoch)
-/// no osmid are permitted since those are strings
 pub struct GeoServer<'a> {
     spiral_db: AlignedMemory<64>,
     pub params: Params,
     pub public_params: Option<PublicParameters<'a>>,
     pub records_per_pir_item: usize,
+    graph: EdgeListGraph,
 }
 
 impl<'a> GeoServer<'a> {
@@ -48,7 +47,7 @@ impl<'a> GeoServer<'a> {
         let mut packed_db_reader = Cursor::new(packed_db_bytes);
         let spiral_db = load_db_from_seek(&params, &mut packed_db_reader);
 
-        Ok((GeoServer { spiral_db, params, public_params: None, records_per_pir_item }, context))
+        Ok((GeoServer { spiral_db, params, public_params: None, records_per_pir_item, graph: context.graph.clone() }, context))
     }
     
     pub fn build_packed_database(
@@ -128,9 +127,21 @@ impl<'a> GeoServer<'a> {
     }
 
     pub fn process_spiral_query(&self, query: &Query) -> Vec<u8> {
-
         let response = process_query(&self.params, &self.public_params.as_ref().unwrap(), query, self.spiral_db.as_slice());
-
         response
+    }
+
+    pub fn get_congestion(&self) -> Vec<u16> {
+
+        let mut congestion :Vec<u16> = vec![];
+
+        // basically, for each node in the graph we write its 4 outgoing edges, even if no edge exists
+        for _ in 0..self.graph.node_count() {
+            for _ in 0..4 {
+                congestion.push(1_u16);
+            }
+        }
+
+        congestion
     }
 }

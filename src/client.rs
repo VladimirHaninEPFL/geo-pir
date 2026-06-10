@@ -147,6 +147,8 @@ impl<'a> GeoClient<'a> {
     /// Run A* search from start osmid to goal osmid
     pub fn a_star_search(&mut self, start_node_idx: NodeIndex, goal_node_idx: NodeIndex) -> io::Result<Option<AStarResult>> {
 
+        let congestion = self.server.get_congestion();
+
         let mut best_cost: HashMap<NodeIndex, TravelTime> = HashMap::new(); // this stores the best known cost to reach each node from the start node
         let mut best_source: HashMap<NodeIndex, NodeIndex> = HashMap::new(); // this stores the best known predecessor of each node on the optimal path from the start node (used for path reconstruction)
         let mut open_set = BinaryHeap::new(); // this is the priority queue of nodes to explore, ordered by f = g + h
@@ -180,9 +182,10 @@ impl<'a> GeoClient<'a> {
             }
 
             let neighbors = self.get_edges_from(curr_node_idx)?.clone();
-            for (neighbour_node_idx, travel_time_edge) in neighbors.iter() {
+            for (i, (neighbour_node_idx, travel_time_edge)) in neighbors.iter().enumerate() {
 
-                let proposed_distance = curr_cost + (*travel_time_edge as TravelTime);
+                let congestion_this_edge = congestion.get(curr_node_idx.index() * 4 + i).unwrap();
+                let proposed_distance = curr_cost + (*travel_time_edge as TravelTime + *congestion_this_edge as TravelTime);
 
                 if !best_cost.contains_key(neighbour_node_idx)
                     || proposed_distance < *best_cost.get(neighbour_node_idx).unwrap()

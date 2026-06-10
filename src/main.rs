@@ -10,6 +10,10 @@ mod server;
 mod spiral;
 mod data_entries;
 
+// todo: add traffic information
+// todo: improve the packing of nodes in spiral for node0 using their coordinates
+// todo: add network usage between client and server 
+
 fn main() -> GraphResult<()> {
 
     // parse command line arguments
