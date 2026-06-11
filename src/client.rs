@@ -1,7 +1,8 @@
 use petgraph::graph::NodeIndex;
 use spiral_rs::client::{Client, PublicParameters};
 
-use crate::{data_entries::{Node0Entry, Node1Entry, Node2Entry, Node3Entry}, graph::{NodeData, TravelTimeEdge}};
+use crate::data_entries::*;
+use crate::graph::*;
 use crate::server::GeoServer;
 use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
@@ -11,12 +12,16 @@ type TravelTime = u64; // travel time in seconds used for calculating total path
 
 pub struct GeoClient<'a> {
     server: &'a GeoServer<'a>,
+
+    country_name: &'a str,
     approach: &'a str,
 
     pub nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
     pub edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
 
     spiral_client: Client<'a>,
+    graph: &'a EdgeListGraph,
+    node_blockid_map: HashMap<NodeIndex, BlockId>,
 }
 
 #[derive(Debug, Clone)]
@@ -56,11 +61,34 @@ impl PartialOrd for AStarState {
 }
 
 impl<'a> GeoClient<'a> {
+    
     pub fn new(
         server: &'a mut GeoServer<'a>, 
+        country_name: &'a str,
         approach: &'a str,
-    ) -> Self {
+        _architecture: &str,
+        graph: &'a EdgeListGraph,
 
+    ) -> Self {
+        
+        let node_blockid_map: HashMap<NodeIndex, BlockId>;
+        if approach == "block01" {
+            node_blockid_map = get_node_blockid_map(graph, 0.1);
+        }
+        else if approach == "block025" {
+            node_blockid_map = get_node_blockid_map(graph, 0.25);
+        }
+        else if approach == "block05" {
+            node_blockid_map = get_node_blockid_map(graph, 0.5);
+        }
+        else if approach == "block1" {
+            node_blockid_map = get_node_blockid_map(graph, 1.);
+        }
+        else {
+            node_blockid_map = HashMap::new();
+        }
+
+        // this is for spiral
         let mut spiral_client = Client::init(&server.params);
         let public_params: PublicParameters = spiral_client.generate_keys();
 
@@ -69,10 +97,97 @@ impl<'a> GeoClient<'a> {
 
         GeoClient {
             server,
+            country_name,
             approach,
             nodes_cache: HashMap::new(),
             edges_cache: HashMap::new(),
             spiral_client,
+            graph,
+            node_blockid_map,
+        }
+    }
+
+    fn perform_spiral_node(&mut self, node_idx: NodeIndex) {
+
+        // * spiral query generation for node0
+        let target_idx = node_idx.index();
+        let target_pir_idx = target_idx / self.server.records_per_pir_item; // this rounds down !
+        let target_idx_clipped = target_pir_idx * self.server.records_per_pir_item;
+
+        let query = self.spiral_client.generate_query(target_pir_idx);
+        let response = self.server.process_spiral_query(&query);
+
+        // * client side response decoding
+        let result = self.spiral_client.decode_response(response.as_slice());
+
+        // you receive multple entries for spiral
+        for i in 0..self.server.records_per_pir_item {
+
+            if self.approach == "node0" {
+
+                let start = i * std::mem::size_of::<Node0Entry>();
+                let end = (i+1) * std::mem::size_of::<Node0Entry>();
+                let recovered_record = &result[start..end];
+
+                let node0_entry: &Node0Entry = bytemuck::from_bytes(recovered_record);
+                node0_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
+            }
+            else if self.approach == "node1" {
+
+                let start = i * std::mem::size_of::<Node1Entry>();
+                let end = (i+1) * std::mem::size_of::<Node1Entry>();
+                let recovered_record = &result[start..end];
+
+                let node1_entry: &Node1Entry = bytemuck::from_bytes(recovered_record);
+                node1_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
+            }
+            else if self.approach == "node2" {
+
+                let start = i * std::mem::size_of::<Node2Entry>();
+                let end = (i+1) * std::mem::size_of::<Node2Entry>();
+                let recovered_record = &result[start..end];
+
+                let node2_entry: &Node2Entry = bytemuck::from_bytes(recovered_record);
+                node2_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
+            }
+            else if self.approach == "node3" {
+
+                let start = i * std::mem::size_of::<Node3Entry>();
+                let end = (i+1) * std::mem::size_of::<Node3Entry>();
+                let recovered_record = &result[start..end];
+
+                let node3_entry: &Node3Entry = bytemuck::from_bytes(recovered_record);
+                node3_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
+            };
+        }
+
+    }
+    
+    fn perform_spiral_block(&mut self, node_idx: NodeIndex) {
+
+        let target_idx = *self.node_blockid_map.get(&node_idx).unwrap() as usize;
+        let target_pir_idx = target_idx / self.server.records_per_pir_item; // this rounds down !
+
+        let query = self.spiral_client.generate_query(target_pir_idx);
+        let response = self.server.process_spiral_query(&query);
+
+        // * client side response decoding
+        let result = self.spiral_client.decode_response(response.as_slice());
+
+        // you receive multple entries for spiral
+        for i in 0..self.server.records_per_pir_item {
+
+            let num_bytes_in_block = get_logical_db(self.country_name, self.approach).record_size_bytes; 
+
+            let start = i * num_bytes_in_block;
+            let end = start + num_bytes_in_block;
+            let block = &result[start..end];
+
+            // extract block content
+            let block_entries: &[BlockEntry] = bytemuck::cast_slice(block);
+            for entry in block_entries {
+                entry.extract_to_graph(self);
+            }
         }
     }
 
@@ -80,60 +195,14 @@ impl<'a> GeoClient<'a> {
     fn get_node_data(&mut self, node_idx: NodeIndex) -> io::Result<&NodeData> {
 
         if !self.nodes_cache.contains_key(&node_idx) {
-
-            // * spiral query generation for node0
-            let target_idx = node_idx.index();
-            let target_pir_idx = target_idx / self.server.records_per_pir_item; // this rounds down !
-            let target_idx_clipped = target_pir_idx * self.server.records_per_pir_item;
-
-            let query = self.spiral_client.generate_query(target_pir_idx);
-            let response = self.server.process_spiral_query(&query);
-
-            // * client side response decoding
-            let result = self.spiral_client.decode_response(response.as_slice());
-
-            // you receive multple entries for spiral
-            for i in 0..self.server.records_per_pir_item {
-
-                if self.approach == "node0" {
-
-                    let start = i * std::mem::size_of::<Node0Entry>();
-                    let end = (i+1) * std::mem::size_of::<Node0Entry>();
-                    let recovered_record = &result[start..end];
-
-                    let node0_entry: &Node0Entry = bytemuck::from_bytes(recovered_record);
-                    node0_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
-                }
-                else if self.approach == "node1" {
-
-                    let start = i * std::mem::size_of::<Node1Entry>();
-                    let end = (i+1) * std::mem::size_of::<Node1Entry>();
-                    let recovered_record = &result[start..end];
-
-                    let node1_entry: &Node1Entry = bytemuck::from_bytes(recovered_record);
-                    node1_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
-                }
-                else if self.approach == "node2" {
-
-                    let start = i * std::mem::size_of::<Node2Entry>();
-                    let end = (i+1) * std::mem::size_of::<Node2Entry>();
-                    let recovered_record = &result[start..end];
-
-                    let node2_entry: &Node2Entry = bytemuck::from_bytes(recovered_record);
-                    node2_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
-                }
-                else if self.approach == "node3" {
-
-                    let start = i * std::mem::size_of::<Node3Entry>();
-                    let end = (i+1) * std::mem::size_of::<Node3Entry>();
-                    let recovered_record = &result[start..end];
-
-                    let node3_entry: &Node3Entry = bytemuck::from_bytes(recovered_record);
-                    node3_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
-                };
+            if self.approach.contains("node") {
+                self.perform_spiral_node(node_idx);
+            } else {
+                self.perform_spiral_block(node_idx);
             }
         }
 
+        assert!(self.nodes_cache.contains_key(&node_idx));
         Ok(self.nodes_cache.get(&node_idx).unwrap())
     }
 

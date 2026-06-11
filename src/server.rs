@@ -5,6 +5,7 @@ use spiral_rs::server::{load_db_from_seek, process_query};
 use crate::data_entries::{*};
 use crate::graph::{EdgeListGraph, GraphContext, GraphResult, read_graph};
 use crate::spiral::{DerivedPirLayout, make_params};
+use petgraph::visit::EdgeRef;
 
 use std::io::Cursor;
 
@@ -23,7 +24,7 @@ impl<'a> GeoServer<'a> {
     pub fn start(
         country_name: &str,
         approach: &str,
-        architecture: &str,
+        _architecture: &str,
     ) -> GraphResult<(Self, GraphContext)> {
 
         // these files contain the osmid of the nodes and the travel time between them, respectively
@@ -32,18 +33,16 @@ impl<'a> GeoServer<'a> {
 
         let context = read_graph(&edgelist_path, &nodes_path)?;
 
-        // spiral setup
-        let logical_db = LogicalDatabase{
-            num_records: context.graph.node_count(),
-            record_size_bytes: get_logical_db(country_name, approach).record_size_bytes,
-        };
+        let logical_db: LogicalDatabase = get_logical_db(country_name, approach);
 
+        // spiral setup
         let DerivedPirLayout {
             params,
             records_per_pir_item,
         } = make_params(&logical_db);
 
-        let packed_db_bytes = GeoServer::build_packed_database(approach, &params, &context.graph);
+        let num_bytes_in_db = params.num_items() * params.db_item_size;
+        let packed_db_bytes = GeoServer::build_packed_database(approach, num_bytes_in_db, &context.graph, &logical_db);
         let mut packed_db_reader = Cursor::new(packed_db_bytes);
         let spiral_db = load_db_from_seek(&params, &mut packed_db_reader);
 
@@ -52,20 +51,21 @@ impl<'a> GeoServer<'a> {
     
     pub fn build_packed_database(
         approach: &str,
-        params: &Params,
+        num_bytes_in_db: usize,
         graph: &EdgeListGraph,
+        logical_db: &LogicalDatabase,
     ) -> Vec<u8> {
 
         if approach == "node0" {
             
-            let mut packed_db = vec![0u8; params.num_items() * params.db_item_size];
+            let mut packed_db = vec![0u8; num_bytes_in_db];
 
             for node_idx in graph.node_indices() {
 
                 let node_entry = Node0Entry::new(graph, node_idx);
 
                 let start = node_idx.index() * std::mem::size_of::<Node0Entry>();
-                let end = (node_idx.index() + 1) * std::mem::size_of::<Node0Entry>();
+                let end = start + std::mem::size_of::<Node0Entry>();
                 let record_slice = &mut packed_db[start..end];
                 record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
             }
@@ -74,14 +74,14 @@ impl<'a> GeoServer<'a> {
         }
         else if approach == "node1" {
 
-            let mut packed_db = vec![0u8; params.num_items() * params.db_item_size];
+            let mut packed_db = vec![0u8; num_bytes_in_db];
 
             for node_idx in graph.node_indices() {
 
                 let node_entry = Node1Entry::new(graph, node_idx);
 
-                let start = node_idx.index() * std::mem::size_of::<Node1Entry>();
-                let end = (node_idx.index() + 1) * std::mem::size_of::<Node1Entry>();
+                let start = node_idx.index() * std::mem::size_of::<Node0Entry>();
+                let end = start + std::mem::size_of::<Node0Entry>();
                 let record_slice = &mut packed_db[start..end];
                 record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
             }
@@ -90,14 +90,14 @@ impl<'a> GeoServer<'a> {
         }
         else if approach == "node2" {
 
-            let mut packed_db = vec![0u8; params.num_items() * params.db_item_size];
+            let mut packed_db = vec![0u8; num_bytes_in_db];
 
             for node_idx in graph.node_indices() {
 
                 let node_entry = Node2Entry::new(graph, node_idx);
 
-                let start = node_idx.index() * std::mem::size_of::<Node2Entry>();
-                let end = (node_idx.index() + 1) * std::mem::size_of::<Node2Entry>();
+                let start = node_idx.index() * std::mem::size_of::<Node0Entry>();
+                let end = start + std::mem::size_of::<Node0Entry>();
                 let record_slice = &mut packed_db[start..end];
                 record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
             }
@@ -106,16 +106,132 @@ impl<'a> GeoServer<'a> {
         }
         else if approach == "node3" {
 
-            let mut packed_db = vec![0u8; params.num_items() * params.db_item_size];
+            let mut packed_db = vec![0u8; num_bytes_in_db];
 
             for node_idx in graph.node_indices() {
 
                 let node_entry = Node3Entry::new(graph, node_idx);
 
                 let start = node_idx.index() * std::mem::size_of::<Node3Entry>();
-                let end = (node_idx.index() + 1) * std::mem::size_of::<Node3Entry>();
+                let end = start + std::mem::size_of::<Node0Entry>();
                 let record_slice = &mut packed_db[start..end];
                 record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
+            }
+
+            return packed_db;
+        }
+        else if approach == "block01" {
+
+            let mut packed_db = vec![0u8; num_bytes_in_db];
+
+            let node_blockid_map = get_node_blockid_map(graph, 0.1);
+
+            let block_entry_size = std::mem::size_of::<BlockEntry>();
+            let block_capacity = logical_db.record_size_bytes / block_entry_size;
+            let mut next_entry_idx = vec![0usize; logical_db.num_records];
+
+            for node_idx in graph.node_indices() {
+
+                let block_entry = BlockEntry::new(graph, node_idx);
+
+                let block_id = *node_blockid_map.get(&node_idx).unwrap() as usize;
+                assert!(block_id < logical_db.num_records, "block_id exceeds logical database block count");
+
+                let entry_index = next_entry_idx[block_id];
+                assert!(entry_index < block_capacity, "block {} has more entries than configured capacity", block_id);
+
+                let start = block_id * logical_db.record_size_bytes + entry_index * block_entry_size;
+                let end = start + block_entry_size;
+                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_entry));
+
+                next_entry_idx[block_id] = entry_index + 1;
+            }
+
+            return packed_db;
+        }
+        else if approach == "block025" {
+
+            let mut packed_db = vec![0u8; num_bytes_in_db];
+
+            let node_blockid_map = get_node_blockid_map(graph, 0.25);
+
+            let block_entry_size = std::mem::size_of::<BlockEntry>();
+            let block_capacity = logical_db.record_size_bytes / block_entry_size;
+            let mut next_entry_idx = vec![0usize; logical_db.num_records];
+
+            for node_idx in graph.node_indices() {
+
+                let block_entry = BlockEntry::new(graph, node_idx);
+
+                let block_id = *node_blockid_map.get(&node_idx).unwrap() as usize;
+                assert!(block_id < logical_db.num_records, "block_id exceeds logical database block count");
+
+                let entry_index = next_entry_idx[block_id];
+                assert!(entry_index < block_capacity, "block {} has more entries than configured capacity", block_id);
+
+                let start = block_id * logical_db.record_size_bytes + entry_index * block_entry_size;
+                let end = start + block_entry_size;
+                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_entry));
+
+                next_entry_idx[block_id] = entry_index + 1;
+            }
+
+            return packed_db;
+        }
+        else if approach == "block05" {
+
+            let mut packed_db = vec![0u8; num_bytes_in_db];
+
+            let node_blockid_map = get_node_blockid_map(graph, 0.5);
+
+            let block_entry_size = std::mem::size_of::<BlockEntry>();
+            let block_capacity = logical_db.record_size_bytes / block_entry_size;
+            let mut next_entry_idx = vec![0usize; logical_db.num_records];
+
+            for node_idx in graph.node_indices() {
+
+                let block_entry = BlockEntry::new(graph, node_idx);
+
+                let block_id = *node_blockid_map.get(&node_idx).unwrap() as usize;
+                assert!(block_id < logical_db.num_records, "block_id exceeds logical database block count");
+
+                let entry_index = next_entry_idx[block_id];
+                assert!(entry_index < block_capacity, "block {} has more entries than configured capacity", block_id);
+
+                let start = block_id * logical_db.record_size_bytes + entry_index * block_entry_size;
+                let end = start + block_entry_size;
+                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_entry));
+
+                next_entry_idx[block_id] = entry_index + 1;
+            }
+
+            return packed_db;
+        }
+        else if approach == "block1" {
+
+            let mut packed_db = vec![0u8; num_bytes_in_db];
+
+            let node_blockid_map = get_node_blockid_map(graph, 1.);
+
+            let block_entry_size = std::mem::size_of::<BlockEntry>();
+            let block_capacity = logical_db.record_size_bytes / block_entry_size;
+            let mut next_entry_idx = vec![0usize; logical_db.num_records];
+
+            for node_idx in graph.node_indices() {
+
+                let block_entry = BlockEntry::new(graph, node_idx);
+
+                let block_id = *node_blockid_map.get(&node_idx).unwrap() as usize;
+                assert!(block_id < logical_db.num_records, "block_id exceeds logical database block count");
+
+                let entry_index = next_entry_idx[block_id];
+                assert!(entry_index < block_capacity, "block {} has more entries than configured capacity", block_id);
+
+                let start = block_id * logical_db.record_size_bytes + entry_index * block_entry_size;
+                let end = start + block_entry_size;
+                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_entry));
+
+                next_entry_idx[block_id] = entry_index + 1;
             }
 
             return packed_db;

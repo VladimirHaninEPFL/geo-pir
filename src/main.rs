@@ -1,3 +1,4 @@
+use core::arch;
 use std::env;
 
 use client::GeoClient;
@@ -33,7 +34,7 @@ fn main() -> GraphResult<()> {
     let end_node_osmid = args.get(5).unwrap();
 
     let (mut server, context) = GeoServer::start(country_name, approach, architecture)?;
-    let mut client = GeoClient::new(&mut server, approach);
+    let mut client = GeoClient::new(&mut server, country_name, approach, architecture, &context.graph);
 
     println!(
         "Running A* from {} to {} in country {} using approach {} and achitecture {} ...",
