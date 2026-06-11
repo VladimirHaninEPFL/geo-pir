@@ -2,3 +2,6 @@
 
 /data
 /batch/*.out
+
+*.png
+*.txt

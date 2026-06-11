@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use bytemuck::{Pod, Zeroable};
 use petgraph::{graph::NodeIndex, visit::EdgeRef};
 
-use crate::{client::GeoClient, graph::{EdgeListGraph, NodeData}};
+use crate::{approaches::Approach, client::GeoClient, graph::{EdgeListGraph, NodeData}};
 
 
 
@@ -292,73 +292,49 @@ pub struct LogicalDatabase {
     pub record_size_bytes: usize,
 }
 
-pub fn get_logical_db(approach: &str, graph: &EdgeListGraph) -> LogicalDatabase {
+pub fn get_logical_db(approach: &Approach, graph: &EdgeListGraph, block_params: &Option<BlockParams>) -> LogicalDatabase {
     
-    if approach == "node0" {
+    if approach.name == "node0" {
         return LogicalDatabase {
             num_records: graph.node_count(),
             record_size_bytes: std::mem::size_of::<Node0Entry>()
         };
     }
-    if approach == "node1" {
+    else if approach.name == "node1" {
         return LogicalDatabase {
             num_records: graph.node_count(),
             record_size_bytes: std::mem::size_of::<Node1Entry>()
         };
     }
-    if approach == "node2" {
+    else if approach.name == "node2" {
         return LogicalDatabase {
             num_records: graph.node_count(),
             record_size_bytes: std::mem::size_of::<Node2Entry>()
         };
     }
-    if approach == "node3" {
+    else if approach.name == "node3" {
         return LogicalDatabase {
             num_records: graph.node_count(),
             record_size_bytes: std::mem::size_of::<Node3Entry>()
         };
     }
-    if approach == "block01" {
-        let BlockParams { nodeidx_blockid_map: _, num_blocks, nodes_per_block } = get_block_params(graph, 0.1);
 
-        return LogicalDatabase {
-            num_records: num_blocks,
-            record_size_bytes: nodes_per_block * std::mem::size_of::<BlockEntry>(),
-        };
-    }
-    if approach == "block025" {
-        let BlockParams { nodeidx_blockid_map: _, num_blocks, nodes_per_block } = get_block_params(graph, 0.25);
-
-        return LogicalDatabase {
-            num_records: num_blocks,
-            record_size_bytes: nodes_per_block * std::mem::size_of::<BlockEntry>(),
-        };
-    }
-    if approach == "block05" {
-        let BlockParams { nodeidx_blockid_map: _, num_blocks, nodes_per_block } = get_block_params(graph, 0.5);
-
-        return LogicalDatabase {
-            num_records: num_blocks,
-            record_size_bytes: nodes_per_block * std::mem::size_of::<BlockEntry>(),
-        };
-    }
-    if approach == "block1" {
-        let BlockParams { nodeidx_blockid_map: _, num_blocks, nodes_per_block } = get_block_params(graph, 1.);
-
-        return LogicalDatabase {
-            num_records: num_blocks,
-            record_size_bytes: nodes_per_block * std::mem::size_of::<BlockEntry>(),
-        };
-    }
-    else {
-        panic!("didn't define parameters for that approach");
-    }
+    // this is for all the block approaches
+    return LogicalDatabase {
+        num_records: block_params.as_ref().unwrap().num_blocks,
+        record_size_bytes: block_params.as_ref().unwrap().nodes_per_block * std::mem::size_of::<BlockEntry>(),
+    };
 }
 
 pub struct BlockParams {
     pub nodeidx_blockid_map: HashMap<NodeIndex, BlockId>,
     pub num_blocks: usize,
     pub nodes_per_block: usize,
+}
+impl BlockParams {
+    pub fn empty() -> Self {
+        BlockParams { nodeidx_blockid_map: HashMap::new(), num_blocks: 0, nodes_per_block: 0 }
+    }
 }
 
 pub fn get_block_params(graph: &EdgeListGraph, block_width: f32) -> BlockParams {

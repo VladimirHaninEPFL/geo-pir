@@ -1,6 +1,7 @@
 use petgraph::graph::NodeIndex;
 use spiral_rs::client::{Client, PublicParameters};
 
+use crate::approaches::Approach;
 use crate::data_entries::*;
 use crate::graph::*;
 use crate::server::GeoServer;
@@ -14,16 +15,13 @@ pub struct GeoClient<'a> {
     server: &'a GeoServer<'a>,
 
     country_name: &'a str,
-    approach: &'a str,
+    approach: &'a Approach<'a>,
+    block_params: Option<BlockParams>,
 
     pub nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
     pub edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
 
     spiral_client: Client<'a>,
-    graph: &'a EdgeListGraph,
-
-    node_blockid_map: HashMap<NodeIndex, BlockId>,
-    num_bytes_in_block: usize, // this stores the number of bytes inside one block for the block approach
 }
 
 #[derive(Debug, Clone)]
@@ -67,38 +65,14 @@ impl<'a> GeoClient<'a> {
     pub fn new(
         server: &'a mut GeoServer<'a>, 
         country_name: &'a str,
-        approach: &'a str,
+        approach: &'a Approach,
         _architecture: &str,
         graph: &'a EdgeListGraph,
-
     ) -> Self {
         
-        let node_blockid_map: HashMap<NodeIndex, BlockId>;
-        let num_bytes_in_block: usize;
-
-        if approach == "block01" {
-            let block_params = get_block_params(graph, 0.1);
-            node_blockid_map = block_params.nodeidx_blockid_map;
-            num_bytes_in_block = block_params.nodes_per_block * std::mem::size_of::<BlockEntry>();
-        }
-        else if approach == "block025" {
-            let block_params = get_block_params(graph, 0.25);
-            node_blockid_map = block_params.nodeidx_blockid_map;
-            num_bytes_in_block = block_params.nodes_per_block * std::mem::size_of::<BlockEntry>();
-        }
-        else if approach == "block05" {
-            let block_params = get_block_params(graph, 0.5);
-            node_blockid_map = block_params.nodeidx_blockid_map;
-            num_bytes_in_block = block_params.nodes_per_block * std::mem::size_of::<BlockEntry>();
-        }
-        else if approach == "block1" {
-            let block_params = get_block_params(graph, 1.);
-            node_blockid_map = block_params.nodeidx_blockid_map;
-            num_bytes_in_block = block_params.nodes_per_block * std::mem::size_of::<BlockEntry>();
-        }
-        else {
-            node_blockid_map = HashMap::new();
-            num_bytes_in_block = 0;
+        let mut block_params = None;
+        if !approach.is_node_approach {
+            block_params = Some(get_block_params(graph, approach.block_width));
         }
 
         // this is for spiral
@@ -111,12 +85,12 @@ impl<'a> GeoClient<'a> {
             server,
             country_name,
             approach,
+
+            block_params,
             nodes_cache: HashMap::new(),
             edges_cache: HashMap::new(),
+
             spiral_client,
-            graph,
-            node_blockid_map,
-            num_bytes_in_block,
         }
     }
 
@@ -136,7 +110,7 @@ impl<'a> GeoClient<'a> {
         // you receive multple entries for spiral
         for i in 0..self.server.records_per_pir_item {
 
-            if self.approach == "node0" {
+            if self.approach.name == "node0" {
 
                 let start = i * std::mem::size_of::<Node0Entry>();
                 let end = (i+1) * std::mem::size_of::<Node0Entry>();
@@ -145,7 +119,7 @@ impl<'a> GeoClient<'a> {
                 let node0_entry: &Node0Entry = bytemuck::from_bytes(recovered_record);
                 node0_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
             }
-            else if self.approach == "node1" {
+            else if self.approach.name == "node1" {
 
                 let start = i * std::mem::size_of::<Node1Entry>();
                 let end = (i+1) * std::mem::size_of::<Node1Entry>();
@@ -154,7 +128,7 @@ impl<'a> GeoClient<'a> {
                 let node1_entry: &Node1Entry = bytemuck::from_bytes(recovered_record);
                 node1_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
             }
-            else if self.approach == "node2" {
+            else if self.approach.name == "node2" {
 
                 let start = i * std::mem::size_of::<Node2Entry>();
                 let end = (i+1) * std::mem::size_of::<Node2Entry>();
@@ -163,7 +137,7 @@ impl<'a> GeoClient<'a> {
                 let node2_entry: &Node2Entry = bytemuck::from_bytes(recovered_record);
                 node2_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
             }
-            else if self.approach == "node3" {
+            else if self.approach.name == "node3" {
 
                 let start = i * std::mem::size_of::<Node3Entry>();
                 let end = (i+1) * std::mem::size_of::<Node3Entry>();
@@ -178,7 +152,9 @@ impl<'a> GeoClient<'a> {
     
     fn perform_spiral_request_block(&mut self, node_idx: NodeIndex) {
 
-        let target_idx = *self.node_blockid_map.get(&node_idx).unwrap();
+        let block_parameters = self.block_params.as_ref().unwrap();
+
+        let target_idx = *block_parameters.nodeidx_blockid_map.get(&node_idx).unwrap();
         let target_pir_idx = target_idx / self.server.records_per_pir_item; // this rounds down !
 
         let query = self.spiral_client.generate_query(target_pir_idx);
@@ -188,11 +164,13 @@ impl<'a> GeoClient<'a> {
         // * client side response decoding
         let result = self.spiral_client.decode_response(response.as_slice());
 
+        let num_bytes_in_block = block_parameters.nodes_per_block * std::mem::size_of::<BlockEntry>();
+
         // you receive multple entries for spiral
         for i in 0..self.server.records_per_pir_item {
 
-            let start = i * self.num_bytes_in_block;
-            let end = start + self.num_bytes_in_block;
+            let start = i * num_bytes_in_block;
+            let end = start + num_bytes_in_block;
             let block = &result[start..end];
 
             // extract block content
@@ -207,7 +185,7 @@ impl<'a> GeoClient<'a> {
     fn get_node_data(&mut self, node_idx: NodeIndex) -> io::Result<&NodeData> {
 
         if !self.nodes_cache.contains_key(&node_idx) {
-            if self.approach.contains("node") {
+            if self.approach.is_node_approach {
                 self.perform_spiral_request_node(node_idx);
             } else {
                 self.perform_spiral_request_block(node_idx);
@@ -322,6 +300,7 @@ impl<'a> GeoClient<'a> {
         path.reverse();
         path
     }
+
 }
 
 fn haversine_distance_meters(lat1: f32, lon1: f32, lat2: f32, lon2: f32) -> f32 {
