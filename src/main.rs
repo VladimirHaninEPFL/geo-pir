@@ -1,4 +1,3 @@
-use core::arch;
 use std::env;
 
 use client::GeoClient;
@@ -46,12 +45,12 @@ fn main() -> GraphResult<()> {
         approach = Approach {
             name: approach_name,
             is_node_approach: false,
-            block_width: approach_name.parse().unwrap(),
+            block_width: approach_name.trim_start_matches(|c: char| !c.is_ascii_digit()).parse().unwrap(),
         }
     }
 
     let (mut server, context) = GeoServer::start(country_name, &approach, architecture)?;
-    let mut client = GeoClient::new(&mut server, country_name, &approach, architecture, &context.graph);
+    let mut client = GeoClient::new(&mut server, &approach, architecture, &context.graph);
 
     println!(
         "Running A* from {} to {} in country {} using approach {} and achitecture {} ...",

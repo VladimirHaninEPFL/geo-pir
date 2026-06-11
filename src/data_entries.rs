@@ -241,9 +241,9 @@ pub struct BlockEntry { // very similar to the node0 entries, we just add the cu
 
 impl BlockEntry {
 
-    pub fn empty() -> Self {
-        BlockEntry { node_id: 0, latitude: 0., longitude: 0., outgoing_edges: [OutgoingEdge::empty(); 4] }
-    }
+    // pub fn empty() -> Self {
+    //     BlockEntry { node_id: 0, latitude: 0., longitude: 0., outgoing_edges: [OutgoingEdge::empty(); 4] }
+    // }
 
     pub fn new(graph: &EdgeListGraph, node_idx: NodeIndex) -> Self {
 
@@ -331,11 +331,11 @@ pub struct BlockParams {
     pub num_blocks: usize,
     pub nodes_per_block: usize,
 }
-impl BlockParams {
-    pub fn empty() -> Self {
-        BlockParams { nodeidx_blockid_map: HashMap::new(), num_blocks: 0, nodes_per_block: 0 }
-    }
-}
+// impl BlockParams {
+//     pub fn empty() -> Self {
+//         BlockParams { nodeidx_blockid_map: HashMap::new(), num_blocks: 0, nodes_per_block: 0 }
+//     }
+// }
 
 pub fn get_block_params(graph: &EdgeListGraph, block_width: f32) -> BlockParams {
 

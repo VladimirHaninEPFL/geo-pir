@@ -8,6 +8,10 @@
 
 cd /home/hanin/geo-pir
 
-# this is a short journey
-cargo run --release -- Switzerland spiral $1 649891036 312462415 > temp-Switzerland-$1.txt && \
-python3 python/visualiseAStarResult.py temp-Switzerland-$1.txt data/Switzerland-navigation.pickle Switzerland-$1
+COUNTRY=$1
+APPROACH=$2
+START=$3
+DEST=$4
+
+cargo run --release -- $COUNTRY spiral $APPROACH $START $DEST > temp-$COUNTRY-$APPROACH-$DEST.txt && \
+python3 python/visualiseAStarResult.py temp-$COUNTRY-$APPROACH-$DEST.txt data/$COUNTRY-navigation.pickle $COUNTRY-$APPROACH-$DEST

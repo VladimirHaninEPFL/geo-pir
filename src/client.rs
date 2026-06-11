@@ -14,7 +14,6 @@ type TravelTime = u64; // travel time in seconds used for calculating total path
 pub struct GeoClient<'a> {
     server: &'a GeoServer<'a>,
 
-    country_name: &'a str,
     approach: &'a Approach<'a>,
     block_params: Option<BlockParams>,
 
@@ -64,7 +63,6 @@ impl<'a> GeoClient<'a> {
     
     pub fn new(
         server: &'a mut GeoServer<'a>, 
-        country_name: &'a str,
         approach: &'a Approach,
         _architecture: &str,
         graph: &'a EdgeListGraph,
@@ -83,7 +81,6 @@ impl<'a> GeoClient<'a> {
 
         GeoClient {
             server,
-            country_name,
             approach,
 
             block_params,

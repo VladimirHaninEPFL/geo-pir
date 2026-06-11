@@ -48,7 +48,7 @@ impl<'a> GeoServer<'a> {
             records_per_pir_item,
         } = make_params(&logical_db);
 
-        let num_bytes_in_db = params.num_items() * logical_db.record_size_bytes;
+        let num_bytes_in_db = params.num_items() * params.db_item_size;
         let packed_db_bytes = GeoServer::build_packed_database(approach, num_bytes_in_db, &context.graph, &block_params);
         let mut packed_db_reader = Cursor::new(packed_db_bytes);
         let spiral_db = load_db_from_seek(&params, &mut packed_db_reader);
@@ -95,7 +95,7 @@ impl<'a> GeoServer<'a> {
             
             for node_idx in graph.node_indices() {
 
-                let node_entry = Node1Entry::new(graph, node_idx);
+                let node_entry = Node2Entry::new(graph, node_idx);
 
                 let offset = node_idx.index() * entry_size;
                 packed_db[offset..offset + entry_size].copy_from_slice(bytemuck::bytes_of(&node_entry));
@@ -107,7 +107,7 @@ impl<'a> GeoServer<'a> {
             
             for node_idx in graph.node_indices() {
 
-                let node_entry = Node1Entry::new(graph, node_idx);
+                let node_entry = Node3Entry::new(graph, node_idx);
 
                 let offset = node_idx.index() * entry_size;
                 packed_db[offset..offset + entry_size].copy_from_slice(bytemuck::bytes_of(&node_entry));
