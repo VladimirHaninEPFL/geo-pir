@@ -41,25 +41,80 @@ fn read_nodes(
     graph: &mut EdgeListGraph,
 ) -> GraphResult<(HashMap<String, NodeIndex>, HashMap<NodeIndex, String>)> {
 
-    let mut osmid_idx_map  = HashMap::<String, NodeIndex>::new();
-    let mut idx_osmid_map = HashMap::<NodeIndex, String>::new();
+    // --- 1. Read all rows into a buffer first ---
+    struct RawNode {
+        osmid: String,
+        lat: f32,
+        lon: f32,
+    }
+    let mut raw_nodes: Vec<RawNode> = Vec::new();
 
     let mut reader = csv::Reader::from_path(path)?;
     for record in reader.records() {
-
         let record = record?;
         let osmid = record
             .get(0)
-            .ok_or_else(|| invalid_data(format!("missing node osmid in row: {record:?}")))?;
+            .ok_or_else(|| invalid_data(format!("missing node osmid in row: {record:?}")))?
+            .to_owned();
         let lat = parse_csv_float(&record, 1, "lat")?;
         let lon = parse_csv_float(&record, 2, "lon")?;
+        raw_nodes.push(RawNode { osmid, lat, lon });
+    }
 
-        let index = graph.add_node(NodeData {
-            lat,
-            lon,
-        });
-        osmid_idx_map.insert(osmid.to_owned(), index);
-        idx_osmid_map.insert(index, osmid.to_owned());
+    // --- 2. Sort by Hilbert-curve index for spatial locality ---
+    //
+    // We map (lat, lon) into a [0, 2^16) integer grid, then interleave
+    // the bits of (row, col) to get a Hilbert index. Points that are
+    // close in 2-D end up with close indices, so graph node indices
+    // reflect geographic proximity.
+    const ORDER: u32 = 16;              // 2^16 × 2^16 grid
+    const N: f32 = (1u32 << ORDER) as f32; // 65536.0
+
+    // Bounding box — needed to normalise coordinates into [0, N)
+    let min_lat = raw_nodes.iter().map(|n| n.lat).fold(f32::INFINITY,  f32::min);
+    let max_lat = raw_nodes.iter().map(|n| n.lat).fold(f32::NEG_INFINITY, f32::max);
+    let min_lon = raw_nodes.iter().map(|n| n.lon).fold(f32::INFINITY,  f32::min);
+    let max_lon = raw_nodes.iter().map(|n| n.lon).fold(f32::NEG_INFINITY, f32::max);
+
+    let lat_range = (max_lat - min_lat).max(f32::EPSILON);
+    let lon_range = (max_lon - min_lon).max(f32::EPSILON);
+
+    /// Convert a (row, col) grid position into a Hilbert curve index.
+    /// Classic in-place rotation algorithm; O(ORDER) bit operations.
+    fn hilbert_index(mut row: u32, mut col: u32, order: u32) -> u64 {
+        let mut index: u64 = 0;
+        let mut level = 1u32 << (order - 1);
+        while level > 0 {
+            let rx = if (row & level) > 0 { 1u64 } else { 0 };
+            let ry = if (col & level) > 0 { 1u64 } else { 0 };
+            index += (level as u64).pow(2) * ((3 * rx) ^ ry);
+            // Rotate / reflect the quadrant
+            if ry == 0 {
+                if rx == 1 {
+                    row = (1 << order) - 1 - row;
+                    col = (1 << order) - 1 - col;
+                }
+                std::mem::swap(&mut row, &mut col);
+            }
+            level >>= 1;
+        }
+        index
+    }
+
+    raw_nodes.sort_unstable_by_key(|n| {
+        let r = ((n.lat - min_lat) / lat_range * (N - 1.0)) as u32;
+        let c = ((n.lon - min_lon) / lon_range * (N - 1.0)) as u32;
+        hilbert_index(r, c, ORDER)
+    });
+
+    // --- 3. Insert into the graph in Hilbert order ---
+    let mut osmid_idx_map = HashMap::<String, NodeIndex>::new();
+    let mut idx_osmid_map = HashMap::<NodeIndex, String>::new();
+
+    for node in raw_nodes {
+        let index = graph.add_node(NodeData { lat: node.lat, lon: node.lon });
+        osmid_idx_map.insert(node.osmid.clone(), index);
+        idx_osmid_map.insert(index, node.osmid.clone());
     }
 
     Ok((osmid_idx_map, idx_osmid_map))
