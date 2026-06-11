@@ -33,7 +33,7 @@ impl<'a> GeoServer<'a> {
 
         let context = read_graph(&edgelist_path, &nodes_path)?;
 
-        let logical_db: LogicalDatabase = get_logical_db(country_name, approach);
+        let logical_db: LogicalDatabase = get_logical_db(approach, &context.graph);
 
         // spiral setup
         let DerivedPirLayout {
@@ -80,8 +80,8 @@ impl<'a> GeoServer<'a> {
 
                 let node_entry = Node1Entry::new(graph, node_idx);
 
-                let start = node_idx.index() * std::mem::size_of::<Node0Entry>();
-                let end = start + std::mem::size_of::<Node0Entry>();
+                let start = node_idx.index() * std::mem::size_of::<Node1Entry>();
+                let end = start + std::mem::size_of::<Node1Entry>();
                 let record_slice = &mut packed_db[start..end];
                 record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
             }
@@ -96,8 +96,8 @@ impl<'a> GeoServer<'a> {
 
                 let node_entry = Node2Entry::new(graph, node_idx);
 
-                let start = node_idx.index() * std::mem::size_of::<Node0Entry>();
-                let end = start + std::mem::size_of::<Node0Entry>();
+                let start = node_idx.index() * std::mem::size_of::<Node2Entry>();
+                let end = start + std::mem::size_of::<Node2Entry>();
                 let record_slice = &mut packed_db[start..end];
                 record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
             }
@@ -113,7 +113,7 @@ impl<'a> GeoServer<'a> {
                 let node_entry = Node3Entry::new(graph, node_idx);
 
                 let start = node_idx.index() * std::mem::size_of::<Node3Entry>();
-                let end = start + std::mem::size_of::<Node0Entry>();
+                let end = start + std::mem::size_of::<Node3Entry>();
                 let record_slice = &mut packed_db[start..end];
                 record_slice.copy_from_slice(bytemuck::bytes_of(&node_entry));
             }
@@ -124,7 +124,7 @@ impl<'a> GeoServer<'a> {
 
             let mut packed_db = vec![0u8; num_bytes_in_db];
 
-            let node_blockid_map = get_node_blockid_map(graph, 0.1);
+            let BlockParams {nodeidx_blockid_map, num_blocks: _, nodes_per_block: _} = get_block_params(graph, 0.1);
 
             let block_entry_size = std::mem::size_of::<BlockEntry>();
             let block_capacity = logical_db.record_size_bytes / block_entry_size;
@@ -132,9 +132,9 @@ impl<'a> GeoServer<'a> {
 
             for node_idx in graph.node_indices() {
 
-                let block_entry = BlockEntry::new(graph, node_idx);
+                let block_node_entry = BlockEntry::new(graph, node_idx);
 
-                let block_id = *node_blockid_map.get(&node_idx).unwrap() as usize;
+                let block_id = *nodeidx_blockid_map.get(&node_idx).unwrap();
                 assert!(block_id < logical_db.num_records, "block_id exceeds logical database block count");
 
                 let entry_index = next_entry_idx[block_id];
@@ -142,7 +142,7 @@ impl<'a> GeoServer<'a> {
 
                 let start = block_id * logical_db.record_size_bytes + entry_index * block_entry_size;
                 let end = start + block_entry_size;
-                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_entry));
+                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_node_entry));
 
                 next_entry_idx[block_id] = entry_index + 1;
             }
@@ -153,7 +153,7 @@ impl<'a> GeoServer<'a> {
 
             let mut packed_db = vec![0u8; num_bytes_in_db];
 
-            let node_blockid_map = get_node_blockid_map(graph, 0.25);
+            let BlockParams {nodeidx_blockid_map, num_blocks: _, nodes_per_block: _} = get_block_params(graph, 0.25);
 
             let block_entry_size = std::mem::size_of::<BlockEntry>();
             let block_capacity = logical_db.record_size_bytes / block_entry_size;
@@ -161,9 +161,9 @@ impl<'a> GeoServer<'a> {
 
             for node_idx in graph.node_indices() {
 
-                let block_entry = BlockEntry::new(graph, node_idx);
+                let block_node_entry = BlockEntry::new(graph, node_idx);
 
-                let block_id = *node_blockid_map.get(&node_idx).unwrap() as usize;
+                let block_id = *nodeidx_blockid_map.get(&node_idx).unwrap();
                 assert!(block_id < logical_db.num_records, "block_id exceeds logical database block count");
 
                 let entry_index = next_entry_idx[block_id];
@@ -171,7 +171,7 @@ impl<'a> GeoServer<'a> {
 
                 let start = block_id * logical_db.record_size_bytes + entry_index * block_entry_size;
                 let end = start + block_entry_size;
-                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_entry));
+                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_node_entry));
 
                 next_entry_idx[block_id] = entry_index + 1;
             }
@@ -182,7 +182,7 @@ impl<'a> GeoServer<'a> {
 
             let mut packed_db = vec![0u8; num_bytes_in_db];
 
-            let node_blockid_map = get_node_blockid_map(graph, 0.5);
+            let BlockParams {nodeidx_blockid_map, num_blocks: _, nodes_per_block: _} = get_block_params(graph, 0.5);
 
             let block_entry_size = std::mem::size_of::<BlockEntry>();
             let block_capacity = logical_db.record_size_bytes / block_entry_size;
@@ -190,9 +190,9 @@ impl<'a> GeoServer<'a> {
 
             for node_idx in graph.node_indices() {
 
-                let block_entry = BlockEntry::new(graph, node_idx);
+                let block_node_entry = BlockEntry::new(graph, node_idx);
 
-                let block_id = *node_blockid_map.get(&node_idx).unwrap() as usize;
+                let block_id = *nodeidx_blockid_map.get(&node_idx).unwrap();
                 assert!(block_id < logical_db.num_records, "block_id exceeds logical database block count");
 
                 let entry_index = next_entry_idx[block_id];
@@ -200,7 +200,7 @@ impl<'a> GeoServer<'a> {
 
                 let start = block_id * logical_db.record_size_bytes + entry_index * block_entry_size;
                 let end = start + block_entry_size;
-                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_entry));
+                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_node_entry));
 
                 next_entry_idx[block_id] = entry_index + 1;
             }
@@ -211,7 +211,7 @@ impl<'a> GeoServer<'a> {
 
             let mut packed_db = vec![0u8; num_bytes_in_db];
 
-            let node_blockid_map = get_node_blockid_map(graph, 1.);
+            let BlockParams {nodeidx_blockid_map, num_blocks: _, nodes_per_block: _} = get_block_params(graph, 1.);
 
             let block_entry_size = std::mem::size_of::<BlockEntry>();
             let block_capacity = logical_db.record_size_bytes / block_entry_size;
@@ -219,9 +219,9 @@ impl<'a> GeoServer<'a> {
 
             for node_idx in graph.node_indices() {
 
-                let block_entry = BlockEntry::new(graph, node_idx);
+                let block_node_entry = BlockEntry::new(graph, node_idx);
 
-                let block_id = *node_blockid_map.get(&node_idx).unwrap() as usize;
+                let block_id = *nodeidx_blockid_map.get(&node_idx).unwrap();
                 assert!(block_id < logical_db.num_records, "block_id exceeds logical database block count");
 
                 let entry_index = next_entry_idx[block_id];
@@ -229,7 +229,7 @@ impl<'a> GeoServer<'a> {
 
                 let start = block_id * logical_db.record_size_bytes + entry_index * block_entry_size;
                 let end = start + block_entry_size;
-                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_entry));
+                packed_db[start..end].copy_from_slice(bytemuck::bytes_of(&block_node_entry));
 
                 next_entry_idx[block_id] = entry_index + 1;
             }

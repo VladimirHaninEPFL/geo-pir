@@ -227,7 +227,7 @@ impl Node3Entry {
 
 
 // block approaches
-pub type BlockId = u32;
+pub type BlockId = usize;
 
 #[repr(C)]
 #[derive(Debug, Clone, Copy, Pod, Zeroable)]
@@ -292,125 +292,83 @@ pub struct LogicalDatabase {
     pub record_size_bytes: usize,
 }
 
-pub fn get_logical_db(country_name: &str, approach: &str) -> LogicalDatabase {
+pub fn get_logical_db(approach: &str, graph: &EdgeListGraph) -> LogicalDatabase {
     
-    if country_name == "Switzerland" {
-        if approach == "node0" {
-            return LogicalDatabase {
-                num_records: 467_344,
-                record_size_bytes: std::mem::size_of::<Node0Entry>()
-            };
-        }
-        if approach == "node1" {
-            return LogicalDatabase {
-                num_records: 467_344,
-                record_size_bytes: std::mem::size_of::<Node1Entry>()
-            };
-        }
-        if approach == "node2" {
-            return LogicalDatabase {
-                num_records: 467_344,
-                record_size_bytes: std::mem::size_of::<Node2Entry>()
-            };
-        }
-        if approach == "node3" {
-            return LogicalDatabase {
-                num_records: 467_344,
-                record_size_bytes: std::mem::size_of::<Node3Entry>()
-            };
-        }
-        if approach == "block01" {
-            return LogicalDatabase {
-                num_records: 536,
-                record_size_bytes: 6857 * std::mem::size_of::<BlockEntry>(),
-            };
-        }
-        if approach == "block025" {
-            return LogicalDatabase {
-                num_records: 108,
-                record_size_bytes: 23500 * std::mem::size_of::<BlockEntry>(),
-            };
-        }
-        if approach == "block05" {
-            return LogicalDatabase {
-                num_records: 36,
-                record_size_bytes: 57_497 * std::mem::size_of::<BlockEntry>(),
-            };
-        }
-        if approach == "block1" {
-            return LogicalDatabase {
-                num_records: 13,
-                record_size_bytes: 133_323 * std::mem::size_of::<BlockEntry>(),
-            };
-        }
-        else {
-            panic!("didn't define parameters for that approach");
-        }
+    if approach == "node0" {
+        return LogicalDatabase {
+            num_records: graph.node_count(),
+            record_size_bytes: std::mem::size_of::<Node0Entry>()
+        };
     }
-    else if country_name == "France" {
-        if approach == "node0" {
-            return LogicalDatabase {
-                num_records: 5_196_479,
-                record_size_bytes: std::mem::size_of::<Node0Entry>()
-            };
-        }
-        if approach == "node1" {
-            return LogicalDatabase {
-                num_records: 5_196_479,
-                record_size_bytes: std::mem::size_of::<Node1Entry>()
-            };
-        }
-        if approach == "node2" {
-            return LogicalDatabase {
-                num_records: 5_196_479,
-                record_size_bytes: std::mem::size_of::<Node2Entry>()
-            };
-        }
-        if approach == "node3" {
-            return LogicalDatabase {
-                num_records: 5_196_479,
-                record_size_bytes: std::mem::size_of::<Node3Entry>()
-            };
-        }
-        if approach == "block01" {
-            return LogicalDatabase {
-                num_records: 6810,
-                record_size_bytes: 12_745 * std::mem::size_of::<BlockEntry>(),
-            };
-        }
-        if approach == "block025" {
-            return LogicalDatabase {
-                num_records: 1170,
-                record_size_bytes: 63_245 * std::mem::size_of::<BlockEntry>(),
-            };
-        }
-        if approach == "block05" {
-            return LogicalDatabase {
-                num_records: 326,
-                record_size_bytes: 149_848 * std::mem::size_of::<BlockEntry>(),
-            };
-        }
-        if approach == "block1" {
-            return LogicalDatabase {
-                num_records: 96,
-                record_size_bytes: 241_882 * std::mem::size_of::<BlockEntry>(),
-            };
-        }
-        else {
-            panic!("didn't define parameters for that approach");
-        }
+    if approach == "node1" {
+        return LogicalDatabase {
+            num_records: graph.node_count(),
+            record_size_bytes: std::mem::size_of::<Node1Entry>()
+        };
     }
+    if approach == "node2" {
+        return LogicalDatabase {
+            num_records: graph.node_count(),
+            record_size_bytes: std::mem::size_of::<Node2Entry>()
+        };
+    }
+    if approach == "node3" {
+        return LogicalDatabase {
+            num_records: graph.node_count(),
+            record_size_bytes: std::mem::size_of::<Node3Entry>()
+        };
+    }
+    if approach == "block01" {
+        let BlockParams { nodeidx_blockid_map: _, num_blocks, nodes_per_block } = get_block_params(graph, 0.1);
 
+        return LogicalDatabase {
+            num_records: num_blocks,
+            record_size_bytes: nodes_per_block * std::mem::size_of::<BlockEntry>(),
+        };
+    }
+    if approach == "block025" {
+        let BlockParams { nodeidx_blockid_map: _, num_blocks, nodes_per_block } = get_block_params(graph, 0.25);
+
+        return LogicalDatabase {
+            num_records: num_blocks,
+            record_size_bytes: nodes_per_block * std::mem::size_of::<BlockEntry>(),
+        };
+    }
+    if approach == "block05" {
+        let BlockParams { nodeidx_blockid_map: _, num_blocks, nodes_per_block } = get_block_params(graph, 0.5);
+
+        return LogicalDatabase {
+            num_records: num_blocks,
+            record_size_bytes: nodes_per_block * std::mem::size_of::<BlockEntry>(),
+        };
+    }
+    if approach == "block1" {
+        let BlockParams { nodeidx_blockid_map: _, num_blocks, nodes_per_block } = get_block_params(graph, 1.);
+
+        return LogicalDatabase {
+            num_records: num_blocks,
+            record_size_bytes: nodes_per_block * std::mem::size_of::<BlockEntry>(),
+        };
+    }
     else {
-        panic!("didn't define parameters for that country");
+        panic!("didn't define parameters for that approach");
     }
 }
 
-pub fn get_node_blockid_map(graph: &EdgeListGraph, block_width: f32) -> HashMap<NodeIndex, BlockId> {
+pub struct BlockParams {
+    pub nodeidx_blockid_map: HashMap<NodeIndex, BlockId>,
+    pub num_blocks: usize,
+    pub nodes_per_block: usize,
+}
 
-    let mut mapping: HashMap<NodeIndex, BlockId> = HashMap::new();
-    let mut block_id_by_cell: HashMap<(i32, i32), u32> = HashMap::new();
+pub fn get_block_params(graph: &EdgeListGraph, block_width: f32) -> BlockParams {
+
+    let mut nodeidx_blockid_map: HashMap<NodeIndex, BlockId> = HashMap::new();
+
+    let mut block_id_by_cell: HashMap<(i32, i32), BlockId> = HashMap::new();
     let mut next_block_id: BlockId = 0;
+
+    let mut block_node_counts: HashMap<BlockId, usize> = HashMap::new();
 
     for node_idx in graph.node_indices() {
 
@@ -425,9 +383,16 @@ pub fn get_node_blockid_map(graph: &EdgeListGraph, block_width: f32) -> HashMap<
             next_block_id += 1;
             id
         });
+        nodeidx_blockid_map.insert(node_idx, block_id);
 
-        mapping.insert(node_idx, block_id);
+        *block_node_counts.entry(block_id).or_insert(0) += 1;
     }
 
-    mapping
+    let max_nodes_in_block = block_node_counts.values().copied().max().unwrap_or(0);
+
+    BlockParams {
+        nodeidx_blockid_map,
+        num_blocks: next_block_id,
+        nodes_per_block: max_nodes_in_block,
+    }
 }

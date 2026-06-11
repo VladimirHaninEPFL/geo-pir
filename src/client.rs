@@ -21,7 +21,9 @@ pub struct GeoClient<'a> {
 
     spiral_client: Client<'a>,
     graph: &'a EdgeListGraph,
+
     node_blockid_map: HashMap<NodeIndex, BlockId>,
+    num_bytes_in_block: usize, // this stores the number of bytes inside one block for the block approach
 }
 
 #[derive(Debug, Clone)]
@@ -72,28 +74,38 @@ impl<'a> GeoClient<'a> {
     ) -> Self {
         
         let node_blockid_map: HashMap<NodeIndex, BlockId>;
+        let num_bytes_in_block: usize;
+
         if approach == "block01" {
-            node_blockid_map = get_node_blockid_map(graph, 0.1);
+            let block_params = get_block_params(graph, 0.1);
+            node_blockid_map = block_params.nodeidx_blockid_map;
+            num_bytes_in_block = block_params.nodes_per_block * std::mem::size_of::<BlockEntry>();
         }
         else if approach == "block025" {
-            node_blockid_map = get_node_blockid_map(graph, 0.25);
+            let block_params = get_block_params(graph, 0.25);
+            node_blockid_map = block_params.nodeidx_blockid_map;
+            num_bytes_in_block = block_params.nodes_per_block * std::mem::size_of::<BlockEntry>();
         }
         else if approach == "block05" {
-            node_blockid_map = get_node_blockid_map(graph, 0.5);
+            let block_params = get_block_params(graph, 0.5);
+            node_blockid_map = block_params.nodeidx_blockid_map;
+            num_bytes_in_block = block_params.nodes_per_block * std::mem::size_of::<BlockEntry>();
         }
         else if approach == "block1" {
-            node_blockid_map = get_node_blockid_map(graph, 1.);
+            let block_params = get_block_params(graph, 1.);
+            node_blockid_map = block_params.nodeidx_blockid_map;
+            num_bytes_in_block = block_params.nodes_per_block * std::mem::size_of::<BlockEntry>();
         }
         else {
             node_blockid_map = HashMap::new();
+            num_bytes_in_block = 0;
         }
 
         // this is for spiral
         let mut spiral_client = Client::init(&server.params);
         let public_params: PublicParameters = spiral_client.generate_keys();
 
-        // send public params to the server
-        server.public_params = Some(public_params);
+        server.public_params = Some(public_params); // send public params to the server
 
         GeoClient {
             server,
@@ -104,10 +116,11 @@ impl<'a> GeoClient<'a> {
             spiral_client,
             graph,
             node_blockid_map,
+            num_bytes_in_block,
         }
     }
 
-    fn perform_spiral_node(&mut self, node_idx: NodeIndex) {
+    fn perform_spiral_request_node(&mut self, node_idx: NodeIndex) {
 
         // * spiral query generation for node0
         let target_idx = node_idx.index();
@@ -163,12 +176,13 @@ impl<'a> GeoClient<'a> {
 
     }
     
-    fn perform_spiral_block(&mut self, node_idx: NodeIndex) {
+    fn perform_spiral_request_block(&mut self, node_idx: NodeIndex) {
 
-        let target_idx = *self.node_blockid_map.get(&node_idx).unwrap() as usize;
+        let target_idx = *self.node_blockid_map.get(&node_idx).unwrap();
         let target_pir_idx = target_idx / self.server.records_per_pir_item; // this rounds down !
 
         let query = self.spiral_client.generate_query(target_pir_idx);
+
         let response = self.server.process_spiral_query(&query);
 
         // * client side response decoding
@@ -177,10 +191,8 @@ impl<'a> GeoClient<'a> {
         // you receive multple entries for spiral
         for i in 0..self.server.records_per_pir_item {
 
-            let num_bytes_in_block = get_logical_db(self.country_name, self.approach).record_size_bytes; 
-
-            let start = i * num_bytes_in_block;
-            let end = start + num_bytes_in_block;
+            let start = i * self.num_bytes_in_block;
+            let end = start + self.num_bytes_in_block;
             let block = &result[start..end];
 
             // extract block content
@@ -196,9 +208,9 @@ impl<'a> GeoClient<'a> {
 
         if !self.nodes_cache.contains_key(&node_idx) {
             if self.approach.contains("node") {
-                self.perform_spiral_node(node_idx);
+                self.perform_spiral_request_node(node_idx);
             } else {
-                self.perform_spiral_block(node_idx);
+                self.perform_spiral_request_block(node_idx);
             }
         }
 
