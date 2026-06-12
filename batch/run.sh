@@ -12,19 +12,14 @@ COUNTRY=$1
 ARCHI=$2
 APPROACH=$3
 
-cargo run --release --bin geo_server Switzerland $ARCHI $APPROACH &
-
+cargo run --release --bin geo_server $COUNTRY $ARCHI $APPROACH &
 sleep 10 # wait until server is ready
 
-# short then long
-START=649891036
+START=$4
+for DEST in "${@:5}"; do
+    FILENAME=temp-$COUNTRY-$ARCHI-$APPROACH-$DEST.txt
 
-for DEST in 312462415 296962379; do
-    FILENAME=temp-Switzerland-$ARCHI-$APPROACH-$DEST.txt
-
-    cargo run --release --bin geo-pir $START $DEST > $FILENAME
-    python3 python/visualiseAStarResult.py $FILENAME data/$COUNTRY-navigation.pickle $COUNTRY-$APPROACH-$DEST
-
-    rm $FILENAME
+    cargo run --release --bin geo-pir $START $DEST > $FILENAME &&
+    python3 python/visualiseAStarResult.py $FILENAME data/$COUNTRY-navigation.pickle $COUNTRY-$ARCHI-$APPROACH-$DEST
 done
 
