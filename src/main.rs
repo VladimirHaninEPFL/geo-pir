@@ -1,28 +1,11 @@
 use std::env;
 use std::path::PathBuf;
 
-use geo_pir::{approaches::Approach, client::GeoClient, graph::{read_graph, GraphResult}, ipc::ServerHandle};
+use geo_pir::{approaches::parse_approach, client::GeoClient, graph::{read_graph, GraphResult}, ipc::ServerHandle};
 
-fn parse_approach(name: &str) -> Approach<'_> {
-    if name.contains("node") {
-        Approach {
-            name,
-            is_node_approach: true,
-            block_width: 0.0,
-        }
-    } else {
-        Approach {
-            name,
-            is_node_approach: false,
-            block_width: name
-                .trim_start_matches(|c: char| !c.is_ascii_digit())
-                .parse()
-                .unwrap_or(0.0),
-        }
-    }
-}
 
 fn main() -> GraphResult<()> {
+
     let args: Vec<String> = env::args().collect();
     if args.len() != 6 && args.len() != 7 {
         eprintln!(
@@ -43,6 +26,7 @@ fn main() -> GraphResult<()> {
         .unwrap_or_else(|| PathBuf::from("/tmp/geo_pir.sock"));
 
     let approach = parse_approach(approach_name);
+
     let context = read_graph(
         format!("./data/{}-navigation.edgelist", country_name),
         format!("./data/{}-navigation.csv", country_name),

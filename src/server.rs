@@ -70,6 +70,8 @@ impl GeoServer {
         block_params: &Option<BlockParams>,
     ) -> Vec<u8> {
 
+        println!("Starting creation of database...");
+
         let mut packed_db = vec![0u8; num_bytes_in_db];
 
         if approach.name == "node0" {
@@ -147,6 +149,7 @@ impl GeoServer {
             }
         }
 
+        println!("done !");
         packed_db
     }
 
@@ -158,7 +161,7 @@ impl GeoServer {
         let listener = UnixListener::bind(socket_path)?;
 
         for connection in listener.incoming() {
-            println!("GeoServer listening for a new GeoClient on {}", socket_path.display());
+            println!("GeoServer accepted new connection to a GeoClient");
 
             match connection {
                 Ok(stream) => {

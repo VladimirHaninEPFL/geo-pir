@@ -72,6 +72,8 @@ impl<'a> GeoClient<'a> {
         _architecture: &str,
         graph: &'a EdgeListGraph,
     ) -> GraphResult<Self> {
+
+
         let mut block_params = None;
         if !approach.is_node_approach {
             block_params = Some(get_block_params(graph, approach.block_width));
