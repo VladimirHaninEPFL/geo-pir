@@ -21,6 +21,7 @@ pub struct GeoClient<'a> {
     pub edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
 
     spiral_client: Client<'a>,
+    records_per_pir_item: usize,
 }
 
 #[derive(Debug, Clone)]
@@ -74,10 +75,16 @@ impl<'a> GeoClient<'a> {
         }
 
         // this is for spiral
-        let mut spiral_client = Client::init(&server.params);
-        let public_params: PublicParameters = spiral_client.generate_keys();
 
+        // get server paraps
+        let server_params = &server.params;
+        let mut spiral_client = Client::init(server_params);
+
+        let public_params: PublicParameters = spiral_client.generate_keys();
         server.public_params = Some(public_params); // send public params to the server
+
+        // get params from the server
+        let records_per_pir_item = server.records_per_pir_item;
 
         GeoClient {
             server,
@@ -88,6 +95,7 @@ impl<'a> GeoClient<'a> {
             edges_cache: HashMap::new(),
 
             spiral_client,
+            records_per_pir_item,
         }
     }
 
@@ -95,8 +103,8 @@ impl<'a> GeoClient<'a> {
 
         // * spiral query generation for node0
         let target_idx = node_idx.index();
-        let target_pir_idx = target_idx / self.server.records_per_pir_item; // this rounds down !
-        let target_idx_clipped = target_pir_idx * self.server.records_per_pir_item;
+        let target_pir_idx = target_idx / self.records_per_pir_item; // this rounds down !
+        let target_idx_clipped = target_pir_idx * self.records_per_pir_item;
 
         let query = self.spiral_client.generate_query(target_pir_idx);
         let response = self.server.process_spiral_query(&query);
@@ -105,7 +113,7 @@ impl<'a> GeoClient<'a> {
         let result = self.spiral_client.decode_response(response.as_slice());
 
         // you receive multple entries for spiral
-        for i in 0..self.server.records_per_pir_item {
+        for i in 0..self.records_per_pir_item {
 
             if self.approach.name == "node0" {
 
@@ -152,7 +160,7 @@ impl<'a> GeoClient<'a> {
         let block_parameters = self.block_params.as_ref().unwrap();
 
         let target_idx = *block_parameters.nodeidx_blockid_map.get(&node_idx).unwrap();
-        let target_pir_idx = target_idx / self.server.records_per_pir_item; // this rounds down !
+        let target_pir_idx = target_idx / self.records_per_pir_item; // this rounds down !
 
         let query = self.spiral_client.generate_query(target_pir_idx);
 
@@ -164,7 +172,7 @@ impl<'a> GeoClient<'a> {
         let num_bytes_in_block = block_parameters.nodes_per_block * std::mem::size_of::<BlockEntry>();
 
         // you receive multple entries for spiral
-        for i in 0..self.server.records_per_pir_item {
+        for i in 0..self.records_per_pir_item {
 
             let start = i * num_bytes_in_block;
             let end = start + num_bytes_in_block;

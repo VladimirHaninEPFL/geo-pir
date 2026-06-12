@@ -13,7 +13,7 @@ mod spiral;
 mod data_entries;
 mod approaches;
 
-// todo: add network usage between client and server 
+// todo: add network usage between client and server (or IPC, but have the proper separation)
 // todo: add singlepass !
 
 fn main() -> GraphResult<()> {
