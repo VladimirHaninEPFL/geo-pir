@@ -145,12 +145,15 @@ impl<'a> GeoServer<'a> {
         packed_db
     }
 
-    pub fn process_spiral_query(&self, query: &Query) -> Vec<u8> {
-        let response = process_query(&self.params, &self.public_params.as_ref().unwrap(), query, self.spiral_db.as_slice());
+    pub fn process_spiral_query(&self, data: Vec<u8>) -> Vec<u8> {
+        let query = Query::deserialize(&self.params, &data);
+
+        let response = process_query(&self.params, &self.public_params.as_ref().unwrap(), &query, self.spiral_db.as_slice());
+
         response
     }
 
-    pub fn get_congestion(&self) -> Vec<u16> {
+    pub fn get_congestion(&self) -> Vec<u8> {
 
         let mut congestion :Vec<u16> = vec![];
 
@@ -161,7 +164,8 @@ impl<'a> GeoServer<'a> {
             }
         }
 
-        congestion
+        let bytes: Vec<u8> = bytemuck::bytes_of(&congestion).to_vec();
+        bytes
     }
 
     pub fn get_logical_db(&self) -> Vec<u8> {

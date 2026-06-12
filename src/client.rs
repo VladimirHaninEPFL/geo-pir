@@ -1,5 +1,5 @@
 use petgraph::graph::NodeIndex;
-use spiral_rs::client::{Client, PublicParameters};
+use spiral_rs::client::{Client, PublicParameters, Query};
 use spiral_rs::params::Params;
 
 use crate::approaches::Approach;
@@ -121,10 +121,25 @@ impl<'a> GeoClient<'a> {
 
         logical_db.clone()
     }
+    
+    fn get_congestion(server: &'a GeoServer<'a>) -> Vec<u16> {
+        let server_bytes = server.get_congestion();
+        let congestion: &Vec<u16> = bytemuck::from_bytes(&server_bytes);
+
+        congestion
+    }
 
     fn send_public_prams(server: &'a mut GeoServer<'a>, public_params: &PublicParameters)  {
         let bytes: Vec<u8> = public_params.serialize();
         server.receive_public_params(bytes);
+    }
+
+    fn send_query_server(&self, query : &Query) -> Vec<u8> {
+        let data = query.serialize();
+        
+        let server_response = self.server.process_spiral_query(data);
+
+        server_response
     }
 
     fn perform_spiral_request_node(&mut self, node_idx: NodeIndex) {
@@ -135,7 +150,7 @@ impl<'a> GeoClient<'a> {
         let target_idx_clipped = target_pir_idx * self.records_per_pir_item;
 
         let query = self.spiral_client.generate_query(target_pir_idx);
-        let response = self.server.process_spiral_query(&query);
+        let response = self.send_query_server(&query);
 
         // * client side response decoding
         let result = self.spiral_client.decode_response(response.as_slice());
@@ -192,7 +207,7 @@ impl<'a> GeoClient<'a> {
 
         let query = self.spiral_client.generate_query(target_pir_idx);
 
-        let response = self.server.process_spiral_query(&query);
+        let response = self.send_query_server(&query);
 
         // * client side response decoding
         let result = self.spiral_client.decode_response(response.as_slice());
@@ -239,7 +254,7 @@ impl<'a> GeoClient<'a> {
     /// Run A* search from start osmid to goal osmid
     pub fn a_star_search(&mut self, start_node_idx: NodeIndex, goal_node_idx: NodeIndex) -> io::Result<Option<AStarResult>> {
 
-        let congestion = self.server.get_congestion();
+        let congestion = self.get_congestion();
 
         let mut best_cost: HashMap<NodeIndex, TravelTime> = HashMap::new(); // this stores the best known cost to reach each node from the start node
         let mut best_source: HashMap<NodeIndex, NodeIndex> = HashMap::new(); // this stores the best known predecessor of each node on the optimal path from the start node (used for path reconstruction)
