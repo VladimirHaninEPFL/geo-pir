@@ -110,7 +110,7 @@ impl GeoServer {
                     packed_db[offset..offset + entry_size].copy_from_slice(bytemuck::bytes_of(&node_entry));
                 }
             },
-            Approaches::Block(block_width) => {
+            Approaches::Block(_) => {
 
                 let block_parameters = db_settings.block_params.as_ref().unwrap();
 

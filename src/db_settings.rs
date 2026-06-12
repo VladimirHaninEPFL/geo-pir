@@ -216,8 +216,6 @@ impl LogicalDatabase {
                                         num_records: block_params.as_ref().unwrap().num_blocks,
                                         record_size_bytes: block_params.as_ref().unwrap().nodes_per_block * std::mem::size_of::<BlockEntry>(),
                                     },
-
-            _ => LogicalDatabase { num_records: 0, record_size_bytes: 0 },
         }
     }
 
