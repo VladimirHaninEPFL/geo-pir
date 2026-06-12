@@ -1,9 +1,7 @@
-use std::collections::HashMap;
-
 use bytemuck::{Pod, Zeroable};
 use petgraph::{graph::NodeIndex, visit::EdgeRef};
 
-use crate::{approaches::Approach, client::GeoClient, graph::{EdgeListGraph, NodeData}};
+use crate::{client::GeoClient, graph::{EdgeListGraph, NodeData}};
 
 
 
@@ -285,92 +283,4 @@ impl BlockEntry {
         geo_client.edges_cache.insert(NodeIndex::new(self.node_id as usize), outgoing_edges);
     }
 
-}
-
-#[repr(C)]
-#[derive(Debug, Clone, Copy, Pod, Zeroable)]
-pub struct LogicalDatabase {
-    pub num_records: usize,
-    pub record_size_bytes: usize,
-}
-
-pub fn get_logical_db(approach: &Approach, graph: &EdgeListGraph, block_params: &Option<BlockParams>) -> LogicalDatabase {
-    
-    if approach.name == "node0" {
-        return LogicalDatabase {
-            num_records: graph.node_count(),
-            record_size_bytes: std::mem::size_of::<Node0Entry>()
-        };
-    }
-    else if approach.name == "node1" {
-        return LogicalDatabase {
-            num_records: graph.node_count(),
-            record_size_bytes: std::mem::size_of::<Node1Entry>()
-        };
-    }
-    else if approach.name == "node2" {
-        return LogicalDatabase {
-            num_records: graph.node_count(),
-            record_size_bytes: std::mem::size_of::<Node2Entry>()
-        };
-    }
-    else if approach.name == "node3" {
-        return LogicalDatabase {
-            num_records: graph.node_count(),
-            record_size_bytes: std::mem::size_of::<Node3Entry>()
-        };
-    }
-
-    // this is for all the block approaches
-    return LogicalDatabase {
-        num_records: block_params.as_ref().unwrap().num_blocks,
-        record_size_bytes: block_params.as_ref().unwrap().nodes_per_block * std::mem::size_of::<BlockEntry>(),
-    };
-}
-
-pub struct BlockParams {
-    pub nodeidx_blockid_map: HashMap<NodeIndex, BlockId>,
-    pub num_blocks: usize,
-    pub nodes_per_block: usize,
-}
-// impl BlockParams {
-//     pub fn empty() -> Self {
-//         BlockParams { nodeidx_blockid_map: HashMap::new(), num_blocks: 0, nodes_per_block: 0 }
-//     }
-// }
-
-pub fn get_block_params(graph: &EdgeListGraph, block_width: f32) -> BlockParams {
-
-    let mut nodeidx_blockid_map: HashMap<NodeIndex, BlockId> = HashMap::new();
-
-    let mut block_id_by_cell: HashMap<(i32, i32), BlockId> = HashMap::new();
-    let mut next_block_id: BlockId = 0;
-
-    let mut block_node_counts: HashMap<BlockId, usize> = HashMap::new();
-
-    for node_idx in graph.node_indices() {
-
-        let node_data = &graph[node_idx];
-
-        let cell_row = (node_data.lat / block_width).floor() as i32;
-        let cell_col = (node_data.lon / block_width).floor() as i32;
-        let cell = (cell_row, cell_col);
-
-        let block_id = *block_id_by_cell.entry(cell).or_insert_with(|| {
-            let id = next_block_id;
-            next_block_id += 1;
-            id
-        });
-        nodeidx_blockid_map.insert(node_idx, block_id);
-
-        *block_node_counts.entry(block_id).or_insert(0) += 1;
-    }
-
-    let max_nodes_in_block = block_node_counts.values().copied().max().unwrap_or(0);
-
-    BlockParams {
-        nodeidx_blockid_map,
-        num_blocks: next_block_id,
-        nodes_per_block: max_nodes_in_block,
-    }
 }

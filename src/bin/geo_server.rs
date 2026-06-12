@@ -2,8 +2,8 @@ use std::env;
 use std::path::PathBuf;
 
 use geo_pir::{graph::GraphResult, server::GeoServer};
-use geo_pir::approaches::{parse_approach};
 
+// todo: have the server store the db in a file, instead of always generating it !
 
 fn main() -> GraphResult<()> {
 
@@ -23,8 +23,7 @@ fn main() -> GraphResult<()> {
         .map(|s| PathBuf::from(s))
         .unwrap_or_else(|| PathBuf::from("/tmp/geo_pir.sock"));
 
-    let approach = parse_approach(approach_name);
-    let mut server = GeoServer::new(country_name, &approach, architecture)?;
+    let mut server = GeoServer::new(country_name, approach_name, architecture)?;
 
     println!("Starting GeoServer on socket {} ...", socket_path.display());
     server.serve_socket(&socket_path)?;

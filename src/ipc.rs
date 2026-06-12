@@ -6,18 +6,18 @@ use std::path::Path;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub enum ClientRequest {
-    GetLogicalDb,
     SendPublicParams(Vec<u8>),
     ProcessQuery(Vec<u8>),
     GetCongestion,
+    GetDBSettings,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub enum ServerResponse {
     Ok,
-    LogicalDb(Vec<u8>),
     QueryResult(Vec<u8>),
     Congestion(Vec<u8>),
+    DBSettings(Vec<u8>),
     Error(String),
 }
 
@@ -63,9 +63,9 @@ impl ServerHandle {
         receive_message(&mut self.stream)
     }
 
-    pub fn get_logical_db(&mut self) -> io::Result<Vec<u8>> {
-        match self.request(ClientRequest::GetLogicalDb)? {
-            ServerResponse::LogicalDb(bytes) => Ok(bytes),
+    pub fn get_db_settings(&mut self) -> io::Result<Vec<u8>> {
+        match self.request(ClientRequest::GetDBSettings)? {
+            ServerResponse::DBSettings(bytes) => Ok(bytes),
             ServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(
                 io::ErrorKind::InvalidData,

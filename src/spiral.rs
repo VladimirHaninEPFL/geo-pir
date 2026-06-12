@@ -1,6 +1,6 @@
 use spiral_rs::params::Params;
 
-use crate::data_entries::LogicalDatabase;
+use crate::db_settings::LogicalDatabase;
 
 // params for the protocol
 const POLY_LEN: usize = 2048;

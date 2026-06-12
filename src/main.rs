@@ -1,44 +1,37 @@
 use std::env;
 use std::path::PathBuf;
 
-use geo_pir::{approaches::parse_approach, client::GeoClient, graph::{read_graph, GraphResult}, ipc::ServerHandle};
+use geo_pir::{client::GeoClient, graph::{read_graph, GraphResult}};
 
 
 fn main() -> GraphResult<()> {
 
     let args: Vec<String> = env::args().collect();
-    if args.len() != 6 && args.len() != 7 {
+    if args.len() != 2 && args.len() != 3 {
         eprintln!(
-            "Usage: {} <country_name> <architecture> <approach> <start_node_osmid> <end_node_osmid> [socket_path]",
+            "Usage: {} <start_node_osmid> <end_node_osmid> [socket_path]",
             args[0]
         );
         std::process::exit(1);
     }
 
-    let country_name = &args[1];
-    let architecture = &args[2];
-    let approach_name = &args[3];
-    let start_node_osmid = &args[4];
-    let end_node_osmid = &args[5];
+    let start_node_osmid = &args[1];
+    let end_node_osmid = &args[2];
     let socket_path = args
-        .get(6)
+        .get(3)
         .map(|s| PathBuf::from(s))
         .unwrap_or_else(|| PathBuf::from("/tmp/geo_pir.sock"));
 
-    let approach = parse_approach(approach_name);
+    let mut client = GeoClient::new(socket_path)?;
 
-    let context = read_graph(
-        format!("./data/{}-navigation.edgelist", country_name),
-        format!("./data/{}-navigation.csv", country_name),
-    )?;
-
-    let server_handle = ServerHandle::connect(&socket_path)
-        .map_err(|e| format!("Failed to connect to server socket {}: {}", socket_path.display(), e))?;
-    let mut client = GeoClient::new(server_handle, &approach, architecture, &context.graph)?;
+    // I recalculate this so that I can print the correct values to stdout once I have the result
+    let edgelist_path = format!("./data/{:?}-navigation.edgelist", client.db_settings.country);
+    let nodes_path = format!("./data/{:?}-navigation.csv", client.db_settings.country);
+    let context = read_graph(&edgelist_path, &nodes_path)?;
 
     println!(
-        "Running A* from {} to {} in country {} using approach {} and architecture {} ...",
-        start_node_osmid, end_node_osmid, country_name, approach_name, architecture
+        "Running A* from {} to {} in country {:?} using approach {:?} and architecture {:?} ...",
+        start_node_osmid, end_node_osmid, client.db_settings.country, client.db_settings.approach, client.db_settings.architecture
     );
 
     let start_node = *context
