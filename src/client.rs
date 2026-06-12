@@ -5,7 +5,7 @@ use spiral_rs::params::Params;
 use crate::approaches::Approach;
 use crate::data_entries::*;
 use crate::graph::*;
-use crate::server::GeoServer;
+use crate::ipc::ServerHandle;
 use crate::spiral::DerivedPirLayout;
 use crate::spiral::make_params;
 use std::collections::{BinaryHeap, HashMap};
@@ -15,7 +15,7 @@ use std::io::{self};
 type TravelTime = u64; // travel time in seconds used for calculating total path cost
 
 pub struct GeoClient<'a> {
-    server: &'a GeoServer<'a>,
+    server: ServerHandle,
 
     approach: &'a Approach<'a>,
     block_params: Option<BlockParams>,
@@ -25,7 +25,7 @@ pub struct GeoClient<'a> {
 
     spiral_client: Client<'a>,
     records_per_pir_item: usize,
-    params: Box<Params>,
+    _params: Box<Params>,
 }
 
 #[derive(Debug, Clone)]
@@ -67,21 +67,18 @@ impl PartialOrd for AStarState {
 impl<'a> GeoClient<'a> {
     
     pub fn new(
-        server: &'a mut GeoServer<'a>, 
+        mut server: ServerHandle,
         approach: &'a Approach,
         _architecture: &str,
         graph: &'a EdgeListGraph,
-    ) -> Self {
-        
+    ) -> GraphResult<Self> {
         let mut block_params = None;
         if !approach.is_node_approach {
             block_params = Some(get_block_params(graph, approach.block_width));
         }
 
         // this is for spiral
-
-        // get server logical db to calculte paraps
-        let logical_db: LogicalDatabase = GeoClient::get_logical_db(server);
+        let logical_db: LogicalDatabase = GeoClient::get_logical_db(&mut server)?;
 
         let DerivedPirLayout {
             params,
@@ -90,8 +87,8 @@ impl<'a> GeoClient<'a> {
 
         // Box params so it has a stable heap address that won't change
         // when we move it into the struct.
-        let params = Box::new(params);
-        let params_ptr: *const Params = &*params;
+        let _params = Box::new(params);
+        let params_ptr: *const Params = &*_params;
 
         // SAFETY: params is heap-allocated via Box and we never move or drop it
         // before spiral_client. Both live in the returned GeoClient struct,
@@ -99,9 +96,9 @@ impl<'a> GeoClient<'a> {
         let mut spiral_client = Client::init(unsafe { &*params_ptr });
 
         let public_params: PublicParameters = spiral_client.generate_keys();
-        GeoClient::send_public_prams(server, &public_params);
+        GeoClient::send_public_prams(&mut server, &public_params)?;
 
-        GeoClient {
+        Ok(GeoClient {
             server,
             approach,
 
@@ -111,38 +108,36 @@ impl<'a> GeoClient<'a> {
 
             spiral_client,
             records_per_pir_item,
-            params,
-        }
+            _params,
+        })
     }
 
-    fn get_logical_db(server: &'a GeoServer<'a>) -> LogicalDatabase {
-        let server_bytes = server.get_logical_db();
+    fn get_logical_db(server: &mut ServerHandle) -> io::Result<LogicalDatabase> {
+        let server_bytes = server.get_logical_db()?;
         let logical_db: &LogicalDatabase = bytemuck::from_bytes(&server_bytes);
 
-        logical_db.clone()
+        Ok(logical_db.clone())
     }
     
-    fn get_congestion(server: &'a GeoServer<'a>) -> Vec<u16> {
-        let server_bytes = server.get_congestion();
-        let congestion: &Vec<u16> = bytemuck::from_bytes(&server_bytes);
+    fn get_congestion(server: &mut ServerHandle) -> io::Result<Vec<u16>> {
+        let server_bytes = server.get_congestion()?;
+        let congestion_slice: &[u16] = bytemuck::cast_slice(&server_bytes);
 
-        congestion
+        Ok(congestion_slice.to_vec())
     }
 
-    fn send_public_prams(server: &'a mut GeoServer<'a>, public_params: &PublicParameters)  {
+    fn send_public_prams(server: &mut ServerHandle, public_params: &PublicParameters) -> io::Result<()> {
         let bytes: Vec<u8> = public_params.serialize();
-        server.receive_public_params(bytes);
+        server.send_public_params(&bytes)
     }
 
-    fn send_query_server(&self, query : &Query) -> Vec<u8> {
+    fn send_query_server(&mut self, query: &Query) -> io::Result<Vec<u8>> {
         let data = query.serialize();
-        
-        let server_response = self.server.process_spiral_query(data);
-
-        server_response
+        let server_response = self.server.process_spiral_query(&data)?;
+        Ok(server_response)
     }
 
-    fn perform_spiral_request_node(&mut self, node_idx: NodeIndex) {
+    fn perform_spiral_request_node(&mut self, node_idx: NodeIndex) -> io::Result<()> {
 
         // * spiral query generation for node0
         let target_idx = node_idx.index();
@@ -150,7 +145,7 @@ impl<'a> GeoClient<'a> {
         let target_idx_clipped = target_pir_idx * self.records_per_pir_item;
 
         let query = self.spiral_client.generate_query(target_pir_idx);
-        let response = self.send_query_server(&query);
+        let response = self.send_query_server(&query)?;
 
         // * client side response decoding
         let result = self.spiral_client.decode_response(response.as_slice());
@@ -196,23 +191,25 @@ impl<'a> GeoClient<'a> {
             };
         }
 
+        Ok(())
     }
     
-    fn perform_spiral_request_block(&mut self, node_idx: NodeIndex) {
+    fn perform_spiral_request_block(&mut self, node_idx: NodeIndex) -> io::Result<()> {
 
         let block_parameters = self.block_params.as_ref().unwrap();
-
         let target_idx = *block_parameters.nodeidx_blockid_map.get(&node_idx).unwrap();
         let target_pir_idx = target_idx / self.records_per_pir_item; // this rounds down !
+        let nodes_per_block = block_parameters.nodes_per_block;
+        let _ = block_parameters;
 
         let query = self.spiral_client.generate_query(target_pir_idx);
 
-        let response = self.send_query_server(&query);
+        let response = self.send_query_server(&query)?;
 
         // * client side response decoding
         let result = self.spiral_client.decode_response(response.as_slice());
 
-        let num_bytes_in_block = block_parameters.nodes_per_block * std::mem::size_of::<BlockEntry>();
+        let num_bytes_in_block = nodes_per_block * std::mem::size_of::<BlockEntry>();
 
         // you receive multple entries for spiral
         for i in 0..self.records_per_pir_item {
@@ -227,6 +224,8 @@ impl<'a> GeoClient<'a> {
                 entry.extract_to_graph(self);
             }
         }
+
+        Ok(())
     }
 
     /// Get node information, querying the server if not cached
@@ -234,9 +233,9 @@ impl<'a> GeoClient<'a> {
 
         if !self.nodes_cache.contains_key(&node_idx) {
             if self.approach.is_node_approach {
-                self.perform_spiral_request_node(node_idx);
+                self.perform_spiral_request_node(node_idx)?;
             } else {
-                self.perform_spiral_request_block(node_idx);
+                self.perform_spiral_request_block(node_idx)?;
             }
         }
 
@@ -254,7 +253,7 @@ impl<'a> GeoClient<'a> {
     /// Run A* search from start osmid to goal osmid
     pub fn a_star_search(&mut self, start_node_idx: NodeIndex, goal_node_idx: NodeIndex) -> io::Result<Option<AStarResult>> {
 
-        let congestion = self.get_congestion();
+        let congestion = GeoClient::get_congestion(&mut self.server)?;
 
         let mut best_cost: HashMap<NodeIndex, TravelTime> = HashMap::new(); // this stores the best known cost to reach each node from the start node
         let mut best_source: HashMap<NodeIndex, NodeIndex> = HashMap::new(); // this stores the best known predecessor of each node on the optimal path from the start node (used for path reconstruction)

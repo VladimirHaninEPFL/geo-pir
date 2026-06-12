@@ -1,84 +1,95 @@
 use std::env;
+use std::path::PathBuf;
 
-use client::GeoClient;
-use graph::GraphResult;
-use server::GeoServer;
+use geo_pir::{approaches::Approach, client::GeoClient, graph::{read_graph, GraphResult}, ipc::ServerHandle};
 
-use crate::approaches::Approach;
-
-mod client;
-mod graph;
-mod server;
-mod spiral;
-mod data_entries;
-mod approaches;
-
-// todo: add network usage between client and server (or IPC, but have the proper separation)
-// todo: add singlepass !
+fn parse_approach(name: &str) -> Approach<'_> {
+    if name.contains("node") {
+        Approach {
+            name,
+            is_node_approach: true,
+            block_width: 0.0,
+        }
+    } else {
+        Approach {
+            name,
+            is_node_approach: false,
+            block_width: name
+                .trim_start_matches(|c: char| !c.is_ascii_digit())
+                .parse()
+                .unwrap_or(0.0),
+        }
+    }
+}
 
 fn main() -> GraphResult<()> {
-
-    // parse command line arguments
     let args: Vec<String> = env::args().collect();
-    if args.len() != 6 {
+    if args.len() != 6 && args.len() != 7 {
         eprintln!(
-            "Usage: {} <country_name> <architecture> <approach> <start_node_osmid> <end_node_osmid>",
+            "Usage: {} <country_name> <architecture> <approach> <start_node_osmid> <end_node_osmid> [socket_path]",
             args[0]
         );
         std::process::exit(1);
     }
 
-    let country_name = args.get(1).unwrap();
-    let architecture = args.get(2).unwrap();
-    let approach_name = args.get(3).unwrap();
-    let start_node_osmid = args.get(4).unwrap();
-    let end_node_osmid = args.get(5).unwrap();
+    let country_name = &args[1];
+    let architecture = &args[2];
+    let approach_name = &args[3];
+    let start_node_osmid = &args[4];
+    let end_node_osmid = &args[5];
+    let socket_path = args
+        .get(6)
+        .map(|s| PathBuf::from(s))
+        .unwrap_or_else(|| PathBuf::from("/tmp/geo_pir.sock"));
 
-    let approach: Approach;
-    if approach_name.contains("node") {
-        approach = Approach {
-            name: approach_name,
-            is_node_approach: true,
-            block_width: 0.,
-        }
-    } else {
-        approach = Approach {
-            name: approach_name,
-            is_node_approach: false,
-            block_width: approach_name.trim_start_matches(|c: char| !c.is_ascii_digit()).parse().unwrap(),
-        }
-    }
+    let approach = parse_approach(approach_name);
+    let context = read_graph(
+        format!("./data/{}-navigation.edgelist", country_name),
+        format!("./data/{}-navigation.csv", country_name),
+    )?;
 
-    let (mut server, context) = GeoServer::start(country_name, &approach, architecture)?;
-    let mut client = GeoClient::new(&mut server, &approach, architecture, &context.graph);
+    let server_handle = ServerHandle::connect(&socket_path)
+        .map_err(|e| format!("Failed to connect to server socket {}: {}", socket_path.display(), e))?;
+    let mut client = GeoClient::new(server_handle, &approach, architecture, &context.graph)?;
 
     println!(
-        "Running A* from {} to {} in country {} using approach {} and achitecture {} ...",
-        start_node_osmid, end_node_osmid, country_name, approach_name, architecture    
+        "Running A* from {} to {} in country {} using approach {} and architecture {} ...",
+        start_node_osmid, end_node_osmid, country_name, approach_name, architecture
     );
 
-    match client.a_star_search(*context.osmid_idx_map.get(start_node_osmid).unwrap(), *context.osmid_idx_map.get(end_node_osmid).unwrap())? {
+    let start_node = *context
+        .osmid_idx_map
+        .get(start_node_osmid)
+        .expect("start node not found in graph");
+    let end_node = *context
+        .osmid_idx_map
+        .get(end_node_osmid)
+        .expect("end node not found in graph");
+
+    match client.a_star_search(start_node, end_node)? {
         Some(result) => {
-
             println!("A* found a path with cost {:.6}", result.cost);
-
             println!("Path length: {} nodes", result.path.len());
-
-            println!("Path: {:?}", result.path.iter().map(|graph_idx| {
-                context.idx_osmid_map.get(graph_idx).unwrap()
-            }).collect::<Vec<_>>());
-
-            println!("Visited nodes: {:?}", result.visited_nodes.iter().map(|graph_idx| {
-                context.idx_osmid_map.get(graph_idx).unwrap()
-            }).collect::<Vec<_>>());
-
+            println!(
+                "Path: {:?}",
+                result
+                    .path
+                    .iter()
+                    .map(|graph_idx| context.idx_osmid_map.get(graph_idx).unwrap())
+                    .collect::<Vec<_>>()
+            );
+            println!(
+                "Visited nodes: {:?}",
+                result
+                    .visited_nodes
+                    .iter()
+                    .map(|graph_idx| context.idx_osmid_map.get(graph_idx).unwrap())
+                    .collect::<Vec<_>>()
+            );
             println!("Number of visited nodes: {}", result.visited_nodes.len());
         }
         None => {
-            println!(
-                "No path found between {} and {}",
-                start_node_osmid, end_node_osmid
-            );
+            println!("No path found between {} and {}", start_node_osmid, end_node_osmid);
         }
     }
 
