@@ -1,10 +1,13 @@
 use petgraph::graph::NodeIndex;
 use spiral_rs::client::{Client, PublicParameters};
+use spiral_rs::params::Params;
 
 use crate::approaches::Approach;
 use crate::data_entries::*;
 use crate::graph::*;
 use crate::server::GeoServer;
+use crate::spiral::DerivedPirLayout;
+use crate::spiral::make_params;
 use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
 use std::io::{self};
@@ -22,6 +25,7 @@ pub struct GeoClient<'a> {
 
     spiral_client: Client<'a>,
     records_per_pir_item: usize,
+    params: Box<Params>,
 }
 
 #[derive(Debug, Clone)]
@@ -76,15 +80,26 @@ impl<'a> GeoClient<'a> {
 
         // this is for spiral
 
-        // get server paraps
-        let server_params = &server.params;
-        let mut spiral_client = Client::init(server_params);
+        // get server logical db to calculte paraps
+        let logical_db: LogicalDatabase = GeoClient::get_logical_db(server);
+
+        let DerivedPirLayout {
+            params,
+            records_per_pir_item,
+        } = make_params(&logical_db);
+
+        // Box params so it has a stable heap address that won't change
+        // when we move it into the struct.
+        let params = Box::new(params);
+        let params_ptr: *const Params = &*params;
+
+        // SAFETY: params is heap-allocated via Box and we never move or drop it
+        // before spiral_client. Both live in the returned GeoClient struct,
+        // and params_ptr points to the stable Box address, not the stack.
+        let mut spiral_client = Client::init(unsafe { &*params_ptr });
 
         let public_params: PublicParameters = spiral_client.generate_keys();
-        server.public_params = Some(public_params); // send public params to the server
-
-        // get params from the server
-        let records_per_pir_item = server.records_per_pir_item;
+        GeoClient::send_public_prams(server, &public_params);
 
         GeoClient {
             server,
@@ -96,7 +111,20 @@ impl<'a> GeoClient<'a> {
 
             spiral_client,
             records_per_pir_item,
+            params,
         }
+    }
+
+    fn get_logical_db(server: &'a GeoServer<'a>) -> LogicalDatabase {
+        let server_bytes = server.get_logical_db();
+        let logical_db: &LogicalDatabase = bytemuck::from_bytes(&server_bytes);
+
+        logical_db.clone()
+    }
+
+    fn send_public_prams(server: &'a mut GeoServer<'a>, public_params: &PublicParameters)  {
+        let bytes: Vec<u8> = public_params.serialize();
+        server.receive_public_params(bytes);
     }
 
     fn perform_spiral_request_node(&mut self, node_idx: NodeIndex) {

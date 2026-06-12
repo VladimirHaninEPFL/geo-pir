@@ -16,9 +16,10 @@ pub struct GeoServer<'a> {
 
     // this is for spiral
     spiral_db: AlignedMemory<64>,
+
     pub params: Params,
     pub public_params: Option<PublicParameters<'a>>,
-    pub records_per_pir_item: usize,
+    pub logical_db: LogicalDatabase,
 }
 
 impl<'a> GeoServer<'a> {
@@ -35,6 +36,7 @@ impl<'a> GeoServer<'a> {
 
         let context = read_graph(&edgelist_path, &nodes_path)?;
 
+        // param generation
         let mut block_params: Option<BlockParams> = None;
         if !approach.is_node_approach {
             block_params = Some(get_block_params(&context.graph, approach.block_width));
@@ -45,7 +47,7 @@ impl<'a> GeoServer<'a> {
         // spiral setup
         let DerivedPirLayout {
             params,
-            records_per_pir_item,
+            records_per_pir_item: _,
         } = make_params(&logical_db);
 
         let num_bytes_in_db = params.num_items() * params.db_item_size;
@@ -53,7 +55,7 @@ impl<'a> GeoServer<'a> {
         let mut packed_db_reader = Cursor::new(packed_db_bytes);
         let spiral_db = load_db_from_seek(&params, &mut packed_db_reader);
 
-        Ok((GeoServer { spiral_db, params, public_params: None, records_per_pir_item, node_count: context.graph.node_count() }, context))
+        Ok((GeoServer { spiral_db, params, public_params: None, logical_db, node_count: context.graph.node_count() }, context))
     }
     
     pub fn build_packed_database(
@@ -160,5 +162,16 @@ impl<'a> GeoServer<'a> {
         }
 
         congestion
+    }
+
+    pub fn get_logical_db(&self) -> Vec<u8> {
+        let bytes: Vec<u8> = bytemuck::bytes_of(&self.logical_db).to_vec();
+        bytes
+    }
+
+    pub fn receive_public_params(&'a mut self, bytes: Vec<u8>) {
+        let public_params = PublicParameters::deserialize(&self.params, &bytes);
+
+        self.public_params = Some(public_params);
     }
 }

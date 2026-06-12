@@ -287,6 +287,8 @@ impl BlockEntry {
 
 }
 
+#[repr(C)]
+#[derive(Debug, Clone, Copy, Pod, Zeroable)]
 pub struct LogicalDatabase {
     pub num_records: usize,
     pub record_size_bytes: usize,
