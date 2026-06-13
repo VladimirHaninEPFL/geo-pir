@@ -3,7 +3,7 @@ use std::path::PathBuf;
 
 use geo_pir::{graph::GraphResult, server::GeoServer};
 
-// todo: have the server store the db in a file, instead of always generating it !
+// todo: when spiral server answers query, it regenerates the public parameters each time !
 
 fn main() -> GraphResult<()> {
 
