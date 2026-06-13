@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task 15
 #SBATCH --time 3:00:00
 #SBATCH --partition academic
-#SBATCH --mem 30G
+#SBATCH --mem 100G
 
 cd /home/hanin/geo-pir
 
@@ -21,10 +21,10 @@ rm -f $READY # making sure it is clean
 echo "-- starting server"
 cargo run --release --bin geo_server $COUNTRY $ARCHI $APPROACH $SOCK &
 
-# Wait for ready file (timeout 60s)
+# Wait for ready file (timeout 600s)
 for i in $(seq 1 600); do
     [ -f $READY ] && break
-    sleep 0.1
+    sleep 1
 done
 
 echo "-- Server ready to listen, starting clients"
@@ -34,7 +34,7 @@ START=$4
 for DEST in "${@:5}"; do
     FILE_RES=temp-$COUNTRY-$ARCHI-$APPROACH-$DEST.txt
 
-    cargo run --release --bin geo-pir $START $DEST $SOCK > $FILE_RES &&
+    cargo run --release --bin geo_client $START $DEST $SOCK > $FILE_RES &&
     python3 python/visualiseAStarResult.py $FILE_RES data/$COUNTRY-navigation.pickle $COUNTRY-$ARCHI-$APPROACH-$DEST
 done
 

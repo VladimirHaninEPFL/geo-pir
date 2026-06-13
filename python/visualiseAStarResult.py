@@ -22,13 +22,15 @@ def visualiseAStarSearch(G, params, outputPath=None):
         elif n in params["path"]:
             node_colors.append("green")
 
-        elif n in params["visited_nodes"]:
+        elif n in params["cached_nodes"]:
             node_colors.append("orange")
 
         else:
             node_colors.append("red")
 
     pos = {n: (d["lon"], d["lat"]) for n, d in G.nodes(data=True)}
+
+    number_cached_nodes = len(params["cached_nodes"])
 
     plt.figure(figsize=(12, 10), dpi=300)
     nx.draw(
@@ -43,13 +45,12 @@ def visualiseAStarSearch(G, params, outputPath=None):
     legend_elements = [
         Line2D([0], [0], marker="o", color="w", label="Start / End", markerfacecolor="black", markersize=6),
         Line2D([0], [0], marker="o", color="w", label="Best path", markerfacecolor="green", markersize=6),
-        Line2D([0], [0], marker="o", color="w", label="Visited", markerfacecolor="orange", markersize=6),
-        Line2D([0], [0], marker="o", color="w", label="Not visited", markerfacecolor="red", markersize=6),
+        Line2D([0], [0], marker="o", color="w", label=f"Cached nodes ({number_cached_nodes})", markerfacecolor="orange", markersize=6),
+        Line2D([0], [0], marker="o", color="w", label="Not cached", markerfacecolor="red", markersize=6),
     ]
     plt.legend(handles=legend_elements, loc="upper right")
     plt.title("Road network")
     plt.axis("equal")
-    plt.tight_layout()
     
     if outputPath is None:
         plt.show()
@@ -79,21 +80,19 @@ def extractAStarResultFromFile(file_path):
     else:
         path = []
 
-    # Extract visited nodes array
-    visited_match = re.search(r"Visited nodes: \s*\[(.*?)\]", text, re.DOTALL)
-    if visited_match:
-        visited_str = visited_match.group(1)
-        visited_nodes = re.findall(r"(\d+)", visited_str)
+    # Extract cached nodes array
+    caced_match = re.search(r"Cached nodes: \s*\[(.*?)\]", text, re.DOTALL)
+    if caced_match:
+        cahed_str = caced_match.group(1)
+        cached_nodes = re.findall(r"(\d+)", cahed_str)
     else:
-        visited_nodes = []
-    # print(f"Found {len(visited_nodes)} visited nodes")
-    # print(f"Visited nodes: {visited_nodes}")
+        cached_nodes = []
 
     return {
         "start_node": int(start_node),
         "end_node": int(end_node),
         "path": [int(n) for n in path],
-        "visited_nodes": set(int(n) for n in visited_nodes)
+        "cached_nodes": set(int(n) for n in cached_nodes)
     }
 
 def main():

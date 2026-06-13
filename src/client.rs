@@ -32,7 +32,7 @@ pub struct GeoClient<'a> {
 pub struct AStarResult {
     pub cost: TravelTime, // total cost of the optimal path found by A*
     pub path: Vec<NodeIndex>, // list of osmids representing the path from start to goal
-    pub visited_nodes: Vec<NodeIndex>, // list of osmids of all nodes that were visited during the search (for analysis/visualization)
+    pub cached_nodes: Vec<NodeIndex>, // list of osmids of all nodes that were visited during the search (for analysis/visualization)
 }
 
 #[derive(Debug, Clone)]
@@ -273,7 +273,7 @@ impl<'a> GeoClient<'a> {
                 return Ok(Some(AStarResult {
                     cost: curr_cost,
                     path,
-                    visited_nodes: self.nodes_cache.keys().cloned().collect(), // Collect visited nodes from the cache keys
+                    cached_nodes: self.nodes_cache.keys().cloned().collect(), // Collect visited nodes from the cache keys
                 }));
             }
 
