@@ -2,7 +2,7 @@ use spiral_rs::aligned_memory::AlignedMemory;
 use spiral_rs::client::{PublicParameters, Query};
 use spiral_rs::params::Params;
 use spiral_rs::server::{load_db_from_seek, process_query};
-use crate::db_settings::{Approaches, Countries, DBSettings};
+use crate::db_settings::{Approaches, Architectures, Countries, DBSettings};
 use crate::data_entries::{*};
 use crate::graph::{EdgeListGraph, GraphContext, GraphResult};
 use crate::ipc::{ClientRequest, ServerResponse};
@@ -20,10 +20,36 @@ pub struct GeoServer {
 
     db_settings: DBSettings,
 
-    // this is for spiral
-    spiral_db: AlignedMemory<64>,
+    spiral_settings: Option<SpiralSettings>,
+}
+
+pub struct SpiralSettings {
+    pub spiral_db: AlignedMemory<64>,
     pub spiral_params: Params,
     pub public_params_bytes: Option<Vec<u8>>,
+}
+
+impl SpiralSettings {
+
+    pub fn new(db_settings: &DBSettings, graph :&EdgeListGraph) -> Self {
+
+        // spiral setup
+        let DerivedPirLayout {
+            params,
+            records_per_pir_item: _,
+        } = make_params(&db_settings.logical_db);
+
+        let num_bytes_in_db = params.num_items() * params.db_item_size;
+        let packed_db_bytes = GeoServer::build_packed_database(&db_settings, num_bytes_in_db, &graph);
+        let mut packed_db_reader = Cursor::new(packed_db_bytes);
+        let spiral_db = load_db_from_seek(&params, &mut packed_db_reader);
+
+        SpiralSettings {
+            spiral_db,
+            spiral_params: params,
+            public_params_bytes: None,
+        }
+    }
 }
 
 impl GeoServer {
@@ -42,18 +68,16 @@ impl GeoServer {
 
         let db_settings = DBSettings::new(country_name, approach_name, architecture_name, &context.graph);
 
-        // spiral setup
-        let DerivedPirLayout {
-            params,
-            records_per_pir_item: _,
-        } = make_params(&db_settings.logical_db);
-
-        let num_bytes_in_db = params.num_items() * params.db_item_size;
-        let packed_db_bytes = GeoServer::build_packed_database(&db_settings, num_bytes_in_db, &context.graph);
-        let mut packed_db_reader = Cursor::new(packed_db_bytes);
-        let spiral_db = load_db_from_seek(&params, &mut packed_db_reader);
-
-        Ok(GeoServer { spiral_db, spiral_params: params, public_params_bytes: None, node_count: context.graph.node_count(), db_settings })
+        match db_settings.architecture {
+            Architectures::Spiral => {
+                let spiral_settings = SpiralSettings::new(&db_settings, &context.graph);
+                Ok(GeoServer { spiral_settings: Some(spiral_settings), node_count: context.graph.node_count(), db_settings })
+            }
+            Architectures::SinglePass => {
+                let spiral_settings = SpiralSettings::new(&db_settings, &context.graph);
+                Ok(GeoServer { spiral_settings: Some(spiral_settings), node_count: context.graph.node_count(), db_settings })
+            }
+        }
     }
     
     pub fn build_packed_database(
@@ -195,25 +219,27 @@ impl GeoServer {
                 ServerResponse::Ok
             }
             ClientRequest::ProcessQuery(data) => {
-                let result = self.process_spiral_query(data);
+                let result = self.process_query(data);
                 ServerResponse::QueryResult(result)
             }
             ClientRequest::GetCongestion => ServerResponse::Congestion(self.get_congestion()),
         }
     }
 
-    pub fn process_spiral_query(&self, data: Vec<u8>) -> Vec<u8> {
-        let public_params_bytes = self.public_params_bytes.as_ref().expect("public params not set");
-        let public_params = PublicParameters::deserialize(&self.spiral_params, public_params_bytes);
+    fn process_query(&self, data: Vec<u8>) -> Vec<u8> {
+        let spiral_settings = self.spiral_settings.as_ref().unwrap();
 
-        let query = Query::deserialize(&self.spiral_params, &data);
+        let public_params_bytes = spiral_settings.public_params_bytes.as_ref().expect("public params not set");
+        let public_params = PublicParameters::deserialize(&spiral_settings.spiral_params, public_params_bytes);
 
-        let response = process_query(&self.spiral_params, &public_params, &query, self.spiral_db.as_slice());
+        let query = Query::deserialize(&spiral_settings.spiral_params, &data);
+
+        let response = process_query(&spiral_settings.spiral_params, &public_params, &query, spiral_settings.spiral_db.as_slice());
 
         response
     }
 
-    pub fn get_congestion(&self) -> Vec<u8> {
+    fn get_congestion(&self) -> Vec<u8> {
 
         let mut congestion: Vec<u16> = vec![];
 
@@ -227,12 +253,13 @@ impl GeoServer {
         bytemuck::cast_slice(&congestion).to_vec()
     }
 
-    pub fn get_db_settings(&self) -> Vec<u8> {
+    fn get_db_settings(&self) -> Vec<u8> {
         let bytes = self.db_settings.serialize_to_bytes();
         bytes
     }
 
-    pub fn receive_public_params(&mut self, bytes: Vec<u8>) {
-        self.public_params_bytes = Some(bytes);
+    fn receive_public_params(&mut self, bytes: Vec<u8>) {
+        let spiral_settings = self.spiral_settings.as_mut().unwrap();
+        spiral_settings.public_params_bytes = Some(bytes);
     }
 }

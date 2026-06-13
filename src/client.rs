@@ -1,9 +1,9 @@
 use petgraph::graph::NodeIndex;
-use spiral_rs::client::{Client, PublicParameters, Query};
+use spiral_rs::client::{Client, PublicParameters};
 use spiral_rs::params::Params;
 
-use crate::db_settings::{Approaches, DBSettings};
-use crate::data_entries::*;
+use crate::db_settings::{Approaches, Architectures, DBSettings};
+use crate::{data_entries::*};
 use crate::graph::*;
 use crate::ipc::ServerHandle;
 use crate::spiral::DerivedPirLayout;
@@ -23,9 +23,38 @@ pub struct GeoClient<'a> {
     pub nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
     pub edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
 
+    spiral_settings: Option<SpiralSettings<'a>>,
+}
+
+struct SpiralSettings<'a> {
     spiral_client: Client<'a>,
     records_per_pir_item: usize,
     _params: Box<Params>,
+}
+impl<'a> SpiralSettings<'a> {
+
+    pub fn new(db_settings: &DBSettings, server_handle: &mut ServerHandle) -> Self {
+
+        let DerivedPirLayout {
+            params: params_spiral,
+            records_per_pir_item,
+        } = make_params(&db_settings.logical_db);
+
+        // Box params so it has a stable heap address that won't change
+        // when we move it into the struct.
+        let params = Box::new(params_spiral);
+        let params_ptr: *const Params = &*params;
+
+        // SAFETY: params is heap-allocated via Box and we never move or drop it
+        // before spiral_client. Both live in the returned GeoClient struct,
+        // and params_ptr points to the stable Box address, not the stack.
+        let mut spiral_client = Client::init(unsafe { &*params_ptr });
+
+        let public_params: PublicParameters = spiral_client.generate_keys();
+        GeoClient::send_spiral_public_prams(server_handle, &public_params).expect("didn't worked");
+
+        SpiralSettings { spiral_client, records_per_pir_item, _params: params }
+    }
 }
 
 #[derive(Debug, Clone)]
@@ -41,7 +70,6 @@ struct AStarState {
     f: TravelTime, // heuristic estimate from this node to the goal
     g: TravelTime, // cost from the start node to this node
 }
-
 impl Eq for AStarState {}
 impl PartialEq for AStarState {
     fn eq(&self, other: &Self) -> bool {
@@ -75,79 +103,82 @@ impl<'a> GeoClient<'a> {
 
         let db_settings  = GeoClient::get_db_settings(&mut server_handle)?;
 
-        // this is for spiral
-        let DerivedPirLayout {
-            params,
-            records_per_pir_item,
-        } = make_params(&db_settings.logical_db);
+        match db_settings.architecture {
+            Architectures::Spiral => {
+                let spiral_settings = SpiralSettings::new(&db_settings, &mut server_handle);
 
-        // Box params so it has a stable heap address that won't change
-        // when we move it into the struct.
-        let _params = Box::new(params);
-        let params_ptr: *const Params = &*_params;
+                Ok(GeoClient {
+                    server_handle,
+                    db_settings,
+                    nodes_cache: HashMap::new(),
+                    edges_cache: HashMap::new(),
 
-        // SAFETY: params is heap-allocated via Box and we never move or drop it
-        // before spiral_client. Both live in the returned GeoClient struct,
-        // and params_ptr points to the stable Box address, not the stack.
-        let mut spiral_client = Client::init(unsafe { &*params_ptr });
+                    spiral_settings: Some(spiral_settings),
+                })
+            }
+            Architectures::SinglePass => {
+                let spiral_settings = SpiralSettings::new(&db_settings, &mut server_handle);
 
-        let public_params: PublicParameters = spiral_client.generate_keys();
-        GeoClient::send_public_prams(&mut server_handle, &public_params)?;
+                Ok(GeoClient {
+                    server_handle,
+                    db_settings,
+                    nodes_cache: HashMap::new(),
+                    edges_cache: HashMap::new(),
 
-        Ok(GeoClient {
-            server_handle,
-
-            db_settings,
-
-            nodes_cache: HashMap::new(),
-            edges_cache: HashMap::new(),
-
-            spiral_client,
-            records_per_pir_item,
-            _params,
-        })
+                    spiral_settings: Some(spiral_settings),
+                })
+            }
+        }
     }
 
-    fn get_db_settings(server: &mut ServerHandle) -> io::Result<DBSettings> {
-        let server_bytes = server.get_db_settings()?;
+    fn get_db_settings(server_handle: &mut ServerHandle) -> io::Result<DBSettings> {
+        let server_bytes = server_handle.get_db_settings()?;
         let db_settings: DBSettings = DBSettings::deserialize_from_bytes(&server_bytes);
 
         Ok(db_settings)
     }
     
-    fn get_congestion(server: &mut ServerHandle) -> io::Result<Vec<u16>> {
-        let server_bytes = server.get_congestion()?;
+    fn get_congestion(server_handle: &mut ServerHandle) -> io::Result<Vec<u16>> {
+        let server_bytes = server_handle.get_congestion()?;
         let congestion_slice: &[u16] = bytemuck::cast_slice(&server_bytes);
 
         Ok(congestion_slice.to_vec())
     }
 
-    fn send_public_prams(server: &mut ServerHandle, public_params: &PublicParameters) -> io::Result<()> {
+    fn send_spiral_public_prams(server_handle: &mut ServerHandle, public_params: &PublicParameters) -> io::Result<()> {
         let bytes: Vec<u8> = public_params.serialize();
-        server.send_public_params(&bytes)
+        server_handle.send_public_params(&bytes)
     }
 
-    fn send_query_server(&mut self, query: &Query) -> io::Result<Vec<u8>> {
-        let data = query.serialize();
-        let server_response = self.server_handle.process_spiral_query(&data)?;
+    fn send_query_server(&mut self, data: &Vec<u8>) -> io::Result<Vec<u8>> {
+        let server_response = self.server_handle.process_query(data)?;
         Ok(server_response)
     }
 
     fn perform_spiral_request_node(&mut self, node_idx: NodeIndex) -> io::Result<()> {
 
-        // * spiral query generation for node0
-        let target_idx = node_idx.index();
-        let target_pir_idx = target_idx / self.records_per_pir_item; // this rounds down !
-        let target_idx_clipped = target_pir_idx * self.records_per_pir_item;
+        let (data, target_idx_clipped) = {
+            let spiral_settings = self.spiral_settings.as_mut().unwrap();
 
-        let query = self.spiral_client.generate_query(target_pir_idx);
-        let response = self.send_query_server(&query)?;
+            // * spiral query generation for node0
+            let target_idx = node_idx.index();
+            let target_pir_idx = target_idx / spiral_settings.records_per_pir_item; // this rounds down !
+            let target_idx_clipped = target_pir_idx * spiral_settings.records_per_pir_item;
+
+            let query = spiral_settings.spiral_client.generate_query(target_pir_idx);
+            let data = query.serialize();
+
+            (data, target_idx_clipped)
+        };
+
+        let response = self.send_query_server(&data)?;
 
         // * client side response decoding
-        let result = self.spiral_client.decode_response(response.as_slice());
+        let spiral_settings = self.spiral_settings.as_mut().unwrap();
+        let result = spiral_settings.spiral_client.decode_response(response.as_slice());
 
         // you receive multple entries for spiral
-        for i in 0..self.records_per_pir_item {
+        for i in 0..spiral_settings.records_per_pir_item {
 
             match self.db_settings.approach {
                 Approaches::Node0 => {
@@ -192,23 +223,30 @@ impl<'a> GeoClient<'a> {
     
     fn perform_spiral_request_block(&mut self, node_idx: NodeIndex) -> io::Result<()> {
 
-        let block_parameters = self.db_settings.block_params.as_ref().unwrap();
-        let target_idx = *block_parameters.nodeidx_blockid_map.get(&(node_idx.index() as u32)).unwrap();
-        let target_pir_idx = target_idx / self.records_per_pir_item; // this rounds down !
-        let nodes_per_block = block_parameters.nodes_per_block;
-        let _ = block_parameters;
+        let data = {
+            let spiral_settings = self.spiral_settings.as_mut().unwrap();
+            let block_parameters = self.db_settings.block_params.as_ref().unwrap();
+        
+            let target_idx = *block_parameters.nodeidx_blockid_map.get(&(node_idx.index() as u32)).unwrap();
+            let target_pir_idx = target_idx / spiral_settings.records_per_pir_item; // this rounds down !
+            let query = spiral_settings.spiral_client.generate_query(target_pir_idx);
+            let data = query.serialize();
 
-        let query = self.spiral_client.generate_query(target_pir_idx);
+            data
+        };
 
-        let response = self.send_query_server(&query)?;
+        let response = self.send_query_server(&data)?;
 
         // * client side response decoding
-        let result = self.spiral_client.decode_response(response.as_slice());
+        let spiral_settings = self.spiral_settings.as_mut().unwrap();
+        let block_parameters = self.db_settings.block_params.as_ref().unwrap();
 
-        let num_bytes_in_block = nodes_per_block * std::mem::size_of::<BlockEntry>();
+        let result = spiral_settings.spiral_client.decode_response(response.as_slice());
+
+        let num_bytes_in_block = block_parameters.nodes_per_block * std::mem::size_of::<BlockEntry>();
 
         // you receive multple entries for spiral
-        for i in 0..self.records_per_pir_item {
+        for i in 0..spiral_settings.records_per_pir_item {
 
             let start = i * num_bytes_in_block;
             let end = start + num_bytes_in_block;
@@ -228,9 +266,20 @@ impl<'a> GeoClient<'a> {
     fn get_node_data(&mut self, node_idx: NodeIndex) -> io::Result<&NodeData> {
 
         if !self.nodes_cache.contains_key(&node_idx) {
-            match self.db_settings.approach {
-                Approaches::Block(_)    => self.perform_spiral_request_block(node_idx)?,
-                _                       => self.perform_spiral_request_node(node_idx)?
+
+            match self.db_settings.architecture {
+                Architectures::Spiral => {
+                    match self.db_settings.approach {
+                        Approaches::Block(_)    => self.perform_spiral_request_block(node_idx)?,
+                        _                       => self.perform_spiral_request_node(node_idx)?
+                    }
+                },
+                Architectures::SinglePass => {
+                    match self.db_settings.approach {
+                        Approaches::Block(_)    => self.perform_spiral_request_block(node_idx)?,
+                        _                       => self.perform_spiral_request_node(node_idx)?
+                    }
+                }
             }
         }
 

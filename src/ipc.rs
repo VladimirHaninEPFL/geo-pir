@@ -85,7 +85,7 @@ impl ServerHandle {
         }
     }
 
-    pub fn process_spiral_query(&mut self, query: &[u8]) -> io::Result<Vec<u8>> {
+    pub fn process_query(&mut self, query: &[u8]) -> io::Result<Vec<u8>> {
         match self.request(ClientRequest::ProcessQuery(query.to_vec()))? {
             ServerResponse::QueryResult(response) => Ok(response),
             ServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
