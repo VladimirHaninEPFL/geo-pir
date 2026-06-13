@@ -8,22 +8,20 @@ use geo_pir::{graph::GraphResult, server::GeoServer};
 fn main() -> GraphResult<()> {
 
     let args: Vec<String> = env::args().collect();
-    if args.len() != 4 && args.len() != 5 {
+    if args.len() != 5 {
         eprintln!(
-            "Usage: {} <country_name> <architecture> <approach> [socket_path]",
+            "Usage: {} <country_name> <architecture> <approach> <socket_path>",
             args[0]
         );
         std::process::exit(1);
     }
 
     let country_name = &args[1];
-    let architecture = &args[2];
+    let architecture_name = &args[2];
     let approach_name = &args[3];
-    let socket_path = args.get(4)
-        .map(|s| PathBuf::from(s))
-        .unwrap_or_else(|| PathBuf::from("/tmp/geo_pir.sock"));
+    let socket_path = PathBuf::from(&args[4]);
 
-    let mut server = GeoServer::new(country_name, approach_name, architecture)?;
+    let mut server = GeoServer::new(country_name, approach_name, architecture_name)?;
 
     println!("Starting GeoServer on socket {} ...", socket_path.display());
     server.serve_socket(&socket_path)?;

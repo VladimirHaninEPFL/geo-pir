@@ -2,9 +2,9 @@ use spiral_rs::aligned_memory::AlignedMemory;
 use spiral_rs::client::{PublicParameters, Query};
 use spiral_rs::params::Params;
 use spiral_rs::server::{load_db_from_seek, process_query};
-use crate::db_settings::{Approaches, DBSettings};
+use crate::db_settings::{Approaches, Countries, DBSettings};
 use crate::data_entries::{*};
-use crate::graph::{EdgeListGraph, GraphResult, read_graph};
+use crate::graph::{EdgeListGraph, GraphContext, GraphResult};
 use crate::ipc::{ClientRequest, ServerResponse};
 use crate::spiral::{DerivedPirLayout, make_params};
 
@@ -31,15 +31,16 @@ impl GeoServer {
     pub fn new(
         country_name: &str,
         approach_name: &str,
-        architecture: &str,
+        architecture_name: &str,
     ) -> GraphResult<Self> {
 
-        // these files contain the osmid of the nodes and the travel time between them, respectively
-        let edgelist_path = format!("./data/{}-navigation.edgelist", country_name);
-        let nodes_path = format!("./data/{}-navigation.csv", country_name);
-        let context = read_graph(&edgelist_path, &nodes_path)?;
 
-        let db_settings = DBSettings::new(country_name, approach_name, architecture, &context.graph);
+        let country = country_name
+            .parse::<Countries>()
+            .expect("unknown country name");
+        let context = GraphContext::load(&country)?;
+
+        let db_settings = DBSettings::new(country_name, approach_name, architecture_name, &context.graph);
 
         // spiral setup
         let DerivedPirLayout {

@@ -1,4 +1,4 @@
-use std::{collections::HashMap, str::FromStr};
+use std::{collections::HashMap, fmt, str::FromStr};
 use serde::{Serialize, Deserialize};
 use crate::{data_entries::*, graph::EdgeListGraph};
 
@@ -120,6 +120,14 @@ impl FromStr for Countries {
             "France" => Ok(Countries::France),
 
             _ => Err(format!("unknown country: {s}")),
+        }
+    }
+}
+impl fmt::Display for Countries {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match self {
+            Countries::Switzerland   => write!(f, "Switzerland"),
+            Countries::France   => write!(f, "France"),
         }
     }
 }

@@ -54,6 +54,7 @@ def visualiseAStarSearch(G, params, outputPath=None):
     if outputPath is None:
         plt.show()
     else:
+        print(f"Image generated to {outputPath} ! ")
         plt.savefig(outputPath)
 
 
@@ -85,8 +86,8 @@ def extractAStarResultFromFile(file_path):
         visited_nodes = re.findall(r"(\d+)", visited_str)
     else:
         visited_nodes = []
-    print(f"Found {len(visited_nodes)} visited nodes")
-    print(f"Visited nodes: {visited_nodes}")
+    # print(f"Found {len(visited_nodes)} visited nodes")
+    # print(f"Visited nodes: {visited_nodes}")
 
     return {
         "start_node": int(start_node),
