@@ -190,7 +190,21 @@ impl FromStr for Approaches {
         }
     }
 }
-
+impl fmt::Display for Approaches {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match self {
+            Approaches::Node0   => write!(f, "node0"),
+            Approaches::Node1   => write!(f, "node1"),
+            Approaches::Node2   => write!(f, "node2"),
+            Approaches::Node3   => write!(f, "node3"),
+            Approaches::Block(0.1)   => write!(f, "block0.1"),
+            Approaches::Block(0.25)   => write!(f, "block0.25"),
+            Approaches::Block(0.5)   => write!(f, "block0.5"),
+            Approaches::Block(1.)   => write!(f, "block1"),
+            _   => write!(f, "block1"),
+        }
+    }
+}
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LogicalDatabase {
     pub num_records: usize,
@@ -202,7 +216,6 @@ impl LogicalDatabase {
     pub fn new(approach: &Approaches, graph: &EdgeListGraph, block_params: &Option<BlockParams>) -> LogicalDatabase {
     
         match approach {
-
             Approaches::Node0 => LogicalDatabase {
                                     num_records: graph.node_count(),
                                     record_size_bytes: std::mem::size_of::<Node0Entry>()

@@ -5,19 +5,37 @@ use std::os::unix::net::UnixStream;
 use std::path::Path;
 
 #[derive(Serialize, Deserialize, Debug)]
-pub enum ClientRequest {
-    SendPublicParams(Vec<u8>),
-    ProcessQuery(Vec<u8>),
+pub enum SpiralClientRequest {
     GetCongestion,
     GetDBSettings,
+    SendPublicParams(Vec<u8>),
+    ProcessQuery(Vec<u8>),
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-pub enum ServerResponse {
-    Ok,
-    QueryResult(Vec<u8>),
+pub enum SinglePassClientRequest {
+    GetCongestion,
+    GetDBSettings,
+    GetHints(Vec<u8>),
+    ProcessQuery(Vec<u8>),
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub enum SinglePassServerResponse {
     Congestion(Vec<u8>),
     DBSettings(Vec<u8>),
+    QueryResult(Vec<u8>),
+    HintResponse(Vec<u8>),
+    Ok,
+    Error(String),
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub enum SpiralServerResponse {
+    Congestion(Vec<u8>),
+    DBSettings(Vec<u8>),
+    QueryResult(Vec<u8>),
+    Ok,
     Error(String),
 }
 
@@ -58,15 +76,15 @@ impl ServerHandle {
         Ok(ServerHandle { stream })
     }
 
-    fn request(&mut self, request: ClientRequest) -> io::Result<ServerResponse> {
+    fn request(&mut self, request: SpiralClientRequest) -> io::Result<SpiralServerResponse> {
         send_message(&mut self.stream, &request)?;
         receive_message(&mut self.stream)
     }
 
     pub fn get_db_settings(&mut self) -> io::Result<Vec<u8>> {
-        match self.request(ClientRequest::GetDBSettings)? {
-            ServerResponse::DBSettings(bytes) => Ok(bytes),
-            ServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
+        match self.request(SpiralClientRequest::GetDBSettings)? {
+            SpiralServerResponse::DBSettings(bytes) => Ok(bytes),
+            SpiralServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(
                 io::ErrorKind::InvalidData,
                 format!("unexpected response type: {:?}", other),
@@ -75,9 +93,9 @@ impl ServerHandle {
     }
 
     pub fn send_public_params(&mut self, bytes: &[u8]) -> io::Result<()> {
-        match self.request(ClientRequest::SendPublicParams(bytes.to_vec()))? {
-            ServerResponse::Ok => Ok(()),
-            ServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
+        match self.request(SpiralClientRequest::SendPublicParams(bytes.to_vec()))? {
+            SpiralServerResponse::Ok => Ok(()),
+            SpiralServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(
                 io::ErrorKind::InvalidData,
                 format!("unexpected response type: {:?}", other),
@@ -86,9 +104,9 @@ impl ServerHandle {
     }
 
     pub fn process_query(&mut self, query: &[u8]) -> io::Result<Vec<u8>> {
-        match self.request(ClientRequest::ProcessQuery(query.to_vec()))? {
-            ServerResponse::QueryResult(response) => Ok(response),
-            ServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
+        match self.request(SpiralClientRequest::ProcessQuery(query.to_vec()))? {
+            SpiralServerResponse::QueryResult(response) => Ok(response),
+            SpiralServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(
                 io::ErrorKind::InvalidData,
                 format!("unexpected response type: {:?}", other),
@@ -97,9 +115,9 @@ impl ServerHandle {
     }
 
     pub fn get_congestion(&mut self) -> io::Result<Vec<u8>> {
-        match self.request(ClientRequest::GetCongestion)? {
-            ServerResponse::Congestion(bytes) => Ok(bytes),
-            ServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
+        match self.request(SpiralClientRequest::GetCongestion)? {
+            SpiralServerResponse::Congestion(bytes) => Ok(bytes),
+            SpiralServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(
                 io::ErrorKind::InvalidData,
                 format!("unexpected response type: {:?}", other),
