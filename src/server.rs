@@ -33,7 +33,7 @@ impl SinglePassSettings {
     pub fn new(db_settings: &DBSettings, graph :&EdgeListGraph) -> Self {
 
         let set_size = (db_settings.logical_db.num_records as f64).sqrt().ceil() as usize;
-        let padded_rows = ((db_settings.logical_db.num_records + set_size - 1) / set_size) * set_size;
+        let padded_rows = ((db_settings.logical_db.num_records + (set_size - 1)) / set_size) * set_size;
 
         // here we must create the database for the SinglePass server, its too hard for it to do it
         // we pass the path to the db as command line argument
@@ -58,7 +58,9 @@ impl SinglePassSettings {
         );
         sleep(time::Duration::from_secs(10)); // wait for the spiral server to have started
 
-        SinglePassSettings { child_socket: socket_child }
+        SinglePassSettings {
+            child_socket: socket_child,
+        }
     }
 }
 
@@ -111,7 +113,6 @@ impl GeoServer {
         let country = country_name
             .parse::<Countries>()
             .expect("unknown country name");
-
         let context = GraphContext::load(&country)?;
 
         let db_settings = DBSettings::new(country_name, approach_name, architecture_name, &context.graph);
@@ -119,13 +120,22 @@ impl GeoServer {
         match db_settings.architecture {
             Architectures::Spiral => {
                 let spiral_settings = SpiralSettings::new(&db_settings, &context.graph);
-                Ok(GeoServer { spiral_settings: Some(spiral_settings), singlepass_settings: None, node_count: context.graph.node_count(), db_settings })
+                Ok(GeoServer {
+                    spiral_settings: Some(spiral_settings), 
+                    singlepass_settings: None,
+                    node_count: context.graph.node_count(), 
+                    db_settings
+                })
             }
 
             Architectures::SinglePass => {
-
                 let singlepass_settings = SinglePassSettings::new(&db_settings, &context.graph);
-                Ok(GeoServer { spiral_settings: None, singlepass_settings: Some(singlepass_settings), node_count: context.graph.node_count(), db_settings })
+                Ok(GeoServer {
+                    spiral_settings: None, 
+                    singlepass_settings: Some(singlepass_settings), 
+                    node_count: context.graph.node_count(), 
+                    db_settings
+                })
             }
         }
     }
@@ -292,13 +302,13 @@ impl GeoServer {
         match request {
             SinglePassClientRequest::GetDBSettings => SinglePassServerResponse::DBSettings(self.get_db_settings()),
             SinglePassClientRequest::GetCongestion => SinglePassServerResponse::Congestion(self.get_congestion()),
-            SinglePassClientRequest::ProcessQuery(data) => {
-                let result = self.process_singlepass_query(data);
-                SinglePassServerResponse::QueryResult(result)
-            }
             SinglePassClientRequest::GetHints(data) => {
                 let result = self.process_singlepass_hints(data);
                 SinglePassServerResponse::HintResponse(result)
+            }
+            SinglePassClientRequest::ProcessQuery(data) => {
+                let result = self.process_singlepass_query(data);
+                SinglePassServerResponse::QueryResult(result)
             }
         }
     }
@@ -318,7 +328,12 @@ impl GeoServer {
         }
     }
 
+    fn process_singlepass_hints(&self, data: Vec<u8>) -> Vec<u8> {
+        vec![]
+    }
+
     fn process_singlepass_query(&self, data: Vec<u8>) -> Vec<u8> {
+        vec![]
     }
 
     fn process_spiral_query(&self, data: Vec<u8>) -> Vec<u8> {
