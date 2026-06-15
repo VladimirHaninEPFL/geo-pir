@@ -257,10 +257,7 @@ impl GeoServer {
 
         let listener = UnixListener::bind(socket_path)?;
 
-        // send signal to the geo client that server is ready
-        let ready_path = socket_path.with_extension("ready");
-        std::fs::write(&ready_path, std::process::id().to_string())?;
-
+        // listen to as many clients as needed
         for connection in listener.incoming() {
             println!("GeoServer accepted new connection to a GeoClient");
 

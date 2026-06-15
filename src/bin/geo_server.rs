@@ -24,6 +24,11 @@ fn main() -> GraphResult<()> {
     let mut server = GeoServer::new(country_name, architecture_name, approach_name)?;
 
     if socket_name.is_none() {
+        let socket_path_name = format!("/tmp/{}-{}-{}.sock", country_name, architecture_name, approach_name);
+        println!("Starting GeoServer on socket {} ...", socket_path_name);
+
+        let socket_path = PathBuf::from(socket_path_name);
+        server.serve_socket(&socket_path)?;
     } else {
         let socket_path_name = format!("/tmp/{}-{}_{}-{}.sock", country_name, architecture_name, socket_name.unwrap(), approach_name);
         println!("Starting GeoServer on socket {} ...", socket_path_name);

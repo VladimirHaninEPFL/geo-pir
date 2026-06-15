@@ -3,6 +3,8 @@ use serde::{de::DeserializeOwned, Deserialize, Serialize};
 use std::io::{self, Read, Write};
 use std::os::unix::net::UnixStream;
 use std::path::Path;
+use std::thread::sleep;
+use std::time;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub enum SpiralClientRequest {
@@ -84,8 +86,14 @@ pub struct ServerHandle {
 impl ServerHandle {
     
     pub fn connect<P: AsRef<Path>>(socket_path: P) -> io::Result<Self> {
-        let stream = UnixStream::connect(socket_path)?;
-        Ok(ServerHandle { stream })
+
+        // block until you are connected
+        loop {
+            match UnixStream::connect(&socket_path) {
+                Ok(stream) => return Ok(ServerHandle { stream }),
+                Err(_) => sleep(time::Duration::from_millis(50)),
+            }
+        }
     }
 
     fn spiral_request(&mut self, request: SpiralClientRequest) -> io::Result<SpiralServerResponse> {
