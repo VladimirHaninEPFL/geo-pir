@@ -10,7 +10,7 @@ use crate::spiral::{DerivedPirLayout, make_params};
 
 use core::time;
 use std::fs::{self, File};
-use std::io::{self, BufReader, BufWriter, Cursor, Read, Write};
+use std::io::{self, BufReader, BufWriter, Write};
 use std::os::unix::net::{UnixListener, UnixStream};
 use std::path::{Path, PathBuf};
 use std::process::{Child, Command};
@@ -27,7 +27,7 @@ pub struct GeoServer {
 }
 
 pub struct SinglePassSettings {
-    child_socket: PathBuf,
+    pub stream_child: UnixStream,
 }
 impl SinglePassSettings {
     pub fn new(db_settings: &DBSettings, graph :&EdgeListGraph) -> Self {
@@ -50,7 +50,7 @@ impl SinglePassSettings {
 
         // start the go singlepass server
         let socket_child = PathBuf::from(format!("/tmp/SinglePass-server-{}-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string()));
-        let _child = GeoServer::spawn_singlepass_server(
+        let _child = SinglePassSettings::spawn_singlepass_server(
             &path_db,
             padded_rows, 
             db_settings.logical_db.record_size_bytes, 
@@ -58,10 +58,23 @@ impl SinglePassSettings {
         );
         sleep(time::Duration::from_secs(10)); // wait for the spiral server to have started
 
+        // connect once to the child
+        let stream_child = UnixStream::connect(&socket_child).expect("oui");
+
         SinglePassSettings {
-            child_socket: socket_child,
+            stream_child,
         }
     }
+
+    fn spawn_singlepass_server(db_path: &PathBuf, num_rows: usize, len_rows: usize, socket_path: &PathBuf) -> Child {
+        Command::new("/home/hanin/SinglePass/pir-server")         
+            .arg(db_path)
+            .arg(num_rows.to_string())
+            .arg(len_rows.to_string())
+            .arg(socket_path)
+            .spawn()
+            .expect("failed to spawn pir-server")
+    } 
 }
 
 pub struct SpiralSettings {
@@ -139,16 +152,6 @@ impl GeoServer {
             }
         }
     }
-
-    fn spawn_singlepass_server(db_path: &PathBuf, num_rows: usize, len_rows: usize, socket_path: &PathBuf) -> Child {
-        Command::new("/home/hanin/SinglePass/pir-server")         
-            .arg(db_path)
-            .arg(num_rows.to_string())
-            .arg(len_rows.to_string())
-            .arg(socket_path)
-            .spawn()
-            .expect("failed to spawn pir-server")
-    } 
 
     pub fn build_packed_database(
         db_settings: &DBSettings,
@@ -306,7 +309,7 @@ impl GeoServer {
                 let result = self.process_singlepass_hints(data);
                 SinglePassServerResponse::HintResponse(result)
             }
-            SinglePassClientRequest::ProcessQuery(data) => {
+            SinglePassClientRequest::Query(data) => {
                 let result = self.process_singlepass_query(data);
                 SinglePassServerResponse::QueryResult(result)
             }
@@ -321,19 +324,45 @@ impl GeoServer {
                 self.receive_public_params(bytes);
                 SpiralServerResponse::Ok
             }
-            SpiralClientRequest::ProcessQuery(data) => {
+            SpiralClientRequest::Query(data) => {
                 let result = self.process_spiral_query(data);
                 SpiralServerResponse::QueryResult(result)
             }
         }
     }
 
-    fn process_singlepass_hints(&self, data: Vec<u8>) -> Vec<u8> {
-        vec![]
+    fn process_singlepass_hints(&mut self, hint_request: Vec<u8>) -> Vec<u8> {
+
+        let mut stream_child = &mut self.singlepass_settings.as_mut().unwrap().stream_child;
+
+        // send the type of message first
+        let msg_type_data = vec![1_u8];
+        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &msg_type_data).expect("oui");
+
+        // now send the content
+        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &hint_request).expect("oui");
+
+        // now read the hint response
+        let hint_response = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child).expect("oui");
+
+        hint_response
     }
 
-    fn process_singlepass_query(&self, data: Vec<u8>) -> Vec<u8> {
-        vec![]
+    fn process_singlepass_query(&mut self, query_data: Vec<u8>) -> Vec<u8> {
+
+        let mut stream_child = &mut self.singlepass_settings.as_mut().unwrap().stream_child;
+
+        // send the type of message first
+        let msg_type_data = vec![2_u8];
+        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &msg_type_data).expect("oui");
+
+        // now send the content
+        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &query_data).expect("oui");
+
+        // now read the repsonse data
+        let query_response = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child).expect("oui");
+
+        query_response
     }
 
     fn process_spiral_query(&self, data: Vec<u8>) -> Vec<u8> {

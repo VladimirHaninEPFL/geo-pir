@@ -8,35 +8,39 @@ use std::path::Path;
 pub enum SpiralClientRequest {
     GetCongestion,
     GetDBSettings,
+    Query(Vec<u8>),
+
     SendPublicParams(Vec<u8>),
-    ProcessQuery(Vec<u8>),
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub enum SinglePassClientRequest {
     GetCongestion,
     GetDBSettings,
+    Query(Vec<u8>),
+
     GetHints(Vec<u8>),
-    ProcessQuery(Vec<u8>),
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub enum SinglePassServerResponse {
     Congestion(Vec<u8>),
     DBSettings(Vec<u8>),
-    QueryResult(Vec<u8>),
-    HintResponse(Vec<u8>),
     Ok,
     Error(String),
+
+    QueryResult(Vec<u8>),
+    HintResponse(Vec<u8>),
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub enum SpiralServerResponse {
     Congestion(Vec<u8>),
     DBSettings(Vec<u8>),
-    QueryResult(Vec<u8>),
     Ok,
     Error(String),
+
+    QueryResult(Vec<u8>),
 }
 
 fn bincode_error_to_io(error: Box<bincode::ErrorKind>) -> io::Error {
@@ -69,20 +73,25 @@ pub(crate) fn receive_message<T: DeserializeOwned>(stream: &mut impl Read) -> io
 pub struct ServerHandle {
     stream: UnixStream,
 }
-
 impl ServerHandle {
+    
     pub fn connect<P: AsRef<Path>>(socket_path: P) -> io::Result<Self> {
         let stream = UnixStream::connect(socket_path)?;
         Ok(ServerHandle { stream })
     }
 
-    fn request(&mut self, request: SpiralClientRequest) -> io::Result<SpiralServerResponse> {
+    fn spiral_request(&mut self, request: SpiralClientRequest) -> io::Result<SpiralServerResponse> {
+        send_message(&mut self.stream, &request)?;
+        receive_message(&mut self.stream)
+    }
+
+    fn singlepass_request(&mut self, request: SinglePassClientRequest) -> io::Result<SinglePassServerResponse> {
         send_message(&mut self.stream, &request)?;
         receive_message(&mut self.stream)
     }
 
     pub fn get_db_settings(&mut self) -> io::Result<Vec<u8>> {
-        match self.request(SpiralClientRequest::GetDBSettings)? {
+        match self.spiral_request(SpiralClientRequest::GetDBSettings)? {
             SpiralServerResponse::DBSettings(bytes) => Ok(bytes),
             SpiralServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(
@@ -92,8 +101,8 @@ impl ServerHandle {
         }
     }
 
-    pub fn send_public_params(&mut self, bytes: &[u8]) -> io::Result<()> {
-        match self.request(SpiralClientRequest::SendPublicParams(bytes.to_vec()))? {
+    pub fn send_spiral_public_params(&mut self, bytes: &[u8]) -> io::Result<()> {
+        match self.spiral_request(SpiralClientRequest::SendPublicParams(bytes.to_vec()))? {
             SpiralServerResponse::Ok => Ok(()),
             SpiralServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(
@@ -103,8 +112,19 @@ impl ServerHandle {
         }
     }
 
-    pub fn process_query(&mut self, query: &[u8]) -> io::Result<Vec<u8>> {
-        match self.request(SpiralClientRequest::ProcessQuery(query.to_vec()))? {
+    pub fn send_singlepass_hint_request(&mut self, bytes: &[u8]) -> io::Result<Vec<u8>> {
+        match self.singlepass_request(SinglePassClientRequest::GetHints(bytes.to_vec()))? {
+            SinglePassServerResponse::HintResponse(response) => Ok(response),
+            SinglePassServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
+            other => Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                format!("unexpected response type: {:?}", other),
+            )),
+        }
+    }
+
+    pub fn send_spiral_query(&mut self, query: &[u8]) -> io::Result<Vec<u8>> {
+        match self.spiral_request(SpiralClientRequest::Query(query.to_vec()))? {
             SpiralServerResponse::QueryResult(response) => Ok(response),
             SpiralServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(
@@ -113,9 +133,20 @@ impl ServerHandle {
             )),
         }
     }
+    
+    pub fn send_singlepass_query(&mut self, query: &[u8]) -> io::Result<Vec<u8>> {
+        match self.singlepass_request(SinglePassClientRequest::Query(query.to_vec()))? {
+            SinglePassServerResponse::QueryResult(response) => Ok(response),
+            SinglePassServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
+            other => Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                format!("unexpected response type: {:?}", other),
+            )),
+        }
+    }
 
     pub fn get_congestion(&mut self) -> io::Result<Vec<u8>> {
-        match self.request(SpiralClientRequest::GetCongestion)? {
+        match self.spiral_request(SpiralClientRequest::GetCongestion)? {
             SpiralServerResponse::Congestion(bytes) => Ok(bytes),
             SpiralServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(

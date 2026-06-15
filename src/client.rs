@@ -1,4 +1,4 @@
-use petgraph::graph::NodeIndex;
+use petgraph::graph::{NodeIndex};
 use spiral_rs::client::{Client, PublicParameters};
 use spiral_rs::params::Params;
 
@@ -11,51 +11,15 @@ use crate::spiral::make_params;
 use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
 use std::io::{self};
+use std::os::unix::net::UnixStream;
 use std::path::PathBuf;
+use std::process::{Child, Command};
+use std::thread::sleep;
+use std::{time};
+
+
 
 type TravelTime = u64; // travel time in seconds used for calculating total path cost
-
-pub struct GeoClient<'a> {
-    server_handle: ServerHandle,
-
-    pub db_settings: DBSettings,
-
-    pub nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
-    pub edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
-
-    spiral_settings: Option<SpiralSettings<'a>>,
-}
-
-struct SpiralSettings<'a> {
-    spiral_client: Client<'a>,
-    records_per_pir_item: usize,
-    _params: Box<Params>,
-}
-impl<'a> SpiralSettings<'a> {
-
-    pub fn new(db_settings: &DBSettings, server_handle: &mut ServerHandle) -> Self {
-
-        let DerivedPirLayout {
-            params: params_spiral,
-            records_per_pir_item,
-        } = make_params(&db_settings.logical_db);
-
-        // Box params so it has a stable heap address that won't change
-        // when we move it into the struct.
-        let params = Box::new(params_spiral);
-        let params_ptr: *const Params = &*params;
-
-        // SAFETY: params is heap-allocated via Box and we never move or drop it
-        // before spiral_client. Both live in the returned GeoClient struct,
-        // and params_ptr points to the stable Box address, not the stack.
-        let mut spiral_client = Client::init(unsafe { &*params_ptr });
-
-        let public_params: PublicParameters = spiral_client.generate_keys();
-        GeoClient::send_spiral_public_prams(server_handle, &public_params).expect("didn't worked");
-
-        SpiralSettings { spiral_client, records_per_pir_item, _params: params }
-    }
-}
 
 #[derive(Debug, Clone)]
 pub struct AStarResult {
@@ -92,40 +56,144 @@ impl PartialOrd for AStarState {
     }
 }
 
+
+
+pub struct GeoClient<'a> {
+    server_handle: ServerHandle,
+    server_handle2: Option<ServerHandle>,
+
+    pub db_settings: DBSettings,
+
+    pub nodes_cache: HashMap<NodeIndex, NodeData>, // map from node idx to NodeData for caching node information
+    pub edges_cache: HashMap<NodeIndex, Vec<(NodeIndex, TravelTimeEdge)>>, // map from node idx to list of (neighbor_node_idx, travel_time_edge) for caching outgoing edges
+
+    spiral_settings: Option<SpiralSettings<'a>>,
+    singlepass_settings: Option<SinglePassSettings>,
+}
+
+struct SpiralSettings<'a> {
+    spiral_client: Client<'a>,
+    records_per_pir_item: usize,
+    _params: Box<Params>,
+}
+impl<'a> SpiralSettings<'a> {
+
+    pub fn new(db_settings: &DBSettings, server_handle: &mut ServerHandle) -> Self {
+
+        let DerivedPirLayout {
+            params: params_spiral,
+            records_per_pir_item,
+        } = make_params(&db_settings.logical_db);
+
+        // Box params so it has a stable heap address that won't change
+        // when we move it into the struct.
+        let params = Box::new(params_spiral);
+        let params_ptr: *const Params = &*params;
+
+        // SAFETY: params is heap-allocated via Box and we never move or drop it
+        // before spiral_client. Both live in the returned GeoClient struct,
+        // and params_ptr points to the stable Box address, not the stack.
+        let mut spiral_client = Client::init(unsafe { &*params_ptr });
+
+        // OFFLINE PHASE OF SPIRAL
+        let public_params: PublicParameters = spiral_client.generate_keys();
+        SpiralSettings::send_spiral_public_prams(server_handle, &public_params).expect("didn't worked");
+
+        SpiralSettings { spiral_client, records_per_pir_item, _params: params }
+    }
+
+    fn send_spiral_public_prams(server_handle: &mut ServerHandle, public_params: &PublicParameters) -> io::Result<()> {
+        let bytes: Vec<u8> = public_params.serialize();
+        server_handle.send_spiral_public_params(&bytes)
+    }
+}
+
+struct SinglePassSettings {
+    pub stream_child: UnixStream,
+}
+impl SinglePassSettings {
+
+    pub fn new(db_settings: &DBSettings, server_handle: &mut ServerHandle) -> Self {
+
+        // * start the child spiral client
+        let set_size = (db_settings.logical_db.num_records as f64).sqrt().ceil() as usize;
+        let socket_child = PathBuf::from(format!("/tmp/SinglePass-client-{}-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string()));
+        let _child = SinglePassSettings::spawn_singlepass_client(
+            set_size,
+            &socket_child
+        );
+        sleep(time::Duration::from_secs(10)); // wait for the spiral client to have started
+        let mut stream_child = UnixStream::connect(&socket_child).expect("oui");
+
+        // START THE OFFLINE PHASE OF SINGLEPASS
+        // first the client generated a hint request, that we forward to the first server
+        let hint_request = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child).expect("oui");
+        let hint_response = server_handle.send_singlepass_hint_request(&hint_request).expect("uoi");
+        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &hint_response).expect("oui");
+
+        SinglePassSettings {
+            stream_child,
+        }
+    }
+
+    fn spawn_singlepass_client(set_size: usize, socket_path: &PathBuf) -> Child {
+        Command::new("/home/hanin/SinglePass/pir-client")         
+            .arg(set_size.to_string())
+            .arg(socket_path)
+            .spawn()
+            .expect("failed to spawn pir-client")
+    } 
+}
+
+
 impl<'a> GeoClient<'a> {
     
     pub fn new(
-        socket_path: PathBuf,
+        socket_path: &String,
+        socket_path2: Option<&String>,
     ) -> GraphResult<Self> {
 
-        let mut server_handle = ServerHandle::connect(&socket_path)
-        .map_err(|e| format!("Failed to connect to server socket {}: {}", socket_path.display(), e))?;
+        // connect to the first server to get the db_settings
+        let server_path = PathBuf::from(socket_path);
+        let mut server_handle = ServerHandle::connect(server_path)
+        .map_err(|e| format!("Failed to connect to server socket {}: {}", socket_path, e))?;
 
         let db_settings  = GeoClient::get_db_settings(&mut server_handle)?;
 
         match db_settings.architecture {
             Architectures::Spiral => {
+
                 let spiral_settings = SpiralSettings::new(&db_settings, &mut server_handle);
 
                 Ok(GeoClient {
                     server_handle,
+                    server_handle2: None,
                     db_settings,
                     nodes_cache: HashMap::new(),
                     edges_cache: HashMap::new(),
 
                     spiral_settings: Some(spiral_settings),
+                    singlepass_settings: None,
                 })
             }
             Architectures::SinglePass => {
-                let spiral_settings = SpiralSettings::new(&db_settings, &mut server_handle);
+
+                // connect to the second server !
+                let server_path2 = PathBuf::from(socket_path2.unwrap());
+                let server_handle2 = ServerHandle::connect(&server_path2)
+                .map_err(|e| format!("Failed to connect to second server socket {}: {}", server_path2.display(), e))?;
+
+                let singlepass_settings = SinglePassSettings::new(&db_settings, &mut server_handle);
 
                 Ok(GeoClient {
                     server_handle,
+                    server_handle2: Some(server_handle2),
                     db_settings,
                     nodes_cache: HashMap::new(),
                     edges_cache: HashMap::new(),
 
-                    spiral_settings: Some(spiral_settings),
+                    spiral_settings: None,
+                    singlepass_settings: Some(singlepass_settings),
                 })
             }
         }
@@ -145,14 +213,35 @@ impl<'a> GeoClient<'a> {
         Ok(congestion_slice.to_vec())
     }
 
-    fn send_spiral_public_prams(server_handle: &mut ServerHandle, public_params: &PublicParameters) -> io::Result<()> {
-        let bytes: Vec<u8> = public_params.serialize();
-        server_handle.send_public_params(&bytes)
+    fn send_spiral_query_server(&mut self, data: &Vec<u8>) -> io::Result<Vec<u8>> {
+        let server_response = self.server_handle.send_spiral_query(data)?;
+        Ok(server_response)
     }
 
-    fn send_query_server(&mut self, data: &Vec<u8>) -> io::Result<Vec<u8>> {
-        let server_response = self.server_handle.process_query(data)?;
-        Ok(server_response)
+    fn send_singlepass_query_server(&mut self, data: &Vec<u8>) -> io::Result<Vec<u8>> {
+
+        let mut stream_child = &self.singlepass_settings.as_ref().unwrap().stream_child;
+
+        // send the index to the spinglepass child
+        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, data)?;
+
+        // get the two requests byts
+        let left_request = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child)?;
+        let right_request = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child)?;
+
+        // send those to the two rust servers
+        // todo: these are blocking operations, they should happen at once
+        let left_response = self.server_handle.send_singlepass_query(&left_request)?;
+        let right_response = self.server_handle2.as_mut().unwrap().send_singlepass_query(&right_request)?;
+
+        // send the two responses back for reconstruction
+        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &left_response)?;
+        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &right_response)?;
+        
+        // get the reconstructed row back
+        let row = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child)?;
+
+        Ok(row)
     }
 
     fn perform_spiral_request_node(&mut self, node_idx: NodeIndex) -> io::Result<()> {
@@ -171,7 +260,7 @@ impl<'a> GeoClient<'a> {
             (data, target_idx_clipped)
         };
 
-        let response = self.send_query_server(&data)?;
+        let response = self.send_spiral_query_server(&data)?;
 
         // * client side response decoding
         let spiral_settings = self.spiral_settings.as_mut().unwrap();
@@ -235,7 +324,7 @@ impl<'a> GeoClient<'a> {
             data
         };
 
-        let response = self.send_query_server(&data)?;
+        let response = self.send_spiral_query_server(&data)?;
 
         // * client side response decoding
         let spiral_settings = self.spiral_settings.as_mut().unwrap();
@@ -262,6 +351,51 @@ impl<'a> GeoClient<'a> {
         Ok(())
     }
 
+    fn perform_singlepass_request_node(&mut self, node_idx: NodeIndex) -> io::Result<()> {
+
+        let data = (node_idx.index() as u32).to_le_bytes().to_vec();
+        let row = self.send_singlepass_query_server(&data)?;
+
+        match self.db_settings.approach {
+            Approaches::Node0 => {
+                let node_entry: &Node0Entry = bytemuck::from_bytes(&row);
+                node_entry.extract_to_graph(node_idx,  self);
+            },
+            Approaches::Node1 => {
+                let node_entry: &Node1Entry = bytemuck::from_bytes(&row);
+                node_entry.extract_to_graph(node_idx,  self);
+            },
+            Approaches::Node2 => {
+                let node_entry: &Node2Entry = bytemuck::from_bytes(&row);
+                node_entry.extract_to_graph(node_idx,  self);
+            },
+            Approaches::Node3 => {
+                let node_entry: &Node3Entry = bytemuck::from_bytes(&row);
+                node_entry.extract_to_graph(node_idx,  self);
+            },
+            _ => {},
+        }
+
+        Ok(())
+    }
+    
+    fn perform_singlepass_request_block(&mut self, node_idx: NodeIndex) -> io::Result<()> {
+
+        let block_parameters = self.db_settings.block_params.as_ref().unwrap();
+        let target_idx = *block_parameters.nodeidx_blockid_map.get(&(node_idx.index() as u32)).unwrap();
+
+        let data = target_idx.to_le_bytes().to_vec();
+        let row = self.send_singlepass_query_server(&data)?;
+
+        // extract block content
+        let block_entries: &[BlockEntry] = bytemuck::cast_slice(&row);
+        for entry in block_entries {
+            entry.extract_to_graph(self);
+        }
+
+        Ok(())
+    }
+    
     /// Get node information, querying the server if not cached
     fn get_node_data(&mut self, node_idx: NodeIndex) -> io::Result<&NodeData> {
 
@@ -276,8 +410,8 @@ impl<'a> GeoClient<'a> {
                 },
                 Architectures::SinglePass => {
                     match self.db_settings.approach {
-                        Approaches::Block(_)    => self.perform_spiral_request_block(node_idx)?,
-                        _                       => self.perform_spiral_request_node(node_idx)?
+                        Approaches::Block(_)    => self.perform_singlepass_request_block(node_idx)?,
+                        _                       => self.perform_singlepass_request_node(node_idx)?
                     }
                 }
             }

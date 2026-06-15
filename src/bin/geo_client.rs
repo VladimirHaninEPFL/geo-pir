@@ -1,5 +1,4 @@
 use std::env;
-use std::path::PathBuf;
 
 use geo_pir::{client::GeoClient, graph::{GraphContext, GraphResult}};
 use petgraph::graph::NodeIndex;
@@ -8,9 +7,9 @@ use petgraph::graph::NodeIndex;
 fn main() -> GraphResult<()> {
 
     let args: Vec<String> = env::args().collect();
-    if args.len() != 4 {
+    if args.len() != 4 && args.len() != 5 {
         eprintln!(
-            "Usage: {} <start_node_osmid> <end_node_osmid> <socket_path>",
+            "Usage: {} <start_node_osmid> <end_node_osmid> <socket_path> [socket_path2]",
             args[0]
         );
         std::process::exit(1);
@@ -18,9 +17,10 @@ fn main() -> GraphResult<()> {
 
     let start_node_osmid = &args[1];
     let end_node_osmid = &args[2];
-    let socket_path = PathBuf::from(&args[3]);
+    let socket_path = &args[3];
+    let socket_path2 = args.get(4);
 
-    let mut client = GeoClient::new(socket_path)?;
+    let mut client = GeoClient::new(socket_path, socket_path2)?;
 
     // I recalculate this so that I can print the correct values to stdout once I have the result
     let context = GraphContext::load(&client.db_settings.country)?;
