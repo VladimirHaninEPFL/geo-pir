@@ -13,14 +13,14 @@ use std::fs::{self, File};
 use std::io::{self, BufReader, BufWriter, Write};
 use std::os::unix::net::{UnixListener, UnixStream};
 use std::path::{Path, PathBuf};
-use std::process::{Child, Command};
+use std::process::{Command};
 use std::thread::sleep;
 
 /// The server holds the complete graph and serves queries from clients
 /// note that the server here has to receive the graph node idx (or the db index of the appraoch)
 pub struct GeoServer {
     node_count: usize, // this is for the traffic info
-    db_settings: DBSettings,
+    pub db_settings: DBSettings,
 
     spiral_settings: Option<SpiralSettings>,
     singlepass_settings: Option<SinglePassSettings>,
@@ -37,7 +37,7 @@ impl SinglePassSettings {
 
         // here we must create the database for the SinglePass server, its too hard for it to do it
         // we pass the path to the db as command line argument
-        let path_db = PathBuf::from(format!("/home/hanin/geo-pir/data/SinglePass-{}-{}.db", db_settings.country.to_string(), db_settings.approach.to_string()));
+        let path_db = PathBuf::from(format!("./data/SinglePass-{}-{}.db", db_settings.country.to_string(), db_settings.approach.to_string()));
         if !fs::exists(&path_db).expect("oui") {
 
             let num_bytes_in_db = db_settings.logical_db.record_size_bytes * padded_rows;
@@ -49,31 +49,39 @@ impl SinglePassSettings {
         };
 
         // start the go singlepass server
-        let socket_child = PathBuf::from(format!("/tmp/SinglePass-server-{}-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string()));
-        let _child = SinglePassSettings::spawn_singlepass_server(
+        let socket_child = PathBuf::from(format!("/tmp/private-singlepass-server-{}-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string()));
+        let stream_child = SinglePassSettings::spawn_singlepass_server(
             &path_db,
             padded_rows, 
             db_settings.logical_db.record_size_bytes, 
             &socket_child
         );
-        sleep(time::Duration::from_secs(10)); // wait for the spiral server to have started
-
-        // connect once to the child
-        let stream_child = UnixStream::connect(&socket_child).expect("oui");
 
         SinglePassSettings {
             stream_child,
         }
     }
 
-    fn spawn_singlepass_server(db_path: &PathBuf, num_rows: usize, len_rows: usize, socket_path: &PathBuf) -> Child {
-        Command::new("/home/hanin/SinglePass/pir-server")         
+    fn spawn_singlepass_server(db_path: &PathBuf, num_rows: usize, len_rows: usize, socket_path: &PathBuf) -> UnixStream {
+        if socket_path.exists() {
+            fs::remove_file(socket_path).expect("oui");
+        }
+
+        Command::new("./../SinglePass/singlepass-server")         
             .arg(db_path)
             .arg(num_rows.to_string())
             .arg(len_rows.to_string())
             .arg(socket_path)
             .spawn()
-            .expect("failed to spawn pir-server")
+            .expect("failed to spawn pir-server");
+
+        // block until you are connected
+        loop {
+            match UnixStream::connect(&socket_path) {
+                Ok(stream) => return stream,
+                Err(_) => sleep(time::Duration::from_millis(50)),
+            }
+        }
     } 
 }
 
@@ -85,6 +93,7 @@ pub struct SpiralSettings {
 impl SpiralSettings {
 
     pub fn new(db_settings: &DBSettings, graph :&EdgeListGraph) -> Self {
+        println!("SpiralSettings creation...");
 
         // spiral setup
         let DerivedPirLayout {
@@ -103,10 +112,11 @@ impl SpiralSettings {
             writer.write_all(&packed_db_bytes).expect("oui");
         }
         
-        let file = File::create(&path_db).expect("you must first generate the db !");
+        let file = File::open(&path_db).expect("you must first generate the db !");
         let mut reader = BufReader::new(file);
         let spiral_db = load_db_from_seek(&params, &mut reader);
 
+        println!("Finished creating spiral settings");
         SpiralSettings {
             spiral_db,
             spiral_params: params,
@@ -119,8 +129,8 @@ impl GeoServer {
     
     pub fn new(
         country_name: &str,
-        approach_name: &str,
         architecture_name: &str,
+        approach_name: &str,
     ) -> GraphResult<Self> {
 
         let country = country_name
@@ -128,7 +138,7 @@ impl GeoServer {
             .expect("unknown country name");
         let context = GraphContext::load(&country)?;
 
-        let db_settings = DBSettings::new(country_name, approach_name, architecture_name, &context.graph);
+        let db_settings = DBSettings::new(country_name, architecture_name, approach_name, &context.graph);
 
         match db_settings.architecture {
             Architectures::Spiral => {
@@ -337,13 +347,13 @@ impl GeoServer {
 
         // send the type of message first
         let msg_type_data = vec![1_u8];
-        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &msg_type_data).expect("oui");
+        crate::ipc::send_data(&mut stream_child, msg_type_data).expect("oui");
 
         // now send the content
-        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &hint_request).expect("oui");
+        crate::ipc::send_data(&mut stream_child, hint_request).expect("oui");
 
         // now read the hint response
-        let hint_response = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child).expect("oui");
+        let hint_response = crate::ipc::receive_data(&mut stream_child).expect("oui");
 
         hint_response
     }
@@ -354,13 +364,13 @@ impl GeoServer {
 
         // send the type of message first
         let msg_type_data = vec![2_u8];
-        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &msg_type_data).expect("oui");
+        crate::ipc::send_data(&mut stream_child, msg_type_data).expect("oui");
 
         // now send the content
-        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &query_data).expect("oui");
+        crate::ipc::send_data(&mut stream_child, query_data).expect("oui");
 
         // now read the repsonse data
-        let query_response = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child).expect("oui");
+        let query_response = crate::ipc::receive_data(&mut stream_child).expect("oui");
 
         query_response
     }

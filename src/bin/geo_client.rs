@@ -7,20 +7,21 @@ use petgraph::graph::NodeIndex;
 fn main() -> GraphResult<()> {
 
     let args: Vec<String> = env::args().collect();
-    if args.len() != 4 && args.len() != 5 {
+    if args.len() != 6 {
         eprintln!(
-            "Usage: {} <start_node_osmid> <end_node_osmid> <socket_path> [socket_path2]",
+            "Usage: {} <country_name> <architecture> <approach> <start_node_osmid> <end_node_osmid>",
             args[0]
         );
         std::process::exit(1);
     }
 
-    let start_node_osmid = &args[1];
-    let end_node_osmid = &args[2];
-    let socket_path = &args[3];
-    let socket_path2 = args.get(4);
+    let country_name = &args[1];
+    let architecture_name = &args[2];
+    let approach_name = &args[3];
+    let start_node_osmid = &args[4];
+    let end_node_osmid = &args[5];
 
-    let mut client = GeoClient::new(socket_path, socket_path2)?;
+    let mut client = GeoClient::new(country_name, architecture_name, approach_name)?;
 
     // I recalculate this so that I can print the correct values to stdout once I have the result
     let context = GraphContext::load(&client.db_settings.country)?;

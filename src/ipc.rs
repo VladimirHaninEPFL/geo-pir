@@ -47,24 +47,32 @@ fn bincode_error_to_io(error: Box<bincode::ErrorKind>) -> io::Error {
     io::Error::new(io::ErrorKind::InvalidData, error)
 }
 
-pub(crate) fn send_message<T: Serialize>(stream: &mut impl Write, message: &T) -> io::Result<()> {
-    let data = bincode::serialize(message).map_err(bincode_error_to_io)?;
-    let len = (data.len() as u32).to_be_bytes();
+pub(crate) fn send_data(stream: &mut impl Write, data: Vec<u8>) -> io::Result<()> {
+    let len = (data.len() as u32).to_le_bytes();
     stream.write_all(&len)?;
     stream.write_all(&data)?;
     stream.flush()?;
     Ok(())
 }
 
-pub(crate) fn receive_message<T: DeserializeOwned>(stream: &mut impl Read) -> io::Result<T> {
+pub(crate) fn send_message<T: Serialize>(stream: &mut impl Write, message: &T) -> io::Result<()> {
+    let data = bincode::serialize(message).map_err(bincode_error_to_io)?;
+    send_data(stream, data)
+}
 
+pub(crate) fn receive_data(stream: &mut impl Read) -> io::Result<Vec<u8>> {
     let mut len_buf = [0u8; 4];
     stream.read_exact(&mut len_buf)?;
-    let len = u32::from_be_bytes(len_buf) as usize;
+    let len = u32::from_le_bytes(len_buf);
 
-    let mut buffer = vec![0u8; len];
+    let mut buffer = vec![0u8; len as usize];
     stream.read_exact(&mut buffer)?;
-    let message = bincode::deserialize(&buffer).map_err(bincode_error_to_io)?;
+
+    Ok(buffer)
+}
+pub(crate) fn receive_message<T: DeserializeOwned>(stream: &mut impl Read) -> io::Result<T> {
+    let data = receive_data(stream)?;
+    let message = bincode::deserialize(&data).map_err(bincode_error_to_io)?;
 
     Ok(message)
 }

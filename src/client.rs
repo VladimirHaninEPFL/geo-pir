@@ -13,9 +13,9 @@ use std::cmp::Ordering;
 use std::io::{self};
 use std::os::unix::net::UnixStream;
 use std::path::PathBuf;
-use std::process::{Child, Command};
+use std::process::{Command};
 use std::thread::sleep;
-use std::{time};
+use std::{fs, time};
 
 
 
@@ -117,31 +117,43 @@ impl SinglePassSettings {
 
         // * start the child spiral client
         let set_size = (db_settings.logical_db.num_records as f64).sqrt().ceil() as usize;
-        let socket_child = PathBuf::from(format!("/tmp/SinglePass-client-{}-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string()));
-        let _child = SinglePassSettings::spawn_singlepass_client(
+        let socket_child = PathBuf::from(format!("/tmp/private-singlepass-client-{}-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string()));
+        let mut stream_child = SinglePassSettings::spawn_singlepass_client(
             set_size,
             &socket_child
         );
-        sleep(time::Duration::from_secs(10)); // wait for the spiral client to have started
-        let mut stream_child = UnixStream::connect(&socket_child).expect("oui");
+        println!("Child singlepass server created !");
 
         // START THE OFFLINE PHASE OF SINGLEPASS
         // first the client generated a hint request, that we forward to the first server
-        let hint_request = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child).expect("oui");
+        let hint_request = crate::ipc::receive_data(&mut stream_child).expect("oui");
         let hint_response = server_handle.send_singlepass_hint_request(&hint_request).expect("uoi");
-        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &hint_response).expect("oui");
+        crate::ipc::send_data(&mut stream_child, hint_response).expect("oui");
 
         SinglePassSettings {
             stream_child,
         }
     }
 
-    fn spawn_singlepass_client(set_size: usize, socket_path: &PathBuf) -> Child {
-        Command::new("/home/hanin/SinglePass/pir-client")         
+    fn spawn_singlepass_client(set_size: usize, socket_path: &PathBuf) -> UnixStream {
+        if socket_path.exists() {
+            fs::remove_file(socket_path).expect("oui");
+        }
+
+        Command::new("./../SinglePass/singlepass-client")         
             .arg(set_size.to_string())
             .arg(socket_path)
             .spawn()
-            .expect("failed to spawn pir-client")
+            .expect("failed to spawn pir-client");
+
+        // block until you are connected
+        loop {
+            println!("waiting to connect to {:?}", &socket_path);
+            match UnixStream::connect(&socket_path) {
+                Ok(stream) => return stream,
+                Err(_) => sleep(time::Duration::from_millis(50)),
+            }
+        }
     } 
 }
 
@@ -149,20 +161,25 @@ impl SinglePassSettings {
 impl<'a> GeoClient<'a> {
     
     pub fn new(
-        socket_path: &String,
-        socket_path2: Option<&String>,
+        country_name: &str,
+        architecture_name: &str,
+        approach_name: &str,
     ) -> GraphResult<Self> {
 
-        // connect to the first server to get the db_settings
-        let server_path = PathBuf::from(socket_path);
-        let mut server_handle = ServerHandle::connect(server_path)
-        .map_err(|e| format!("Failed to connect to server socket {}: {}", socket_path, e))?;
+        let architecture = architecture_name
+            .parse::<Architectures>()
+            .expect("unknown architecture name");
 
-        let db_settings  = GeoClient::get_db_settings(&mut server_handle)?;
-
-        match db_settings.architecture {
+        match architecture {
             Architectures::Spiral => {
 
+                let socket_path_name = format!("/tmp/{}-{}-{}.sock", country_name, architecture_name, approach_name);
+                let server_path = PathBuf::from(&socket_path_name);
+
+                let mut server_handle = ServerHandle::connect(server_path)
+                .map_err(|e| format!("Failed to connect to server socket {}: {}", socket_path_name, e))?;
+
+                let db_settings  = GeoClient::get_db_settings(&mut server_handle)?;
                 let spiral_settings = SpiralSettings::new(&db_settings, &mut server_handle);
 
                 Ok(GeoClient {
@@ -178,16 +195,23 @@ impl<'a> GeoClient<'a> {
             }
             Architectures::SinglePass => {
 
-                // connect to the second server !
-                let server_path2 = PathBuf::from(socket_path2.unwrap());
-                let server_handle2 = ServerHandle::connect(&server_path2)
-                .map_err(|e| format!("Failed to connect to second server socket {}: {}", server_path2.display(), e))?;
+                let socket1_path_name = format!("/tmp/{}-{}_left-{}.sock", country_name, architecture_name, approach_name);
+                let server1_path = PathBuf::from(&socket1_path_name);
+                let mut server1_handle = ServerHandle::connect(server1_path)
+                .map_err(|e| format!("Failed to connect to server socket {}: {}", socket1_path_name, e))?;
 
-                let singlepass_settings = SinglePassSettings::new(&db_settings, &mut server_handle);
+                let socket2_path_name = format!("/tmp/{}-{}_right-{}.sock", country_name, architecture_name, approach_name);
+                let server2_path = PathBuf::from(&socket2_path_name);
+                let server2_handle = ServerHandle::connect(server2_path)
+                .map_err(|e| format!("Failed to connect to server socket {}: {}", socket2_path_name, e))?;
+
+                let db_settings  = GeoClient::get_db_settings(&mut server1_handle)?;
+
+                let singlepass_settings = SinglePassSettings::new(&db_settings, &mut server1_handle);
 
                 Ok(GeoClient {
-                    server_handle,
-                    server_handle2: Some(server_handle2),
+                    server_handle: server1_handle,
+                    server_handle2: Some(server2_handle),
                     db_settings,
                     nodes_cache: HashMap::new(),
                     edges_cache: HashMap::new(),
@@ -218,16 +242,16 @@ impl<'a> GeoClient<'a> {
         Ok(server_response)
     }
 
-    fn send_singlepass_query_server(&mut self, data: &Vec<u8>) -> io::Result<Vec<u8>> {
+    fn send_singlepass_query_server(&mut self, data: Vec<u8>) -> io::Result<Vec<u8>> {
 
         let mut stream_child = &self.singlepass_settings.as_ref().unwrap().stream_child;
 
         // send the index to the spinglepass child
-        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, data)?;
+        crate::ipc::send_data(&mut stream_child, data)?;
 
         // get the two requests byts
-        let left_request = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child)?;
-        let right_request = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child)?;
+        let left_request = crate::ipc::receive_data(&mut stream_child)?;
+        let right_request = crate::ipc::receive_data(&mut stream_child)?;
 
         // send those to the two rust servers
         // todo: these are blocking operations, they should happen at once
@@ -235,11 +259,11 @@ impl<'a> GeoClient<'a> {
         let right_response = self.server_handle2.as_mut().unwrap().send_singlepass_query(&right_request)?;
 
         // send the two responses back for reconstruction
-        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &left_response)?;
-        crate::ipc::send_message::<Vec<u8>>(&mut stream_child, &right_response)?;
+        crate::ipc::send_data(&mut stream_child, left_response)?;
+        crate::ipc::send_data(&mut stream_child, right_response)?;
         
         // get the reconstructed row back
-        let row = crate::ipc::receive_message::<Vec<u8>>(&mut stream_child)?;
+        let row = crate::ipc::receive_data(&mut stream_child)?;
 
         Ok(row)
     }
@@ -354,7 +378,7 @@ impl<'a> GeoClient<'a> {
     fn perform_singlepass_request_node(&mut self, node_idx: NodeIndex) -> io::Result<()> {
 
         let data = (node_idx.index() as u32).to_le_bytes().to_vec();
-        let row = self.send_singlepass_query_server(&data)?;
+        let row = self.send_singlepass_query_server(data)?;
 
         match self.db_settings.approach {
             Approaches::Node0 => {
@@ -385,7 +409,7 @@ impl<'a> GeoClient<'a> {
         let target_idx = *block_parameters.nodeidx_blockid_map.get(&(node_idx.index() as u32)).unwrap();
 
         let data = target_idx.to_le_bytes().to_vec();
-        let row = self.send_singlepass_query_server(&data)?;
+        let row = self.send_singlepass_query_server(data)?;
 
         // extract block content
         let block_entries: &[BlockEntry] = bytemuck::cast_slice(&row);
