@@ -69,6 +69,7 @@ pub struct GeoClient<'a> {
 
     spiral_settings: Option<SpiralSettings<'a>>,
     singlepass_settings: Option<SinglePassSettings>,
+    pub server_query_duration: time::Duration,
 }
 
 struct SpiralSettings<'a> {
@@ -190,6 +191,7 @@ impl<'a> GeoClient<'a> {
 
                     spiral_settings: Some(spiral_settings),
                     singlepass_settings: None,
+                    server_query_duration: time::Duration::ZERO,
                 })
             }
             Architectures::SinglePass => {
@@ -217,6 +219,7 @@ impl<'a> GeoClient<'a> {
 
                     spiral_settings: None,
                     singlepass_settings: Some(singlepass_settings),
+                    server_query_duration: time::Duration::ZERO,
                 })
             }
         }
@@ -244,11 +247,14 @@ impl<'a> GeoClient<'a> {
     }
 
     fn send_spiral_query_server(&mut self, data: &Vec<u8>) -> io::Result<Vec<u8>> {
+        let t0 = time::Instant::now();
         let server_response = self.server_handle.send_spiral_query(data)?;
+        self.server_query_duration += t0.elapsed();
         Ok(server_response)
     }
 
     fn send_singlepass_query_server(&mut self, data: Vec<u8>) -> io::Result<Vec<u8>> {
+        let t0 = time::Instant::now();
 
         let mut stream_child = &self.singlepass_settings.as_ref().unwrap().stream_child;
 
@@ -272,6 +278,8 @@ impl<'a> GeoClient<'a> {
         
         // get the reconstructed row back
         let row = crate::ipc::receive_data(&mut stream_child)?;
+
+        self.server_query_duration += t0.elapsed();
 
         Ok(row)
     }
@@ -462,7 +470,11 @@ impl<'a> GeoClient<'a> {
     }
 
     /// Run A* search from start osmid to goal osmid
-    pub fn a_star_search(&mut self, start_node_idx: NodeIndex, goal_node_idx: NodeIndex) -> io::Result<Option<AStarResult>> {
+    pub fn a_star_search(&mut self, start_node_idx: NodeIndex, goal_node_idx: NodeIndex) -> io::Result<(Option<AStarResult>, time::Duration, time::Duration)> {
+        let start_time = time::Instant::now();
+
+        // reset per-run server query accumulator
+        self.server_query_duration = time::Duration::ZERO;
 
         let congestion = GeoClient::get_congestion(&mut self.server_handle)?;
 
@@ -484,13 +496,14 @@ impl<'a> GeoClient<'a> {
             let curr_node_idx  = current_state.node_idx;
             let curr_cost = current_state.g;
 
-            if curr_node_idx == goal_node_idx {
+                if curr_node_idx == goal_node_idx {
                 let path = self.reconstruct_path(&best_source, start_node_idx, goal_node_idx);
-                return Ok(Some(AStarResult {
-                    cost: curr_cost,
-                    path,
-                    cached_nodes: self.nodes_cache.keys().cloned().collect(), // Collect visited nodes from the cache keys
-                }));
+                let elapsed = start_time.elapsed();
+                    return Ok((Some(AStarResult {
+                        cost: curr_cost,
+                        path,
+                        cached_nodes: self.nodes_cache.keys().cloned().collect(), // Collect visited nodes from the cache keys
+                    }), elapsed, self.server_query_duration));
             }
 
             // this happens when we found a better path to this node
@@ -519,7 +532,8 @@ impl<'a> GeoClient<'a> {
             }
         }
 
-        Ok(None)
+            let elapsed = start_time.elapsed();
+            Ok((None, elapsed, self.server_query_duration))
     }
 
     fn heuristic(&mut self, from_node_idx: NodeIndex, to_node_idx: NodeIndex) -> io::Result<TravelTime> {

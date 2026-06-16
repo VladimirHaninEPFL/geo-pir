@@ -40,7 +40,9 @@ fn main() -> GraphResult<()> {
         .get(end_node_osmid)
         .expect("end node not found in graph") as usize);
 
-    match client.a_star_search(start_node, end_node)? {
+    let (maybe_result, total_elapsed, server_elapsed) = client.a_star_search(start_node, end_node)?;
+
+    match maybe_result {
         Some(result) => {
             println!("A* found a path with cost {:.6}", result.cost);
             println!("Path length: {} nodes", result.path.len());
@@ -65,6 +67,11 @@ fn main() -> GraphResult<()> {
             println!("!! No path found between {} and {}", start_node_osmid, end_node_osmid);
         }
     }
+
+    let search_only = total_elapsed.checked_sub(server_elapsed).unwrap_or_else(|| std::time::Duration::ZERO);
+    println!("A* total elapsed time: {:.6} s", total_elapsed.as_secs_f64());
+    println!("  server queries time: {:.6} s", server_elapsed.as_secs_f64());
+    println!("  search-only time: {:.6} s", search_only.as_secs_f64());
 
     Ok(())
 }
