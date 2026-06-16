@@ -179,7 +179,7 @@ impl<'a> GeoClient<'a> {
                 let mut server_handle = ServerHandle::connect(server_path)
                 .map_err(|e| format!("Failed to connect to server socket {}: {}", socket_path_name, e))?;
 
-                let db_settings  = GeoClient::get_db_settings(&mut server_handle)?;
+                let db_settings  = GeoClient::get_db_settings_spiral(&mut server_handle)?;
                 let spiral_settings = SpiralSettings::new(&db_settings, &mut server_handle);
 
                 Ok(GeoClient {
@@ -205,7 +205,7 @@ impl<'a> GeoClient<'a> {
                 let server2_handle = ServerHandle::connect(server2_path)
                 .map_err(|e| format!("Failed to connect to server socket {}: {}", socket2_path_name, e))?;
 
-                let db_settings  = GeoClient::get_db_settings(&mut server1_handle)?;
+                let db_settings  = GeoClient::get_db_settings_singlepass(&mut server1_handle)?;
 
                 let singlepass_settings = SinglePassSettings::new(&db_settings, &mut server1_handle);
 
@@ -223,8 +223,15 @@ impl<'a> GeoClient<'a> {
         }
     }
 
-    fn get_db_settings(server_handle: &mut ServerHandle) -> io::Result<DBSettings> {
-        let server_bytes = server_handle.get_db_settings()?;
+    fn get_db_settings_spiral(server_handle: &mut ServerHandle) -> io::Result<DBSettings> {
+        let server_bytes = server_handle.get_db_settings_spiral()?;
+        let db_settings: DBSettings = DBSettings::deserialize_from_bytes(&server_bytes);
+
+        Ok(db_settings)
+    }
+
+    fn get_db_settings_singlepass(server_handle: &mut ServerHandle) -> io::Result<DBSettings> {
+        let server_bytes = server_handle.get_db_settings_singlepass()?;
         let db_settings: DBSettings = DBSettings::deserialize_from_bytes(&server_bytes);
 
         Ok(db_settings)
@@ -253,10 +260,12 @@ impl<'a> GeoClient<'a> {
         let left_request = crate::ipc::receive_data(&mut stream_child)?;
         let right_request = crate::ipc::receive_data(&mut stream_child)?;
 
-        // send those to the two rust servers
-        // todo: these are blocking operations, they should happen at once
-        let left_response = self.server_handle.send_singlepass_query(&left_request)?;
-        let right_response = self.server_handle2.as_mut().unwrap().send_singlepass_query(&right_request)?;
+        // send those to the two rust servers IN PARRALEL   
+        self.server_handle.send_singlepass_query(&left_request)?;
+        self.server_handle2.as_mut().unwrap().send_singlepass_query(&right_request)?;
+
+        let left_response = self.server_handle.get_singlepass_query_repsonse()?;
+        let right_response = self.server_handle2.as_mut().unwrap().get_singlepass_query_repsonse()?;
 
         // send the two responses back for reconstruction
         crate::ipc::send_data(&mut stream_child, left_response)?;

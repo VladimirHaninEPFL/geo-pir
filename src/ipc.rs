@@ -106,10 +106,21 @@ impl ServerHandle {
         receive_message(&mut self.stream)
     }
 
-    pub fn get_db_settings(&mut self) -> io::Result<Vec<u8>> {
+    pub fn get_db_settings_spiral(&mut self) -> io::Result<Vec<u8>> {
         match self.spiral_request(SpiralClientRequest::GetDBSettings)? {
             SpiralServerResponse::DBSettings(bytes) => Ok(bytes),
             SpiralServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
+            other => Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                format!("unexpected response type: {:?}", other),
+            )),
+        }
+    }
+
+    pub fn get_db_settings_singlepass(&mut self) -> io::Result<Vec<u8>> {
+        match self.singlepass_request(SinglePassClientRequest::GetDBSettings)? {
+            SinglePassServerResponse::DBSettings(bytes) => Ok(bytes),
+            SinglePassServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(
                 io::ErrorKind::InvalidData,
                 format!("unexpected response type: {:?}", other),
@@ -150,8 +161,12 @@ impl ServerHandle {
         }
     }
     
-    pub fn send_singlepass_query(&mut self, query: &[u8]) -> io::Result<Vec<u8>> {
-        match self.singlepass_request(SinglePassClientRequest::Query(query.to_vec()))? {
+    pub fn send_singlepass_query(&mut self, query: &[u8]) -> io::Result<()> {
+        send_message(&mut self.stream, &SinglePassClientRequest::Query(query.to_vec()))
+    }
+
+    pub fn get_singlepass_query_repsonse(&mut self) -> io::Result<Vec<u8>> {
+        match receive_message::<SinglePassServerResponse>(&mut self.stream)? {
             SinglePassServerResponse::QueryResult(response) => Ok(response),
             SinglePassServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(

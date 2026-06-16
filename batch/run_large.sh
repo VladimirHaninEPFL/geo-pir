@@ -3,8 +3,8 @@
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task 15
 #SBATCH --time 3:00:00
-#SBATCH --partition academic
 #SBATCH --mem 100G
+#SBATCH --partition academic
 
 cd /home/hanin/geo-pir
 
