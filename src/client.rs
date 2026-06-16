@@ -286,6 +286,7 @@ impl<'a> GeoClient<'a> {
             let target_pir_idx = target_idx / spiral_settings.records_per_pir_item; // this rounds down !
             let target_idx_clipped = target_pir_idx * spiral_settings.records_per_pir_item;
 
+            println!("sending request for index:{}", target_pir_idx);
             let query = spiral_settings.spiral_client.generate_query(target_pir_idx);
             let data = query.serialize();
 
