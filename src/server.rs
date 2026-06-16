@@ -30,7 +30,7 @@ pub struct SinglePassSettings {
     pub stream_child: UnixStream,
 }
 impl SinglePassSettings {
-    pub fn new(db_settings: &DBSettings, graph :&EdgeListGraph) -> Self {
+    pub fn new(db_settings: &DBSettings, graph :&EdgeListGraph, socket_name: &String) -> Self {
 
         let set_size = (db_settings.logical_db.num_records as f64).sqrt().ceil() as usize;
         let padded_rows = ((db_settings.logical_db.num_records + (set_size - 1)) / set_size) * set_size;
@@ -49,7 +49,7 @@ impl SinglePassSettings {
         };
 
         // start the go singlepass server
-        let socket_child = PathBuf::from(format!("/tmp/private-singlepass-server-{}-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string()));
+        let socket_child = PathBuf::from(format!("/tmp/private-singlepass-{}-server-{}-{}.sock", socket_name, db_settings.country.to_string(), db_settings.approach.to_string()));
         let stream_child = SinglePassSettings::spawn_singlepass_server(
             &path_db,
             padded_rows, 
@@ -131,6 +131,7 @@ impl GeoServer {
         country_name: &str,
         architecture_name: &str,
         approach_name: &str,
+        socket_name: Option<&String>,
     ) -> GraphResult<Self> {
 
         let country = country_name
@@ -152,7 +153,7 @@ impl GeoServer {
             }
 
             Architectures::SinglePass => {
-                let singlepass_settings = SinglePassSettings::new(&db_settings, &context.graph);
+                let singlepass_settings = SinglePassSettings::new(&db_settings, &context.graph, socket_name.unwrap());
                 Ok(GeoServer {
                     spiral_settings: None, 
                     singlepass_settings: Some(singlepass_settings), 

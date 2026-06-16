@@ -21,7 +21,7 @@ fn main() -> GraphResult<()> {
     let approach_name = &args[3];
     let socket_name = args.get(4);
 
-    let mut server = GeoServer::new(country_name, architecture_name, approach_name)?;
+    let mut server = GeoServer::new(country_name, architecture_name, approach_name, socket_name)?;
 
     if socket_name.is_none() {
         let socket_path_name = format!("/tmp/{}-{}-{}.sock", country_name, architecture_name, approach_name);
