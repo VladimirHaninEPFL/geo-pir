@@ -60,10 +60,9 @@ fn main() -> GraphResult<()> {
                     .map(|graph_idx| context.idx_osmid_map.get(&(graph_idx.index() as u32)).unwrap())
                     .collect::<Vec<_>>()
             );
-            println!("Number of cached nodes: {}", result.cached_nodes.len());
         }
         None => {
-            println!("No path found between {} and {}", start_node_osmid, end_node_osmid);
+            println!("!! No path found between {} and {}", start_node_osmid, end_node_osmid);
         }
     }
 

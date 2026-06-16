@@ -2,7 +2,6 @@ use std::env;
 
 use geo_pir::{db_settings::Countries, graph::{GraphContext, GraphResult}};
 
-// todo: genrate a graph context if not already created, no need to execute it
 
 fn main() -> GraphResult<()> {
 

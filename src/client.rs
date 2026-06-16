@@ -173,11 +173,10 @@ impl<'a> GeoClient<'a> {
         match architecture {
             Architectures::Spiral => {
 
-                let socket_path_name = format!("/tmp/{}-{}-{}.sock", country_name, architecture_name, approach_name);
-                let server_path = PathBuf::from(&socket_path_name);
+                let server_path = PathBuf::from(format!("/tmp/{}-{}-{}.sock", country_name, architecture_name, approach_name));
 
-                let mut server_handle = ServerHandle::connect(server_path)
-                .map_err(|e| format!("Failed to connect to server socket {}: {}", socket_path_name, e))?;
+                let mut server_handle = ServerHandle::connect(&server_path)
+                .map_err(|e| format!("Failed to connect to server socket {:?}: {}", server_path, e))?;
 
                 let db_settings  = GeoClient::get_db_settings_spiral(&mut server_handle)?;
                 let spiral_settings = SpiralSettings::new(&db_settings, &mut server_handle);

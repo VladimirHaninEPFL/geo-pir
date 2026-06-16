@@ -28,6 +28,7 @@ pub struct GeoServer {
 
 pub struct SinglePassSettings {
     pub stream_child: UnixStream,
+    path_socket_server: PathBuf,
 }
 impl SinglePassSettings {
     pub fn new(db_settings: &DBSettings, graph :&EdgeListGraph, socket_name: &String) -> Self {
@@ -57,8 +58,11 @@ impl SinglePassSettings {
             &socket_child
         );
 
+        let path_socket_server = PathBuf::from(format!("/tmp/{}-SinglePass_{}-{}.sock", db_settings.country.to_string(), socket_name, db_settings.approach.to_string()));
+
         SinglePassSettings {
             stream_child,
+            path_socket_server,
         }
     }
 
@@ -89,11 +93,11 @@ pub struct SpiralSettings {
     pub spiral_db: AlignedMemory<64>,
     pub spiral_params: Params,
     pub public_params_bytes: Option<Vec<u8>>,
+    pub path_socket_server: PathBuf,
 }
 impl SpiralSettings {
 
     pub fn new(db_settings: &DBSettings, graph :&EdgeListGraph) -> Self {
-        println!("SpiralSettings creation...");
 
         // spiral setup
         let DerivedPirLayout {
@@ -116,11 +120,13 @@ impl SpiralSettings {
         let mut reader = BufReader::new(file);
         let spiral_db = load_db_from_seek(&params, &mut reader);
 
-        println!("Finished creating spiral settings");
+        let path_socket_server = PathBuf::from(format!("/tmp/{}-Spiral-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string()));
+
         SpiralSettings {
             spiral_db,
             spiral_params: params,
             public_params_bytes: None,
+            path_socket_server,
         }
     }
 }
@@ -163,8 +169,23 @@ impl GeoServer {
             }
         }
     }
+    
+    pub fn run(&mut self) -> io::Result<()> {
+        let socket_path: PathBuf ;
 
-    pub fn build_packed_database(
+        match self.db_settings.architecture {
+            Architectures::Spiral => {
+                socket_path = self.spiral_settings.as_mut().unwrap().path_socket_server.clone();
+            }
+            Architectures::SinglePass => {
+                socket_path = self.singlepass_settings.as_mut().unwrap().path_socket_server.clone();
+            }
+        }
+        
+        self.serve_socket(&socket_path)
+    }
+
+    fn build_packed_database(
         db_settings: &DBSettings,
         num_bytes_in_db: usize,
         graph: &EdgeListGraph,
@@ -251,16 +272,17 @@ impl GeoServer {
         packed_db
     }
 
-    pub fn serve_socket(&mut self, socket_path: &Path) -> io::Result<()> {
+    fn serve_socket(&mut self, socket_path: &Path) -> io::Result<()> {
         if socket_path.exists() {
             fs::remove_file(socket_path)?;
         }
 
         let listener = UnixListener::bind(socket_path)?;
+        println!("GeoServer started listening on socket {:?} ...", socket_path);
 
         // listen to as many clients as needed
         for connection in listener.incoming() {
-            println!("GeoServer accepted new connection to a GeoClient");
+            println!("GeoServer accepted new connection to a GeoClient...");
 
             match connection {
                 Ok(stream) => {
@@ -409,4 +431,5 @@ impl GeoServer {
         let spiral_settings = self.spiral_settings.as_mut().unwrap();
         spiral_settings.public_params_bytes = Some(bytes);
     }
+
 }
