@@ -117,7 +117,7 @@ impl SinglePassSettings {
 
         // * start the child spiral client
         let set_size = (db_settings.logical_db.num_records as f64).sqrt().ceil() as usize;
-        let socket_child = PathBuf::from(format!("/tmp/private-singlepass-client-{}-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string()));
+        let socket_child = PathBuf::from(format!("/tmp/singlepass_private_client-{}-SinglePass-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string()));
         let mut stream_child = SinglePassSettings::spawn_singlepass_client(
             set_size,
             &socket_child
@@ -408,7 +408,7 @@ impl<'a> GeoClient<'a> {
         let block_parameters = self.db_settings.block_params.as_ref().unwrap();
         let target_idx = *block_parameters.nodeidx_blockid_map.get(&(node_idx.index() as u32)).unwrap();
 
-        let data = target_idx.to_le_bytes().to_vec();
+        let data = (target_idx as u32).to_le_bytes().to_vec();
         let row = self.send_singlepass_query_server(data)?;
 
         // extract block content

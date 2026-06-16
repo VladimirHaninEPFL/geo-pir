@@ -49,7 +49,7 @@ impl SinglePassSettings {
         };
 
         // start the go singlepass server
-        let socket_child = PathBuf::from(format!("/tmp/private-singlepass-{}-server-{}-{}.sock", socket_name, db_settings.country.to_string(), db_settings.approach.to_string()));
+        let socket_child = PathBuf::from(format!("/tmp/singlepass_private_server_{}-{}-SinglePass-{}.sock", socket_name, db_settings.country.to_string(), db_settings.approach.to_string()));
         let stream_child = SinglePassSettings::spawn_singlepass_server(
             &path_db,
             padded_rows, 
