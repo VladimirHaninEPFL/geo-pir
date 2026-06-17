@@ -136,6 +136,7 @@ def plot_metric(
     colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
 
     for idx, (approach, metric_per_distance) in enumerate(data.items()):
+        metric_per_distance = dict(sorted(metric_per_distance.items()))
         x_values = np.asarray(list(metric_per_distance.keys()), dtype=float) / 1000.0
         sample_sets = list(metric_per_distance.values())
         color = colors[idx % len(colors)]
