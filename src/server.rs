@@ -299,11 +299,11 @@ impl GeoServer {
         }
 
         let listener = UnixListener::bind(socket_path)?;
-        println!("GeoServer started listening on socket {:?} ...", socket_path);
+        // println!("GeoServer started listening on socket {:?} ...", socket_path);
 
         // listen to as many clients as needed
         for connection in listener.incoming() {
-            println!("GeoServer accepted new connection to a GeoClient...");
+            // println!("GeoServer accepted new connection to a GeoClient...");
 
             match connection {
                 Ok(stream) => {

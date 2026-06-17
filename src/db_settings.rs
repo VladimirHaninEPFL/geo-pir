@@ -18,7 +18,7 @@ pub struct DBSettings {
 impl DBSettings {
 
     pub fn new(country_name: &str, architecture_name: &str, approach_name: &str, graph: &EdgeListGraph) -> Self {
-        println!("db settings creation...");
+        // println!("db settings creation...");
 
         let country = country_name
             .parse::<Countries>()

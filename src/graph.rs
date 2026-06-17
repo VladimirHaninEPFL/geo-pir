@@ -58,7 +58,7 @@ impl GraphContext {
     }
 
     pub fn load(country: &Countries) -> GraphResult<Self> {
-        println!("Loading graph context for {:?}...", country);
+        // println!("Loading graph context for {:?}...", country);
 
         let path = PathBuf::from(format!("./data/{}-graph-context.gctx",  country.to_string()));
         let file = File::open(path)?;

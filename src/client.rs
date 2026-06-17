@@ -154,7 +154,7 @@ impl SinglePassSettings {
 
         // block until you are connected
         loop {
-            println!("client waiting to connect to singlepass client on {:?}", &socket_path);
+            // println!("client waiting to connect to singlepass client on {:?}", &socket_path);
             match UnixStream::connect(&socket_path) {
                 Ok(stream) => return stream,
                 Err(_) => sleep(time::Duration::from_millis(50)),

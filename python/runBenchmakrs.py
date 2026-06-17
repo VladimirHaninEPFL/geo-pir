@@ -17,8 +17,8 @@ def startBenchmarks() -> None:
     subprocess.run(["rm ./output/*"], shell=True)
 
     # compile the go code of singlepass !
-    # subprocess.run(["go", "build", "-o", "singlepass-client", "./cmd/singlepass_demo_node/client/client.go"], cwd="./../SinglePass")
-    # subprocess.run(["go", "build", "-o", "singlepass-server", "./cmd/singlepass_demo_node/server/server.go"], cwd="./../SinglePass")
+    subprocess.run(["go", "build", "-o", "singlepass-client", "./cmd/singlepass_demo_node/client/client.go"], cwd="./../SinglePass")
+    subprocess.run(["go", "build", "-o", "singlepass-server", "./cmd/singlepass_demo_node/server/server.go"], cwd="./../SinglePass")
 
     countries = ["Switzerland", "France"]
     architectures = ["Spiral", "SinglePass"]

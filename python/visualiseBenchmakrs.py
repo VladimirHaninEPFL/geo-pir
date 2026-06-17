@@ -89,7 +89,7 @@ def annotate_last_point(ax, x_values, y_values, text, color, y_offset=0):
         clip_on=False,
     )
 
-def plot_mean_with_percentile_band(ax, x_values, sample_sets, label, color):
+def plot_mean_with_percentile_band(ax, x_values, sample_sets, label, color, linestyle=None):
     """Plot the mean, a central percentile band, and raw samples."""
 
     sample_arrays = [np.asarray(results, dtype=float) for results in sample_sets]
@@ -111,7 +111,7 @@ def plot_mean_with_percentile_band(ax, x_values, sample_sets, label, color):
     #     )
 
     # ax.fill_between(x_values, lower, upper, color=color, alpha=0.18)
-    ax.plot(x_values, means, color=color, linewidth=2.5, label=label)
+    ax.plot(x_values, means, color=color, linewidth=2.5, linestyle=linestyle, label=label)
     ax.scatter(x_values, means, color=color, s=28, zorder=3)
     return x_values, means
 
@@ -164,8 +164,30 @@ def plot_metric(
 
     if add_naive is not None:
         x_values, y_values, label = add_naive
+
         x_values = np.asarray(list(x_values), dtype=float) / 1000.0
-        ax.plot(x_values, y_values, linestyle="--", color="black", linewidth=2, label=label)
+        sample_sets = y_values
+        y_offset = 0 #-10 if idx % 2 == 0 else 10
+
+        mean_x_values, mean_values = plot_mean_with_percentile_band(
+            ax,
+            x_values,
+            sample_sets,
+            label=label,
+            color="black",
+            linestyle="--"
+        )
+
+        if lastPoint:
+            point_formatter = last_point_formatter or format_y_value
+            annotate_last_point(
+                ax,
+                mean_x_values,
+                mean_values,
+                point_formatter(mean_values[-1]),
+                color,
+                y_offset=y_offset,
+            )
 
     if ylim is not None:
         ax.set_ylim(bottom=0, top=ylim)
@@ -255,22 +277,17 @@ def getQueryTimes(countryName, archi):
         time_per_approach[approach] = timePerDistance
         byte_per_approach[approach] = bytePerDistance
             
-    return time_per_approach, byte_per_approach
+    filepath = f"./output/{countryName}-Naive-node0.txt"
+    timePerDistanceNaive, bytePerDistanceNaive = parse_output_file(filepath)
 
-def getBandwidths():
-    return {}
-
+    return time_per_approach, byte_per_approach, timePerDistanceNaive, bytePerDistanceNaive
 
 def main():
-
-    dataNaive = {"France": 635_526_289 + 165_098_110, "Switzerland": 56_037_281 + 14_631_173}
-    journeyDistances = list(pk.load(open(f"./data/France-journeys.pickle", "rb")).keys())
-    numberDistances = len(journeyDistances)
 
     for countryName in countries:
         for archi in architectures:
 
-            queryTimes, queryBytes = getQueryTimes(countryName, archi)
+            queryTimes, queryBytes, timesNaive, dataNaive = getQueryTimes(countryName, archi)
 
             # visualise navigational query duration
             plot_metric(
@@ -279,6 +296,11 @@ def main():
                 title=f"Navigational query duration for {countryName} using {archi}",
                 output_path=f"./times-{countryName}-{archi}.png",
                 y_formatter=format_time,
+                add_naive=(
+                    timesNaive.keys(),
+                    timesNaive.values(),
+                    f"naive approach",
+                )
             )
 
             # visualise navigational query bandwdith
@@ -290,9 +312,9 @@ def main():
                 output_path=f"./data-{countryName}-{archi}.png",
                 y_formatter=format_bytes,
                 add_naive=(
-                    journeyDistances,
-                    [dataNaive[countryName]] * numberDistances,
-                    f"full db ({format_bytes(dataNaive[countryName])})",
+                    dataNaive.keys(),
+                    dataNaive.values(),
+                    f"full db",
                 )
             )
 
