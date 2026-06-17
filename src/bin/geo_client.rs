@@ -40,7 +40,7 @@ fn main() -> GraphResult<()> {
         .get(end_node_osmid)
         .expect("end node not found in graph") as usize);
 
-    let (maybe_result, total_elapsed, server_elapsed) = client.a_star_search(start_node, end_node)?;
+    let maybe_result = client.a_star_search(start_node, end_node)?;
 
     match maybe_result {
         Some(result) => {
@@ -54,6 +54,7 @@ fn main() -> GraphResult<()> {
                     .map(|graph_idx| context.idx_osmid_map.get(&(graph_idx.index() as u32)).unwrap())
                     .collect::<Vec<_>>()
             );
+
             println!(
                 "Cached nodes: {:?}",
                 result
@@ -62,16 +63,18 @@ fn main() -> GraphResult<()> {
                     .map(|graph_idx| context.idx_osmid_map.get(&(graph_idx.index() as u32)).unwrap())
                     .collect::<Vec<_>>()
             );
+
+            let search_only = result.elapsed_total.checked_sub(result.elapsed_server).unwrap_or_else(|| std::time::Duration::ZERO);
+            println!("A* total elapsed time: {:.6} s", result.elapsed_total.as_secs_f64());
+            println!("  server queries time: {:.6} s", result.elapsed_server.as_secs_f64());
+            println!("  search-only time: {:.6} s", search_only.as_secs_f64());
+
+            println!("Server bytes received: {} bytes", result.server_bytes_received);
         }
         None => {
             println!("!! No path found between {} and {}", start_node_osmid, end_node_osmid);
         }
     }
-
-    let search_only = total_elapsed.checked_sub(server_elapsed).unwrap_or_else(|| std::time::Duration::ZERO);
-    println!("A* total elapsed time: {:.6} s", total_elapsed.as_secs_f64());
-    println!("  server queries time: {:.6} s", server_elapsed.as_secs_f64());
-    println!("  search-only time: {:.6} s", search_only.as_secs_f64());
 
     Ok(())
 }

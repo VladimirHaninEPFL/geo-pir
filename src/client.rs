@@ -15,6 +15,7 @@ use std::os::unix::net::UnixStream;
 use std::path::PathBuf;
 use std::process::{Command};
 use std::thread::sleep;
+use std::time::Duration;
 use std::{fs, time};
 
 
@@ -26,6 +27,9 @@ pub struct AStarResult {
     pub cost: TravelTime, // total cost of the optimal path found by A*
     pub path: Vec<NodeIndex>, // list of osmids representing the path from start to goal
     pub cached_nodes: Vec<NodeIndex>, // list of osmids of all nodes that were visited during the search (for analysis/visualization)
+    pub server_bytes_received: usize, // total number of bytes received from the server during the search
+    pub elapsed_total: Duration,
+    pub elapsed_server: Duration,
 }
 
 #[derive(Debug, Clone)]
@@ -70,6 +74,7 @@ pub struct GeoClient<'a> {
     spiral_settings: Option<SpiralSettings<'a>>,
     singlepass_settings: Option<SinglePassSettings>,
     pub server_query_duration: time::Duration,
+    pub server_bytes_received: usize,
 }
 
 struct SpiralSettings<'a> {
@@ -191,6 +196,7 @@ impl<'a> GeoClient<'a> {
                     spiral_settings: Some(spiral_settings),
                     singlepass_settings: None,
                     server_query_duration: time::Duration::ZERO,
+                    server_bytes_received: 0,
                 })
             }
             Architectures::SinglePass => {
@@ -219,6 +225,7 @@ impl<'a> GeoClient<'a> {
                     spiral_settings: None,
                     singlepass_settings: Some(singlepass_settings),
                     server_query_duration: time::Duration::ZERO,
+                    server_bytes_received: 0,
                 })
             }
         }
@@ -238,22 +245,20 @@ impl<'a> GeoClient<'a> {
         Ok(db_settings)
     }
     
-    fn get_congestion(server_handle: &mut ServerHandle) -> io::Result<Vec<u16>> {
-        let server_bytes = server_handle.get_congestion()?;
+    fn get_congestion(&mut self) -> io::Result<Vec<u16>> {
+        let server_bytes = self.server_handle.get_congestion()?;
         let congestion_slice: &[u16] = bytemuck::cast_slice(&server_bytes);
 
         Ok(congestion_slice.to_vec())
     }
 
     fn send_spiral_query_server(&mut self, data: &Vec<u8>) -> io::Result<Vec<u8>> {
-        let t0 = time::Instant::now();
         let server_response = self.server_handle.send_spiral_query(data)?;
-        self.server_query_duration += t0.elapsed();
+        self.server_bytes_received += server_response.len();
         Ok(server_response)
     }
 
     fn send_singlepass_query_server(&mut self, data: Vec<u8>) -> io::Result<Vec<u8>> {
-        let t0 = time::Instant::now();
 
         let mut stream_child = &self.singlepass_settings.as_ref().unwrap().stream_child;
 
@@ -271,14 +276,15 @@ impl<'a> GeoClient<'a> {
         let left_response = self.server_handle.get_singlepass_query_repsonse()?;
         let right_response = self.server_handle2.as_mut().unwrap().get_singlepass_query_repsonse()?;
 
+        self.server_bytes_received += left_response.len();
+        self.server_bytes_received += right_response.len();
+
         // send the two responses back for reconstruction
         crate::ipc::send_data(&mut stream_child, left_response)?;
         crate::ipc::send_data(&mut stream_child, right_response)?;
         
         // get the reconstructed row back
         let row = crate::ipc::receive_data(&mut stream_child)?;
-
-        self.server_query_duration += t0.elapsed();
 
         Ok(row)
     }
@@ -440,6 +446,8 @@ impl<'a> GeoClient<'a> {
 
         if !self.nodes_cache.contains_key(&node_idx) {
 
+            let t0 = time::Instant::now();
+
             match self.db_settings.architecture {
                 Architectures::Spiral => {
                     match self.db_settings.approach {
@@ -454,6 +462,8 @@ impl<'a> GeoClient<'a> {
                     }
                 }
             }
+
+            self.server_query_duration += t0.elapsed();
         }
 
         assert!(self.nodes_cache.contains_key(&node_idx));
@@ -468,13 +478,14 @@ impl<'a> GeoClient<'a> {
     }
 
     /// Run A* search from start osmid to goal osmid
-    pub fn a_star_search(&mut self, start_node_idx: NodeIndex, goal_node_idx: NodeIndex) -> io::Result<(Option<AStarResult>, time::Duration, time::Duration)> {
+    pub fn a_star_search(&mut self, start_node_idx: NodeIndex, goal_node_idx: NodeIndex) -> io::Result<Option<AStarResult>> {
         let start_time = time::Instant::now();
 
-        // reset per-run server query accumulator
+        // reset per-run server accumulators
         self.server_query_duration = time::Duration::ZERO;
+        self.server_bytes_received = 0;
 
-        let congestion = GeoClient::get_congestion(&mut self.server_handle)?;
+        let congestion = self.get_congestion()?;
 
         let mut best_cost: HashMap<NodeIndex, TravelTime> = HashMap::new(); // this stores the best known cost to reach each node from the start node
         let mut best_source: HashMap<NodeIndex, NodeIndex> = HashMap::new(); // this stores the best known predecessor of each node on the optimal path from the start node (used for path reconstruction)
@@ -494,14 +505,17 @@ impl<'a> GeoClient<'a> {
             let curr_node_idx  = current_state.node_idx;
             let curr_cost = current_state.g;
 
-                if curr_node_idx == goal_node_idx {
+            if curr_node_idx == goal_node_idx {
                 let path = self.reconstruct_path(&best_source, start_node_idx, goal_node_idx);
-                let elapsed = start_time.elapsed();
-                    return Ok((Some(AStarResult {
-                        cost: curr_cost,
-                        path,
-                        cached_nodes: self.nodes_cache.keys().cloned().collect(), // Collect visited nodes from the cache keys
-                    }), elapsed, self.server_query_duration));
+
+                return Ok(Some(AStarResult {
+                    cost: curr_cost,
+                    path,
+                    cached_nodes: self.nodes_cache.keys().cloned().collect(), // Collect visited nodes from the cache keys
+                    server_bytes_received: self.server_bytes_received,
+                    elapsed_total: start_time.elapsed(),
+                    elapsed_server: self.server_query_duration,
+                }));
             }
 
             // this happens when we found a better path to this node
@@ -530,8 +544,7 @@ impl<'a> GeoClient<'a> {
             }
         }
 
-            let elapsed = start_time.elapsed();
-            Ok((None, elapsed, self.server_query_duration))
+        Ok(None)
     }
 
     fn heuristic(&mut self, from_node_idx: NodeIndex, to_node_idx: NodeIndex) -> io::Result<TravelTime> {
