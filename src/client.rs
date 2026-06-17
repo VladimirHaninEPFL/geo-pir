@@ -123,7 +123,6 @@ impl SinglePassSettings {
             set_size,
             &socket_child
         );
-        println!("Child singlepass server created !");
 
         // START THE OFFLINE PHASE OF SINGLEPASS
         // first the client generated a hint request, that we forward to the first server
@@ -149,7 +148,7 @@ impl SinglePassSettings {
 
         // block until you are connected
         loop {
-            println!("waiting to connect to {:?}", &socket_path);
+            println!("client waiting to connect to singlepass client on {:?}", &socket_path);
             match UnixStream::connect(&socket_path) {
                 Ok(stream) => return stream,
                 Err(_) => sleep(time::Duration::from_millis(50)),
@@ -294,7 +293,6 @@ impl<'a> GeoClient<'a> {
             let target_pir_idx = target_idx / spiral_settings.records_per_pir_item; // this rounds down !
             let target_idx_clipped = target_pir_idx * spiral_settings.records_per_pir_item;
 
-            println!("sending request for index:{}", target_pir_idx);
             let query = spiral_settings.spiral_client.generate_query(target_pir_idx);
             let data = query.serialize();
 

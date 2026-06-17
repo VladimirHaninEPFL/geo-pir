@@ -268,7 +268,7 @@ impl GeoServer {
             }
         }
 
-        println!("done !");
+        // println!("done !");
         packed_db
     }
 

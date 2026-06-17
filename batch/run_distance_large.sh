@@ -2,7 +2,7 @@
 #SBATCH --nodes 1
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task 25
-#SBATCH --time 3:00:00
+#SBATCH --time 5:00:00
 #SBATCH --mem 100G
 #SBATCH --partition academic
 
@@ -12,6 +12,7 @@ COUNTRY=$1
 ARCHI=$2
 APPROACH=$3
 
+FILE_RES=./output/$COUNTRY-$ARCHI-$APPROACH.txt
 
 if [ "$ARCHI" = "Spiral" ]; then
     echo "-- starting spiral server in the background --"
@@ -24,19 +25,20 @@ fi
 
 echo "-- starting client for all destinations of this distance --"
 
-DISTANCE=$4
-FILE_RES=./output/$COUNTRY-$ARCHI-$APPROACH-$DISTANCE.txt
+DISTANCE_PAIRS=$4
 
-echo $5
+# Iterate over each integer key
+for DISTANCE in $(echo "$DISTANCE_PAIRS" | jq -r 'keys[]'); do
 
-# you can now start the clients destinations (one after another)
-IFS=' ' read -ra pairs <<< "$5"
-for pair in "${pairs[@]}"; do
-    START="${pair%%:*}"
-    END="${pair##*:}"
+    echo "-- running journeys of distance $DISTANCE..." >> $FILE_RES
+    echo "-- running journeys of distance $DISTANCE..." 
+    # Iterate over each pair under that key
+    while IFS=$'\t' read -r START END; do
 
-    cargo run --release --bin geo_client $COUNTRY $ARCHI $APPROACH $START $END &> $FILE_RES
-    # python3 python/visualiseAStarResult.py $FILE_RES ./data/$COUNTRY-navigation.pickle ./output/$COUNTRY-$ARCHI-$APPROACH-$DEST.png
+        cargo run --release --bin geo_client $COUNTRY $ARCHI $APPROACH $START $END >> $FILE_RES
+        # python3 python/visualiseAStarResult.py $FILE_RES ./data/$COUNTRY-navigation.pickle ./output/$COUNTRY-$ARCHI-$APPROACH-$DEST.png
+
+    done < <(echo "$DISTANCE_PAIRS" | jq -r --arg k "$DISTANCE" '.[$k][] | [.[0], .[1]] | @tsv')
 done
 
 echo "-- All clients executed ! --"

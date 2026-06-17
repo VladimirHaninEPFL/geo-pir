@@ -32,7 +32,7 @@ impl GraphContext {
     pub fn new(
         country: &Countries,
     ) -> GraphResult<Self> {
-        println!("Generating new graph context for {:?}", country);
+        println!("Generating new graph context for {:?}...", country);
 
         let mut graph = EdgeListGraph::new();
 
@@ -46,7 +46,7 @@ impl GraphContext {
     }
 
     pub fn save(&self, country: &Countries) -> GraphResult<()> {
-        println!("Saving graph context for {:?}", country);
+        println!("Saving graph context for {:?}...", country);
 
         let path = PathBuf::from(format!("./data/{}-graph-context.gctx",  country.to_string()));
         let file = File::create(path)?;
@@ -58,7 +58,7 @@ impl GraphContext {
     }
 
     pub fn load(country: &Countries) -> GraphResult<Self> {
-        println!("Loading graph context for {:?}", country);
+        println!("Loading graph context for {:?}...", country);
 
         let path = PathBuf::from(format!("./data/{}-graph-context.gctx",  country.to_string()));
         let file = File::open(path)?;

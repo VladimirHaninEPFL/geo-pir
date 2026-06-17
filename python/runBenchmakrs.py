@@ -7,7 +7,7 @@ graph or journeys dump.
 
 from pathlib import Path
 import pickle as pk
-import sys
+import json
 import subprocess
 import time
 
@@ -29,25 +29,24 @@ def startBenchmarks() -> None:
         journeys[country] = pk.load(open(f"./data/{country}-journeys.pickle", "rb"))
     
     for country in countries:
-        for archi in architectures:
-            for approach in approaches:
 
-                journeysThisCountry = journeys[country]
+        if country == "France":
+            script_to_run = "run_distance_large.sh"
+        else:
+            script_to_run = "run_distance_small.sh"
 
-                for distance, start_ends in journeysThisCountry.items():
+            for archi in architectures:
+                for approach in approaches:
 
-                    if country == "France":
-                        subprocess.run(["sbatch", "run_distance_large.sh", country, archi, approach, str(distance), pairs_to_bash_arg(start_ends)], cwd="./batch/")
-                    else:
-                        subprocess.run(["sbatch", "run_distance_small.sh", country, archi, approach, str(distance), pairs_to_bash_arg(start_ends)], cwd="./batch/")
-                    time.sleep(1)
+                    journeysThisCountry = json.dumps(journeys[country])
+                    subprocess.run(["sbatch", script_to_run, country, archi, approach, journeysThisCountry], cwd="./batch/")
 
 
-def pairs_to_bash_arg(pairs):
-    return " ".join(f"{k}:{v}" for k, v in pairs)
+# def pairs_to_bash_arg(pairs):
+#     return "|".join(f"{a}:{b}" for a, b in pairs)
 
-def to_bash_array(arr):
-    return "(" + " ".join(f'"{s}"' for s in arr) + ")"
+# def to_bash_array(arr):
+#     return "(" + " ".join(f'"{s}"' for s in arr) + ")"
 
 if __name__ == "__main__":
     startBenchmarks()
