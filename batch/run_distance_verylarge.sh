@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --nodes 1
 #SBATCH --ntasks 1
-#SBATCH --cpus-per-task 10
+#SBATCH --cpus-per-task 40
 #SBATCH --time 5:00:00
-#SBATCH --mem 30G
+#SBATCH --mem 250G
 #SBATCH --partition academic
 
 cd /home/hanin/geo-pir

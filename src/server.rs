@@ -268,7 +268,6 @@ impl GeoServer {
             }
         }
 
-        // println!("done !");
         packed_db
     }
 

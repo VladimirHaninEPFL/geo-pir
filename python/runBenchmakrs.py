@@ -37,8 +37,10 @@ def startBenchmarks() -> None:
                 else:
                     script_to_run = "run_distance_small.sh"
 
-                journeysThisCountry = {dist: journeys[:2] for dist, journeys in journeys[country].items()}
-                journeysJson = json.dumps(journeysThisCountry, sort_keys=True)
+                if approach == "node3":
+                    script_to_run = "run_distance_verylarge.sh"
+
+                journeysJson = json.dumps(journeys[country], sort_keys=True)
                 subprocess.run(["sbatch", script_to_run, country, archi, approach, journeysJson], cwd="./batch/")
 
 

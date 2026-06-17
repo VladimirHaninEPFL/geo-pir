@@ -3,3 +3,5 @@
 /data
 /output
 /batch/*.out
+
+*.png

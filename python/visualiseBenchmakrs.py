@@ -95,8 +95,8 @@ def plot_mean_with_percentile_band(ax, x_values, sample_sets, label, color):
     sample_arrays = [np.asarray(results, dtype=float) for results in sample_sets]
 
     means = np.asarray([np.mean(results) for results in sample_arrays], dtype=float)
-    lower = np.asarray([np.percentile(results, 5) for results in sample_arrays], dtype=float)
-    upper = np.asarray([np.percentile(results, 95) for results in sample_arrays], dtype=float)
+    # lower = np.asarray([np.percentile(results, 5) for results in sample_arrays], dtype=float)
+    # upper = np.asarray([np.percentile(results, 95) for results in sample_arrays], dtype=float)
 
     # Show all raw samples without connecting them, because each x-position
     # contains independent runs rather than a continuous trajectory.
@@ -110,7 +110,7 @@ def plot_mean_with_percentile_band(ax, x_values, sample_sets, label, color):
     #         linewidths=0,
     #     )
 
-    ax.fill_between(x_values, lower, upper, color=color, alpha=0.18)
+    # ax.fill_between(x_values, lower, upper, color=color, alpha=0.18)
     ax.plot(x_values, means, color=color, linewidth=2.5, label=label)
     ax.scatter(x_values, means, color=color, s=28, zorder=3)
     return x_values, means
@@ -137,6 +137,7 @@ def plot_metric(
 
     for idx, (approach, metric_per_distance) in enumerate(data.items()):
         metric_per_distance = dict(sorted(metric_per_distance.items()))
+
         x_values = np.asarray(list(metric_per_distance.keys()), dtype=float) / 1000.0
         sample_sets = list(metric_per_distance.values())
         color = colors[idx % len(colors)]
@@ -208,32 +209,27 @@ def parse_output_file(filepath):
 
     current_distance = None
     
-    try:
-        with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
-            for line in f:
+    with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+        for line in f:
 
-                # Extract distance from comment line
-                distance_match = re.search(r'-- running journeys of distance (\d+)\.\.\.', line)
-                if distance_match:
-                    current_distance = int(distance_match.group(1))
+            # Extract distance from comment line
+            distance_match = re.search(r'-- running journeys of distance (\d+)\.\.\.', line)
+            if distance_match:
+                current_distance = int(distance_match.group(1))
 
-                    time_per_distance[current_distance] = []
-                    bytes_per_distance[current_distance] = []
+                time_per_distance[current_distance] = []
+                bytes_per_distance[current_distance] = []
 
-                # Extract timing information
-                if 'A* total elapsed time:' in line:
-                    time_match = re.search(r'A\* total elapsed time:\s+([\d.]+)\s+s', line)
-                    if time_match:
-                        time_per_distance[current_distance].append(float(time_match.group(1)))
-                
-                # Extract bytes received
-                if 'Server bytes received:' in line:
-                    bytes_match = re.search(r'Server bytes received:\s+([\d.]+)\s+bytes', line)
-                    if bytes_match:
-                        bytes_per_distance[current_distance].append(float(bytes_match.group(1)))
+            # Extract timing information
+            match = re.search(r'A\* total elapsed time:\s+([\d.]+)\s+s', line)
+            if match:
+                time_per_distance[current_distance].append(float(match.group(1)))
+            
+            # Extract bytes received
+            match = re.search(r'Server bytes received:\s+([\d.]+)\s+bytes', line)
+            if match:
+                bytes_per_distance[current_distance].append(float(match.group(1)))
     
-    except Exception as e:
-        print(f"Error parsing {filepath}: {e}")
     
     return time_per_distance, bytes_per_distance
 
@@ -277,8 +273,6 @@ def main():
                 output_path=f"./times-{countryName}-{archi}.png",
                 y_formatter=format_time,
             )
-            return
-
 
     # visualise navigational query bandwidth
 

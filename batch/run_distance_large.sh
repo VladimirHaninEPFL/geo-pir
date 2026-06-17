@@ -3,7 +3,7 @@
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task 25
 #SBATCH --time 5:00:00
-#SBATCH --mem 100G
+#SBATCH --mem 80G
 #SBATCH --partition academic
 
 cd /home/hanin/geo-pir
@@ -28,10 +28,11 @@ echo "-- starting client for all destinations of this distance --"
 DISTANCE_PAIRS=$4
 
 # Iterate over each integer key
-for DISTANCE in $(echo "$DISTANCE_PAIRS" | jq -r 'keys[]'); do
+for DISTANCE in $(echo "$DISTANCE_PAIRS" | jq -r '[keys[] | tonumber] | sort[] | tostring'); do
 
     echo "-- running journeys of distance $DISTANCE..." >> $FILE_RES
     echo "-- running journeys of distance $DISTANCE..." 
+    sleep 1
 
     # Iterate over each pair under that key
     while IFS=$'\t' read -r START END; do
