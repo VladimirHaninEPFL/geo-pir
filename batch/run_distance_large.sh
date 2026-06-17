@@ -32,6 +32,7 @@ for DISTANCE in $(echo "$DISTANCE_PAIRS" | jq -r 'keys[]'); do
 
     echo "-- running journeys of distance $DISTANCE..." >> $FILE_RES
     echo "-- running journeys of distance $DISTANCE..." 
+
     # Iterate over each pair under that key
     while IFS=$'\t' read -r START END; do
 

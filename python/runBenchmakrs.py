@@ -29,17 +29,18 @@ def startBenchmarks() -> None:
         journeys[country] = pk.load(open(f"./data/{country}-journeys.pickle", "rb"))
     
     for country in countries:
+        for archi in architectures:
+            for approach in approaches:
 
-        if country == "France":
-            script_to_run = "run_distance_large.sh"
-        else:
-            script_to_run = "run_distance_small.sh"
+                if country == "France":
+                    script_to_run = "run_distance_large.sh"
+                else:
+                    script_to_run = "run_distance_small.sh"
 
-            for archi in architectures:
-                for approach in approaches:
+                journeysThisCountry = {dist: journeys[:2] for dist, journeys in journeys[country].items()}
+                journeysJson = json.dumps(journeysThisCountry, sort_keys=True)
+                subprocess.run(["sbatch", script_to_run, country, archi, approach, journeysJson], cwd="./batch/")
 
-                    journeysThisCountry = json.dumps(journeys[country])
-                    subprocess.run(["sbatch", script_to_run, country, archi, approach, journeysThisCountry], cwd="./batch/")
 
 
 # def pairs_to_bash_arg(pairs):
