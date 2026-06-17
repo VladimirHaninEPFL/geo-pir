@@ -1,4 +1,5 @@
 use petgraph::graph::{NodeIndex};
+use petgraph::visit::EdgeRef;
 use spiral_rs::client::{Client, PublicParameters};
 use spiral_rs::params::Params;
 
@@ -228,6 +229,31 @@ impl<'a> GeoClient<'a> {
                     server_bytes_received: 0,
                 })
             }
+
+            Architectures::Naive => {
+
+                let server_path = PathBuf::from(format!("/tmp/{}-{}-{}.sock", country_name, architecture_name, approach_name));
+
+                let mut server_handle = ServerHandle::connect(&server_path)
+                .map_err(|e| format!("Failed to connect to server socket {:?}: {}", server_path, e))?;
+
+                let db_settings  = GeoClient::get_db_settings_spiral(&mut server_handle)?;
+
+                Ok(GeoClient {
+                    server_handle: server_handle,
+                    server_handle2: None,
+                    db_settings,
+                    nodes_cache: HashMap::new(),
+                    edges_cache: HashMap::new(),
+
+                    spiral_settings: None,
+                    singlepass_settings: None,
+
+                    server_query_duration: time::Duration::ZERO,
+                    server_bytes_received: 0,
+                })
+
+            }
         }
     }
 
@@ -254,6 +280,12 @@ impl<'a> GeoClient<'a> {
 
     fn send_spiral_query_server(&mut self, data: &Vec<u8>) -> io::Result<Vec<u8>> {
         let server_response = self.server_handle.send_spiral_query(data)?;
+        self.server_bytes_received += server_response.len();
+        Ok(server_response)
+    }
+
+    fn send_naive_query_server(&mut self) -> io::Result<Vec<u8>> {
+        let server_response = self.server_handle.send_naive_query()?;
         self.server_bytes_received += server_response.len();
         Ok(server_response)
     }
@@ -396,6 +428,25 @@ impl<'a> GeoClient<'a> {
         Ok(())
     }
 
+    fn perform_naive_request(&mut self)  -> io::Result<()> {
+
+        let graph_context_vec = self.send_naive_query_server()?;
+        let graph_context: GraphContext = bincode::deserialize(&graph_context_vec).expect("oui");
+
+        for node_idx in graph_context.graph.node_indices() {
+            let node_data = graph_context.graph[node_idx].clone();
+            let outgoing_edges = graph_context.graph.edges(node_idx)
+                .map(|edge| (edge.target(), *edge.weight()))
+                .collect::<Vec<(NodeIndex, TravelTimeEdge)>>();
+
+            self.nodes_cache.insert(node_idx, node_data);
+            self.edges_cache.insert(node_idx, outgoing_edges);
+        }
+
+        Ok(())
+
+    }
+
     fn perform_singlepass_request_node(&mut self, node_idx: NodeIndex) -> io::Result<()> {
 
         let data = (node_idx.index() as u32).to_le_bytes().to_vec();
@@ -460,6 +511,9 @@ impl<'a> GeoClient<'a> {
                         Approaches::Block(_)    => self.perform_singlepass_request_block(node_idx)?,
                         _                       => self.perform_singlepass_request_node(node_idx)?
                     }
+                },
+                Architectures::Naive => {
+                    self.perform_naive_request()?
                 }
             }
 

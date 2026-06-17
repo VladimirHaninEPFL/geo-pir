@@ -1,3 +1,4 @@
+use petgraph::Graph;
 use spiral_rs::aligned_memory::AlignedMemory;
 use spiral_rs::client::{PublicParameters, Query};
 use spiral_rs::params::Params;
@@ -5,7 +6,7 @@ use spiral_rs::server::{load_db_from_seek, process_query};
 use crate::db_settings::{Approaches, Architectures, Countries, DBSettings};
 use crate::data_entries::{*};
 use crate::graph::{EdgeListGraph, GraphContext, GraphResult};
-use crate::ipc::{SinglePassClientRequest, SinglePassServerResponse, SpiralClientRequest, SpiralServerResponse};
+use crate::ipc::{NaiveClientRequest, NaiveServerResponse, SinglePassClientRequest, SinglePassServerResponse, SpiralClientRequest, SpiralServerResponse};
 use crate::spiral::{DerivedPirLayout, make_params};
 
 use core::time;
@@ -24,6 +25,7 @@ pub struct GeoServer {
 
     spiral_settings: Option<SpiralSettings>,
     singlepass_settings: Option<SinglePassSettings>,
+    naive_settings: Option<NaiveSettings>,
 }
 
 pub struct SinglePassSettings {
@@ -131,6 +133,11 @@ impl SpiralSettings {
     }
 }
 
+pub struct NaiveSettings {
+    pub graph_context: GraphContext,
+    pub path_socket_server: PathBuf,
+}
+
 impl GeoServer {
     
     pub fn new(
@@ -153,6 +160,7 @@ impl GeoServer {
                 Ok(GeoServer {
                     spiral_settings: Some(spiral_settings), 
                     singlepass_settings: None,
+                    naive_settings: None,
                     node_count: context.graph.node_count(), 
                     db_settings
                 })
@@ -163,7 +171,19 @@ impl GeoServer {
                 Ok(GeoServer {
                     spiral_settings: None, 
                     singlepass_settings: Some(singlepass_settings), 
+                    naive_settings: None,
                     node_count: context.graph.node_count(), 
+                    db_settings
+                })
+            },
+            Architectures::Naive => {
+                Ok(GeoServer {
+                    spiral_settings: None, 
+                    singlepass_settings: None, 
+                    node_count: context.graph.node_count(), 
+                    naive_settings: Some(NaiveSettings {
+                        graph_context: context, 
+                        path_socket_server: PathBuf::from(format!("/tmp/{}-Naive.sock", db_settings.country.to_string()))}),
                     db_settings
                 })
             }
@@ -179,6 +199,9 @@ impl GeoServer {
             }
             Architectures::SinglePass => {
                 socket_path = self.singlepass_settings.as_mut().unwrap().path_socket_server.clone();
+            }
+            Architectures::Naive => {
+                socket_path = self.naive_settings.as_mut().unwrap().path_socket_server.clone();
             }
         }
         
@@ -325,9 +348,33 @@ impl GeoServer {
                     crate::ipc::send_message(&mut stream, &response)?;
                 }
             }
+            Architectures::Naive => {
+                loop {
+                    let request = match crate::ipc::receive_message::<NaiveClientRequest>(&mut stream) {
+                        Ok(request) => request,
+                        Err(err) if err.kind() == io::ErrorKind::UnexpectedEof => break,
+                        Err(err) => return Err(err),
+                    };
+
+                    let response = self.handle_naive_request(request);
+                    crate::ipc::send_message(&mut stream, &response)?;
+                }
+
+            }
         }
 
         Ok(())
+    }
+    
+    fn handle_naive_request(&mut self, request: NaiveClientRequest) -> NaiveServerResponse {
+        match request {
+            NaiveClientRequest::GetDBSettings => NaiveServerResponse::DBSettings(self.get_db_settings()),
+            NaiveClientRequest::GetCongestion => NaiveServerResponse::Congestion(self.get_congestion()),
+            NaiveClientRequest::GetDB => {
+                let graph_context = &self.naive_settings.as_ref().unwrap().graph_context;
+                NaiveServerResponse::DB(bincode::serialize(graph_context).expect("oui"))
+            }
+        }
     }
 
     fn handle_singlepass_request(&mut self, request: SinglePassClientRequest) -> SinglePassServerResponse {

@@ -140,6 +140,7 @@ impl fmt::Display for Countries {
 pub enum Architectures {
     Spiral,
     SinglePass,
+    Naive,
 }
 
 impl FromStr for Architectures {
@@ -150,6 +151,7 @@ impl FromStr for Architectures {
 
             "Spiral" => Ok(Architectures::Spiral),
             "SinglePass" => Ok(Architectures::SinglePass),
+            "Naive" => Ok(Architectures::Naive),
 
             _ => Err(format!("unknown architecutre: {s}")),
         }

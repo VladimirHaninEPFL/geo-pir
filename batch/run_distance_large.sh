@@ -2,7 +2,7 @@
 #SBATCH --nodes 1
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task 25
-#SBATCH --time 5:00:00
+#SBATCH --time 10:00:00
 #SBATCH --mem 80G
 #SBATCH --partition academic
 

@@ -25,6 +25,23 @@ pub enum SinglePassClientRequest {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
+pub enum NaiveClientRequest {
+    GetCongestion,
+    GetDBSettings,
+    GetDB,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub enum NaiveServerResponse {
+    Congestion(Vec<u8>),
+    DBSettings(Vec<u8>),
+    Ok,
+    Error(String),
+
+    DB(Vec<u8>),
+}
+
+#[derive(Serialize, Deserialize, Debug)]
 pub enum SinglePassServerResponse {
     Congestion(Vec<u8>),
     DBSettings(Vec<u8>),
@@ -106,6 +123,11 @@ impl ServerHandle {
         receive_message(&mut self.stream)
     }
 
+    fn naive_request(&mut self, request: NaiveClientRequest) -> io::Result<NaiveServerResponse> {
+        send_message(&mut self.stream, &request)?;
+        receive_message(&mut self.stream)
+    }
+
     pub fn get_db_settings_spiral(&mut self) -> io::Result<Vec<u8>> {
         match self.spiral_request(SpiralClientRequest::GetDBSettings)? {
             SpiralServerResponse::DBSettings(bytes) => Ok(bytes),
@@ -160,7 +182,17 @@ impl ServerHandle {
             )),
         }
     }
-    
+
+    pub fn send_naive_query(&mut self) -> io::Result<Vec<u8>> {
+        match self.naive_request(NaiveClientRequest::GetDB)? {
+            NaiveServerResponse::DB(response) => Ok(response),
+            NaiveServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
+            other => Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                format!("unexpected response type: {:?}", other),
+            )),
+        }
+    }
     pub fn send_singlepass_query(&mut self, query: &[u8]) -> io::Result<()> {
         send_message(&mut self.stream, &SinglePassClientRequest::Query(query.to_vec()))
     }

@@ -11,7 +11,7 @@ plotting:
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 import numpy as np
-import glob
+import pickle as pk
 import os
 import re
 
@@ -164,6 +164,7 @@ def plot_metric(
 
     if add_naive is not None:
         x_values, y_values, label = add_naive
+        x_values = np.asarray(list(x_values), dtype=float) / 1000.0
         ax.plot(x_values, y_values, linestyle="--", color="black", linewidth=2, label=label)
 
     if ylim is not None:
@@ -245,27 +246,33 @@ def getQueryTimes(countryName, archi):
     
     # Group results by (country, architecture)
     time_per_approach = {}
+    byte_per_approach = {}
     for approach in approaches:
 
         filepath = f"./output/{countryName}-{archi}-{approach}.txt"
-        timePerDistance, _ = parse_output_file(filepath)
+        timePerDistance, bytePerDistance = parse_output_file(filepath)
 
         time_per_approach[approach] = timePerDistance
+        byte_per_approach[approach] = bytePerDistance
             
-    return time_per_approach
+    return time_per_approach, byte_per_approach
 
 def getBandwidths():
     return {}
 
 
 def main():
-    
-    # visualise navigational query duration
+
+    dataNaive = {"France": 635_526_289 + 165_098_110, "Switzerland": 56_037_281 + 14_631_173}
+    journeyDistances = list(pk.load(open(f"./data/France-journeys.pickle", "rb")).keys())
+    numberDistances = len(journeyDistances)
+
     for countryName in countries:
         for archi in architectures:
 
-            queryTimes = getQueryTimes(countryName, archi)
+            queryTimes, queryBytes = getQueryTimes(countryName, archi)
 
+            # visualise navigational query duration
             plot_metric(
                 queryTimes,
                 ylabel="Query time",
@@ -274,8 +281,20 @@ def main():
                 y_formatter=format_time,
             )
 
-    # visualise navigational query bandwidth
+            # visualise navigational query bandwdith
 
+            plot_metric(
+                queryBytes,
+                ylabel="Query bandwidth",
+                title=f"Navigational query bandwidth for {countryName} using {archi}",
+                output_path=f"./data-{countryName}-{archi}.png",
+                y_formatter=format_bytes,
+                add_naive=(
+                    journeyDistances,
+                    [dataNaive[countryName]] * numberDistances,
+                    f"full db ({format_bytes(dataNaive[countryName])})",
+                )
+            )
 
 
 main()
