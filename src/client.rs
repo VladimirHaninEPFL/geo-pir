@@ -229,15 +229,13 @@ impl<'a> GeoClient<'a> {
                     server_bytes_received: 0,
                 })
             }
-
             Architectures::Naive => {
-
                 let server_path = PathBuf::from(format!("/tmp/{}-{}-{}.sock", country_name, architecture_name, approach_name));
 
                 let mut server_handle = ServerHandle::connect(&server_path)
                 .map_err(|e| format!("Failed to connect to server socket {:?}: {}", server_path, e))?;
 
-                let db_settings  = GeoClient::get_db_settings_spiral(&mut server_handle)?;
+                let db_settings  = GeoClient::get_db_settings_naive(&mut server_handle)?;
 
                 Ok(GeoClient {
                     server_handle: server_handle,
@@ -270,12 +268,35 @@ impl<'a> GeoClient<'a> {
 
         Ok(db_settings)
     }
+
+    fn get_db_settings_naive(server_handle: &mut ServerHandle) -> io::Result<DBSettings> {
+        let server_bytes = server_handle.get_db_settings_naive()?;
+        let db_settings: DBSettings = DBSettings::deserialize_from_bytes(&server_bytes);
+
+        Ok(db_settings)
+    }
     
     fn get_congestion(&mut self) -> io::Result<Vec<u16>> {
-        let server_bytes = self.server_handle.get_congestion()?;
-        let congestion_slice: &[u16] = bytemuck::cast_slice(&server_bytes);
+        match self.db_settings.architecture {
+            Architectures::Naive => {
+                let server_bytes = self.server_handle.get_congestion_naive()?;
+                let congestion_slice: &[u16] = bytemuck::cast_slice(&server_bytes);
 
-        Ok(congestion_slice.to_vec())
+                Ok(congestion_slice.to_vec())
+            }
+            Architectures::SinglePass => {
+                let server_bytes = self.server_handle.get_congestion_singlepass()?;
+                let congestion_slice: &[u16] = bytemuck::cast_slice(&server_bytes);
+
+                Ok(congestion_slice.to_vec())
+            }
+            Architectures::Spiral => {
+                let server_bytes = self.server_handle.get_congestion_spiral()?;
+                let congestion_slice: &[u16] = bytemuck::cast_slice(&server_bytes);
+
+                Ok(congestion_slice.to_vec())
+            }
+        }
     }
 
     fn send_spiral_query_server(&mut self, data: &Vec<u8>) -> io::Result<Vec<u8>> {

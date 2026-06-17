@@ -149,6 +149,17 @@ impl ServerHandle {
             )),
         }
     }
+    
+    pub fn get_db_settings_naive(&mut self) -> io::Result<Vec<u8>> {
+        match self.naive_request(NaiveClientRequest::GetDBSettings)? {
+            NaiveServerResponse::DBSettings(response) => Ok(response),
+            NaiveServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
+            other => Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                format!("unexpected response type: {:?}", other),
+            )),
+        }
+    }
 
     pub fn send_spiral_public_params(&mut self, bytes: &[u8]) -> io::Result<()> {
         match self.spiral_request(SpiralClientRequest::SendPublicParams(bytes.to_vec()))? {
@@ -193,6 +204,7 @@ impl ServerHandle {
             )),
         }
     }
+    
     pub fn send_singlepass_query(&mut self, query: &[u8]) -> io::Result<()> {
         send_message(&mut self.stream, &SinglePassClientRequest::Query(query.to_vec()))
     }
@@ -208,10 +220,32 @@ impl ServerHandle {
         }
     }
 
-    pub fn get_congestion(&mut self) -> io::Result<Vec<u8>> {
+    pub fn get_congestion_spiral(&mut self) -> io::Result<Vec<u8>> {
         match self.spiral_request(SpiralClientRequest::GetCongestion)? {
             SpiralServerResponse::Congestion(bytes) => Ok(bytes),
             SpiralServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
+            other => Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                format!("unexpected response type: {:?}", other),
+            )),
+        }
+    }
+
+    pub fn get_congestion_naive(&mut self) -> io::Result<Vec<u8>> {
+        match self.naive_request(NaiveClientRequest::GetCongestion)? {
+            NaiveServerResponse::Congestion(response) => Ok(response),
+            NaiveServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
+            other => Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                format!("unexpected response type: {:?}", other),
+            )),
+        }
+    }
+
+    pub fn get_congestion_singlepass(&mut self) -> io::Result<Vec<u8>> {
+        match self.singlepass_request(SinglePassClientRequest::GetCongestion)? {
+            SinglePassServerResponse::Congestion(response) => Ok(response),
+            SinglePassServerResponse::Error(err) => Err(io::Error::new(io::ErrorKind::Other, err)),
             other => Err(io::Error::new(
                 io::ErrorKind::InvalidData,
                 format!("unexpected response type: {:?}", other),

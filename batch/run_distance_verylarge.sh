@@ -17,10 +17,15 @@ FILE_RES=./output/$COUNTRY-$ARCHI-$APPROACH.txt
 if [ "$ARCHI" = "Spiral" ]; then
     echo "-- starting spiral server in the background --"
     cargo run --release --bin geo_server $COUNTRY $ARCHI $APPROACH &
-else
+fi
+if [ "$ARCHI" = "SinglePass" ]; then
     echo "-- starting singlepass servers in the background --"
     cargo run --release --bin geo_server $COUNTRY $ARCHI $APPROACH left &
     cargo run --release --bin geo_server $COUNTRY $ARCHI $APPROACH right &
+fi
+if [ "$ARCHI" = "Naive" ]; then
+    echo "-- starting naive server in the background --"
+    cargo run --release --bin geo_server $COUNTRY $ARCHI $APPROACH &
 fi
 
 echo "-- starting client for all destinations of this distance --"
@@ -32,7 +37,6 @@ for DISTANCE in $(echo "$DISTANCE_PAIRS" | jq -r '[keys[] | tonumber] | sort[] |
 
     echo "-- running journeys of distance $DISTANCE..." >> $FILE_RES
     echo "-- running journeys of distance $DISTANCE..." 
-    sleep 1
 
     # Iterate over each pair under that key
     while IFS=$'\t' read -r START END; do

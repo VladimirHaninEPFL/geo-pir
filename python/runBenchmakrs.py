@@ -45,7 +45,8 @@ def startBenchmarks() -> None:
 
     # naive approaches
     for country in countries:
-    subprocess.run(["sbatch", script_to_run, country, archi, approach, journeysJson], cwd="./batch/")
+        journeysJson = json.dumps(journeys[country], sort_keys=True)
+        subprocess.run(["sbatch", "run_distance_small.sh", country, "Naive", "node0", journeysJson], cwd="./batch/")
 
 
 # def pairs_to_bash_arg(pairs):

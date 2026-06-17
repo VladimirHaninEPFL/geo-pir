@@ -1,4 +1,3 @@
-use petgraph::Graph;
 use spiral_rs::aligned_memory::AlignedMemory;
 use spiral_rs::client::{PublicParameters, Query};
 use spiral_rs::params::Params;
@@ -183,7 +182,7 @@ impl GeoServer {
                     node_count: context.graph.node_count(), 
                     naive_settings: Some(NaiveSettings {
                         graph_context: context, 
-                        path_socket_server: PathBuf::from(format!("/tmp/{}-Naive.sock", db_settings.country.to_string()))}),
+                        path_socket_server: PathBuf::from(format!("/tmp/{}-Naive-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string() ))}),
                     db_settings
                 })
             }
