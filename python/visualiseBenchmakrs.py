@@ -95,8 +95,8 @@ def plot_mean_with_percentile_band(ax, x_values, sample_sets, label, color, line
     sample_arrays = [np.asarray(results, dtype=float) for results in sample_sets]
 
     means = np.asarray([np.mean(results) for results in sample_arrays], dtype=float)
-    # lower = np.asarray([np.percentile(results, 5) for results in sample_arrays], dtype=float)
-    # upper = np.asarray([np.percentile(results, 95) for results in sample_arrays], dtype=float)
+    lower = np.asarray([np.percentile(results, 5) for results in sample_arrays], dtype=float)
+    upper = np.asarray([np.percentile(results, 95) for results in sample_arrays], dtype=float)
 
     # Show all raw samples without connecting them, because each x-position
     # contains independent runs rather than a continuous trajectory.
@@ -110,7 +110,7 @@ def plot_mean_with_percentile_band(ax, x_values, sample_sets, label, color, line
     #         linewidths=0,
     #     )
 
-    # ax.fill_between(x_values, lower, upper, color=color, alpha=0.18)
+    ax.fill_between(x_values, lower, upper, color=color, alpha=0.18)
     ax.plot(x_values, means, color=color, linewidth=2.5, linestyle=linestyle, label=label)
     ax.scatter(x_values, means, color=color, s=28, zorder=3)
     return x_values, means
@@ -304,7 +304,6 @@ def main():
             )
 
             # visualise navigational query bandwdith
-
             plot_metric(
                 queryBytes,
                 ylabel="Query bandwidth",
@@ -318,5 +317,6 @@ def main():
                 )
             )
 
+    print("Done !")
 
 main()

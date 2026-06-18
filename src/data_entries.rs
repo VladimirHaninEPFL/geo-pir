@@ -3,8 +3,6 @@ use petgraph::{graph::NodeIndex, visit::EdgeRef};
 
 use crate::{client::GeoClient, graph::{EdgeListGraph, NodeData}};
 
-
-
 #[repr(C)]
 #[derive(Debug, PartialEq, Eq, Clone, Copy, Pod, Zeroable)]
 pub struct OutgoingEdge {
@@ -12,7 +10,6 @@ pub struct OutgoingEdge {
     pub cost: u16,
     pub _pad: u16, // explicit padding so that the struct is aligned
 }
-
 impl OutgoingEdge {
     pub fn empty() -> Self {
         OutgoingEdge { id_target: 0, cost: 0, _pad: 0 }
@@ -28,7 +25,6 @@ pub struct Node0Entry {
     pub longitude: f32,
     pub outgoing_edges: [OutgoingEdge; 4],
 }
-
 impl Node0Entry {
         
     pub fn new(graph: &EdgeListGraph, node_idx: NodeIndex) -> Self {
@@ -84,7 +80,6 @@ pub struct Node1Entry {
     node0_entry: Node0Entry,
     neighbours: [Node0Entry; 4],
 }
-
 impl Node1Entry {
         
     pub fn new(graph: &EdgeListGraph, node_idx: NodeIndex) -> Self {
@@ -135,7 +130,6 @@ pub struct Node2Entry {
     node0_entry: Node0Entry,
     neighbours: [Node1Entry; 4],
 }
-
 impl Node2Entry {
         
     pub fn new(graph: &EdgeListGraph, node_idx: NodeIndex) -> Self {
@@ -185,7 +179,6 @@ pub struct Node3Entry {
     node0_entry: Node0Entry,
     neighbours: [Node2Entry; 4],
 }
-
 impl Node3Entry {
         
     pub fn new(graph: &EdgeListGraph, node_idx: NodeIndex) -> Self {
@@ -236,12 +229,11 @@ pub struct BlockEntry { // very similar to the node0 entries, we just add the cu
     pub longitude: f32,
     pub outgoing_edges: [OutgoingEdge; 4],
 }
-
 impl BlockEntry {
 
-    // pub fn empty() -> Self {
-    //     BlockEntry { node_id: 0, latitude: 0., longitude: 0., outgoing_edges: [OutgoingEdge::empty(); 4] }
-    // }
+    pub fn isempty(&self) -> bool {
+        self.latitude == 0. && self.longitude == 0.
+    }
 
     pub fn new(graph: &EdgeListGraph, node_idx: NodeIndex) -> Self {
 

@@ -364,45 +364,30 @@ impl<'a> GeoClient<'a> {
         let spiral_settings = self.spiral_settings.as_mut().unwrap();
         let result = spiral_settings.spiral_client.decode_response(response.as_slice());
 
+        let mut size_entry = 0;
+        match self.db_settings.approach {
+            Approaches::Node0 => {
+                size_entry = std::mem::size_of::<Node0Entry>();
+            },
+            Approaches::Node1 => {
+                size_entry = std::mem::size_of::<Node1Entry>();
+            },
+            Approaches::Node2 => {
+                size_entry = std::mem::size_of::<Node2Entry>();
+            },
+            Approaches::Node3 => {
+                size_entry = std::mem::size_of::<Node3Entry>();
+            },
+            _ => (),
+        }
+
         // you receive multple entries for spiral
         for i in 0..spiral_settings.records_per_pir_item {
+            let start = i * size_entry;
+            let end = start + size_entry;
+            let recovered_record = &result[start..end];
 
-            match self.db_settings.approach {
-                Approaches::Node0 => {
-                    let start = i * std::mem::size_of::<Node0Entry>();
-                    let end = (i+1) * std::mem::size_of::<Node0Entry>();
-                    let recovered_record = &result[start..end];
-
-                    let node0_entry: &Node0Entry = bytemuck::from_bytes(recovered_record);
-                    node0_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
-                },
-                Approaches::Node1 => {
-                    let start = i * std::mem::size_of::<Node1Entry>();
-                    let end = (i+1) * std::mem::size_of::<Node1Entry>();
-                    let recovered_record = &result[start..end];
-
-                    let node1_entry: &Node1Entry = bytemuck::from_bytes(recovered_record);
-                    node1_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
-                },
-                Approaches::Node2 => {
-                    let start = i * std::mem::size_of::<Node2Entry>();
-                    let end = (i+1) * std::mem::size_of::<Node2Entry>();
-                    let recovered_record = &result[start..end];
-
-                    let node2_entry: &Node2Entry = bytemuck::from_bytes(recovered_record);
-                    node2_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
-                },
-                Approaches::Node3 => {
-                    let start = i * std::mem::size_of::<Node3Entry>();
-                    let end = (i+1) * std::mem::size_of::<Node3Entry>();
-                    let recovered_record = &result[start..end];
-
-                    let node3_entry: &Node3Entry = bytemuck::from_bytes(recovered_record);
-                    node3_entry.extract_to_graph(NodeIndex::new(target_idx_clipped + i),  self);
-                },
-                _ => (),
-
-            }
+            self.parse_node(recovered_record.to_vec(), NodeIndex::new(target_idx_clipped + i));
         }
 
         Ok(())
@@ -439,11 +424,7 @@ impl<'a> GeoClient<'a> {
             let end = start + num_bytes_in_block;
             let block = &result[start..end];
 
-            // extract block content
-            let block_entries: &[BlockEntry] = bytemuck::cast_slice(block);
-            for entry in block_entries {
-                entry.extract_to_graph(self);
-            }
+            self.parse_block(block.to_vec());
         }
 
         Ok(())
@@ -451,12 +432,12 @@ impl<'a> GeoClient<'a> {
 
     fn perform_naive_request(&mut self)  -> io::Result<()> {
 
-        let graph_context_vec = self.send_naive_query_server()?;
-        let graph_context: GraphContext = bincode::deserialize(&graph_context_vec).expect("oui");
+        let graph_vec = self.send_naive_query_server()?;
+        let graph: EdgeListGraph = bincode::deserialize(&graph_vec).expect("oui");
 
-        for node_idx in graph_context.graph.node_indices() {
-            let node_data = graph_context.graph[node_idx].clone();
-            let outgoing_edges = graph_context.graph.edges(node_idx)
+        for node_idx in graph.node_indices() {
+            let node_data = graph[node_idx].clone();
+            let outgoing_edges = graph.edges(node_idx)
                 .map(|edge| (edge.target(), *edge.weight()))
                 .collect::<Vec<(NodeIndex, TravelTimeEdge)>>();
 
@@ -473,25 +454,7 @@ impl<'a> GeoClient<'a> {
         let data = (node_idx.index() as u32).to_le_bytes().to_vec();
         let row = self.send_singlepass_query_server(data)?;
 
-        match self.db_settings.approach {
-            Approaches::Node0 => {
-                let node_entry: &Node0Entry = bytemuck::from_bytes(&row);
-                node_entry.extract_to_graph(node_idx,  self);
-            },
-            Approaches::Node1 => {
-                let node_entry: &Node1Entry = bytemuck::from_bytes(&row);
-                node_entry.extract_to_graph(node_idx,  self);
-            },
-            Approaches::Node2 => {
-                let node_entry: &Node2Entry = bytemuck::from_bytes(&row);
-                node_entry.extract_to_graph(node_idx,  self);
-            },
-            Approaches::Node3 => {
-                let node_entry: &Node3Entry = bytemuck::from_bytes(&row);
-                node_entry.extract_to_graph(node_idx,  self);
-            },
-            _ => {},
-        }
+        self.parse_node(row, node_idx);
 
         Ok(())
     }
@@ -504,13 +467,46 @@ impl<'a> GeoClient<'a> {
         let data = (target_idx as u32).to_le_bytes().to_vec();
         let row = self.send_singlepass_query_server(data)?;
 
-        // extract block content
-        let block_entries: &[BlockEntry] = bytemuck::cast_slice(&row);
-        for entry in block_entries {
-            entry.extract_to_graph(self);
-        }
+        self.parse_block(row);
 
         Ok(())
+    }
+
+    fn parse_block(&mut self, block: Vec<u8>) {
+
+        let block_entries: &[BlockEntry] = bytemuck::cast_slice(&block);
+
+        for entry in block_entries {
+
+            if entry.isempty() {
+                break
+            }
+
+            entry.extract_to_graph(self);
+        }
+    }
+    
+    fn parse_node(&mut self, node: Vec<u8>, node_idx: NodeIndex) {
+
+        match self.db_settings.approach {
+            Approaches::Node0 => {
+                let node_entry: &Node0Entry = bytemuck::from_bytes(&node);
+                node_entry.extract_to_graph(node_idx,  self);
+            },
+            Approaches::Node1 => {
+                let node_entry: &Node1Entry = bytemuck::from_bytes(&node);
+                node_entry.extract_to_graph(node_idx,  self);
+            },
+            Approaches::Node2 => {
+                let node_entry: &Node2Entry = bytemuck::from_bytes(&node);
+                node_entry.extract_to_graph(node_idx,  self);
+            },
+            Approaches::Node3 => {
+                let node_entry: &Node3Entry = bytemuck::from_bytes(&node);
+                node_entry.extract_to_graph(node_idx,  self);
+            },
+            _ => {},
+        }
     }
     
     /// Get node information, querying the server if not cached

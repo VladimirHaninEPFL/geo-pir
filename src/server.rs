@@ -133,7 +133,7 @@ impl SpiralSettings {
 }
 
 pub struct NaiveSettings {
-    pub graph_context: GraphContext,
+    pub graph: EdgeListGraph,
     pub path_socket_server: PathBuf,
 }
 
@@ -181,7 +181,7 @@ impl GeoServer {
                     singlepass_settings: None, 
                     node_count: context.graph.node_count(), 
                     naive_settings: Some(NaiveSettings {
-                        graph_context: context, 
+                        graph: context.graph, 
                         path_socket_server: PathBuf::from(format!("/tmp/{}-Naive-{}.sock", db_settings.country.to_string(), db_settings.approach.to_string() ))}),
                     db_settings
                 })
@@ -370,8 +370,8 @@ impl GeoServer {
             NaiveClientRequest::GetDBSettings => NaiveServerResponse::DBSettings(self.get_db_settings()),
             NaiveClientRequest::GetCongestion => NaiveServerResponse::Congestion(self.get_congestion()),
             NaiveClientRequest::GetDB => {
-                let graph_context = &self.naive_settings.as_ref().unwrap().graph_context;
-                NaiveServerResponse::DB(bincode::serialize(graph_context).expect("oui"))
+                let graph = &self.naive_settings.as_ref().unwrap().graph;
+                NaiveServerResponse::DB(bincode::serialize(graph).expect("oui"))
             }
         }
     }

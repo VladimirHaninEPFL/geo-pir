@@ -16,16 +16,16 @@ FILE_RES=./output/$COUNTRY-$ARCHI-$APPROACH.txt
 
 if [ "$ARCHI" = "Spiral" ]; then
     echo "-- starting spiral server in the background --"
-    cargo run --release --bin geo_server $COUNTRY $ARCHI $APPROACH &
+    ./target/release/geo_server $COUNTRY $ARCHI $APPROACH &
 fi
 if [ "$ARCHI" = "SinglePass" ]; then
     echo "-- starting singlepass servers in the background --"
-    cargo run --release --bin geo_server $COUNTRY $ARCHI $APPROACH left &
-    cargo run --release --bin geo_server $COUNTRY $ARCHI $APPROACH right &
+    ./target/release/geo_server $COUNTRY $ARCHI $APPROACH left &
+    ./target/release/geo_server $COUNTRY $ARCHI $APPROACH right &
 fi
 if [ "$ARCHI" = "Naive" ]; then
     echo "-- starting naive server in the background --"
-    cargo run --release --bin geo_server $COUNTRY $ARCHI $APPROACH &
+    ./target/release/geo_server $COUNTRY $ARCHI $APPROACH &
 fi
 
 echo "-- starting client for all destinations of this distance --"
@@ -41,7 +41,7 @@ for DISTANCE in $(echo "$DISTANCE_PAIRS" | jq -r '[keys[] | tonumber] | sort[] |
     # Iterate over each pair under that key
     while IFS=$'\t' read -r START END; do
 
-        cargo run --release --bin geo_client $COUNTRY $ARCHI $APPROACH $START $END >> $FILE_RES
+        ./target/release/geo_client $COUNTRY $ARCHI $APPROACH $START $END >> $FILE_RES
         # python3 python/visualiseAStarResult.py $FILE_RES ./data/$COUNTRY-navigation.pickle ./output/$COUNTRY-$ARCHI-$APPROACH-$DEST.png
 
     done < <(echo "$DISTANCE_PAIRS" | jq -r --arg k "$DISTANCE" '.[$k][] | [.[0], .[1]] | @tsv')

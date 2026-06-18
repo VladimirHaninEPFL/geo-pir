@@ -20,6 +20,10 @@ def startBenchmarks() -> None:
     subprocess.run(["go", "build", "-o", "singlepass-client", "./cmd/singlepass_demo_node/client/client.go"], cwd="./../SinglePass")
     subprocess.run(["go", "build", "-o", "singlepass-server", "./cmd/singlepass_demo_node/server/server.go"], cwd="./../SinglePass")
 
+    # compile this code
+    subprocess.run(["cargo", "build", "--release", "--bin", "geo_server"])
+    subprocess.run(["cargo", "build", "--release", "--bin", "geo_client"])
+
     countries = ["Switzerland", "France"]
     architectures = ["Spiral", "SinglePass"]
     approaches = ["node0", "node1", "node2", "node3", "block0.1", "block0.25", "block0.5", "block1"]
