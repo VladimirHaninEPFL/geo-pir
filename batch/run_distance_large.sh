@@ -2,7 +2,7 @@
 #SBATCH --nodes 1
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task 25
-#SBATCH --time 10:00:00
+#SBATCH --time 20:00:00
 #SBATCH --mem 80G
 #SBATCH --partition academic
 
@@ -13,18 +13,18 @@ ARCHI=$2
 APPROACH=$3
 
 FILE_RES=./output/$COUNTRY-$ARCHI-$APPROACH.txt
+echo "-- starting benchmarks for $COUNTRY $ARCHI $APPROACH --"
+echo "-- starting benchmarks for $COUNTRY $ARCHI $APPROACH --" >> $FILE_RES
 
+echo "-- starting server in the background --"
 if [ "$ARCHI" = "Spiral" ]; then
-    echo "-- starting spiral server in the background --"
     ./target/release/geo_server $COUNTRY $ARCHI $APPROACH &
 fi
 if [ "$ARCHI" = "SinglePass" ]; then
-    echo "-- starting singlepass servers in the background --"
     ./target/release/geo_server $COUNTRY $ARCHI $APPROACH left &
     ./target/release/geo_server $COUNTRY $ARCHI $APPROACH right &
 fi
 if [ "$ARCHI" = "Naive" ]; then
-    echo "-- starting naive server in the background --"
     ./target/release/geo_server $COUNTRY $ARCHI $APPROACH &
 fi
 

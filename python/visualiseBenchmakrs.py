@@ -95,8 +95,8 @@ def plot_mean_with_percentile_band(ax, x_values, sample_sets, label, color, line
     sample_arrays = [np.asarray(results, dtype=float) for results in sample_sets]
 
     means = np.asarray([np.mean(results) for results in sample_arrays], dtype=float)
-    lower = np.asarray([np.percentile(results, 5) for results in sample_arrays], dtype=float)
-    upper = np.asarray([np.percentile(results, 95) for results in sample_arrays], dtype=float)
+    # lower = np.asarray([np.percentile(results, 5) for results in sample_arrays], dtype=float)
+    # upper = np.asarray([np.percentile(results, 95) for results in sample_arrays], dtype=float)
 
     # Show all raw samples without connecting them, because each x-position
     # contains independent runs rather than a continuous trajectory.
@@ -110,7 +110,7 @@ def plot_mean_with_percentile_band(ax, x_values, sample_sets, label, color, line
     #         linewidths=0,
     #     )
 
-    ax.fill_between(x_values, lower, upper, color=color, alpha=0.18)
+    # ax.fill_between(x_values, lower, upper, color=color, alpha=0.18)
     ax.plot(x_values, means, color=color, linewidth=2.5, linestyle=linestyle, label=label)
     ax.scatter(x_values, means, color=color, s=28, zorder=3)
     return x_values, means
@@ -228,6 +228,7 @@ def parse_output_file(filepath):
     """
 
     time_per_distance = {}
+    server_time_per_distance = {}
     bytes_per_distance = {}
 
     current_distance = None
@@ -242,19 +243,25 @@ def parse_output_file(filepath):
 
                 time_per_distance[current_distance] = []
                 bytes_per_distance[current_distance] = []
+                server_time_per_distance[current_distance] = []
 
             # Extract timing information
             match = re.search(r'A\* total elapsed time:\s+([\d.]+)\s+s', line)
             if match:
                 time_per_distance[current_distance].append(float(match.group(1)))
             
+            # extract server time
+            match = re.search(r'  server queries time:\s+([\d.]+)\s+s', line)
+            if match:
+                server_time_per_distance[current_distance].append(float(match.group(1)))
+
             # Extract bytes received
             match = re.search(r'Server bytes received:\s+([\d.]+)\s+bytes', line)
             if match:
                 bytes_per_distance[current_distance].append(float(match.group(1)))
     
     
-    return time_per_distance, bytes_per_distance
+    return time_per_distance, server_time_per_distance, bytes_per_distance
 
 def getQueryTimes(countryName, archi):
     """
@@ -268,26 +275,28 @@ def getQueryTimes(countryName, archi):
     
     # Group results by (country, architecture)
     time_per_approach = {}
+    server_time_per_approach = {}
     byte_per_approach = {}
     for approach in approaches:
 
         filepath = f"./output/{countryName}-{archi}-{approach}.txt"
-        timePerDistance, bytePerDistance = parse_output_file(filepath)
+        timePerDistance, serverTimePerDistance, bytePerDistance = parse_output_file(filepath)
 
         time_per_approach[approach] = timePerDistance
+        server_time_per_approach[approach] = serverTimePerDistance
         byte_per_approach[approach] = bytePerDistance
             
     filepath = f"./output/{countryName}-Naive-node0.txt"
-    timePerDistanceNaive, bytePerDistanceNaive = parse_output_file(filepath)
+    timePerDistanceNaive, serverTimePerDistanceNaive, bytePerDistanceNaive = parse_output_file(filepath)
 
-    return time_per_approach, byte_per_approach, timePerDistanceNaive, bytePerDistanceNaive
+    return time_per_approach, server_time_per_approach, byte_per_approach, timePerDistanceNaive, serverTimePerDistanceNaive, bytePerDistanceNaive
 
 def main():
 
     for countryName in countries:
         for archi in architectures:
 
-            queryTimes, queryBytes, timesNaive, dataNaive = getQueryTimes(countryName, archi)
+            queryTimes, queryServerTimes, queryBytes, timesNaive, serverTimesNaive, dataNaive = getQueryTimes(countryName, archi)
 
             # visualise navigational query duration
             plot_metric(
@@ -299,6 +308,20 @@ def main():
                 add_naive=(
                     timesNaive.keys(),
                     timesNaive.values(),
+                    f"naive approach",
+                )
+            )
+
+            # visualise navigational query duration
+            plot_metric(
+                queryServerTimes,
+                ylabel="Server query time",
+                title=f"Server query duration for {countryName} using {archi}",
+                output_path=f"./servertimes-{countryName}-{archi}.png",
+                y_formatter=format_time,
+                add_naive=(
+                    serverTimesNaive.keys(),
+                    serverTimesNaive.values(),
                     f"naive approach",
                 )
             )
