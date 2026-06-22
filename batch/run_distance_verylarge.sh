@@ -2,7 +2,7 @@
 #SBATCH --nodes 1
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task 40
-#SBATCH --time 30:00:00
+#SBATCH --time 50:00:00
 #SBATCH --mem 250G
 #SBATCH --partition academic
 
@@ -13,6 +13,8 @@ ARCHI=$2
 APPROACH=$3
 
 FILE_RES=./output/$COUNTRY-$ARCHI-$APPROACH.txt
+rm $FILE_RES
+
 echo "-- starting benchmarks for $COUNTRY $ARCHI $APPROACH --"
 echo "-- starting benchmarks for $COUNTRY $ARCHI $APPROACH --" >> $FILE_RES
 

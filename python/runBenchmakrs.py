@@ -14,7 +14,7 @@ import time
 def startBenchmarks() -> None:
 
     # clean output directory
-    subprocess.run(["rm ./output/*"], shell=True)
+    # subprocess.run(["rm ./output/*"], shell=True)
 
     # compile the go code of singlepass !
     subprocess.run(["go", "build", "-o", "singlepass-client", "./cmd/singlepass_demo_node/client/client.go"], cwd="./../SinglePass")
@@ -25,8 +25,8 @@ def startBenchmarks() -> None:
     subprocess.run(["cargo", "build", "--release", "--bin", "geo_client"])
 
     countries = ["Switzerland", "France"]
-    architectures = ["Spiral", "SinglePass"]
-    approaches = ["node0", "node1", "node2", "node3", "block0.1", "block0.25", "block0.5", "block1"]
+    architectures = ["Spiral"] #, "SinglePass"]
+    approaches = ["node0", "node1", "node2", "node3" ] #, "block0.1", "block0.25", "block0.5", "block1"]
     
     journeys = {}
     for country in countries:
@@ -47,10 +47,10 @@ def startBenchmarks() -> None:
                 journeysJson = json.dumps(journeys[country], sort_keys=True)
                 subprocess.run(["sbatch", script_to_run, country, archi, approach, journeysJson], cwd="./batch/")
 
-    # naive approaches
-    for country in countries:
-        journeysJson = json.dumps(journeys[country], sort_keys=True)
-        subprocess.run(["sbatch", "run_distance_small.sh", country, "Naive", "node0", journeysJson], cwd="./batch/")
+    # # naive approaches
+    # for country in countries:
+    #     journeysJson = json.dumps(journeys[country], sort_keys=True)
+    #     subprocess.run(["sbatch", "run_distance_small.sh", country, "Naive", "node0", journeysJson], cwd="./batch/")
 
 
 # def pairs_to_bash_arg(pairs):

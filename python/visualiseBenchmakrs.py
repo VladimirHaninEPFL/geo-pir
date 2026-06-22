@@ -89,30 +89,36 @@ def annotate_last_point(ax, x_values, y_values, text, color, y_offset=0):
         clip_on=False,
     )
 
-def plot_mean_with_percentile_band(ax, x_values, sample_sets, label, color, linestyle=None):
+def plot_comp(ax, x_values, sample_sets1, sample_sets2, label, color, linestyle=None):
+
+    sample_arrays1 = [np.asarray(results, dtype=float) for results in sample_sets1]
+    sample_arrays2 = [np.asarray(results, dtype=float) for results in sample_sets2]
+
+    totals = np.asarray([np.mean(results) for results in sample_arrays1], dtype=float)
+    parts = np.asarray([np.mean(results) for results in sample_arrays2], dtype=float)
+
+    percentages = parts / totals
+
+    ax.plot(x_values, percentages, color=color, linewidth=2.5, linestyle=linestyle, label=label)
+    ax.scatter(x_values, percentages, color=color, linewidth=2.5)
+
+def plot_mean_with_percentile_band(ax, x_values, sample_sets1, label, color, linestyle=None):
     """Plot the mean, a central percentile band, and raw samples."""
 
-    sample_arrays = [np.asarray(results, dtype=float) for results in sample_sets]
+    # result = [ (xvalue, sample) for (xvalue, sample) in zip(x_values, sample_sets1) if len(sample) > 0]
+    # x_values = list(map(lambda x: x[0], result))
+    # sample_sets1 = list(map(lambda x: x[1], result))
+
+    sample_arrays = [np.asarray(results, dtype=float) for results in sample_sets1]
+
+    lower = np.asarray([np.percentile(results, 5) for results in sample_arrays], dtype=float)
+    upper = np.asarray([np.percentile(results, 95) for results in sample_arrays], dtype=float)
+    ax.fill_between(x_values, lower, upper, color=color, alpha=0.18)
 
     means = np.asarray([np.mean(results) for results in sample_arrays], dtype=float)
-    # lower = np.asarray([np.percentile(results, 5) for results in sample_arrays], dtype=float)
-    # upper = np.asarray([np.percentile(results, 95) for results in sample_arrays], dtype=float)
-
-    # Show all raw samples without connecting them, because each x-position
-    # contains independent runs rather than a continuous trajectory.
-    # for x, results in zip(x_values, sample_arrays):
-    #     ax.scatter(
-    #         np.full(len(results), x),
-    #         results,
-    #         color=color,
-    #         alpha=0.12,
-    #         s=14,
-    #         linewidths=0,
-    #     )
-
-    # ax.fill_between(x_values, lower, upper, color=color, alpha=0.18)
     ax.plot(x_values, means, color=color, linewidth=2.5, linestyle=linestyle, label=label)
-    ax.scatter(x_values, means, color=color, s=28, zorder=3)
+    ax.scatter(x_values, means, color=color, linewidth=2.5)
+
     return x_values, means
 
 def plot_metric(
@@ -193,6 +199,70 @@ def plot_metric(
         ax.set_ylim(bottom=0, top=ylim)
 
     ax.set_yscale("log")
+    if y_formatter is not None:
+        ax.yaxis.set_major_formatter(FuncFormatter(y_formatter))
+    ax.set_xlabel("Journey length (km)")
+    ax.set_ylabel(ylabel)
+    ax.set_title(title)
+    ax.margins(x=0.08)
+    ax.legend()
+    fig.tight_layout()
+    fig.savefig(output_path)
+    plt.close(fig)
+
+def plot_comp_metric(
+    data1,
+    data2,
+    ylabel,
+    title,
+    output_path,
+    add_naive=None,
+    ylim=None,
+    lastPoint=False,
+    last_point_formatter=None,
+    y_formatter=None,
+):
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.set_axisbelow(True)
+    ax.grid(True, which="major", axis="both", alpha=0.18, linewidth=0.8)
+    ax.grid(True, which="minor", axis="both", alpha=0.08, linewidth=0.5)
+    colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
+
+    for idx, approach in enumerate(data1.keys()):
+        metric_per_distance1 = dict(sorted(data1[approach].items()))
+        metric_per_distance2 = dict(sorted(data2[approach].items()))
+
+        x_values = np.asarray(list(metric_per_distance1.keys()), dtype=float) / 1000.0
+        sample_sets1 = list(metric_per_distance1.values())
+        sample_sets2 = list(metric_per_distance2.values())
+        color = colors[idx % len(colors)]
+
+        plot_comp(
+            ax,
+            x_values,
+            sample_sets1,
+            sample_sets2,
+            label=approach,
+            color=color,
+        )
+
+        # if lastPoint:
+        #     point_formatter = last_point_formatter or format_y_value
+        #     annotate_last_point(
+        #         ax,
+        #         mean_x_values,
+        #         mean_values,
+        #         point_formatter(mean_values[-1]),
+        #         color,
+        #         y_offset=y_offset,
+        #     )
+
+
+    ax.set_ylim(bottom=0, top=1)
+
     if y_formatter is not None:
         ax.yaxis.set_major_formatter(FuncFormatter(y_formatter))
     ax.set_xlabel("Journey length (km)")
@@ -313,17 +383,12 @@ def main():
             )
 
             # visualise navigational query duration
-            plot_metric(
+            plot_comp_metric(
+                queryTimes,
                 queryServerTimes,
-                ylabel="Server query time",
-                title=f"Server query duration for {countryName} using {archi}",
+                ylabel="Proportion",
+                title=f"Proportion of time spent on PIR for {countryName} using {archi}",
                 output_path=f"./servertimes-{countryName}-{archi}.png",
-                y_formatter=format_time,
-                add_naive=(
-                    serverTimesNaive.keys(),
-                    serverTimesNaive.values(),
-                    f"naive approach",
-                )
             )
 
             # visualise navigational query bandwdith
