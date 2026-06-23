@@ -1,0 +1,1050 @@
+-- starting benchmarks for France Spiral node1 --
+-- running journeys of distance 500...
+Running A* from 7251342218 to 736631130 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 51
+Path length: 4 nodes
+A* total elapsed time: 10.915695 s
+  server queries time: 10.789052 s
+  search-only time: 0.126643 s
+Server bytes received: 16384 bytes
+Running A* from 2191353924 to 1265211283 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 86
+Path length: 16 nodes
+A* total elapsed time: 129.962469 s
+  server queries time: 129.813142 s
+  search-only time: 0.149327 s
+Server bytes received: 196608 bytes
+Running A* from 496980752 to 1470846416 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 89
+Path length: 15 nodes
+A* total elapsed time: 59.862244 s
+  server queries time: 59.716860 s
+  search-only time: 0.145384 s
+Server bytes received: 90112 bytes
+Running A* from 105455016 to 1115017059 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 134
+Path length: 13 nodes
+A* total elapsed time: 32.765359 s
+  server queries time: 32.626622 s
+  search-only time: 0.138737 s
+Server bytes received: 49152 bytes
+Running A* from 286501429 to 286268455 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 95
+Path length: 20 nodes
+A* total elapsed time: 124.642515 s
+  server queries time: 124.498101 s
+  search-only time: 0.144414 s
+Server bytes received: 188416 bytes
+Running A* from 618926645 to 1037757745 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 71
+Path length: 18 nodes
+A* total elapsed time: 65.080963 s
+  server queries time: 64.940098 s
+  search-only time: 0.140865 s
+Server bytes received: 98304 bytes
+Running A* from 412493727 to 397657383 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 59
+Path length: 6 nodes
+A* total elapsed time: 16.449147 s
+  server queries time: 16.301469 s
+  search-only time: 0.147678 s
+Server bytes received: 24576 bytes
+Running A* from 1398394841 to 278574752 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 52
+Path length: 11 nodes
+A* total elapsed time: 38.087200 s
+  server queries time: 37.947496 s
+  search-only time: 0.139704 s
+Server bytes received: 57344 bytes
+Running A* from 206339818 to 598396071 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 102
+Path length: 16 nodes
+A* total elapsed time: 113.966518 s
+  server queries time: 113.819465 s
+  search-only time: 0.147053 s
+Server bytes received: 172032 bytes
+Running A* from 6367769388 to 1621752972 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 57
+Path length: 8 nodes
+A* total elapsed time: 32.649205 s
+  server queries time: 32.509248 s
+  search-only time: 0.139957 s
+Server bytes received: 49152 bytes
+Running A* from 1949743114 to 1111347752 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 66
+Path length: 7 nodes
+A* total elapsed time: 59.937106 s
+  server queries time: 59.787395 s
+  search-only time: 0.149712 s
+Server bytes received: 90112 bytes
+Running A* from 538279225 to 3434525432 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 92
+Path length: 15 nodes
+A* total elapsed time: 48.869016 s
+  server queries time: 48.727866 s
+  search-only time: 0.141151 s
+Server bytes received: 73728 bytes
+Running A* from 4806159449 to 2566236119 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 46
+Path length: 6 nodes
+A* total elapsed time: 11.001603 s
+  server queries time: 10.852703 s
+  search-only time: 0.148900 s
+Server bytes received: 16384 bytes
+Running A* from 372629988 to 372626663 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 130
+Path length: 17 nodes
+A* total elapsed time: 130.286250 s
+  server queries time: 130.145031 s
+  search-only time: 0.141219 s
+Server bytes received: 196608 bytes
+Running A* from 283342334 to 283341375 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 62
+Path length: 10 nodes
+A* total elapsed time: 43.649419 s
+  server queries time: 43.500558 s
+  search-only time: 0.148861 s
+Server bytes received: 65536 bytes
+Running A* from 1936509742 to 1968458543 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 35
+Path length: 2 nodes
+A* total elapsed time: 16.473247 s
+  server queries time: 16.337019 s
+  search-only time: 0.136228 s
+Server bytes received: 24576 bytes
+Running A* from 694500183 to 13004337371 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 89
+Path length: 30 nodes
+A* total elapsed time: 119.705298 s
+  server queries time: 119.558447 s
+  search-only time: 0.146851 s
+Server bytes received: 180224 bytes
+Running A* from 1164034288 to 3016570057 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 89
+Path length: 14 nodes
+A* total elapsed time: 65.254109 s
+  server queries time: 65.113835 s
+  search-only time: 0.140274 s
+Server bytes received: 98304 bytes
+Running A* from 2639780124 to 289109314 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 122
+Path length: 19 nodes
+A* total elapsed time: 119.072232 s
+  server queries time: 118.925192 s
+  search-only time: 0.147040 s
+Server bytes received: 180224 bytes
+Running A* from 4920343852 to 4920343821 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 28
+Path length: 4 nodes
+A* total elapsed time: 5.568470 s
+  server queries time: 5.428177 s
+  search-only time: 0.140292 s
+Server bytes received: 8192 bytes
+Running A* from 6106065584 to 1499078067 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 78
+Path length: 6 nodes
+A* total elapsed time: 21.872368 s
+  server queries time: 21.723030 s
+  search-only time: 0.149338 s
+Server bytes received: 32768 bytes
+Running A* from 6906939948 to 648670842 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 63
+Path length: 8 nodes
+A* total elapsed time: 27.201508 s
+  server queries time: 27.068687 s
+  search-only time: 0.132821 s
+Server bytes received: 40960 bytes
+Running A* from 6819828963 to 1425057838 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 111
+Path length: 12 nodes
+A* total elapsed time: 70.561469 s
+  server queries time: 70.428673 s
+  search-only time: 0.132796 s
+Server bytes received: 106496 bytes
+Running A* from 4056045038 to 706205617 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 52
+Path length: 10 nodes
+A* total elapsed time: 10.956201 s
+  server queries time: 10.816475 s
+  search-only time: 0.139726 s
+Server bytes received: 16384 bytes
+Running A* from 1310191101 to 514123401 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 65
+Path length: 10 nodes
+A* total elapsed time: 48.965304 s
+  server queries time: 48.819347 s
+  search-only time: 0.145957 s
+Server bytes received: 73728 bytes
+Running A* from 254439871 to 2422172162 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 60
+Path length: 16 nodes
+A* total elapsed time: 54.442979 s
+  server queries time: 54.303097 s
+  search-only time: 0.139882 s
+Server bytes received: 81920 bytes
+Running A* from 762629780 to 3320604317 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 108
+Path length: 14 nodes
+A* total elapsed time: 43.548735 s
+  server queries time: 43.416285 s
+  search-only time: 0.132450 s
+Server bytes received: 65536 bytes
+Running A* from 303469444 to 303060979 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 73
+Path length: 11 nodes
+A* total elapsed time: 70.553465 s
+  server queries time: 70.412901 s
+  search-only time: 0.140565 s
+Server bytes received: 106496 bytes
+Running A* from 417667586 to 293849029 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 57
+Path length: 7 nodes
+A* total elapsed time: 21.876395 s
+  server queries time: 21.743904 s
+  search-only time: 0.132491 s
+Server bytes received: 32768 bytes
+Running A* from 283629000 to 2262114139 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 62
+Path length: 8 nodes
+A* total elapsed time: 59.819932 s
+  server queries time: 59.678814 s
+  search-only time: 0.141118 s
+Server bytes received: 90112 bytes
+-- running journeys of distance 1000...
+Running A* from 915309455 to 915349063 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 103
+Path length: 4 nodes
+A* total elapsed time: 32.665358 s
+  server queries time: 32.520190 s
+  search-only time: 0.145167 s
+Server bytes received: 49152 bytes
+Running A* from 9358027076 to 1038252317 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 141
+Path length: 22 nodes
+A* total elapsed time: 194.643813 s
+  server queries time: 194.502633 s
+  search-only time: 0.141180 s
+Server bytes received: 294912 bytes
+Running A* from 4935552371 to 5024953247 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 223
+Path length: 29 nodes
+A* total elapsed time: 129.527464 s
+  server queries time: 129.376733 s
+  search-only time: 0.150731 s
+Server bytes received: 196608 bytes
+Running A* from 379688172 to 705489862 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 116
+Path length: 7 nodes
+A* total elapsed time: 27.063729 s
+  server queries time: 26.923514 s
+  search-only time: 0.140215 s
+Server bytes received: 40960 bytes
+Running A* from 4611385379 to 269182155 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 196
+Path length: 42 nodes
+A* total elapsed time: 270.162334 s
+  server queries time: 270.013635 s
+  search-only time: 0.148699 s
+Server bytes received: 409600 bytes
+Running A* from 1290799697 to 1305175968 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 253
+Path length: 15 nodes
+A* total elapsed time: 70.817768 s
+  server queries time: 70.676555 s
+  search-only time: 0.141213 s
+Server bytes received: 106496 bytes
+Running A* from 250123267 to 11005859303 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 256
+Path length: 47 nodes
+A* total elapsed time: 238.142128 s
+  server queries time: 237.996210 s
+  search-only time: 0.145919 s
+Server bytes received: 360448 bytes
+Running A* from 3357956392 to 738816505 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 112
+Path length: 7 nodes
+A* total elapsed time: 16.336737 s
+  server queries time: 16.196007 s
+  search-only time: 0.140730 s
+Server bytes received: 24576 bytes
+Running A* from 3384569126 to 460449868 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 168
+Path length: 19 nodes
+A* total elapsed time: 54.219682 s
+  server queries time: 54.086501 s
+  search-only time: 0.133181 s
+Server bytes received: 81920 bytes
+Running A* from 457835044 to 1887955128 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 606
+Path length: 60 nodes
+A* total elapsed time: 1082.968984 s
+  server queries time: 1082.826164 s
+  search-only time: 0.142821 s
+Server bytes received: 1638400 bytes
+Running A* from 3806773658 to 274390008 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 158
+Path length: 25 nodes
+A* total elapsed time: 173.212495 s
+  server queries time: 173.066047 s
+  search-only time: 0.146448 s
+Server bytes received: 262144 bytes
+Running A* from 762193917 to 762758475 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 208
+Path length: 21 nodes
+A* total elapsed time: 108.614421 s
+  server queries time: 108.478172 s
+  search-only time: 0.136249 s
+Server bytes received: 163840 bytes
+Running A* from 3824912882 to 428236129 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 163
+Path length: 21 nodes
+A* total elapsed time: 130.049306 s
+  server queries time: 129.898675 s
+  search-only time: 0.150631 s
+Server bytes received: 196608 bytes
+Running A* from 1122812350 to 1119275769 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 308
+Path length: 46 nodes
+A* total elapsed time: 421.796753 s
+  server queries time: 421.654787 s
+  search-only time: 0.141966 s
+Server bytes received: 638976 bytes
+Running A* from 5631306845 to 797793718 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 314
+Path length: 46 nodes
+A* total elapsed time: 140.767341 s
+  server queries time: 140.617488 s
+  search-only time: 0.149853 s
+Server bytes received: 212992 bytes
+Running A* from 32559462 to 1528805570 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 139
+Path length: 30 nodes
+A* total elapsed time: 196.305586 s
+  server queries time: 196.164355 s
+  search-only time: 0.141231 s
+Server bytes received: 294912 bytes
+Running A* from 1241375688 to 1785449437 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 91
+Path length: 11 nodes
+A* total elapsed time: 21.861567 s
+  server queries time: 21.712763 s
+  search-only time: 0.148804 s
+Server bytes received: 32768 bytes
+Running A* from 3875860318 to 13448622441 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 250
+Path length: 12 nodes
+A* total elapsed time: 113.986776 s
+  server queries time: 113.842365 s
+  search-only time: 0.144411 s
+Server bytes received: 172032 bytes
+Running A* from 10962567131 to 247274282 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 170
+Path length: 17 nodes
+A* total elapsed time: 276.433392 s
+  server queries time: 276.283776 s
+  search-only time: 0.149616 s
+Server bytes received: 417792 bytes
+Running A* from 270323566 to 7758184953 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 309
+Path length: 36 nodes
+A* total elapsed time: 244.991752 s
+  server queries time: 244.862368 s
+  search-only time: 0.129384 s
+Server bytes received: 368640 bytes
+Running A* from 1828568407 to 26353406 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 174
+Path length: 44 nodes
+A* total elapsed time: 307.193591 s
+  server queries time: 307.059890 s
+  search-only time: 0.133701 s
+Server bytes received: 466944 bytes
+Running A* from 842220933 to 1832530303 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 160
+Path length: 31 nodes
+A* total elapsed time: 232.238288 s
+  server queries time: 232.097297 s
+  search-only time: 0.140991 s
+Server bytes received: 352256 bytes
+Running A* from 13577572798 to 2257891006 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 156
+Path length: 16 nodes
+A* total elapsed time: 109.920135 s
+  server queries time: 109.774013 s
+  search-only time: 0.146122 s
+Server bytes received: 163840 bytes
+Running A* from 7004544308 to 29331860 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 156
+Path length: 34 nodes
+A* total elapsed time: 259.795580 s
+  server queries time: 259.654850 s
+  search-only time: 0.140730 s
+Server bytes received: 393216 bytes
+Running A* from 1204300928 to 9628991808 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 334
+Path length: 27 nodes
+A* total elapsed time: 150.784067 s
+  server queries time: 150.638825 s
+  search-only time: 0.145242 s
+Server bytes received: 229376 bytes
+Running A* from 3647896665 to 2940386091 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 191
+Path length: 22 nodes
+A* total elapsed time: 195.069799 s
+  server queries time: 194.929790 s
+  search-only time: 0.140009 s
+Server bytes received: 294912 bytes
+Running A* from 934843697 to 8069411785 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 419
+Path length: 39 nodes
+A* total elapsed time: 231.954052 s
+  server queries time: 231.806324 s
+  search-only time: 0.147727 s
+Server bytes received: 352256 bytes
+Running A* from 6083337001 to 3245131571 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 124
+Path length: 17 nodes
+A* total elapsed time: 135.004995 s
+  server queries time: 134.864586 s
+  search-only time: 0.140409 s
+Server bytes received: 204800 bytes
+Running A* from 1305740760 to 2457639872 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 73
+Path length: 10 nodes
+A* total elapsed time: 27.249379 s
+  server queries time: 27.103379 s
+  search-only time: 0.146001 s
+Server bytes received: 40960 bytes
+Running A* from 504012213 to 8066862127 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 204
+Path length: 18 nodes
+A* total elapsed time: 205.645848 s
+  server queries time: 205.505090 s
+  search-only time: 0.140758 s
+Server bytes received: 311296 bytes
+-- running journeys of distance 2000...
+Running A* from 311586112 to 266016129 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 287
+Path length: 40 nodes
+A* total elapsed time: 615.529836 s
+  server queries time: 615.397093 s
+  search-only time: 0.132743 s
+Server bytes received: 933888 bytes
+Running A* from 402920612 to 8477308258 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 266
+Path length: 33 nodes
+A* total elapsed time: 517.929143 s
+  server queries time: 517.786572 s
+  search-only time: 0.142571 s
+Server bytes received: 786432 bytes
+Running A* from 13795263 to 1264262785 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 479
+Path length: 47 nodes
+A* total elapsed time: 1099.973104 s
+  server queries time: 1099.826374 s
+  search-only time: 0.146730 s
+Server bytes received: 1671168 bytes
+Running A* from 1476075680 to 1888024765 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 189
+Path length: 28 nodes
+A* total elapsed time: 96.996620 s
+  server queries time: 96.855583 s
+  search-only time: 0.141036 s
+Server bytes received: 147456 bytes
+Running A* from 498794353 to 1230552018 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 201
+Path length: 30 nodes
+A* total elapsed time: 150.525445 s
+  server queries time: 150.393128 s
+  search-only time: 0.132317 s
+Server bytes received: 229376 bytes
+Running A* from 8481249263 to 288408121 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 252
+Path length: 22 nodes
+A* total elapsed time: 392.521510 s
+  server queries time: 392.380367 s
+  search-only time: 0.141143 s
+Server bytes received: 598016 bytes
+Running A* from 1511486985 to 6352191508 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 204
+Path length: 25 nodes
+A* total elapsed time: 37.845162 s
+  server queries time: 37.698653 s
+  search-only time: 0.146508 s
+Server bytes received: 57344 bytes
+Running A* from 10993972275 to 11920476597 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 501
+Path length: 94 nodes
+A* total elapsed time: 1380.902229 s
+  server queries time: 1380.770415 s
+  search-only time: 0.131814 s
+Server bytes received: 2097152 bytes
+Running A* from 1151139193 to 614442019 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 233
+Path length: 47 nodes
+A* total elapsed time: 436.447628 s
+  server queries time: 436.300378 s
+  search-only time: 0.147250 s
+Server bytes received: 663552 bytes
+Running A* from 12649554445 to 191988295 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 813
+Path length: 96 nodes
+A* total elapsed time: 2497.334730 s
+  server queries time: 2497.199983 s
+  search-only time: 0.134747 s
+Server bytes received: 3792896 bytes
+Running A* from 135383386 to 2541877498 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 201
+Path length: 32 nodes
+A* total elapsed time: 366.127165 s
+  server queries time: 365.994217 s
+  search-only time: 0.132948 s
+Server bytes received: 557056 bytes
+Running A* from 13333336448 to 1004511703 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 252
+Path length: 52 nodes
+A* total elapsed time: 437.438102 s
+  server queries time: 437.296102 s
+  search-only time: 0.142001 s
+Server bytes received: 663552 bytes
+Running A* from 316517389 to 282350954 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 292
+Path length: 55 nodes
+A* total elapsed time: 323.783461 s
+  server queries time: 323.636275 s
+  search-only time: 0.147186 s
+Server bytes received: 491520 bytes
+Running A* from 335480653 to 333627171 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 380
+Path length: 44 nodes
+A* total elapsed time: 1389.883050 s
+  server queries time: 1389.740328 s
+  search-only time: 0.142722 s
+Server bytes received: 2113536 bytes
+Running A* from 255072993 to 13655088450 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 343
+Path length: 58 nodes
+A* total elapsed time: 752.380140 s
+  server queries time: 752.231787 s
+  search-only time: 0.148353 s
+Server bytes received: 1138688 bytes
+Running A* from 4348180998 to 633486092 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 149
+Path length: 29 nodes
+A* total elapsed time: 59.746293 s
+  server queries time: 59.605759 s
+  search-only time: 0.140534 s
+Server bytes received: 90112 bytes
+Running A* from 1638936350 to 799200406 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 212
+Path length: 31 nodes
+A* total elapsed time: 329.782266 s
+  server queries time: 329.649597 s
+  search-only time: 0.132670 s
+Server bytes received: 499712 bytes
+Running A* from 3869715124 to 2282296368 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 184
+Path length: 9 nodes
+A* total elapsed time: 97.699720 s
+  server queries time: 97.559355 s
+  search-only time: 0.140365 s
+Server bytes received: 147456 bytes
+Running A* from 6210276248 to 276007144 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 656
+Path length: 55 nodes
+A* total elapsed time: 1455.553017 s
+  server queries time: 1455.400687 s
+  search-only time: 0.152330 s
+Server bytes received: 2211840 bytes
+Running A* from 10093546853 to 281131677 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 293
+Path length: 49 nodes
+A* total elapsed time: 607.145569 s
+  server queries time: 607.004345 s
+  search-only time: 0.141224 s
+Server bytes received: 925696 bytes
+Running A* from 1015881277 to 3779361081 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 327
+Path length: 62 nodes
+A* total elapsed time: 484.756812 s
+  server queries time: 484.610001 s
+  search-only time: 0.146811 s
+Server bytes received: 737280 bytes
+Running A* from 784080474 to 1293201570 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 187
+Path length: 28 nodes
+A* total elapsed time: 59.342583 s
+  server queries time: 59.212843 s
+  search-only time: 0.129740 s
+Server bytes received: 90112 bytes
+Running A* from 11302230542 to 95132468 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 496
+Path length: 71 nodes
+A* total elapsed time: 803.401222 s
+  server queries time: 803.250577 s
+  search-only time: 0.150645 s
+Server bytes received: 1220608 bytes
+Running A* from 281108037 to 11438477636 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 288
+Path length: 50 nodes
+A* total elapsed time: 422.589961 s
+  server queries time: 422.448573 s
+  search-only time: 0.141388 s
+Server bytes received: 638976 bytes
+Running A* from 3440503594 to 327481275 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 248
+Path length: 54 nodes
+A* total elapsed time: 623.678955 s
+  server queries time: 623.531676 s
+  search-only time: 0.147279 s
+Server bytes received: 942080 bytes
+Running A* from 1590815746 to 7526543987 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 257
+Path length: 27 nodes
+A* total elapsed time: 81.365407 s
+  server queries time: 81.232598 s
+  search-only time: 0.132809 s
+Server bytes received: 122880 bytes
+Running A* from 9370450517 to 498612412 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 276
+Path length: 36 nodes
+A* total elapsed time: 780.712773 s
+  server queries time: 780.577337 s
+  search-only time: 0.135436 s
+Server bytes received: 1187840 bytes
+Running A* from 1921408470 to 11673355023 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 227
+Path length: 44 nodes
+A* total elapsed time: 279.273059 s
+  server queries time: 279.139362 s
+  search-only time: 0.133697 s
+Server bytes received: 425984 bytes
+Running A* from 2850488407 to 1716869353 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 192
+Path length: 22 nodes
+A* total elapsed time: 76.477346 s
+  server queries time: 76.342147 s
+  search-only time: 0.135198 s
+Server bytes received: 114688 bytes
+Running A* from 3079425041 to 1866360581 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 188
+Path length: 15 nodes
+A* total elapsed time: 134.586965 s
+  server queries time: 134.452493 s
+  search-only time: 0.134472 s
+Server bytes received: 204800 bytes
+-- running journeys of distance 5000...
+Running A* from 1240468959 to 4496637769 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 663
+Path length: 85 nodes
+A* total elapsed time: 940.249326 s
+  server queries time: 940.112910 s
+  search-only time: 0.136416 s
+Server bytes received: 1433600 bytes
+Running A* from 322883732 to 1196790008 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 708
+Path length: 71 nodes
+A* total elapsed time: 1251.291659 s
+  server queries time: 1251.156056 s
+  search-only time: 0.135604 s
+Server bytes received: 1908736 bytes
+Running A* from 1197776947 to 1196652872 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 544
+Path length: 21 nodes
+A* total elapsed time: 521.747089 s
+  server queries time: 521.611321 s
+  search-only time: 0.135769 s
+Server bytes received: 794624 bytes
+Running A* from 919795864 to 1374849213 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 697
+Path length: 79 nodes
+A* total elapsed time: 591.137387 s
+  server queries time: 591.003235 s
+  search-only time: 0.134152 s
+Server bytes received: 901120 bytes
+Running A* from 7968663230 to 609219819 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 580
+Path length: 79 nodes
+A* total elapsed time: 2620.184721 s
+  server queries time: 2620.044881 s
+  search-only time: 0.139841 s
+Server bytes received: 3981312 bytes
+Running A* from 1987116823 to 2838229168 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 437
+Path length: 47 nodes
+A* total elapsed time: 696.404947 s
+  server queries time: 696.270284 s
+  search-only time: 0.134663 s
+Server bytes received: 1056768 bytes
+Running A* from 300499971 to 5859064320 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 576
+Path length: 86 nodes
+A* total elapsed time: 1724.849563 s
+  server queries time: 1724.712561 s
+  search-only time: 0.137001 s
+Server bytes received: 2613248 bytes
+Running A* from 1659679137 to 1123943374 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 345
+Path length: 37 nodes
+A* total elapsed time: 167.696371 s
+  server queries time: 167.562443 s
+  search-only time: 0.133928 s
+Server bytes received: 253952 bytes
+Running A* from 11472838383 to 1160038792 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 496
+Path length: 89 nodes
+A* total elapsed time: 1702.260599 s
+  server queries time: 1702.120819 s
+  search-only time: 0.139780 s
+Server bytes received: 2580480 bytes
+Running A* from 1478199670 to 450947345 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 446
+Path length: 42 nodes
+A* total elapsed time: 297.441153 s
+  server queries time: 297.308866 s
+  search-only time: 0.132287 s
+Server bytes received: 450560 bytes
+Running A* from 451099655 to 12174313082 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 768
+Path length: 104 nodes
+A* total elapsed time: 4146.705216 s
+  server queries time: 4146.559291 s
+  search-only time: 0.145925 s
+Server bytes received: 6283264 bytes
+Running A* from 2475815095 to 1838950837 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 478
+Path length: 40 nodes
+A* total elapsed time: 162.370571 s
+  server queries time: 162.238235 s
+  search-only time: 0.132336 s
+Server bytes received: 245760 bytes
+Running A* from 2126568903 to 1204339484 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 531
+Path length: 48 nodes
+A* total elapsed time: 782.716962 s
+  server queries time: 782.580987 s
+  search-only time: 0.135975 s
+Server bytes received: 1187840 bytes
+Running A* from 651540501 to 1974283252 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 536
+Path length: 69 nodes
+A* total elapsed time: 1118.006266 s
+  server queries time: 1117.870409 s
+  search-only time: 0.135857 s
+Server bytes received: 1695744 bytes
+Running A* from 338492437 to 394994200 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 551
+Path length: 111 nodes
+A* total elapsed time: 848.728913 s
+  server queries time: 848.593390 s
+  search-only time: 0.135523 s
+Server bytes received: 1286144 bytes
+Running A* from 2106946006 to 2426642933 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1201
+Path length: 87 nodes
+A* total elapsed time: 1755.795633 s
+  server queries time: 1755.658524 s
+  search-only time: 0.137109 s
+Server bytes received: 2662400 bytes
+Running A* from 6862630059 to 1509994799 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 737
+Path length: 131 nodes
+A* total elapsed time: 2678.629539 s
+  server queries time: 2678.489175 s
+  search-only time: 0.140364 s
+Server bytes received: 4055040 bytes
+Running A* from 2843450952 to 283459265 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 395
+Path length: 52 nodes
+A* total elapsed time: 929.793951 s
+  server queries time: 929.661752 s
+  search-only time: 0.132200 s
+Server bytes received: 1409024 bytes
+Running A* from 700399937 to 748867083 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 599
+Path length: 90 nodes
+A* total elapsed time: 2551.950434 s
+  server queries time: 2551.810128 s
+  search-only time: 0.140306 s
+Server bytes received: 3866624 bytes
+Running A* from 360463160 to 367677757 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 582
+Path length: 90 nodes
+A* total elapsed time: 2036.035786 s
+  server queries time: 2035.897758 s
+  search-only time: 0.138027 s
+Server bytes received: 3088384 bytes
+Running A* from 560803579 to 1651535028 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 440
+Path length: 74 nodes
+A* total elapsed time: 1663.119053 s
+  server queries time: 1662.982165 s
+  search-only time: 0.136888 s
+Server bytes received: 2523136 bytes
+Running A* from 4717517420 to 1743350073 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 535
+Path length: 34 nodes
+A* total elapsed time: 486.195063 s
+  server queries time: 486.062749 s
+  search-only time: 0.132314 s
+Server bytes received: 737280 bytes
+Running A* from 6391614710 to 819180423 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 549
+Path length: 51 nodes
+A* total elapsed time: 345.730219 s
+  server queries time: 345.596190 s
+  search-only time: 0.134029 s
+Server bytes received: 524288 bytes
+Running A* from 11989571125 to 24959188 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 717
+Path length: 114 nodes
+A* total elapsed time: 4674.143338 s
+  server queries time: 4674.002252 s
+  search-only time: 0.141086 s
+Server bytes received: 7118848 bytes
+Running A* from 2107138083 to 11552853936 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 508
+Path length: 62 nodes
+A* total elapsed time: 983.288009 s
+  server queries time: 983.153840 s
+  search-only time: 0.134170 s
+Server bytes received: 1499136 bytes
+Running A* from 365373640 to 25244985 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 562
+Path length: 83 nodes
+A* total elapsed time: 2266.846518 s
+  server queries time: 2266.712758 s
+  search-only time: 0.133760 s
+Server bytes received: 3465216 bytes
+Running A* from 246546719 to 5966270133 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 590
+Path length: 80 nodes
+A* total elapsed time: 1749.683253 s
+  server queries time: 1749.547123 s
+  search-only time: 0.136130 s
+Server bytes received: 2670592 bytes
+Running A* from 7826262898 to 2136839972 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 547
+Path length: 69 nodes
+A* total elapsed time: 589.508125 s
+  server queries time: 589.377171 s
+  search-only time: 0.130954 s
+Server bytes received: 901120 bytes
+Running A* from 1345715607 to 2262766901 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 610
+Path length: 82 nodes
+A* total elapsed time: 2311.729745 s
+  server queries time: 2311.592793 s
+  search-only time: 0.136952 s
+Server bytes received: 3530752 bytes
+Running A* from 251837217 to 57199750 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 679
+Path length: 123 nodes
+A* total elapsed time: 3874.525331 s
+  server queries time: 3874.387405 s
+  search-only time: 0.137926 s
+Server bytes received: 5906432 bytes
+-- running journeys of distance 10000...
+Running A* from 3854556831 to 7997255579 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1033
+Path length: 139 nodes
+A* total elapsed time: 8067.104179 s
+  server queries time: 8066.951217 s
+  search-only time: 0.152963 s
+Server bytes received: 12378112 bytes
+Running A* from 2265931986 to 3182727258 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 990
+Path length: 113 nodes
+A* total elapsed time: 1965.668562 s
+  server queries time: 1965.534833 s
+  search-only time: 0.133730 s
+Server bytes received: 3014656 bytes
+Running A* from 958712467 to 2954740808 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 973
+Path length: 91 nodes
+A* total elapsed time: 2155.041117 s
+  server queries time: 2154.903790 s
+  search-only time: 0.137327 s
+Server bytes received: 3268608 bytes
+Running A* from 1744045661 to 288865069 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 752
+Path length: 61 nodes
+A* total elapsed time: 899.441068 s
+  server queries time: 899.310700 s
+  search-only time: 0.130368 s
+Server bytes received: 1376256 bytes
+Running A* from 663705652 to 8375534581 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 817
+Path length: 112 nodes
+A* total elapsed time: 7167.150751 s
+  server queries time: 7167.000144 s
+  search-only time: 0.150607 s
+Server bytes received: 10944512 bytes
+Running A* from 8121006207 to 3692663689 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1023
+Path length: 69 nodes
+A* total elapsed time: 1199.840035 s
+  server queries time: 1199.706650 s
+  search-only time: 0.133384 s
+Server bytes received: 1843200 bytes
+Running A* from 4010995143 to 1773568983 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 872
+Path length: 105 nodes
+A* total elapsed time: 5454.680088 s
+  server queries time: 5454.534483 s
+  search-only time: 0.145605 s
+Server bytes received: 8372224 bytes
+Running A* from 294775435 to 3613498841 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 902
+Path length: 120 nodes
+A* total elapsed time: 1473.469380 s
+  server queries time: 1473.337190 s
+  search-only time: 0.132190 s
+Server bytes received: 2260992 bytes
+Running A* from 481467475 to 1952159244 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 892
+Path length: 56 nodes
+A* total elapsed time: 715.308189 s
+  server queries time: 715.175448 s
+  search-only time: 0.132741 s
+Server bytes received: 1097728 bytes
+Running A* from 267486869 to 469936983 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 899
+Path length: 107 nodes
+A* total elapsed time: 7391.250788 s
+  server queries time: 7391.103445 s
+  search-only time: 0.147343 s
+Server bytes received: 11345920 bytes
+Running A* from 8827279714 to 416818004 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1239
+Path length: 142 nodes
+A* total elapsed time: 8375.005573 s
+  server queries time: 8374.850940 s
+  search-only time: 0.154633 s
+Server bytes received: 12853248 bytes
+Running A* from 1804825761 to 5242855121 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 648
+Path length: 81 nodes
+A* total elapsed time: 1200.995541 s
+  server queries time: 1200.864017 s
+  search-only time: 0.131523 s
+Server bytes received: 1843200 bytes
+Running A* from 480707432 to 477005965 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 810
+Path length: 116 nodes
+A* total elapsed time: 1147.846565 s
+  server queries time: 1147.712761 s
+  search-only time: 0.133803 s
+Server bytes received: 1761280 bytes
+Running A* from 12361597805 to 1272873672 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 823
+Path length: 88 nodes
+A* total elapsed time: 1388.024001 s
+  server queries time: 1387.891636 s
+  search-only time: 0.132365 s
+Server bytes received: 2129920 bytes
+Running A* from 371880176 to 9383784371 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 933
+Path length: 95 nodes
+A* total elapsed time: 1446.582684 s
+  server queries time: 1446.448180 s
+  search-only time: 0.134504 s
+Server bytes received: 2220032 bytes
+Running A* from 1612868378 to 8287705483 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 902
+Path length: 113 nodes
+A* total elapsed time: 1907.715139 s
+  server queries time: 1907.582158 s
+  search-only time: 0.132981 s
+Server bytes received: 2916352 bytes
+Running A* from 2138561876 to 12841659817 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1056
+Path length: 133 nodes
+A* total elapsed time: 2827.234843 s
+  server queries time: 2827.094325 s
+  search-only time: 0.140518 s
+Server bytes received: 4317184 bytes
+Running A* from 7054259455 to 7164620931 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1146
+Path length: 104 nodes
+A* total elapsed time: 2619.722206 s
+  server queries time: 2619.587678 s
+  search-only time: 0.134528 s
+Server bytes received: 4022272 bytes
+Running A* from 33985899 to 976654296 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 856
+Path length: 125 nodes
+A* total elapsed time: 3147.872933 s
+  server queries time: 3147.735207 s
+  search-only time: 0.137726 s
+Server bytes received: 4825088 bytes
+Running A* from 2751033159 to 360701332 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 858
+Path length: 60 nodes
+A* total elapsed time: 1088.055569 s
+  server queries time: 1087.924488 s
+  search-only time: 0.131081 s
+Server bytes received: 1671168 bytes
+Running A* from 1662772689 to 859312566 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1339
+Path length: 44 nodes
+A* total elapsed time: 1147.050332 s
+  server queries time: 1146.916949 s
+  search-only time: 0.133383 s
+Server bytes received: 1761280 bytes
+Running A* from 180160858 to 1881415571 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 845
+Path length: 89 nodes
+A* total elapsed time: 4015.222745 s
+  server queries time: 4015.083251 s
+  search-only time: 0.139494 s
+Server bytes received: 6037504 bytes
+Running A* from 2193237137 to 1719396494 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 745
+Path length: 28 nodes
+A* total elapsed time: 92.925125 s
+  server queries time: 92.783100 s
+  search-only time: 0.142025 s
+Server bytes received: 139264 bytes
+Running A* from 3070147359 to 10007397903 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1046
+Path length: 159 nodes
+A* total elapsed time: 1795.452628 s
+  server queries time: 1795.309435 s
+  search-only time: 0.143194 s
+Server bytes received: 2695168 bytes
+Running A* from 695592949 to 1146882873 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1135
+Path length: 146 nodes
+A* total elapsed time: 4295.354695 s
+  server queries time: 4295.201237 s
+  search-only time: 0.153458 s
+Server bytes received: 6438912 bytes
+Running A* from 8627045248 to 748991295 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 994
+Path length: 126 nodes
+A* total elapsed time: 7141.163210 s
+  server queries time: 7141.001829 s
+  search-only time: 0.161381 s
+Server bytes received: 10715136 bytes
+Running A* from 1678237731 to 10048677614 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1265
+Path length: 136 nodes
+A* total elapsed time: 12628.288368 s
+  server queries time: 12628.106889 s
+  search-only time: 0.181479 s
+Server bytes received: 18931712 bytes
+Running A* from 9574702862 to 485615446 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1193
+Path length: 117 nodes
+A* total elapsed time: 2177.114837 s
+  server queries time: 2176.971891 s
+  search-only time: 0.142945 s
+Server bytes received: 3268608 bytes
+Running A* from 4736588746 to 922624519 in country France using approach Node1 and architecture Spiral ...
+A* found a path with cost 1122
+Path length: 137 nodes
+A* total elapsed time: 6365.239318 s
+  server queries time: 6365.080730 s
+  search-only time: 0.158587 s
+Server bytes received: 9543680 bytes
+Running A* from 315466048 to 2376864696 in country France using approach Node1 and architecture Spiral ...

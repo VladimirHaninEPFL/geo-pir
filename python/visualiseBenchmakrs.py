@@ -26,7 +26,7 @@ plt.style.use('default')
 def format_y_value(value):
     if value >= 1000:
         return f"{int(round(value)):,}"
-    return f"{value:.2f}" if value < 100 else f"{value:.0f}"
+    return f"{value:.1f}" if value < 100 else f"{value:.0f}"
 
 def format_bytes(value, _pos=None):
     """Format byte values using readable units on a log axis."""
@@ -44,12 +44,12 @@ def format_bytes(value, _pos=None):
         if abs_value >= factor:
             scaled = value / factor
             if abs(scaled) >= 100:
-                return f"{scaled:.0f} {unit}"
+                return f"{scaled:.0f}{unit}"
             if abs(scaled) >= 10:
-                return f"{scaled:.1f} {unit}"
-            return f"{scaled:.2f} {unit}"
+                return f"{scaled:.1f}{unit}"
+            return f"{scaled:.1f}{unit}"
 
-    return f"{value:.0f} B"
+    return f"{value:.0f}B"
 
 def format_time(value, _pos=None):
     """Format seconds using human-friendly units on a log axis."""
@@ -69,12 +69,12 @@ def format_time(value, _pos=None):
         if abs_value >= factor:
             scaled = value / factor
             if abs(scaled) >= 100:
-                return f"{scaled:.0f} {unit}"
+                return f"{scaled:.0f}{unit}"
             if abs(scaled) >= 10:
-                return f"{scaled:.1f} {unit}"
-            return f"{scaled:.2f} {unit}"
+                return f"{scaled:.1f}{unit}"
+            return f"{scaled:.1f}{unit}"
 
-    return f"{value:.2f} s"
+    return f"{value:.1f}s"
 
 def annotate_last_point(ax, x_values, y_values, text, color, y_offset=0):
     ax.annotate(
@@ -131,9 +131,10 @@ def plot_metric(
     lastPoint=False,
     last_point_formatter=None,
     y_formatter=None,
+    locLegend="lower right",
 ):
 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(6, 4))
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     ax.set_axisbelow(True)
@@ -205,7 +206,7 @@ def plot_metric(
     ax.set_ylabel(ylabel)
     ax.set_title(title)
     ax.margins(x=0.08)
-    ax.legend()
+    ax.legend(loc=locLegend, prop={"size": 9},  ncol=2)
     fig.tight_layout()
     fig.savefig(output_path)
     plt.close(fig)
@@ -221,9 +222,10 @@ def plot_comp_metric(
     lastPoint=False,
     last_point_formatter=None,
     y_formatter=None,
+    locLegend="lower right",
 ):
 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(6, 4))
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     ax.set_axisbelow(True)
@@ -269,7 +271,7 @@ def plot_comp_metric(
     ax.set_ylabel(ylabel)
     ax.set_title(title)
     ax.margins(x=0.08)
-    ax.legend()
+    ax.legend(loc=locLegend, prop={"size": 9},  ncol=2)
     fig.tight_layout()
     fig.savefig(output_path)
     plt.close(fig)
@@ -378,11 +380,11 @@ def main():
                 add_naive=(
                     timesNaive.keys(),
                     timesNaive.values(),
-                    f"naive approach",
-                )
+                    f"naive",
+                ),
+                locLegend="upper left" if countryName == "France" and archi == "SinglePass" else None
             )
 
-            # visualise navigational query duration
             plot_comp_metric(
                 queryTimes,
                 queryServerTimes,
@@ -401,7 +403,7 @@ def main():
                 add_naive=(
                     dataNaive.keys(),
                     dataNaive.values(),
-                    f"full db",
+                    f"full db ({ format_bytes(list(dataNaive.values())[0][0]) })",
                 )
             )
 

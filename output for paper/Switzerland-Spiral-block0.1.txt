@@ -1,0 +1,2312 @@
+-- starting benchmarks for Switzerland Spiral block0.1 --
+-- running journeys of distance 500...
+Running A* from 2967149442 to 5336880755 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 80
+Path length: 14 nodes
+A* total elapsed time: 0.600810 s
+  server queries time: 0.590634 s
+  search-only time: 0.010176 s
+Server bytes received: 1073152 bytes
+Running A* from 1323889417 to 291362851 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 24
+Path length: 2 nodes
+A* total elapsed time: 0.575337 s
+  server queries time: 0.565095 s
+  search-only time: 0.010242 s
+Server bytes received: 1073152 bytes
+Running A* from 441123448 to 158722554 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 62
+Path length: 10 nodes
+A* total elapsed time: 0.588586 s
+  server queries time: 0.578267 s
+  search-only time: 0.010319 s
+Server bytes received: 1073152 bytes
+Running A* from 299985842 to 299986004 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 45
+Path length: 7 nodes
+A* total elapsed time: 1.169933 s
+  server queries time: 1.158787 s
+  search-only time: 0.011146 s
+Server bytes received: 2146304 bytes
+Running A* from 3986836962 to 3986836960 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 50
+Path length: 8 nodes
+A* total elapsed time: 1.156252 s
+  server queries time: 1.145900 s
+  search-only time: 0.010351 s
+Server bytes received: 2146304 bytes
+Running A* from 30064412 to 60118892 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 120
+Path length: 13 nodes
+A* total elapsed time: 0.590193 s
+  server queries time: 0.579695 s
+  search-only time: 0.010498 s
+Server bytes received: 1073152 bytes
+Running A* from 239032816 to 482344258 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 66
+Path length: 12 nodes
+A* total elapsed time: 0.583342 s
+  server queries time: 0.572998 s
+  search-only time: 0.010345 s
+Server bytes received: 1073152 bytes
+Running A* from 1774980917 to 309544510 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 147
+Path length: 11 nodes
+A* total elapsed time: 1.166937 s
+  server queries time: 1.156672 s
+  search-only time: 0.010265 s
+Server bytes received: 2146304 bytes
+Running A* from 8122094033 to 3549093396 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 210
+Path length: 16 nodes
+A* total elapsed time: 1.143504 s
+  server queries time: 1.133173 s
+  search-only time: 0.010331 s
+Server bytes received: 2146304 bytes
+Running A* from 9960645906 to 261681995 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 60
+Path length: 11 nodes
+A* total elapsed time: 0.582286 s
+  server queries time: 0.572092 s
+  search-only time: 0.010194 s
+Server bytes received: 1073152 bytes
+Running A* from 566751128 to 295490106 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 126
+Path length: 25 nodes
+A* total elapsed time: 0.622770 s
+  server queries time: 0.611363 s
+  search-only time: 0.011407 s
+Server bytes received: 1073152 bytes
+Running A* from 1119873627 to 267846228 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 48
+Path length: 13 nodes
+A* total elapsed time: 0.579663 s
+  server queries time: 0.569275 s
+  search-only time: 0.010388 s
+Server bytes received: 1073152 bytes
+Running A* from 34186586 to 1640020542 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 67
+Path length: 9 nodes
+A* total elapsed time: 0.621020 s
+  server queries time: 0.610356 s
+  search-only time: 0.010664 s
+Server bytes received: 1073152 bytes
+Running A* from 856484808 to 11953969583 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 171
+Path length: 22 nodes
+A* total elapsed time: 0.579328 s
+  server queries time: 0.568905 s
+  search-only time: 0.010423 s
+Server bytes received: 1073152 bytes
+Running A* from 385661141 to 11278022869 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 81
+Path length: 19 nodes
+A* total elapsed time: 1.197463 s
+  server queries time: 1.186888 s
+  search-only time: 0.010575 s
+Server bytes received: 2146304 bytes
+Running A* from 10105892902 to 296917811 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 149
+Path length: 13 nodes
+A* total elapsed time: 1.155834 s
+  server queries time: 1.145465 s
+  search-only time: 0.010368 s
+Server bytes received: 2146304 bytes
+Running A* from 1894754826 to 3403699067 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 72
+Path length: 6 nodes
+A* total elapsed time: 0.588091 s
+  server queries time: 0.577728 s
+  search-only time: 0.010363 s
+Server bytes received: 1073152 bytes
+Running A* from 1710470811 to 11278110475 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 125
+Path length: 24 nodes
+A* total elapsed time: 0.576156 s
+  server queries time: 0.565890 s
+  search-only time: 0.010267 s
+Server bytes received: 1073152 bytes
+Running A* from 365290877 to 223260412 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 47
+Path length: 13 nodes
+A* total elapsed time: 0.579255 s
+  server queries time: 0.568963 s
+  search-only time: 0.010291 s
+Server bytes received: 1073152 bytes
+Running A* from 1485039857 to 12141292315 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 94
+Path length: 11 nodes
+A* total elapsed time: 0.586254 s
+  server queries time: 0.575946 s
+  search-only time: 0.010308 s
+Server bytes received: 1073152 bytes
+Running A* from 1458224939 to 21546562 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 501
+Path length: 56 nodes
+A* total elapsed time: 1.745230 s
+  server queries time: 1.734240 s
+  search-only time: 0.010990 s
+Server bytes received: 3219456 bytes
+Running A* from 8465615121 to 303380226 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 75
+Path length: 11 nodes
+A* total elapsed time: 0.634728 s
+  server queries time: 0.624261 s
+  search-only time: 0.010467 s
+Server bytes received: 1073152 bytes
+Running A* from 1543906717 to 402681277 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 137
+Path length: 14 nodes
+A* total elapsed time: 1.161516 s
+  server queries time: 1.151101 s
+  search-only time: 0.010415 s
+Server bytes received: 2146304 bytes
+Running A* from 7650381638 to 476312931 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 87
+Path length: 11 nodes
+A* total elapsed time: 1.152068 s
+  server queries time: 1.141626 s
+  search-only time: 0.010442 s
+Server bytes received: 2146304 bytes
+Running A* from 3056537303 to 2701545866 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 95
+Path length: 19 nodes
+A* total elapsed time: 0.580643 s
+  server queries time: 0.570379 s
+  search-only time: 0.010264 s
+Server bytes received: 1073152 bytes
+Running A* from 316184709 to 412486764 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 99
+Path length: 11 nodes
+A* total elapsed time: 0.585618 s
+  server queries time: 0.575309 s
+  search-only time: 0.010309 s
+Server bytes received: 1073152 bytes
+Running A* from 264544821 to 1752582029 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 74
+Path length: 15 nodes
+A* total elapsed time: 1.200348 s
+  server queries time: 1.189323 s
+  search-only time: 0.011025 s
+Server bytes received: 2146304 bytes
+Running A* from 2078993832 to 2078993843 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 48
+Path length: 7 nodes
+A* total elapsed time: 0.586861 s
+  server queries time: 0.576634 s
+  search-only time: 0.010227 s
+Server bytes received: 1073152 bytes
+Running A* from 423310766 to 2809627279 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 131
+Path length: 24 nodes
+A* total elapsed time: 1.200333 s
+  server queries time: 1.190053 s
+  search-only time: 0.010280 s
+Server bytes received: 2146304 bytes
+Running A* from 25427092 to 25430745 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 78
+Path length: 10 nodes
+A* total elapsed time: 0.584022 s
+  server queries time: 0.573770 s
+  search-only time: 0.010252 s
+Server bytes received: 1073152 bytes
+-- running journeys of distance 1000...
+Running A* from 97981677 to 97980660 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 204
+Path length: 35 nodes
+A* total elapsed time: 1.177805 s
+  server queries time: 1.167123 s
+  search-only time: 0.010681 s
+Server bytes received: 2146304 bytes
+Running A* from 364387222 to 281761716 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 371
+Path length: 25 nodes
+A* total elapsed time: 0.586192 s
+  server queries time: 0.575939 s
+  search-only time: 0.010253 s
+Server bytes received: 1073152 bytes
+Running A* from 952829266 to 6081403641 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 137
+Path length: 31 nodes
+A* total elapsed time: 1.212572 s
+  server queries time: 1.202047 s
+  search-only time: 0.010526 s
+Server bytes received: 2146304 bytes
+Running A* from 5337093507 to 3517000249 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 178
+Path length: 37 nodes
+A* total elapsed time: 0.586433 s
+  server queries time: 0.575878 s
+  search-only time: 0.010556 s
+Server bytes received: 1073152 bytes
+Running A* from 339286871 to 1562043069 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 101
+Path length: 19 nodes
+A* total elapsed time: 1.189753 s
+  server queries time: 1.179104 s
+  search-only time: 0.010649 s
+Server bytes received: 2146304 bytes
+Running A* from 10734432734 to 665097894 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 155
+Path length: 27 nodes
+A* total elapsed time: 0.575133 s
+  server queries time: 0.564754 s
+  search-only time: 0.010379 s
+Server bytes received: 1073152 bytes
+Running A* from 252822573 to 1902515108 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 129
+Path length: 27 nodes
+A* total elapsed time: 1.157806 s
+  server queries time: 1.147120 s
+  search-only time: 0.010686 s
+Server bytes received: 2146304 bytes
+Running A* from 4956927714 to 30825881 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 143
+Path length: 28 nodes
+A* total elapsed time: 1.201976 s
+  server queries time: 1.191517 s
+  search-only time: 0.010460 s
+Server bytes received: 2146304 bytes
+Running A* from 1386836273 to 1611938693 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 147
+Path length: 24 nodes
+A* total elapsed time: 1.157879 s
+  server queries time: 1.147073 s
+  search-only time: 0.010806 s
+Server bytes received: 2146304 bytes
+Running A* from 280883447 to 728635066 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 106
+Path length: 9 nodes
+A* total elapsed time: 0.589110 s
+  server queries time: 0.578511 s
+  search-only time: 0.010599 s
+Server bytes received: 1073152 bytes
+Running A* from 6669811209 to 25426839 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 189
+Path length: 41 nodes
+A* total elapsed time: 1.155894 s
+  server queries time: 1.145302 s
+  search-only time: 0.010592 s
+Server bytes received: 2146304 bytes
+Running A* from 267271851 to 282645402 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 124
+Path length: 30 nodes
+A* total elapsed time: 0.582150 s
+  server queries time: 0.571733 s
+  search-only time: 0.010417 s
+Server bytes received: 1073152 bytes
+Running A* from 275687867 to 31130384 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 157
+Path length: 21 nodes
+A* total elapsed time: 0.579511 s
+  server queries time: 0.569195 s
+  search-only time: 0.010317 s
+Server bytes received: 1073152 bytes
+Running A* from 1195275498 to 3464000032 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 80
+Path length: 16 nodes
+A* total elapsed time: 0.587088 s
+  server queries time: 0.576684 s
+  search-only time: 0.010404 s
+Server bytes received: 1073152 bytes
+Running A* from 2123185634 to 3708419423 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 116
+Path length: 13 nodes
+A* total elapsed time: 0.578161 s
+  server queries time: 0.567819 s
+  search-only time: 0.010342 s
+Server bytes received: 1073152 bytes
+Running A* from 33053378 to 279578480 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 138
+Path length: 19 nodes
+A* total elapsed time: 1.159268 s
+  server queries time: 1.148267 s
+  search-only time: 0.011001 s
+Server bytes received: 2146304 bytes
+Running A* from 413619975 to 302409608 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 125
+Path length: 33 nodes
+A* total elapsed time: 0.585649 s
+  server queries time: 0.575424 s
+  search-only time: 0.010225 s
+Server bytes received: 1073152 bytes
+Running A* from 412517195 to 81533927 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 132
+Path length: 17 nodes
+A* total elapsed time: 1.164975 s
+  server queries time: 1.154364 s
+  search-only time: 0.010612 s
+Server bytes received: 2146304 bytes
+Running A* from 453995 to 60504103 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 543
+Path length: 68 nodes
+A* total elapsed time: 2.350147 s
+  server queries time: 2.339351 s
+  search-only time: 0.010796 s
+Server bytes received: 4292608 bytes
+Running A* from 8548126227 to 30825918 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 169
+Path length: 27 nodes
+A* total elapsed time: 1.184863 s
+  server queries time: 1.174203 s
+  search-only time: 0.010659 s
+Server bytes received: 2146304 bytes
+Running A* from 3454007813 to 364813178 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 124
+Path length: 23 nodes
+A* total elapsed time: 1.154572 s
+  server queries time: 1.144298 s
+  search-only time: 0.010274 s
+Server bytes received: 2146304 bytes
+Running A* from 350321961 to 365980908 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 130
+Path length: 16 nodes
+A* total elapsed time: 0.582844 s
+  server queries time: 0.572183 s
+  search-only time: 0.010661 s
+Server bytes received: 1073152 bytes
+Running A* from 540597602 to 439645110 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 117
+Path length: 24 nodes
+A* total elapsed time: 1.157736 s
+  server queries time: 1.147387 s
+  search-only time: 0.010348 s
+Server bytes received: 2146304 bytes
+Running A* from 484796342 to 9192417252 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 168
+Path length: 15 nodes
+A* total elapsed time: 0.594179 s
+  server queries time: 0.582733 s
+  search-only time: 0.011446 s
+Server bytes received: 1073152 bytes
+Running A* from 60688554 to 6489391906 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 110
+Path length: 11 nodes
+A* total elapsed time: 0.580076 s
+  server queries time: 0.569666 s
+  search-only time: 0.010410 s
+Server bytes received: 1073152 bytes
+Running A* from 5273881350 to 568425338 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 219
+Path length: 36 nodes
+A* total elapsed time: 1.161581 s
+  server queries time: 1.151063 s
+  search-only time: 0.010518 s
+Server bytes received: 2146304 bytes
+Running A* from 957403167 to 767860671 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 131
+Path length: 24 nodes
+A* total elapsed time: 0.587492 s
+  server queries time: 0.576654 s
+  search-only time: 0.010838 s
+Server bytes received: 1073152 bytes
+Running A* from 4626514178 to 390490390 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 119
+Path length: 12 nodes
+A* total elapsed time: 1.149763 s
+  server queries time: 1.139500 s
+  search-only time: 0.010262 s
+Server bytes received: 2146304 bytes
+Running A* from 12412537571 to 81563317 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 134
+Path length: 42 nodes
+A* total elapsed time: 0.585008 s
+  server queries time: 0.574492 s
+  search-only time: 0.010515 s
+Server bytes received: 1073152 bytes
+Running A* from 105451520 to 109634860 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 150
+Path length: 22 nodes
+A* total elapsed time: 0.588055 s
+  server queries time: 0.577703 s
+  search-only time: 0.010351 s
+Server bytes received: 1073152 bytes
+-- running journeys of distance 2000...
+Running A* from 3055053420 to 1164911831 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 189
+Path length: 31 nodes
+A* total elapsed time: 1.174408 s
+  server queries time: 1.163871 s
+  search-only time: 0.010537 s
+Server bytes received: 2146304 bytes
+Running A* from 5976375981 to 66576983 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 172
+Path length: 10 nodes
+A* total elapsed time: 0.575549 s
+  server queries time: 0.565237 s
+  search-only time: 0.010312 s
+Server bytes received: 1073152 bytes
+Running A* from 3281197943 to 3445514799 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 180
+Path length: 17 nodes
+A* total elapsed time: 1.187892 s
+  server queries time: 1.177514 s
+  search-only time: 0.010379 s
+Server bytes received: 2146304 bytes
+Running A* from 310147802 to 12919836160 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 240
+Path length: 23 nodes
+A* total elapsed time: 0.578807 s
+  server queries time: 0.568394 s
+  search-only time: 0.010413 s
+Server bytes received: 1073152 bytes
+Running A* from 371590813 to 2298019027 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 191
+Path length: 19 nodes
+A* total elapsed time: 1.173534 s
+  server queries time: 1.163193 s
+  search-only time: 0.010342 s
+Server bytes received: 2146304 bytes
+Running A* from 767273508 to 3641027818 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 336
+Path length: 47 nodes
+A* total elapsed time: 0.589503 s
+  server queries time: 0.579243 s
+  search-only time: 0.010260 s
+Server bytes received: 1073152 bytes
+Running A* from 1259622212 to 12588346417 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 236
+Path length: 34 nodes
+A* total elapsed time: 0.604784 s
+  server queries time: 0.593819 s
+  search-only time: 0.010965 s
+Server bytes received: 1073152 bytes
+Running A* from 10808377864 to 281736497 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 354
+Path length: 48 nodes
+A* total elapsed time: 0.578338 s
+  server queries time: 0.567595 s
+  search-only time: 0.010743 s
+Server bytes received: 1073152 bytes
+Running A* from 1021253 to 275550728 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 361
+Path length: 52 nodes
+A* total elapsed time: 0.597677 s
+  server queries time: 0.586418 s
+  search-only time: 0.011259 s
+Server bytes received: 1073152 bytes
+Running A* from 12513284457 to 324647944 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 261
+Path length: 83 nodes
+A* total elapsed time: 1.161229 s
+  server queries time: 1.150368 s
+  search-only time: 0.010861 s
+Server bytes received: 2146304 bytes
+Running A* from 1026977717 to 10957866787 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 302
+Path length: 54 nodes
+A* total elapsed time: 1.156787 s
+  server queries time: 1.145832 s
+  search-only time: 0.010955 s
+Server bytes received: 2146304 bytes
+Running A* from 289972307 to 29773864 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 255
+Path length: 44 nodes
+A* total elapsed time: 0.580630 s
+  server queries time: 0.570204 s
+  search-only time: 0.010426 s
+Server bytes received: 1073152 bytes
+Running A* from 6481185553 to 6518802275 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 249
+Path length: 46 nodes
+A* total elapsed time: 1.146553 s
+  server queries time: 1.136117 s
+  search-only time: 0.010435 s
+Server bytes received: 2146304 bytes
+Running A* from 1239360446 to 139719471 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 312
+Path length: 22 nodes
+A* total elapsed time: 0.577579 s
+  server queries time: 0.566815 s
+  search-only time: 0.010764 s
+Server bytes received: 1073152 bytes
+Running A* from 295490078 to 260928031 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 323
+Path length: 67 nodes
+A* total elapsed time: 1.143756 s
+  server queries time: 1.132818 s
+  search-only time: 0.010939 s
+Server bytes received: 2146304 bytes
+Running A* from 1168825714 to 7188336034 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 213
+Path length: 45 nodes
+A* total elapsed time: 1.175691 s
+  server queries time: 1.165312 s
+  search-only time: 0.010379 s
+Server bytes received: 2146304 bytes
+Running A* from 12301211615 to 4633821766 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 197
+Path length: 21 nodes
+A* total elapsed time: 1.172614 s
+  server queries time: 1.162223 s
+  search-only time: 0.010391 s
+Server bytes received: 2146304 bytes
+Running A* from 263040043 to 2447730659 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 208
+Path length: 34 nodes
+A* total elapsed time: 0.574398 s
+  server queries time: 0.563905 s
+  search-only time: 0.010493 s
+Server bytes received: 1073152 bytes
+Running A* from 1051090325 to 11736531166 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 195
+Path length: 15 nodes
+A* total elapsed time: 0.577806 s
+  server queries time: 0.567565 s
+  search-only time: 0.010241 s
+Server bytes received: 1073152 bytes
+Running A* from 3058968106 to 3097796239 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 858
+Path length: 96 nodes
+A* total elapsed time: 2.319038 s
+  server queries time: 2.308624 s
+  search-only time: 0.010414 s
+Server bytes received: 4292608 bytes
+Running A* from 677038139 to 10250560405 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 202
+Path length: 12 nodes
+A* total elapsed time: 0.588743 s
+  server queries time: 0.578418 s
+  search-only time: 0.010325 s
+Server bytes received: 1073152 bytes
+Running A* from 364354666 to 12351254646 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 483
+Path length: 76 nodes
+A* total elapsed time: 1.153020 s
+  server queries time: 1.141783 s
+  search-only time: 0.011237 s
+Server bytes received: 2146304 bytes
+Running A* from 472618375 to 27612605 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 163
+Path length: 25 nodes
+A* total elapsed time: 1.160765 s
+  server queries time: 1.150371 s
+  search-only time: 0.010394 s
+Server bytes received: 2146304 bytes
+Running A* from 8475642843 to 105307149 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 203
+Path length: 35 nodes
+A* total elapsed time: 1.139018 s
+  server queries time: 1.128601 s
+  search-only time: 0.010416 s
+Server bytes received: 2146304 bytes
+Running A* from 8734809632 to 279963017 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 233
+Path length: 29 nodes
+A* total elapsed time: 0.624409 s
+  server queries time: 0.613961 s
+  search-only time: 0.010448 s
+Server bytes received: 1073152 bytes
+Running A* from 1259622143 to 654104263 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 265
+Path length: 35 nodes
+A* total elapsed time: 0.584340 s
+  server queries time: 0.573700 s
+  search-only time: 0.010640 s
+Server bytes received: 1073152 bytes
+Running A* from 259996095 to 364876309 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 268
+Path length: 36 nodes
+A* total elapsed time: 1.173370 s
+  server queries time: 1.162910 s
+  search-only time: 0.010459 s
+Server bytes received: 2146304 bytes
+Running A* from 27612605 to 472618375 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 168
+Path length: 28 nodes
+A* total elapsed time: 1.153095 s
+  server queries time: 1.142781 s
+  search-only time: 0.010314 s
+Server bytes received: 2146304 bytes
+Running A* from 144736441 to 101735749 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 256
+Path length: 30 nodes
+A* total elapsed time: 2.285444 s
+  server queries time: 2.274688 s
+  search-only time: 0.010756 s
+Server bytes received: 4292608 bytes
+Running A* from 660193504 to 360471827 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 291
+Path length: 49 nodes
+A* total elapsed time: 1.770711 s
+  server queries time: 1.760112 s
+  search-only time: 0.010599 s
+Server bytes received: 3219456 bytes
+-- running journeys of distance 5000...
+Running A* from 94814817 to 29687766 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 568
+Path length: 99 nodes
+A* total elapsed time: 1.748855 s
+  server queries time: 1.737386 s
+  search-only time: 0.011469 s
+Server bytes received: 3219456 bytes
+Running A* from 1499154084 to 285235565 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 675
+Path length: 102 nodes
+A* total elapsed time: 1.721237 s
+  server queries time: 1.710883 s
+  search-only time: 0.010354 s
+Server bytes received: 3219456 bytes
+Running A* from 679638727 to 2075426117 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 426
+Path length: 58 nodes
+A* total elapsed time: 2.288368 s
+  server queries time: 2.277637 s
+  search-only time: 0.010732 s
+Server bytes received: 4292608 bytes
+Running A* from 282874875 to 9890731047 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 652
+Path length: 116 nodes
+A* total elapsed time: 1.723634 s
+  server queries time: 1.712059 s
+  search-only time: 0.011576 s
+Server bytes received: 3219456 bytes
+Running A* from 1410065280 to 1338628661 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 437
+Path length: 40 nodes
+A* total elapsed time: 2.326434 s
+  server queries time: 2.315144 s
+  search-only time: 0.011290 s
+Server bytes received: 4292608 bytes
+Running A* from 150556534 to 130233861 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 568
+Path length: 88 nodes
+A* total elapsed time: 1.731332 s
+  server queries time: 1.719466 s
+  search-only time: 0.011866 s
+Server bytes received: 3219456 bytes
+Running A* from 333677198 to 1673911246 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 535
+Path length: 55 nodes
+A* total elapsed time: 2.319231 s
+  server queries time: 2.308528 s
+  search-only time: 0.010703 s
+Server bytes received: 4292608 bytes
+Running A* from 264962896 to 5030114764 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 750
+Path length: 32 nodes
+A* total elapsed time: 2.879026 s
+  server queries time: 2.868038 s
+  search-only time: 0.010988 s
+Server bytes received: 5365760 bytes
+Running A* from 13439174939 to 9050576164 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 653
+Path length: 88 nodes
+A* total elapsed time: 2.317549 s
+  server queries time: 2.306696 s
+  search-only time: 0.010853 s
+Server bytes received: 4292608 bytes
+Running A* from 25430622 to 441855552 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 474
+Path length: 76 nodes
+A* total elapsed time: 2.897723 s
+  server queries time: 2.886417 s
+  search-only time: 0.011306 s
+Server bytes received: 5365760 bytes
+Running A* from 262165755 to 28900650 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 444
+Path length: 56 nodes
+A* total elapsed time: 1.165698 s
+  server queries time: 1.155074 s
+  search-only time: 0.010625 s
+Server bytes received: 2146304 bytes
+Running A* from 11442853766 to 27621238 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 407
+Path length: 61 nodes
+A* total elapsed time: 1.137403 s
+  server queries time: 1.126594 s
+  search-only time: 0.010810 s
+Server bytes received: 2146304 bytes
+Running A* from 1024129389 to 25427498 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 622
+Path length: 81 nodes
+A* total elapsed time: 1.741373 s
+  server queries time: 1.730000 s
+  search-only time: 0.011373 s
+Server bytes received: 3219456 bytes
+Running A* from 1203732883 to 9036272594 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 743
+Path length: 141 nodes
+A* total elapsed time: 2.318896 s
+  server queries time: 2.306949 s
+  search-only time: 0.011947 s
+Server bytes received: 4292608 bytes
+Running A* from 3128267906 to 3824243128 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 488
+Path length: 65 nodes
+A* total elapsed time: 1.155995 s
+  server queries time: 1.145544 s
+  search-only time: 0.010451 s
+Server bytes received: 2146304 bytes
+Running A* from 1165861060 to 9708935710 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1962
+Path length: 151 nodes
+A* total elapsed time: 4.631799 s
+  server queries time: 4.619740 s
+  search-only time: 0.012059 s
+Server bytes received: 8585216 bytes
+Running A* from 150876418 to 8524994609 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1102
+Path length: 138 nodes
+A* total elapsed time: 4.675083 s
+  server queries time: 4.660040 s
+  search-only time: 0.015044 s
+Server bytes received: 8585216 bytes
+Running A* from 269559422 to 408170083 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 673
+Path length: 105 nodes
+A* total elapsed time: 2.925295 s
+  server queries time: 2.912756 s
+  search-only time: 0.012539 s
+Server bytes received: 5365760 bytes
+Running A* from 299336133 to 298658812 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 502
+Path length: 69 nodes
+A* total elapsed time: 1.176962 s
+  server queries time: 1.166071 s
+  search-only time: 0.010891 s
+Server bytes received: 2146304 bytes
+Running A* from 9221436801 to 9529368400 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 836
+Path length: 56 nodes
+A* total elapsed time: 2.911257 s
+  server queries time: 2.900218 s
+  search-only time: 0.011039 s
+Server bytes received: 5365760 bytes
+Running A* from 308898933 to 1249007997 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 570
+Path length: 97 nodes
+A* total elapsed time: 1.737637 s
+  server queries time: 1.725703 s
+  search-only time: 0.011934 s
+Server bytes received: 3219456 bytes
+Running A* from 2068210830 to 2069705435 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 641
+Path length: 90 nodes
+A* total elapsed time: 2.304356 s
+  server queries time: 2.293589 s
+  search-only time: 0.010767 s
+Server bytes received: 4292608 bytes
+Running A* from 289471501 to 355933552 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 461
+Path length: 88 nodes
+A* total elapsed time: 2.333746 s
+  server queries time: 2.322425 s
+  search-only time: 0.011321 s
+Server bytes received: 4292608 bytes
+Running A* from 583387865 to 4095821573 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 460
+Path length: 70 nodes
+A* total elapsed time: 2.323483 s
+  server queries time: 2.312446 s
+  search-only time: 0.011037 s
+Server bytes received: 4292608 bytes
+Running A* from 213302618 to 1126482500 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 524
+Path length: 72 nodes
+A* total elapsed time: 1.729982 s
+  server queries time: 1.719214 s
+  search-only time: 0.010768 s
+Server bytes received: 3219456 bytes
+Running A* from 327315546 to 262271857 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 586
+Path length: 48 nodes
+A* total elapsed time: 2.336134 s
+  server queries time: 2.323705 s
+  search-only time: 0.012428 s
+Server bytes received: 4292608 bytes
+Running A* from 297035896 to 2591159937 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 459
+Path length: 56 nodes
+A* total elapsed time: 1.182642 s
+  server queries time: 1.171438 s
+  search-only time: 0.011204 s
+Server bytes received: 2146304 bytes
+Running A* from 2184615343 to 3159094075 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 612
+Path length: 64 nodes
+A* total elapsed time: 2.338376 s
+  server queries time: 2.328007 s
+  search-only time: 0.010369 s
+Server bytes received: 4292608 bytes
+Running A* from 9543405972 to 2872465819 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 968
+Path length: 135 nodes
+A* total elapsed time: 4.035033 s
+  server queries time: 4.023503 s
+  search-only time: 0.011529 s
+Server bytes received: 7512064 bytes
+Running A* from 9274279052 to 2086435624 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 514
+Path length: 49 nodes
+A* total elapsed time: 1.167362 s
+  server queries time: 1.156168 s
+  search-only time: 0.011194 s
+Server bytes received: 2146304 bytes
+-- running journeys of distance 10000...
+Running A* from 7887892232 to 1387522165 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 716
+Path length: 97 nodes
+A* total elapsed time: 2.896158 s
+  server queries time: 2.883765 s
+  search-only time: 0.012393 s
+Server bytes received: 5365760 bytes
+Running A* from 60503259 to 469705849 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1861
+Path length: 219 nodes
+A* total elapsed time: 10.413460 s
+  server queries time: 10.390324 s
+  search-only time: 0.023136 s
+Server bytes received: 19316736 bytes
+Running A* from 30173181 to 1221505804 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1000
+Path length: 183 nodes
+A* total elapsed time: 4.611609 s
+  server queries time: 4.597310 s
+  search-only time: 0.014300 s
+Server bytes received: 8585216 bytes
+Running A* from 305391250 to 534815561 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 989
+Path length: 181 nodes
+A* total elapsed time: 5.200527 s
+  server queries time: 5.186834 s
+  search-only time: 0.013693 s
+Server bytes received: 9658368 bytes
+Running A* from 2670706445 to 2319220519 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 725
+Path length: 73 nodes
+A* total elapsed time: 3.469558 s
+  server queries time: 3.458407 s
+  search-only time: 0.011151 s
+Server bytes received: 6438912 bytes
+Running A* from 1672733056 to 3046441702 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 877
+Path length: 96 nodes
+A* total elapsed time: 3.474532 s
+  server queries time: 3.463054 s
+  search-only time: 0.011477 s
+Server bytes received: 6438912 bytes
+Running A* from 10095791460 to 9116355457 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 866
+Path length: 114 nodes
+A* total elapsed time: 2.322924 s
+  server queries time: 2.311355 s
+  search-only time: 0.011569 s
+Server bytes received: 4292608 bytes
+Running A* from 94701896 to 114298515 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 977
+Path length: 136 nodes
+A* total elapsed time: 4.599015 s
+  server queries time: 4.583700 s
+  search-only time: 0.015315 s
+Server bytes received: 8585216 bytes
+Running A* from 114310774 to 514434491 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 897
+Path length: 127 nodes
+A* total elapsed time: 3.452433 s
+  server queries time: 3.439885 s
+  search-only time: 0.012548 s
+Server bytes received: 6438912 bytes
+Running A* from 11805500715 to 5352409973 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 966
+Path length: 105 nodes
+A* total elapsed time: 4.029736 s
+  server queries time: 4.015921 s
+  search-only time: 0.013815 s
+Server bytes received: 7512064 bytes
+Running A* from 3451304339 to 412439484 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1043
+Path length: 111 nodes
+A* total elapsed time: 2.301772 s
+  server queries time: 2.290164 s
+  search-only time: 0.011607 s
+Server bytes received: 4292608 bytes
+Running A* from 274989727 to 2016799261 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1010
+Path length: 95 nodes
+A* total elapsed time: 4.632634 s
+  server queries time: 4.618072 s
+  search-only time: 0.014562 s
+Server bytes received: 8585216 bytes
+Running A* from 665688284 to 8492007310 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 674
+Path length: 90 nodes
+A* total elapsed time: 2.289427 s
+  server queries time: 2.277774 s
+  search-only time: 0.011653 s
+Server bytes received: 4292608 bytes
+Running A* from 268484189 to 762678310 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1046
+Path length: 153 nodes
+A* total elapsed time: 3.456179 s
+  server queries time: 3.441710 s
+  search-only time: 0.014469 s
+Server bytes received: 6438912 bytes
+Running A* from 611658079 to 278253114 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 872
+Path length: 90 nodes
+A* total elapsed time: 4.038352 s
+  server queries time: 4.024168 s
+  search-only time: 0.014185 s
+Server bytes received: 7512064 bytes
+Running A* from 1668776867 to 5756016007 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 718
+Path length: 106 nodes
+A* total elapsed time: 2.866036 s
+  server queries time: 2.854881 s
+  search-only time: 0.011155 s
+Server bytes received: 5365760 bytes
+Running A* from 289469565 to 3909924939 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 669
+Path length: 99 nodes
+A* total elapsed time: 2.304561 s
+  server queries time: 2.292510 s
+  search-only time: 0.012050 s
+Server bytes received: 4292608 bytes
+Running A* from 11202836 to 309791713 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1555
+Path length: 217 nodes
+A* total elapsed time: 4.054909 s
+  server queries time: 4.042693 s
+  search-only time: 0.012215 s
+Server bytes received: 7512064 bytes
+Running A* from 2126331710 to 199425977 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1188
+Path length: 74 nodes
+A* total elapsed time: 5.175438 s
+  server queries time: 5.163826 s
+  search-only time: 0.011612 s
+Server bytes received: 9658368 bytes
+Running A* from 4492998800 to 1103974024 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 650
+Path length: 105 nodes
+A* total elapsed time: 2.284976 s
+  server queries time: 2.273400 s
+  search-only time: 0.011576 s
+Server bytes received: 4292608 bytes
+Running A* from 2371706454 to 533735714 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 593
+Path length: 56 nodes
+A* total elapsed time: 2.309344 s
+  server queries time: 2.298467 s
+  search-only time: 0.010876 s
+Server bytes received: 4292608 bytes
+Running A* from 702207145 to 25522776 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 773
+Path length: 63 nodes
+A* total elapsed time: 2.885562 s
+  server queries time: 2.874345 s
+  search-only time: 0.011218 s
+Server bytes received: 5365760 bytes
+Running A* from 374113918 to 107798053 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 873
+Path length: 107 nodes
+A* total elapsed time: 3.449492 s
+  server queries time: 3.437592 s
+  search-only time: 0.011899 s
+Server bytes received: 6438912 bytes
+Running A* from 1485039920 to 292610716 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1281
+Path length: 207 nodes
+A* total elapsed time: 4.635305 s
+  server queries time: 4.620605 s
+  search-only time: 0.014699 s
+Server bytes received: 8585216 bytes
+Running A* from 386846837 to 441597475 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 991
+Path length: 115 nodes
+A* total elapsed time: 4.018829 s
+  server queries time: 4.007019 s
+  search-only time: 0.011810 s
+Server bytes received: 7512064 bytes
+Running A* from 944657441 to 569584464 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 887
+Path length: 100 nodes
+A* total elapsed time: 2.335185 s
+  server queries time: 2.321892 s
+  search-only time: 0.013293 s
+Server bytes received: 4292608 bytes
+Running A* from 308823443 to 349231384 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 726
+Path length: 108 nodes
+A* total elapsed time: 2.891489 s
+  server queries time: 2.879655 s
+  search-only time: 0.011834 s
+Server bytes received: 5365760 bytes
+Running A* from 12342392330 to 9737255488 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 685
+Path length: 48 nodes
+A* total elapsed time: 2.323873 s
+  server queries time: 2.312626 s
+  search-only time: 0.011247 s
+Server bytes received: 4292608 bytes
+Running A* from 298674240 to 965911896 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1172
+Path length: 196 nodes
+A* total elapsed time: 4.036796 s
+  server queries time: 4.022783 s
+  search-only time: 0.014013 s
+Server bytes received: 7512064 bytes
+Running A* from 297789747 to 1973572553 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 970
+Path length: 134 nodes
+A* total elapsed time: 4.631153 s
+  server queries time: 4.618204 s
+  search-only time: 0.012948 s
+Server bytes received: 8585216 bytes
+-- running journeys of distance 15000...
+Running A* from 4656327090 to 2632303474 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2155
+Path length: 196 nodes
+A* total elapsed time: 10.960470 s
+  server queries time: 10.946042 s
+  search-only time: 0.014428 s
+Server bytes received: 20389888 bytes
+Running A* from 498159102 to 290144765 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3148
+Path length: 219 nodes
+A* total elapsed time: 17.807645 s
+  server queries time: 17.782697 s
+  search-only time: 0.024948 s
+Server bytes received: 33267712 bytes
+Running A* from 301266122 to 576204571 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1240
+Path length: 134 nodes
+A* total elapsed time: 6.305645 s
+  server queries time: 6.291022 s
+  search-only time: 0.014623 s
+Server bytes received: 11804672 bytes
+Running A* from 2324923182 to 277997396 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1311
+Path length: 138 nodes
+A* total elapsed time: 5.171556 s
+  server queries time: 5.157389 s
+  search-only time: 0.014166 s
+Server bytes received: 9658368 bytes
+Running A* from 34484983 to 377097305 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1078
+Path length: 105 nodes
+A* total elapsed time: 5.204964 s
+  server queries time: 5.190366 s
+  search-only time: 0.014598 s
+Server bytes received: 9658368 bytes
+Running A* from 2504901946 to 385696322 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2614
+Path length: 276 nodes
+A* total elapsed time: 13.909924 s
+  server queries time: 13.878696 s
+  search-only time: 0.031228 s
+Server bytes received: 25755648 bytes
+Running A* from 296055708 to 300026424 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 933
+Path length: 106 nodes
+A* total elapsed time: 4.047245 s
+  server queries time: 4.034956 s
+  search-only time: 0.012290 s
+Server bytes received: 7512064 bytes
+Running A* from 445045086 to 1014536256 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1343
+Path length: 147 nodes
+A* total elapsed time: 6.911014 s
+  server queries time: 6.895922 s
+  search-only time: 0.015092 s
+Server bytes received: 12877824 bytes
+Running A* from 294167019 to 1602569149 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2456
+Path length: 290 nodes
+A* total elapsed time: 8.045424 s
+  server queries time: 8.029118 s
+  search-only time: 0.016306 s
+Server bytes received: 15024128 bytes
+Running A* from 386846055 to 288513123 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1411
+Path length: 156 nodes
+A* total elapsed time: 4.022834 s
+  server queries time: 4.009472 s
+  search-only time: 0.013362 s
+Server bytes received: 7512064 bytes
+Running A* from 65206511 to 6036767790 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1247
+Path length: 152 nodes
+A* total elapsed time: 5.762220 s
+  server queries time: 5.748225 s
+  search-only time: 0.013994 s
+Server bytes received: 10731520 bytes
+Running A* from 1354781251 to 322778110 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1202
+Path length: 170 nodes
+A* total elapsed time: 4.023573 s
+  server queries time: 4.011034 s
+  search-only time: 0.012540 s
+Server bytes received: 7512064 bytes
+Running A* from 3782557825 to 8416737454 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1517
+Path length: 139 nodes
+A* total elapsed time: 4.012663 s
+  server queries time: 4.000896 s
+  search-only time: 0.011767 s
+Server bytes received: 7512064 bytes
+Running A* from 746964895 to 1345209709 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1163
+Path length: 176 nodes
+A* total elapsed time: 4.043027 s
+  server queries time: 4.028422 s
+  search-only time: 0.014605 s
+Server bytes received: 7512064 bytes
+Running A* from 122041738 to 663008420 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1353
+Path length: 176 nodes
+A* total elapsed time: 6.340920 s
+  server queries time: 6.321432 s
+  search-only time: 0.019488 s
+Server bytes received: 11804672 bytes
+Running A* from 436367315 to 2266643843 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1133
+Path length: 128 nodes
+A* total elapsed time: 4.038144 s
+  server queries time: 4.024617 s
+  search-only time: 0.013527 s
+Server bytes received: 7512064 bytes
+Running A* from 479751144 to 105393156 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1462
+Path length: 151 nodes
+A* total elapsed time: 6.336440 s
+  server queries time: 6.322389 s
+  search-only time: 0.014051 s
+Server bytes received: 11804672 bytes
+Running A* from 256579856 to 6738167666 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1278
+Path length: 115 nodes
+A* total elapsed time: 5.756910 s
+  server queries time: 5.744221 s
+  search-only time: 0.012689 s
+Server bytes received: 10731520 bytes
+Running A* from 26905286 to 25427030 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 965
+Path length: 114 nodes
+A* total elapsed time: 4.059331 s
+  server queries time: 4.046747 s
+  search-only time: 0.012584 s
+Server bytes received: 7512064 bytes
+Running A* from 311264865 to 29896824 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1704
+Path length: 182 nodes
+A* total elapsed time: 8.026965 s
+  server queries time: 8.009329 s
+  search-only time: 0.017636 s
+Server bytes received: 15024128 bytes
+Running A* from 144728029 to 2503945491 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1422
+Path length: 183 nodes
+A* total elapsed time: 7.484378 s
+  server queries time: 7.463240 s
+  search-only time: 0.021138 s
+Server bytes received: 13950976 bytes
+Running A* from 299449778 to 244998392 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1343
+Path length: 177 nodes
+A* total elapsed time: 6.983370 s
+  server queries time: 6.967905 s
+  search-only time: 0.015465 s
+Server bytes received: 12877824 bytes
+Running A* from 312561304 to 986827968 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1466
+Path length: 196 nodes
+A* total elapsed time: 8.124722 s
+  server queries time: 8.104203 s
+  search-only time: 0.020519 s
+Server bytes received: 15024128 bytes
+Running A* from 324793771 to 837377703 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1453
+Path length: 119 nodes
+A* total elapsed time: 6.923149 s
+  server queries time: 6.910666 s
+  search-only time: 0.012484 s
+Server bytes received: 12877824 bytes
+Running A* from 10821195217 to 1968100215 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1205
+Path length: 154 nodes
+A* total elapsed time: 5.778391 s
+  server queries time: 5.759852 s
+  search-only time: 0.018539 s
+Server bytes received: 10731520 bytes
+Running A* from 93020579 to 4128576433 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1214
+Path length: 139 nodes
+A* total elapsed time: 6.343846 s
+  server queries time: 6.324973 s
+  search-only time: 0.018873 s
+Server bytes received: 11804672 bytes
+Running A* from 96677186 to 317210461 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1241
+Path length: 123 nodes
+A* total elapsed time: 6.910759 s
+  server queries time: 6.894370 s
+  search-only time: 0.016389 s
+Server bytes received: 12877824 bytes
+Running A* from 2041888496 to 11503084389 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1104
+Path length: 96 nodes
+A* total elapsed time: 4.621453 s
+  server queries time: 4.609876 s
+  search-only time: 0.011577 s
+Server bytes received: 8585216 bytes
+Running A* from 371575083 to 35786112 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1209
+Path length: 155 nodes
+A* total elapsed time: 5.760994 s
+  server queries time: 5.746704 s
+  search-only time: 0.014290 s
+Server bytes received: 10731520 bytes
+Running A* from 292225039 to 4416359560 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1617
+Path length: 151 nodes
+A* total elapsed time: 6.943007 s
+  server queries time: 6.925780 s
+  search-only time: 0.017227 s
+Server bytes received: 12877824 bytes
+-- running journeys of distance 20000...
+Running A* from 2465939571 to 1250128207 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1273
+Path length: 153 nodes
+A* total elapsed time: 5.193410 s
+  server queries time: 5.181392 s
+  search-only time: 0.012018 s
+Server bytes received: 9658368 bytes
+Running A* from 454602372 to 1285211603 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1454
+Path length: 223 nodes
+A* total elapsed time: 7.529050 s
+  server queries time: 7.513173 s
+  search-only time: 0.015876 s
+Server bytes received: 13950976 bytes
+Running A* from 321188887 to 10312101391 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1542
+Path length: 199 nodes
+A* total elapsed time: 10.373529 s
+  server queries time: 10.354855 s
+  search-only time: 0.018674 s
+Server bytes received: 19316736 bytes
+Running A* from 1832854376 to 1316396657 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1612
+Path length: 264 nodes
+A* total elapsed time: 7.502415 s
+  server queries time: 7.485947 s
+  search-only time: 0.016469 s
+Server bytes received: 13950976 bytes
+Running A* from 364076191 to 10245729243 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1902
+Path length: 229 nodes
+A* total elapsed time: 12.688809 s
+  server queries time: 12.659051 s
+  search-only time: 0.029758 s
+Server bytes received: 23609344 bytes
+Running A* from 665746636 to 298622476 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1885
+Path length: 179 nodes
+A* total elapsed time: 10.395345 s
+  server queries time: 10.373232 s
+  search-only time: 0.022114 s
+Server bytes received: 19316736 bytes
+Running A* from 414225676 to 321542510 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1523
+Path length: 183 nodes
+A* total elapsed time: 7.493173 s
+  server queries time: 7.475744 s
+  search-only time: 0.017428 s
+Server bytes received: 13950976 bytes
+Running A* from 617820393 to 287027452 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1576
+Path length: 173 nodes
+A* total elapsed time: 7.495105 s
+  server queries time: 7.480005 s
+  search-only time: 0.015100 s
+Server bytes received: 13950976 bytes
+Running A* from 5237692132 to 461144267 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1819
+Path length: 197 nodes
+A* total elapsed time: 10.911464 s
+  server queries time: 10.890853 s
+  search-only time: 0.020611 s
+Server bytes received: 20389888 bytes
+Running A* from 263256888 to 921851357 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1718
+Path length: 186 nodes
+A* total elapsed time: 9.203411 s
+  server queries time: 9.182816 s
+  search-only time: 0.020595 s
+Server bytes received: 17170432 bytes
+Running A* from 490235397 to 1255643819 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1145
+Path length: 75 nodes
+A* total elapsed time: 5.177088 s
+  server queries time: 5.165396 s
+  search-only time: 0.011692 s
+Server bytes received: 9658368 bytes
+Running A* from 1921946055 to 2160691939 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1610
+Path length: 176 nodes
+A* total elapsed time: 8.110499 s
+  server queries time: 8.093644 s
+  search-only time: 0.016854 s
+Server bytes received: 15024128 bytes
+Running A* from 13555579467 to 260395179 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1681
+Path length: 175 nodes
+A* total elapsed time: 8.066196 s
+  server queries time: 8.048408 s
+  search-only time: 0.017788 s
+Server bytes received: 15024128 bytes
+Running A* from 206180945 to 12802395405 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2503
+Path length: 314 nodes
+A* total elapsed time: 10.957165 s
+  server queries time: 10.927313 s
+  search-only time: 0.029851 s
+Server bytes received: 20389888 bytes
+Running A* from 29271871 to 102224930 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1335
+Path length: 133 nodes
+A* total elapsed time: 5.766499 s
+  server queries time: 5.747643 s
+  search-only time: 0.018856 s
+Server bytes received: 10731520 bytes
+Running A* from 745461302 to 1779698014 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1429
+Path length: 144 nodes
+A* total elapsed time: 8.022074 s
+  server queries time: 8.004577 s
+  search-only time: 0.017497 s
+Server bytes received: 15024128 bytes
+Running A* from 296924093 to 2399435020 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1399
+Path length: 179 nodes
+A* total elapsed time: 4.062369 s
+  server queries time: 4.048251 s
+  search-only time: 0.014117 s
+Server bytes received: 7512064 bytes
+Running A* from 327003860 to 4267392379 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1758
+Path length: 265 nodes
+A* total elapsed time: 10.384001 s
+  server queries time: 10.363654 s
+  search-only time: 0.020347 s
+Server bytes received: 19316736 bytes
+Running A* from 10901634553 to 268744936 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1576
+Path length: 209 nodes
+A* total elapsed time: 8.670913 s
+  server queries time: 8.649891 s
+  search-only time: 0.021023 s
+Server bytes received: 16097280 bytes
+Running A* from 1246606021 to 10537151055 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2004
+Path length: 222 nodes
+A* total elapsed time: 10.367533 s
+  server queries time: 10.353735 s
+  search-only time: 0.013798 s
+Server bytes received: 19316736 bytes
+Running A* from 4854922736 to 8117788216 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2098
+Path length: 175 nodes
+A* total elapsed time: 16.712636 s
+  server queries time: 16.681707 s
+  search-only time: 0.030929 s
+Server bytes received: 31121408 bytes
+Running A* from 290818162 to 2993629961 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2184
+Path length: 202 nodes
+A* total elapsed time: 13.255310 s
+  server queries time: 13.231179 s
+  search-only time: 0.024131 s
+Server bytes received: 24682496 bytes
+Running A* from 1651369480 to 10029051 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1356
+Path length: 165 nodes
+A* total elapsed time: 4.061178 s
+  server queries time: 4.049796 s
+  search-only time: 0.011382 s
+Server bytes received: 7512064 bytes
+Running A* from 3100349546 to 2569421829 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1596
+Path length: 167 nodes
+A* total elapsed time: 8.024868 s
+  server queries time: 8.007598 s
+  search-only time: 0.017270 s
+Server bytes received: 15024128 bytes
+Running A* from 1975546350 to 114297630 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1178
+Path length: 137 nodes
+A* total elapsed time: 6.937263 s
+  server queries time: 6.922221 s
+  search-only time: 0.015042 s
+Server bytes received: 12877824 bytes
+Running A* from 825774711 to 298405370 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1596
+Path length: 165 nodes
+A* total elapsed time: 9.264198 s
+  server queries time: 9.246812 s
+  search-only time: 0.017386 s
+Server bytes received: 17170432 bytes
+Running A* from 550114567 to 945873819 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1459
+Path length: 134 nodes
+A* total elapsed time: 4.023335 s
+  server queries time: 4.010918 s
+  search-only time: 0.012417 s
+Server bytes received: 7512064 bytes
+Running A* from 268480848 to 459970929 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1667
+Path length: 171 nodes
+A* total elapsed time: 9.795720 s
+  server queries time: 9.775769 s
+  search-only time: 0.019950 s
+Server bytes received: 18243584 bytes
+Running A* from 1668903242 to 99201149 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1257
+Path length: 169 nodes
+A* total elapsed time: 5.184297 s
+  server queries time: 5.169269 s
+  search-only time: 0.015027 s
+Server bytes received: 9658368 bytes
+Running A* from 929095028 to 280882173 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1368
+Path length: 150 nodes
+A* total elapsed time: 5.214785 s
+  server queries time: 5.197932 s
+  search-only time: 0.016854 s
+Server bytes received: 9658368 bytes
+-- running journeys of distance 30000...
+Running A* from 295440293 to 2470376712 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2262
+Path length: 232 nodes
+A* total elapsed time: 16.177783 s
+  server queries time: 16.145772 s
+  search-only time: 0.032011 s
+Server bytes received: 30048256 bytes
+Running A* from 213057945 to 266595852 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1987
+Path length: 158 nodes
+A* total elapsed time: 12.637861 s
+  server queries time: 12.613129 s
+  search-only time: 0.024732 s
+Server bytes received: 23609344 bytes
+Running A* from 12347704536 to 33186141 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2442
+Path length: 334 nodes
+A* total elapsed time: 13.854219 s
+  server queries time: 13.836368 s
+  search-only time: 0.017851 s
+Server bytes received: 25755648 bytes
+Running A* from 1835857918 to 309308820 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2119
+Path length: 191 nodes
+A* total elapsed time: 7.511108 s
+  server queries time: 7.495032 s
+  search-only time: 0.016076 s
+Server bytes received: 13950976 bytes
+Running A* from 10289892080 to 9609619367 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2020
+Path length: 227 nodes
+A* total elapsed time: 10.378763 s
+  server queries time: 10.357741 s
+  search-only time: 0.021023 s
+Server bytes received: 19316736 bytes
+Running A* from 2228841458 to 298413249 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1694
+Path length: 145 nodes
+A* total elapsed time: 6.969108 s
+  server queries time: 6.953122 s
+  search-only time: 0.015986 s
+Server bytes received: 12877824 bytes
+Running A* from 322835380 to 2365778248 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2964
+Path length: 346 nodes
+A* total elapsed time: 23.069697 s
+  server queries time: 23.033198 s
+  search-only time: 0.036499 s
+Server bytes received: 42926080 bytes
+Running A* from 380486765 to 356727535 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2271
+Path length: 201 nodes
+A* total elapsed time: 12.693201 s
+  server queries time: 12.671042 s
+  search-only time: 0.022158 s
+Server bytes received: 23609344 bytes
+Running A* from 4567570317 to 9210375252 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2677
+Path length: 286 nodes
+A* total elapsed time: 21.953191 s
+  server queries time: 21.903447 s
+  search-only time: 0.049744 s
+Server bytes received: 40779776 bytes
+Running A* from 12969775556 to 5522521093 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1632
+Path length: 189 nodes
+A* total elapsed time: 7.516297 s
+  server queries time: 7.497157 s
+  search-only time: 0.019140 s
+Server bytes received: 13950976 bytes
+Running A* from 11022765559 to 305676394 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2023
+Path length: 212 nodes
+A* total elapsed time: 12.090030 s
+  server queries time: 12.057887 s
+  search-only time: 0.032143 s
+Server bytes received: 22536192 bytes
+Running A* from 280103949 to 401756373 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 4498
+Path length: 331 nodes
+A* total elapsed time: 24.749247 s
+  server queries time: 24.725764 s
+  search-only time: 0.023483 s
+Server bytes received: 46145536 bytes
+Running A* from 14611086 to 2906079784 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 4521
+Path length: 297 nodes
+A* total elapsed time: 29.360792 s
+  server queries time: 29.341306 s
+  search-only time: 0.019486 s
+Server bytes received: 54730752 bytes
+Running A* from 713568664 to 1014462230 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1372
+Path length: 90 nodes
+A* total elapsed time: 5.273287 s
+  server queries time: 5.260680 s
+  search-only time: 0.012607 s
+Server bytes received: 9658368 bytes
+Running A* from 8516142878 to 268958572 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1807
+Path length: 207 nodes
+A* total elapsed time: 10.477596 s
+  server queries time: 10.459444 s
+  search-only time: 0.018152 s
+Server bytes received: 19316736 bytes
+Running A* from 294070928 to 2532328739 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 5317
+Path length: 450 nodes
+A* total elapsed time: 38.709587 s
+  server queries time: 38.671976 s
+  search-only time: 0.037611 s
+Server bytes received: 71901184 bytes
+Running A* from 1803288509 to 12810567471 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2047
+Path length: 263 nodes
+A* total elapsed time: 13.251445 s
+  server queries time: 13.228746 s
+  search-only time: 0.022699 s
+Server bytes received: 24682496 bytes
+Running A* from 413670871 to 12809771714 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2468
+Path length: 339 nodes
+A* total elapsed time: 11.504880 s
+  server queries time: 11.484221 s
+  search-only time: 0.020659 s
+Server bytes received: 21463040 bytes
+Running A* from 3278225899 to 2137656661 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1673
+Path length: 203 nodes
+A* total elapsed time: 7.512970 s
+  server queries time: 7.494455 s
+  search-only time: 0.018516 s
+Server bytes received: 13950976 bytes
+Running A* from 420075590 to 317663781 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2130
+Path length: 276 nodes
+A* total elapsed time: 12.171739 s
+  server queries time: 12.142063 s
+  search-only time: 0.029676 s
+Server bytes received: 22536192 bytes
+Running A* from 2390236945 to 317446076 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2259
+Path length: 282 nodes
+A* total elapsed time: 12.126152 s
+  server queries time: 12.107820 s
+  search-only time: 0.018332 s
+Server bytes received: 22536192 bytes
+Running A* from 5254058388 to 410227819 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1463
+Path length: 153 nodes
+A* total elapsed time: 5.749039 s
+  server queries time: 5.733934 s
+  search-only time: 0.015105 s
+Server bytes received: 10731520 bytes
+Running A* from 443225065 to 249674451 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2283
+Path length: 259 nodes
+A* total elapsed time: 14.986256 s
+  server queries time: 14.960078 s
+  search-only time: 0.026177 s
+Server bytes received: 27901952 bytes
+Running A* from 299510564 to 2919159660 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2490
+Path length: 266 nodes
+A* total elapsed time: 20.728608 s
+  server queries time: 20.691424 s
+  search-only time: 0.037184 s
+Server bytes received: 38633472 bytes
+Running A* from 6355380580 to 676482631 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2352
+Path length: 277 nodes
+A* total elapsed time: 12.127010 s
+  server queries time: 12.095301 s
+  search-only time: 0.031709 s
+Server bytes received: 22536192 bytes
+Running A* from 7080307074 to 315269638 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1412
+Path length: 110 nodes
+A* total elapsed time: 5.218301 s
+  server queries time: 5.204360 s
+  search-only time: 0.013941 s
+Server bytes received: 9658368 bytes
+Running A* from 299083534 to 297950428 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1904
+Path length: 198 nodes
+A* total elapsed time: 8.662517 s
+  server queries time: 8.643614 s
+  search-only time: 0.018902 s
+Server bytes received: 16097280 bytes
+Running A* from 1883505388 to 4112388810 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3233
+Path length: 360 nodes
+A* total elapsed time: 25.967781 s
+  server queries time: 25.936096 s
+  search-only time: 0.031685 s
+Server bytes received: 48291840 bytes
+Running A* from 5287669095 to 772079750 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2067
+Path length: 227 nodes
+A* total elapsed time: 11.497761 s
+  server queries time: 11.477030 s
+  search-only time: 0.020731 s
+Server bytes received: 21463040 bytes
+Running A* from 8222064380 to 116022045 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2004
+Path length: 202 nodes
+A* total elapsed time: 13.276782 s
+  server queries time: 13.258323 s
+  search-only time: 0.018459 s
+Server bytes received: 24682496 bytes
+-- running journeys of distance 40000...
+Running A* from 2097861161 to 1811756393 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2750
+Path length: 290 nodes
+A* total elapsed time: 16.156290 s
+  server queries time: 16.130688 s
+  search-only time: 0.025602 s
+Server bytes received: 30048256 bytes
+Running A* from 341224020 to 3161214469 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2025
+Path length: 154 nodes
+A* total elapsed time: 9.214919 s
+  server queries time: 9.194737 s
+  search-only time: 0.020182 s
+Server bytes received: 17170432 bytes
+Running A* from 312432515 to 2326301513 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3542
+Path length: 281 nodes
+A* total elapsed time: 34.619857 s
+  server queries time: 34.564077 s
+  search-only time: 0.055780 s
+Server bytes received: 64389120 bytes
+Running A* from 1175547941 to 7468147629 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3841
+Path length: 433 nodes
+A* total elapsed time: 32.904160 s
+  server queries time: 32.864760 s
+  search-only time: 0.039400 s
+Server bytes received: 61169664 bytes
+Running A* from 25647254 to 936169467 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2263
+Path length: 257 nodes
+A* total elapsed time: 8.620022 s
+  server queries time: 8.599449 s
+  search-only time: 0.020573 s
+Server bytes received: 16097280 bytes
+Running A* from 253822078 to 1169510988 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2648
+Path length: 251 nodes
+A* total elapsed time: 20.831308 s
+  server queries time: 20.794483 s
+  search-only time: 0.036825 s
+Server bytes received: 38633472 bytes
+Running A* from 309066907 to 2823453689 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3167
+Path length: 272 nodes
+A* total elapsed time: 19.662641 s
+  server queries time: 19.629331 s
+  search-only time: 0.033310 s
+Server bytes received: 36487168 bytes
+Running A* from 296506283 to 493847212 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2257
+Path length: 200 nodes
+A* total elapsed time: 12.115611 s
+  server queries time: 12.093748 s
+  search-only time: 0.021864 s
+Server bytes received: 22536192 bytes
+Running A* from 286696636 to 11036734648 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1951
+Path length: 191 nodes
+A* total elapsed time: 9.308716 s
+  server queries time: 9.289470 s
+  search-only time: 0.019247 s
+Server bytes received: 17170432 bytes
+Running A* from 309835165 to 315263694 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2478
+Path length: 345 nodes
+A* total elapsed time: 7.497146 s
+  server queries time: 7.477798 s
+  search-only time: 0.019348 s
+Server bytes received: 13950976 bytes
+Running A* from 872947730 to 2421090421 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3643
+Path length: 452 nodes
+A* total elapsed time: 32.314263 s
+  server queries time: 32.238138 s
+  search-only time: 0.076125 s
+Server bytes received: 60096512 bytes
+Running A* from 269128012 to 3010327558 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3432
+Path length: 407 nodes
+A* total elapsed time: 34.640257 s
+  server queries time: 34.582955 s
+  search-only time: 0.057302 s
+Server bytes received: 64389120 bytes
+Running A* from 1461950834 to 4031848665 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3254
+Path length: 262 nodes
+A* total elapsed time: 23.061990 s
+  server queries time: 23.026495 s
+  search-only time: 0.035495 s
+Server bytes received: 42926080 bytes
+Running A* from 746308210 to 1685985063 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2155
+Path length: 175 nodes
+A* total elapsed time: 9.777979 s
+  server queries time: 9.761736 s
+  search-only time: 0.016244 s
+Server bytes received: 18243584 bytes
+Running A* from 108197060 to 7143761775 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2453
+Path length: 310 nodes
+A* total elapsed time: 17.859248 s
+  server queries time: 17.820169 s
+  search-only time: 0.039079 s
+Server bytes received: 33267712 bytes
+Running A* from 296962516 to 5699834009 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1926
+Path length: 185 nodes
+A* total elapsed time: 9.221739 s
+  server queries time: 9.204583 s
+  search-only time: 0.017156 s
+Server bytes received: 17170432 bytes
+Running A* from 316876981 to 444007577 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3169
+Path length: 395 nodes
+A* total elapsed time: 25.924507 s
+  server queries time: 25.869079 s
+  search-only time: 0.055428 s
+Server bytes received: 48291840 bytes
+Running A* from 7817299038 to 27443701 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2471
+Path length: 218 nodes
+A* total elapsed time: 13.968122 s
+  server queries time: 13.942245 s
+  search-only time: 0.025877 s
+Server bytes received: 25755648 bytes
+Running A* from 2571441314 to 2178857998 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3693
+Path length: 290 nodes
+A* total elapsed time: 19.075690 s
+  server queries time: 19.061269 s
+  search-only time: 0.014420 s
+Server bytes received: 35414016 bytes
+Running A* from 629556719 to 476017829 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3247
+Path length: 335 nodes
+A* total elapsed time: 27.202859 s
+  server queries time: 27.164493 s
+  search-only time: 0.038366 s
+Server bytes received: 50438144 bytes
+Running A* from 269104291 to 10733196766 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3134
+Path length: 251 nodes
+A* total elapsed time: 13.251100 s
+  server queries time: 13.234554 s
+  search-only time: 0.016547 s
+Server bytes received: 24682496 bytes
+Running A* from 1811567858 to 1972083126 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2868
+Path length: 335 nodes
+A* total elapsed time: 14.983270 s
+  server queries time: 14.956896 s
+  search-only time: 0.026375 s
+Server bytes received: 27901952 bytes
+Running A* from 33475435 to 303807012 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3093
+Path length: 270 nodes
+A* total elapsed time: 25.393616 s
+  server queries time: 25.350441 s
+  search-only time: 0.043175 s
+Server bytes received: 47218688 bytes
+Running A* from 9756375923 to 746727284 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3294
+Path length: 373 nodes
+A* total elapsed time: 23.088609 s
+  server queries time: 23.033533 s
+  search-only time: 0.055076 s
+Server bytes received: 42926080 bytes
+Running A* from 544217411 to 3780777135 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2504
+Path length: 245 nodes
+A* total elapsed time: 13.874525 s
+  server queries time: 13.848260 s
+  search-only time: 0.026265 s
+Server bytes received: 25755648 bytes
+Running A* from 748871503 to 5682917304 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2403
+Path length: 285 nodes
+A* total elapsed time: 13.292873 s
+  server queries time: 13.257527 s
+  search-only time: 0.035346 s
+Server bytes received: 24682496 bytes
+Running A* from 505125197 to 60483843 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2966
+Path length: 347 nodes
+A* total elapsed time: 22.479060 s
+  server queries time: 22.429629 s
+  search-only time: 0.049431 s
+Server bytes received: 41852928 bytes
+Running A* from 13410417849 to 1136197359 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 1888
+Path length: 187 nodes
+A* total elapsed time: 7.483317 s
+  server queries time: 7.467621 s
+  search-only time: 0.015696 s
+Server bytes received: 13950976 bytes
+Running A* from 1479520430 to 307692649 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2907
+Path length: 334 nodes
+A* total elapsed time: 10.975455 s
+  server queries time: 10.953727 s
+  search-only time: 0.021728 s
+Server bytes received: 20389888 bytes
+Running A* from 443876050 to 339009525 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 4130
+Path length: 382 nodes
+A* total elapsed time: 17.278633 s
+  server queries time: 17.260657 s
+  search-only time: 0.017975 s
+Server bytes received: 32194560 bytes
+-- running journeys of distance 50000...
+Running A* from 469708144 to 7978238304 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3625
+Path length: 404 nodes
+A* total elapsed time: 24.165750 s
+  server queries time: 24.122001 s
+  search-only time: 0.043749 s
+Server bytes received: 45072384 bytes
+Running A* from 7090912335 to 35296908 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3031
+Path length: 366 nodes
+A* total elapsed time: 10.964002 s
+  server queries time: 10.939486 s
+  search-only time: 0.024516 s
+Server bytes received: 20389888 bytes
+Running A* from 12573401400 to 2135528058 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3015
+Path length: 310 nodes
+A* total elapsed time: 25.314517 s
+  server queries time: 25.280662 s
+  search-only time: 0.033855 s
+Server bytes received: 47218688 bytes
+Running A* from 1427766316 to 477619411 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3116
+Path length: 363 nodes
+A* total elapsed time: 20.791013 s
+  server queries time: 20.750843 s
+  search-only time: 0.040170 s
+Server bytes received: 38633472 bytes
+Running A* from 2039537986 to 5278614965 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 4143
+Path length: 434 nodes
+A* total elapsed time: 28.751325 s
+  server queries time: 28.702170 s
+  search-only time: 0.049156 s
+Server bytes received: 53657600 bytes
+Running A* from 2434836232 to 1834135246 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2536
+Path length: 244 nodes
+A* total elapsed time: 10.930277 s
+  server queries time: 10.911635 s
+  search-only time: 0.018642 s
+Server bytes received: 20389888 bytes
+Running A* from 1770863429 to 145871887 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2591
+Path length: 290 nodes
+A* total elapsed time: 19.037859 s
+  server queries time: 19.000070 s
+  search-only time: 0.037788 s
+Server bytes received: 35414016 bytes
+Running A* from 360436670 to 2610607822 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3055
+Path length: 310 nodes
+A* total elapsed time: 29.381820 s
+  server queries time: 29.324856 s
+  search-only time: 0.056964 s
+Server bytes received: 54730752 bytes
+Running A* from 1139758641 to 309406754 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3843
+Path length: 404 nodes
+A* total elapsed time: 25.903226 s
+  server queries time: 25.858869 s
+  search-only time: 0.044357 s
+Server bytes received: 48291840 bytes
+Running A* from 663867108 to 4471046714 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3507
+Path length: 348 nodes
+A* total elapsed time: 20.768065 s
+  server queries time: 20.742414 s
+  search-only time: 0.025651 s
+Server bytes received: 38633472 bytes
+Running A* from 299762993 to 344188708 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2966
+Path length: 301 nodes
+A* total elapsed time: 23.074314 s
+  server queries time: 23.033267 s
+  search-only time: 0.041046 s
+Server bytes received: 42926080 bytes
+Running A* from 3003603011 to 1865817207 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3731
+Path length: 404 nodes
+A* total elapsed time: 24.767157 s
+  server queries time: 24.729618 s
+  search-only time: 0.037539 s
+Server bytes received: 46145536 bytes
+Running A* from 890036369 to 8672735174 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2339
+Path length: 178 nodes
+A* total elapsed time: 13.832979 s
+  server queries time: 13.808831 s
+  search-only time: 0.024148 s
+Server bytes received: 25755648 bytes
+Running A* from 459970681 to 4117283257 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3818
+Path length: 376 nodes
+A* total elapsed time: 36.335431 s
+  server queries time: 36.276615 s
+  search-only time: 0.058817 s
+Server bytes received: 67608576 bytes
+Running A* from 33980331 to 3981650745 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3590
+Path length: 366 nodes
+A* total elapsed time: 34.032404 s
+  server queries time: 33.969411 s
+  search-only time: 0.062993 s
+Server bytes received: 63315968 bytes
+Running A* from 1687075786 to 1727225779 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3505
+Path length: 306 nodes
+A* total elapsed time: 28.865084 s
+  server queries time: 28.821901 s
+  search-only time: 0.043182 s
+Server bytes received: 53657600 bytes
+Running A* from 3119287047 to 1678218868 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3268
+Path length: 354 nodes
+A* total elapsed time: 21.956367 s
+  server queries time: 21.914337 s
+  search-only time: 0.042030 s
+Server bytes received: 40779776 bytes
+Running A* from 132118870 to 704742949 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3307
+Path length: 379 nodes
+A* total elapsed time: 26.666890 s
+  server queries time: 26.612335 s
+  search-only time: 0.054555 s
+Server bytes received: 49364992 bytes
+Running A* from 472438499 to 2029120638 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+!! No path found between 472438499 and 2029120638
+Running A* from 296891764 to 2383505898 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2382
+Path length: 246 nodes
+A* total elapsed time: 13.803018 s
+  server queries time: 13.777881 s
+  search-only time: 0.025137 s
+Server bytes received: 25755648 bytes
+Running A* from 767860711 to 330171539 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2568
+Path length: 250 nodes
+A* total elapsed time: 9.213347 s
+  server queries time: 9.189531 s
+  search-only time: 0.023816 s
+Server bytes received: 17170432 bytes
+Running A* from 10613957066 to 1547017432 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 4453
+Path length: 467 nodes
+A* total elapsed time: 37.512715 s
+  server queries time: 37.452564 s
+  search-only time: 0.060151 s
+Server bytes received: 69754880 bytes
+Running A* from 1290784110 to 1893811275 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3616
+Path length: 337 nodes
+A* total elapsed time: 25.441283 s
+  server queries time: 25.390667 s
+  search-only time: 0.050616 s
+Server bytes received: 47218688 bytes
+Running A* from 8561138898 to 8728519894 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2518
+Path length: 216 nodes
+A* total elapsed time: 13.807577 s
+  server queries time: 13.787221 s
+  search-only time: 0.020356 s
+Server bytes received: 25755648 bytes
+Running A* from 255564650 to 390933587 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3196
+Path length: 320 nodes
+A* total elapsed time: 23.617518 s
+  server queries time: 23.580380 s
+  search-only time: 0.037138 s
+Server bytes received: 43999232 bytes
+Running A* from 300569441 to 2504915666 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3765
+Path length: 490 nodes
+A* total elapsed time: 27.045175 s
+  server queries time: 26.985167 s
+  search-only time: 0.060007 s
+Server bytes received: 50438144 bytes
+Running A* from 698881825 to 304544856 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2935
+Path length: 314 nodes
+A* total elapsed time: 20.784139 s
+  server queries time: 20.744085 s
+  search-only time: 0.040054 s
+Server bytes received: 38633472 bytes
+Running A* from 11927213642 to 1438424204 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2483
+Path length: 226 nodes
+A* total elapsed time: 17.289935 s
+  server queries time: 17.262608 s
+  search-only time: 0.027326 s
+Server bytes received: 32194560 bytes
+Running A* from 247922799 to 296241024 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3475
+Path length: 329 nodes
+A* total elapsed time: 25.929390 s
+  server queries time: 25.886267 s
+  search-only time: 0.043123 s
+Server bytes received: 48291840 bytes
+Running A* from 94865477 to 3649549291 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2951
+Path length: 336 nodes
+A* total elapsed time: 21.936655 s
+  server queries time: 21.885598 s
+  search-only time: 0.051056 s
+Server bytes received: 40779776 bytes
+-- running journeys of distance 60000...
+Running A* from 1704141402 to 9096926146 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 4636
+Path length: 536 nodes
+A* total elapsed time: 45.019811 s
+  server queries time: 44.918557 s
+  search-only time: 0.101254 s
+Server bytes received: 83705856 bytes
+Running A* from 6960559342 to 271446321 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3082
+Path length: 269 nodes
+A* total elapsed time: 25.438579 s
+  server queries time: 25.391737 s
+  search-only time: 0.046842 s
+Server bytes received: 47218688 bytes
+Running A* from 332558773 to 8062265091 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3478
+Path length: 313 nodes
+A* total elapsed time: 27.029223 s
+  server queries time: 26.979360 s
+  search-only time: 0.049863 s
+Server bytes received: 50438144 bytes
+Running A* from 1075200604 to 5310423103 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3652
+Path length: 367 nodes
+A* total elapsed time: 25.947091 s
+  server queries time: 25.902806 s
+  search-only time: 0.044286 s
+Server bytes received: 48291840 bytes
+Running A* from 10607703415 to 8087274 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 4141
+Path length: 413 nodes
+A* total elapsed time: 36.267176 s
+  server queries time: 36.215607 s
+  search-only time: 0.051569 s
+Server bytes received: 67608576 bytes
+Running A* from 582638772 to 684619659 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 4412
+Path length: 498 nodes
+A* total elapsed time: 19.002936 s
+  server queries time: 18.970385 s
+  search-only time: 0.032550 s
+Server bytes received: 35414016 bytes
+Running A* from 1111071174 to 1304083300 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3022
+Path length: 261 nodes
+A* total elapsed time: 14.424532 s
+  server queries time: 14.400620 s
+  search-only time: 0.023913 s
+Server bytes received: 26828800 bytes
+Running A* from 2705263109 to 304307633 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 6610
+Path length: 502 nodes
+A* total elapsed time: 66.395200 s
+  server queries time: 66.324978 s
+  search-only time: 0.070221 s
+Server bytes received: 123412480 bytes
+Running A* from 2154439985 to 618675984 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 5040
+Path length: 585 nodes
+A* total elapsed time: 43.375522 s
+  server queries time: 43.286148 s
+  search-only time: 0.089374 s
+Server bytes received: 80486400 bytes
+Running A* from 404745769 to 1597316161 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3401
+Path length: 291 nodes
+A* total elapsed time: 28.801545 s
+  server queries time: 28.758702 s
+  search-only time: 0.042843 s
+Server bytes received: 53657600 bytes
+Running A* from 7385691473 to 309287878 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3117
+Path length: 329 nodes
+A* total elapsed time: 13.822424 s
+  server queries time: 13.794018 s
+  search-only time: 0.028406 s
+Server bytes received: 25755648 bytes
+Running A* from 318577407 to 1014424038 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3689
+Path length: 339 nodes
+A* total elapsed time: 32.241494 s
+  server queries time: 32.196149 s
+  search-only time: 0.045345 s
+Server bytes received: 60096512 bytes
+Running A* from 248817211 to 247139632 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3742
+Path length: 350 nodes
+A* total elapsed time: 29.392503 s
+  server queries time: 29.335094 s
+  search-only time: 0.057409 s
+Server bytes received: 54730752 bytes
+Running A* from 331236786 to 12084237935 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2990
+Path length: 304 nodes
+A* total elapsed time: 14.384007 s
+  server queries time: 14.358649 s
+  search-only time: 0.025358 s
+Server bytes received: 26828800 bytes
+Running A* from 3596677668 to 3948186968 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3442
+Path length: 363 nodes
+A* total elapsed time: 14.452743 s
+  server queries time: 14.423269 s
+  search-only time: 0.029474 s
+Server bytes received: 26828800 bytes
+Running A* from 9197426086 to 1849542352 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3056
+Path length: 298 nodes
+A* total elapsed time: 19.027840 s
+  server queries time: 19.003482 s
+  search-only time: 0.024359 s
+Server bytes received: 35414016 bytes
+Running A* from 561177344 to 6220826864 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+!! No path found between 561177344 and 6220826864
+Running A* from 557429054 to 8394131195 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3710
+Path length: 420 nodes
+A* total elapsed time: 33.688970 s
+  server queries time: 33.615567 s
+  search-only time: 0.073403 s
+Server bytes received: 62242816 bytes
+Running A* from 3840022060 to 4478893107 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3870
+Path length: 345 nodes
+A* total elapsed time: 26.573690 s
+  server queries time: 26.527457 s
+  search-only time: 0.046233 s
+Server bytes received: 49364992 bytes
+Running A* from 9386512790 to 12802437745 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3282
+Path length: 373 nodes
+A* total elapsed time: 21.335557 s
+  server queries time: 21.299371 s
+  search-only time: 0.036186 s
+Server bytes received: 39706624 bytes
+Running A* from 5809966575 to 290469349 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3468
+Path length: 310 nodes
+A* total elapsed time: 26.540408 s
+  server queries time: 26.485695 s
+  search-only time: 0.054713 s
+Server bytes received: 49364992 bytes
+Running A* from 4459904061 to 5064715595 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3636
+Path length: 291 nodes
+A* total elapsed time: 28.915519 s
+  server queries time: 28.875221 s
+  search-only time: 0.040298 s
+Server bytes received: 53657600 bytes
+Running A* from 2452671170 to 291733816 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 6142
+Path length: 501 nodes
+A* total elapsed time: 61.108585 s
+  server queries time: 61.041183 s
+  search-only time: 0.067402 s
+Server bytes received: 113754112 bytes
+Running A* from 130042898 to 12944710579 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 4346
+Path length: 416 nodes
+A* total elapsed time: 44.012660 s
+  server queries time: 43.929869 s
+  search-only time: 0.082790 s
+Server bytes received: 81559552 bytes
+Running A* from 535889754 to 368971167 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 2838
+Path length: 300 nodes
+A* total elapsed time: 19.740464 s
+  server queries time: 19.705175 s
+  search-only time: 0.035289 s
+Server bytes received: 36487168 bytes
+Running A* from 29684853 to 2119260567 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3174
+Path length: 293 nodes
+A* total elapsed time: 19.290887 s
+  server queries time: 19.263622 s
+  search-only time: 0.027265 s
+Server bytes received: 35414016 bytes
+Running A* from 1152744868 to 307765193 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 4768
+Path length: 442 nodes
+A* total elapsed time: 32.824700 s
+  server queries time: 32.800874 s
+  search-only time: 0.023826 s
+Server bytes received: 60096512 bytes
+Running A* from 256018003 to 302320965 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3151
+Path length: 376 nodes
+A* total elapsed time: 12.906964 s
+  server queries time: 12.881548 s
+  search-only time: 0.025416 s
+Server bytes received: 23609344 bytes
+Running A* from 7695458764 to 12302836938 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3612
+Path length: 371 nodes
+A* total elapsed time: 25.816210 s
+  server queries time: 25.775727 s
+  search-only time: 0.040483 s
+Server bytes received: 47218688 bytes
+Running A* from 1116883051 to 321576449 in country Switzerland using approach Block(0.1) and architecture Spiral ...
+A* found a path with cost 3581
+Path length: 409 nodes
+A* total elapsed time: 21.727601 s
+  server queries time: 21.690602 s
+  search-only time: 0.036999 s
+Server bytes received: 39706624 bytes

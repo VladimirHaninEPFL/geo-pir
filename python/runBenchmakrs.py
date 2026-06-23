@@ -24,13 +24,14 @@ def startBenchmarks() -> None:
     subprocess.run(["cargo", "build", "--release", "--bin", "geo_server"])
     subprocess.run(["cargo", "build", "--release", "--bin", "geo_client"])
 
-    countries = ["Switzerland", "France"]
-    architectures = ["Spiral"] #, "SinglePass"]
-    approaches = ["node0", "node1", "node2", "node3" ] #, "block0.1", "block0.25", "block0.5", "block1"]
+    countries = ["Switzerland"]#, "France"]
+    architectures = ["SinglePass"] #, "Spiral"]
+    approaches = ["node0", "node3", "block0.1", "block1" ] #, "block0.1", "block0.25", "block0.5", "block1"]
     
     journeys = {}
     for country in countries:
         journeys[country] = pk.load(open(f"./data/{country}-journeys.pickle", "rb"))
+        # journeys[country] = {10000: [(2324923182, 277997396)] }
     
     for country in countries:
         for archi in architectures:

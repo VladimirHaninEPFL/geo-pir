@@ -1,0 +1,2312 @@
+-- starting benchmarks for Switzerland Naive node0 --
+-- running journeys of distance 500...
+Running A* from 2967149442 to 5336880755 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 80
+Path length: 14 nodes
+A* total elapsed time: 0.258422 s
+  server queries time: 0.186147 s
+  search-only time: 0.072275 s
+Server bytes received: 14863058 bytes
+Running A* from 1323889417 to 291362851 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 24
+Path length: 2 nodes
+A* total elapsed time: 0.194335 s
+  server queries time: 0.182746 s
+  search-only time: 0.011588 s
+Server bytes received: 14863058 bytes
+Running A* from 441123448 to 158722554 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 47
+Path length: 8 nodes
+A* total elapsed time: 0.187400 s
+  server queries time: 0.175666 s
+  search-only time: 0.011734 s
+Server bytes received: 14863058 bytes
+Running A* from 299985842 to 299986004 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 45
+Path length: 7 nodes
+A* total elapsed time: 0.189989 s
+  server queries time: 0.178332 s
+  search-only time: 0.011657 s
+Server bytes received: 14863058 bytes
+Running A* from 3986836962 to 3986836960 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 50
+Path length: 8 nodes
+A* total elapsed time: 0.190392 s
+  server queries time: 0.178778 s
+  search-only time: 0.011614 s
+Server bytes received: 14863058 bytes
+Running A* from 30064412 to 60118892 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 120
+Path length: 13 nodes
+A* total elapsed time: 0.189239 s
+  server queries time: 0.177494 s
+  search-only time: 0.011746 s
+Server bytes received: 14863058 bytes
+Running A* from 239032816 to 482344258 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 66
+Path length: 12 nodes
+A* total elapsed time: 0.187262 s
+  server queries time: 0.175633 s
+  search-only time: 0.011629 s
+Server bytes received: 14863058 bytes
+Running A* from 1774980917 to 309544510 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 147
+Path length: 11 nodes
+A* total elapsed time: 0.198439 s
+  server queries time: 0.186584 s
+  search-only time: 0.011855 s
+Server bytes received: 14863058 bytes
+Running A* from 8122094033 to 3549093396 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 210
+Path length: 16 nodes
+A* total elapsed time: 0.183305 s
+  server queries time: 0.171587 s
+  search-only time: 0.011718 s
+Server bytes received: 14863058 bytes
+Running A* from 9960645906 to 261681995 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 60
+Path length: 11 nodes
+A* total elapsed time: 0.184331 s
+  server queries time: 0.172724 s
+  search-only time: 0.011607 s
+Server bytes received: 14863058 bytes
+Running A* from 566751128 to 295490106 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 126
+Path length: 25 nodes
+A* total elapsed time: 0.181418 s
+  server queries time: 0.169602 s
+  search-only time: 0.011816 s
+Server bytes received: 14863058 bytes
+Running A* from 1119873627 to 267846228 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 48
+Path length: 13 nodes
+A* total elapsed time: 0.182586 s
+  server queries time: 0.171020 s
+  search-only time: 0.011566 s
+Server bytes received: 14863058 bytes
+Running A* from 34186586 to 1640020542 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 67
+Path length: 9 nodes
+A* total elapsed time: 0.180867 s
+  server queries time: 0.169305 s
+  search-only time: 0.011562 s
+Server bytes received: 14863058 bytes
+Running A* from 856484808 to 11953969583 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 171
+Path length: 22 nodes
+A* total elapsed time: 0.183796 s
+  server queries time: 0.172085 s
+  search-only time: 0.011711 s
+Server bytes received: 14863058 bytes
+Running A* from 385661141 to 11278022869 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 81
+Path length: 19 nodes
+A* total elapsed time: 0.182344 s
+  server queries time: 0.170763 s
+  search-only time: 0.011580 s
+Server bytes received: 14863058 bytes
+Running A* from 10105892902 to 296917811 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 149
+Path length: 13 nodes
+A* total elapsed time: 0.182569 s
+  server queries time: 0.170975 s
+  search-only time: 0.011594 s
+Server bytes received: 14863058 bytes
+Running A* from 1894754826 to 3403699067 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 72
+Path length: 6 nodes
+A* total elapsed time: 0.199489 s
+  server queries time: 0.187923 s
+  search-only time: 0.011566 s
+Server bytes received: 14863058 bytes
+Running A* from 1710470811 to 11278110475 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 125
+Path length: 24 nodes
+A* total elapsed time: 0.195800 s
+  server queries time: 0.183985 s
+  search-only time: 0.011814 s
+Server bytes received: 14863058 bytes
+Running A* from 365290877 to 223260412 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 47
+Path length: 13 nodes
+A* total elapsed time: 0.199457 s
+  server queries time: 0.187733 s
+  search-only time: 0.011725 s
+Server bytes received: 14863058 bytes
+Running A* from 1485039857 to 12141292315 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 94
+Path length: 11 nodes
+A* total elapsed time: 0.204332 s
+  server queries time: 0.192436 s
+  search-only time: 0.011896 s
+Server bytes received: 14863058 bytes
+Running A* from 1458224939 to 21546562 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 501
+Path length: 56 nodes
+A* total elapsed time: 0.201313 s
+  server queries time: 0.189388 s
+  search-only time: 0.011925 s
+Server bytes received: 14863058 bytes
+Running A* from 8465615121 to 303380226 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 75
+Path length: 11 nodes
+A* total elapsed time: 0.191264 s
+  server queries time: 0.179530 s
+  search-only time: 0.011734 s
+Server bytes received: 14863058 bytes
+Running A* from 1543906717 to 402681277 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 137
+Path length: 14 nodes
+A* total elapsed time: 0.191429 s
+  server queries time: 0.179680 s
+  search-only time: 0.011749 s
+Server bytes received: 14863058 bytes
+Running A* from 7650381638 to 476312931 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 87
+Path length: 11 nodes
+A* total elapsed time: 0.201859 s
+  server queries time: 0.190035 s
+  search-only time: 0.011824 s
+Server bytes received: 14863058 bytes
+Running A* from 3056537303 to 2701545866 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 95
+Path length: 19 nodes
+A* total elapsed time: 0.198064 s
+  server queries time: 0.186230 s
+  search-only time: 0.011834 s
+Server bytes received: 14863058 bytes
+Running A* from 316184709 to 412486764 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 99
+Path length: 11 nodes
+A* total elapsed time: 0.202961 s
+  server queries time: 0.191300 s
+  search-only time: 0.011661 s
+Server bytes received: 14863058 bytes
+Running A* from 264544821 to 1752582029 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 74
+Path length: 15 nodes
+A* total elapsed time: 0.192916 s
+  server queries time: 0.181250 s
+  search-only time: 0.011666 s
+Server bytes received: 14863058 bytes
+Running A* from 2078993832 to 2078993843 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 48
+Path length: 7 nodes
+A* total elapsed time: 0.188352 s
+  server queries time: 0.176690 s
+  search-only time: 0.011662 s
+Server bytes received: 14863058 bytes
+Running A* from 423310766 to 2809627279 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 131
+Path length: 24 nodes
+A* total elapsed time: 0.191846 s
+  server queries time: 0.180186 s
+  search-only time: 0.011660 s
+Server bytes received: 14863058 bytes
+Running A* from 25427092 to 25430745 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 78
+Path length: 10 nodes
+A* total elapsed time: 0.195589 s
+  server queries time: 0.183929 s
+  search-only time: 0.011660 s
+Server bytes received: 14863058 bytes
+-- running journeys of distance 1000...
+Running A* from 97981677 to 97980660 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 204
+Path length: 35 nodes
+A* total elapsed time: 0.188520 s
+  server queries time: 0.176613 s
+  search-only time: 0.011907 s
+Server bytes received: 14863058 bytes
+Running A* from 364387222 to 281761716 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 371
+Path length: 25 nodes
+A* total elapsed time: 0.188303 s
+  server queries time: 0.176663 s
+  search-only time: 0.011641 s
+Server bytes received: 14863058 bytes
+Running A* from 952829266 to 6081403641 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 137
+Path length: 31 nodes
+A* total elapsed time: 0.204341 s
+  server queries time: 0.192565 s
+  search-only time: 0.011776 s
+Server bytes received: 14863058 bytes
+Running A* from 5337093507 to 3517000249 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 178
+Path length: 37 nodes
+A* total elapsed time: 0.195848 s
+  server queries time: 0.183584 s
+  search-only time: 0.012264 s
+Server bytes received: 14863058 bytes
+Running A* from 339286871 to 1562043069 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 101
+Path length: 19 nodes
+A* total elapsed time: 0.193401 s
+  server queries time: 0.181646 s
+  search-only time: 0.011755 s
+Server bytes received: 14863058 bytes
+Running A* from 10734432734 to 665097894 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 155
+Path length: 27 nodes
+A* total elapsed time: 0.195346 s
+  server queries time: 0.183410 s
+  search-only time: 0.011936 s
+Server bytes received: 14863058 bytes
+Running A* from 252822573 to 1902515108 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 129
+Path length: 27 nodes
+A* total elapsed time: 0.188862 s
+  server queries time: 0.177181 s
+  search-only time: 0.011681 s
+Server bytes received: 14863058 bytes
+Running A* from 4956927714 to 30825881 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 143
+Path length: 28 nodes
+A* total elapsed time: 0.198694 s
+  server queries time: 0.186640 s
+  search-only time: 0.012054 s
+Server bytes received: 14863058 bytes
+Running A* from 1386836273 to 1611938693 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 147
+Path length: 24 nodes
+A* total elapsed time: 0.197047 s
+  server queries time: 0.185383 s
+  search-only time: 0.011664 s
+Server bytes received: 14863058 bytes
+Running A* from 280883447 to 728635066 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 106
+Path length: 9 nodes
+A* total elapsed time: 0.188897 s
+  server queries time: 0.177309 s
+  search-only time: 0.011588 s
+Server bytes received: 14863058 bytes
+Running A* from 6669811209 to 25426839 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 189
+Path length: 41 nodes
+A* total elapsed time: 0.188155 s
+  server queries time: 0.176293 s
+  search-only time: 0.011863 s
+Server bytes received: 14863058 bytes
+Running A* from 267271851 to 282645402 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 124
+Path length: 30 nodes
+A* total elapsed time: 0.194440 s
+  server queries time: 0.182527 s
+  search-only time: 0.011912 s
+Server bytes received: 14863058 bytes
+Running A* from 275687867 to 31130384 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 157
+Path length: 21 nodes
+A* total elapsed time: 0.186570 s
+  server queries time: 0.174741 s
+  search-only time: 0.011829 s
+Server bytes received: 14863058 bytes
+Running A* from 1195275498 to 3464000032 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 80
+Path length: 16 nodes
+A* total elapsed time: 0.189084 s
+  server queries time: 0.177461 s
+  search-only time: 0.011622 s
+Server bytes received: 14863058 bytes
+Running A* from 2123185634 to 3708419423 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 116
+Path length: 13 nodes
+A* total elapsed time: 0.189253 s
+  server queries time: 0.177349 s
+  search-only time: 0.011903 s
+Server bytes received: 14863058 bytes
+Running A* from 33053378 to 279578480 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 138
+Path length: 19 nodes
+A* total elapsed time: 0.201522 s
+  server queries time: 0.189696 s
+  search-only time: 0.011826 s
+Server bytes received: 14863058 bytes
+Running A* from 413619975 to 302409608 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 125
+Path length: 33 nodes
+A* total elapsed time: 0.205724 s
+  server queries time: 0.193809 s
+  search-only time: 0.011915 s
+Server bytes received: 14863058 bytes
+Running A* from 412517195 to 81533927 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 132
+Path length: 17 nodes
+A* total elapsed time: 0.202640 s
+  server queries time: 0.190805 s
+  search-only time: 0.011835 s
+Server bytes received: 14863058 bytes
+Running A* from 453995 to 60504103 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 543
+Path length: 68 nodes
+A* total elapsed time: 0.190924 s
+  server queries time: 0.178166 s
+  search-only time: 0.012758 s
+Server bytes received: 14863058 bytes
+Running A* from 8548126227 to 30825918 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 169
+Path length: 27 nodes
+A* total elapsed time: 0.190255 s
+  server queries time: 0.178189 s
+  search-only time: 0.012066 s
+Server bytes received: 14863058 bytes
+Running A* from 3454007813 to 364813178 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 124
+Path length: 23 nodes
+A* total elapsed time: 0.197608 s
+  server queries time: 0.185892 s
+  search-only time: 0.011716 s
+Server bytes received: 14863058 bytes
+Running A* from 350321961 to 365980908 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 130
+Path length: 16 nodes
+A* total elapsed time: 0.197439 s
+  server queries time: 0.185610 s
+  search-only time: 0.011829 s
+Server bytes received: 14863058 bytes
+Running A* from 540597602 to 439645110 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 117
+Path length: 24 nodes
+A* total elapsed time: 0.190413 s
+  server queries time: 0.178752 s
+  search-only time: 0.011661 s
+Server bytes received: 14863058 bytes
+Running A* from 484796342 to 9192417252 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 168
+Path length: 15 nodes
+A* total elapsed time: 0.186266 s
+  server queries time: 0.174635 s
+  search-only time: 0.011631 s
+Server bytes received: 14863058 bytes
+Running A* from 60688554 to 6489391906 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 110
+Path length: 11 nodes
+A* total elapsed time: 0.194853 s
+  server queries time: 0.183108 s
+  search-only time: 0.011745 s
+Server bytes received: 14863058 bytes
+Running A* from 5273881350 to 568425338 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 117
+Path length: 23 nodes
+A* total elapsed time: 0.186214 s
+  server queries time: 0.174452 s
+  search-only time: 0.011762 s
+Server bytes received: 14863058 bytes
+Running A* from 957403167 to 767860671 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 131
+Path length: 24 nodes
+A* total elapsed time: 0.196675 s
+  server queries time: 0.185021 s
+  search-only time: 0.011654 s
+Server bytes received: 14863058 bytes
+Running A* from 4626514178 to 390490390 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 119
+Path length: 12 nodes
+A* total elapsed time: 0.198601 s
+  server queries time: 0.186937 s
+  search-only time: 0.011664 s
+Server bytes received: 14863058 bytes
+Running A* from 12412537571 to 81563317 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 134
+Path length: 42 nodes
+A* total elapsed time: 0.204824 s
+  server queries time: 0.192495 s
+  search-only time: 0.012329 s
+Server bytes received: 14863058 bytes
+Running A* from 105451520 to 109634860 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 150
+Path length: 22 nodes
+A* total elapsed time: 0.209223 s
+  server queries time: 0.197375 s
+  search-only time: 0.011848 s
+Server bytes received: 14863058 bytes
+-- running journeys of distance 2000...
+Running A* from 3055053420 to 1164911831 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 189
+Path length: 31 nodes
+A* total elapsed time: 0.191183 s
+  server queries time: 0.179398 s
+  search-only time: 0.011785 s
+Server bytes received: 14863058 bytes
+Running A* from 5976375981 to 66576983 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 172
+Path length: 10 nodes
+A* total elapsed time: 0.191255 s
+  server queries time: 0.179608 s
+  search-only time: 0.011648 s
+Server bytes received: 14863058 bytes
+Running A* from 3281197943 to 3445514799 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 180
+Path length: 17 nodes
+A* total elapsed time: 0.189942 s
+  server queries time: 0.178075 s
+  search-only time: 0.011867 s
+Server bytes received: 14863058 bytes
+Running A* from 310147802 to 12919836160 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 240
+Path length: 23 nodes
+A* total elapsed time: 0.196850 s
+  server queries time: 0.185035 s
+  search-only time: 0.011814 s
+Server bytes received: 14863058 bytes
+Running A* from 371590813 to 2298019027 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 191
+Path length: 19 nodes
+A* total elapsed time: 0.185780 s
+  server queries time: 0.173999 s
+  search-only time: 0.011781 s
+Server bytes received: 14863058 bytes
+Running A* from 767273508 to 3641027818 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 336
+Path length: 47 nodes
+A* total elapsed time: 0.184465 s
+  server queries time: 0.172675 s
+  search-only time: 0.011790 s
+Server bytes received: 14863058 bytes
+Running A* from 1259622212 to 12588346417 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 236
+Path length: 34 nodes
+A* total elapsed time: 0.182254 s
+  server queries time: 0.170533 s
+  search-only time: 0.011721 s
+Server bytes received: 14863058 bytes
+Running A* from 10808377864 to 281736497 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 354
+Path length: 48 nodes
+A* total elapsed time: 0.182309 s
+  server queries time: 0.170498 s
+  search-only time: 0.011811 s
+Server bytes received: 14863058 bytes
+Running A* from 1021253 to 275550728 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 361
+Path length: 52 nodes
+A* total elapsed time: 0.182925 s
+  server queries time: 0.170181 s
+  search-only time: 0.012744 s
+Server bytes received: 14863058 bytes
+Running A* from 12513284457 to 324647944 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 252
+Path length: 75 nodes
+A* total elapsed time: 0.183443 s
+  server queries time: 0.170954 s
+  search-only time: 0.012488 s
+Server bytes received: 14863058 bytes
+Running A* from 1026977717 to 10957866787 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 302
+Path length: 54 nodes
+A* total elapsed time: 0.183455 s
+  server queries time: 0.171499 s
+  search-only time: 0.011957 s
+Server bytes received: 14863058 bytes
+Running A* from 289972307 to 29773864 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 255
+Path length: 44 nodes
+A* total elapsed time: 0.181810 s
+  server queries time: 0.170067 s
+  search-only time: 0.011743 s
+Server bytes received: 14863058 bytes
+Running A* from 6481185553 to 6518802275 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 249
+Path length: 46 nodes
+A* total elapsed time: 0.185499 s
+  server queries time: 0.173575 s
+  search-only time: 0.011924 s
+Server bytes received: 14863058 bytes
+Running A* from 1239360446 to 139719471 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 312
+Path length: 22 nodes
+A* total elapsed time: 0.195083 s
+  server queries time: 0.182688 s
+  search-only time: 0.012395 s
+Server bytes received: 14863058 bytes
+Running A* from 295490078 to 260928031 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 323
+Path length: 67 nodes
+A* total elapsed time: 0.193717 s
+  server queries time: 0.181087 s
+  search-only time: 0.012630 s
+Server bytes received: 14863058 bytes
+Running A* from 1168825714 to 7188336034 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 213
+Path length: 45 nodes
+A* total elapsed time: 0.190888 s
+  server queries time: 0.178979 s
+  search-only time: 0.011909 s
+Server bytes received: 14863058 bytes
+Running A* from 12301211615 to 4633821766 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 197
+Path length: 21 nodes
+A* total elapsed time: 0.190195 s
+  server queries time: 0.178152 s
+  search-only time: 0.012043 s
+Server bytes received: 14863058 bytes
+Running A* from 263040043 to 2447730659 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 208
+Path length: 34 nodes
+A* total elapsed time: 0.192217 s
+  server queries time: 0.180171 s
+  search-only time: 0.012046 s
+Server bytes received: 14863058 bytes
+Running A* from 1051090325 to 11736531166 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 195
+Path length: 15 nodes
+A* total elapsed time: 0.202656 s
+  server queries time: 0.190901 s
+  search-only time: 0.011756 s
+Server bytes received: 14863058 bytes
+Running A* from 3058968106 to 3097796239 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 858
+Path length: 96 nodes
+A* total elapsed time: 0.198124 s
+  server queries time: 0.186130 s
+  search-only time: 0.011994 s
+Server bytes received: 14863058 bytes
+Running A* from 677038139 to 10250560405 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 202
+Path length: 12 nodes
+A* total elapsed time: 0.195438 s
+  server queries time: 0.183680 s
+  search-only time: 0.011758 s
+Server bytes received: 14863058 bytes
+Running A* from 364354666 to 12351254646 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 483
+Path length: 76 nodes
+A* total elapsed time: 0.188487 s
+  server queries time: 0.176067 s
+  search-only time: 0.012420 s
+Server bytes received: 14863058 bytes
+Running A* from 472618375 to 27612605 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 163
+Path length: 25 nodes
+A* total elapsed time: 0.193591 s
+  server queries time: 0.181768 s
+  search-only time: 0.011824 s
+Server bytes received: 14863058 bytes
+Running A* from 8475642843 to 105307149 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 203
+Path length: 35 nodes
+A* total elapsed time: 0.189244 s
+  server queries time: 0.177267 s
+  search-only time: 0.011977 s
+Server bytes received: 14863058 bytes
+Running A* from 8734809632 to 279963017 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 233
+Path length: 29 nodes
+A* total elapsed time: 0.188618 s
+  server queries time: 0.176729 s
+  search-only time: 0.011888 s
+Server bytes received: 14863058 bytes
+Running A* from 1259622143 to 654104263 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 265
+Path length: 35 nodes
+A* total elapsed time: 0.199799 s
+  server queries time: 0.187835 s
+  search-only time: 0.011964 s
+Server bytes received: 14863058 bytes
+Running A* from 259996095 to 364876309 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 268
+Path length: 36 nodes
+A* total elapsed time: 0.196792 s
+  server queries time: 0.184807 s
+  search-only time: 0.011985 s
+Server bytes received: 14863058 bytes
+Running A* from 27612605 to 472618375 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 168
+Path length: 28 nodes
+A* total elapsed time: 0.204872 s
+  server queries time: 0.193193 s
+  search-only time: 0.011679 s
+Server bytes received: 14863058 bytes
+Running A* from 144736441 to 101735749 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 256
+Path length: 30 nodes
+A* total elapsed time: 0.191220 s
+  server queries time: 0.178878 s
+  search-only time: 0.012341 s
+Server bytes received: 14863058 bytes
+Running A* from 660193504 to 360471827 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 291
+Path length: 49 nodes
+A* total elapsed time: 0.191270 s
+  server queries time: 0.179185 s
+  search-only time: 0.012086 s
+Server bytes received: 14863058 bytes
+-- running journeys of distance 5000...
+Running A* from 94814817 to 29687766 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 568
+Path length: 99 nodes
+A* total elapsed time: 0.190821 s
+  server queries time: 0.177377 s
+  search-only time: 0.013444 s
+Server bytes received: 14863058 bytes
+Running A* from 1499154084 to 285235565 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 675
+Path length: 102 nodes
+A* total elapsed time: 0.198331 s
+  server queries time: 0.186540 s
+  search-only time: 0.011792 s
+Server bytes received: 14863058 bytes
+Running A* from 679638727 to 2075426117 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 426
+Path length: 58 nodes
+A* total elapsed time: 0.199181 s
+  server queries time: 0.186748 s
+  search-only time: 0.012433 s
+Server bytes received: 14863058 bytes
+Running A* from 282874875 to 9890731047 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 652
+Path length: 116 nodes
+A* total elapsed time: 0.192511 s
+  server queries time: 0.179022 s
+  search-only time: 0.013489 s
+Server bytes received: 14863058 bytes
+Running A* from 1410065280 to 1338628661 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 437
+Path length: 40 nodes
+A* total elapsed time: 0.195784 s
+  server queries time: 0.183390 s
+  search-only time: 0.012395 s
+Server bytes received: 14863058 bytes
+Running A* from 150556534 to 130233861 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 568
+Path length: 88 nodes
+A* total elapsed time: 0.194855 s
+  server queries time: 0.181141 s
+  search-only time: 0.013714 s
+Server bytes received: 14863058 bytes
+Running A* from 333677198 to 1673911246 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 535
+Path length: 55 nodes
+A* total elapsed time: 0.187907 s
+  server queries time: 0.175551 s
+  search-only time: 0.012356 s
+Server bytes received: 14863058 bytes
+Running A* from 264962896 to 5030114764 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 750
+Path length: 32 nodes
+A* total elapsed time: 0.192210 s
+  server queries time: 0.179725 s
+  search-only time: 0.012486 s
+Server bytes received: 14863058 bytes
+Running A* from 13439174939 to 9050576164 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 653
+Path length: 88 nodes
+A* total elapsed time: 0.191605 s
+  server queries time: 0.179013 s
+  search-only time: 0.012592 s
+Server bytes received: 14863058 bytes
+Running A* from 25430622 to 441855552 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 474
+Path length: 76 nodes
+A* total elapsed time: 0.194353 s
+  server queries time: 0.181153 s
+  search-only time: 0.013200 s
+Server bytes received: 14863058 bytes
+Running A* from 262165755 to 28900650 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 444
+Path length: 56 nodes
+A* total elapsed time: 0.197280 s
+  server queries time: 0.185162 s
+  search-only time: 0.012118 s
+Server bytes received: 14863058 bytes
+Running A* from 11442853766 to 27621238 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 407
+Path length: 61 nodes
+A* total elapsed time: 0.194700 s
+  server queries time: 0.182109 s
+  search-only time: 0.012592 s
+Server bytes received: 14863058 bytes
+Running A* from 1024129389 to 25427498 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 622
+Path length: 81 nodes
+A* total elapsed time: 0.190782 s
+  server queries time: 0.178460 s
+  search-only time: 0.012322 s
+Server bytes received: 14863058 bytes
+Running A* from 1203732883 to 9036272594 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 743
+Path length: 141 nodes
+A* total elapsed time: 0.192009 s
+  server queries time: 0.177756 s
+  search-only time: 0.014253 s
+Server bytes received: 14863058 bytes
+Running A* from 3128267906 to 3824243128 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 488
+Path length: 65 nodes
+A* total elapsed time: 0.198995 s
+  server queries time: 0.186917 s
+  search-only time: 0.012077 s
+Server bytes received: 14863058 bytes
+Running A* from 1165861060 to 9708935710 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1962
+Path length: 151 nodes
+A* total elapsed time: 0.199820 s
+  server queries time: 0.185707 s
+  search-only time: 0.014113 s
+Server bytes received: 14863058 bytes
+Running A* from 150876418 to 8524994609 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1102
+Path length: 138 nodes
+A* total elapsed time: 0.199137 s
+  server queries time: 0.181660 s
+  search-only time: 0.017477 s
+Server bytes received: 14863058 bytes
+Running A* from 269559422 to 408170083 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 673
+Path length: 105 nodes
+A* total elapsed time: 0.195310 s
+  server queries time: 0.180948 s
+  search-only time: 0.014362 s
+Server bytes received: 14863058 bytes
+Running A* from 299336133 to 298658812 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 502
+Path length: 69 nodes
+A* total elapsed time: 0.188912 s
+  server queries time: 0.176301 s
+  search-only time: 0.012611 s
+Server bytes received: 14863058 bytes
+Running A* from 9221436801 to 9529368400 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 836
+Path length: 56 nodes
+A* total elapsed time: 0.191634 s
+  server queries time: 0.178999 s
+  search-only time: 0.012635 s
+Server bytes received: 14863058 bytes
+Running A* from 308898933 to 1249007997 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 570
+Path length: 97 nodes
+A* total elapsed time: 0.195484 s
+  server queries time: 0.181569 s
+  search-only time: 0.013915 s
+Server bytes received: 14863058 bytes
+Running A* from 2068210830 to 2069705435 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 641
+Path length: 90 nodes
+A* total elapsed time: 0.190006 s
+  server queries time: 0.177698 s
+  search-only time: 0.012308 s
+Server bytes received: 14863058 bytes
+Running A* from 289471501 to 355933552 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 461
+Path length: 88 nodes
+A* total elapsed time: 0.188047 s
+  server queries time: 0.174954 s
+  search-only time: 0.013093 s
+Server bytes received: 14863058 bytes
+Running A* from 583387865 to 4095821573 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 460
+Path length: 70 nodes
+A* total elapsed time: 0.195589 s
+  server queries time: 0.182918 s
+  search-only time: 0.012671 s
+Server bytes received: 14863058 bytes
+Running A* from 213302618 to 1126482500 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 524
+Path length: 72 nodes
+A* total elapsed time: 0.198559 s
+  server queries time: 0.186190 s
+  search-only time: 0.012369 s
+Server bytes received: 14863058 bytes
+Running A* from 327315546 to 262271857 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 586
+Path length: 48 nodes
+A* total elapsed time: 0.192344 s
+  server queries time: 0.179016 s
+  search-only time: 0.013328 s
+Server bytes received: 14863058 bytes
+Running A* from 297035896 to 2591159937 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 459
+Path length: 56 nodes
+A* total elapsed time: 0.192420 s
+  server queries time: 0.179929 s
+  search-only time: 0.012490 s
+Server bytes received: 14863058 bytes
+Running A* from 2184615343 to 3159094075 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 612
+Path length: 64 nodes
+A* total elapsed time: 0.197051 s
+  server queries time: 0.185250 s
+  search-only time: 0.011801 s
+Server bytes received: 14863058 bytes
+Running A* from 9543405972 to 2872465819 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 968
+Path length: 135 nodes
+A* total elapsed time: 0.199405 s
+  server queries time: 0.185893 s
+  search-only time: 0.013511 s
+Server bytes received: 14863058 bytes
+Running A* from 9274279052 to 2086435624 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 514
+Path length: 49 nodes
+A* total elapsed time: 0.198475 s
+  server queries time: 0.186506 s
+  search-only time: 0.011968 s
+Server bytes received: 14863058 bytes
+-- running journeys of distance 10000...
+Running A* from 7887892232 to 1387522165 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 716
+Path length: 97 nodes
+A* total elapsed time: 0.193292 s
+  server queries time: 0.178561 s
+  search-only time: 0.014731 s
+Server bytes received: 14863058 bytes
+Running A* from 60503259 to 469705849 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1861
+Path length: 219 nodes
+A* total elapsed time: 0.203014 s
+  server queries time: 0.177135 s
+  search-only time: 0.025879 s
+Server bytes received: 14863058 bytes
+Running A* from 30173181 to 1221505804 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1000
+Path length: 183 nodes
+A* total elapsed time: 0.197852 s
+  server queries time: 0.181278 s
+  search-only time: 0.016574 s
+Server bytes received: 14863058 bytes
+Running A* from 305391250 to 534815561 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 989
+Path length: 181 nodes
+A* total elapsed time: 0.193367 s
+  server queries time: 0.177619 s
+  search-only time: 0.015748 s
+Server bytes received: 14863058 bytes
+Running A* from 2670706445 to 2319220519 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 725
+Path length: 73 nodes
+A* total elapsed time: 0.190787 s
+  server queries time: 0.177925 s
+  search-only time: 0.012862 s
+Server bytes received: 14863058 bytes
+Running A* from 1672733056 to 3046441702 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 877
+Path length: 96 nodes
+A* total elapsed time: 0.187572 s
+  server queries time: 0.174633 s
+  search-only time: 0.012939 s
+Server bytes received: 14863058 bytes
+Running A* from 10095791460 to 9116355457 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 866
+Path length: 114 nodes
+A* total elapsed time: 0.202853 s
+  server queries time: 0.189478 s
+  search-only time: 0.013375 s
+Server bytes received: 14863058 bytes
+Running A* from 94701896 to 114298515 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 977
+Path length: 136 nodes
+A* total elapsed time: 0.200080 s
+  server queries time: 0.181876 s
+  search-only time: 0.018204 s
+Server bytes received: 14863058 bytes
+Running A* from 114310774 to 514434491 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 897
+Path length: 127 nodes
+A* total elapsed time: 0.194164 s
+  server queries time: 0.179684 s
+  search-only time: 0.014480 s
+Server bytes received: 14863058 bytes
+Running A* from 11805500715 to 5352409973 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 966
+Path length: 105 nodes
+A* total elapsed time: 0.210819 s
+  server queries time: 0.194863 s
+  search-only time: 0.015955 s
+Server bytes received: 14863058 bytes
+Running A* from 3451304339 to 412439484 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1043
+Path length: 111 nodes
+A* total elapsed time: 0.192505 s
+  server queries time: 0.178993 s
+  search-only time: 0.013512 s
+Server bytes received: 14863058 bytes
+Running A* from 274989727 to 2016799261 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1010
+Path length: 95 nodes
+A* total elapsed time: 0.202570 s
+  server queries time: 0.185435 s
+  search-only time: 0.017134 s
+Server bytes received: 14863058 bytes
+Running A* from 665688284 to 8492007310 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 674
+Path length: 90 nodes
+A* total elapsed time: 0.208560 s
+  server queries time: 0.195022 s
+  search-only time: 0.013538 s
+Server bytes received: 14863058 bytes
+Running A* from 268484189 to 762678310 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1046
+Path length: 153 nodes
+A* total elapsed time: 0.193054 s
+  server queries time: 0.176151 s
+  search-only time: 0.016904 s
+Server bytes received: 14863058 bytes
+Running A* from 611658079 to 278253114 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 872
+Path length: 90 nodes
+A* total elapsed time: 0.192585 s
+  server queries time: 0.176316 s
+  search-only time: 0.016269 s
+Server bytes received: 14863058 bytes
+Running A* from 1668776867 to 5756016007 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 718
+Path length: 106 nodes
+A* total elapsed time: 0.193540 s
+  server queries time: 0.180558 s
+  search-only time: 0.012982 s
+Server bytes received: 14863058 bytes
+Running A* from 289469565 to 3909924939 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 669
+Path length: 99 nodes
+A* total elapsed time: 0.191024 s
+  server queries time: 0.176927 s
+  search-only time: 0.014097 s
+Server bytes received: 14863058 bytes
+Running A* from 11202836 to 309791713 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1555
+Path length: 217 nodes
+A* total elapsed time: 0.190583 s
+  server queries time: 0.176339 s
+  search-only time: 0.014244 s
+Server bytes received: 14863058 bytes
+Running A* from 2126331710 to 199425977 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1188
+Path length: 74 nodes
+A* total elapsed time: 0.190391 s
+  server queries time: 0.176862 s
+  search-only time: 0.013529 s
+Server bytes received: 14863058 bytes
+Running A* from 4492998800 to 1103974024 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 650
+Path length: 105 nodes
+A* total elapsed time: 0.199921 s
+  server queries time: 0.186166 s
+  search-only time: 0.013755 s
+Server bytes received: 14863058 bytes
+Running A* from 2371706454 to 533735714 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 593
+Path length: 56 nodes
+A* total elapsed time: 0.201187 s
+  server queries time: 0.188668 s
+  search-only time: 0.012518 s
+Server bytes received: 14863058 bytes
+Running A* from 702207145 to 25522776 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 773
+Path length: 63 nodes
+A* total elapsed time: 0.204622 s
+  server queries time: 0.191726 s
+  search-only time: 0.012895 s
+Server bytes received: 14863058 bytes
+Running A* from 374113918 to 107798053 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 873
+Path length: 107 nodes
+A* total elapsed time: 0.191159 s
+  server queries time: 0.177417 s
+  search-only time: 0.013742 s
+Server bytes received: 14863058 bytes
+Running A* from 1485039920 to 292610716 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1281
+Path length: 207 nodes
+A* total elapsed time: 0.194897 s
+  server queries time: 0.177680 s
+  search-only time: 0.017217 s
+Server bytes received: 14863058 bytes
+Running A* from 386846837 to 441597475 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 991
+Path length: 115 nodes
+A* total elapsed time: 0.198415 s
+  server queries time: 0.184778 s
+  search-only time: 0.013638 s
+Server bytes received: 14863058 bytes
+Running A* from 944657441 to 569584464 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 887
+Path length: 100 nodes
+A* total elapsed time: 0.197202 s
+  server queries time: 0.181243 s
+  search-only time: 0.015959 s
+Server bytes received: 14863058 bytes
+Running A* from 308823443 to 349231384 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 726
+Path length: 108 nodes
+A* total elapsed time: 0.194062 s
+  server queries time: 0.180409 s
+  search-only time: 0.013653 s
+Server bytes received: 14863058 bytes
+Running A* from 12342392330 to 9737255488 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 685
+Path length: 48 nodes
+A* total elapsed time: 0.189493 s
+  server queries time: 0.176865 s
+  search-only time: 0.012629 s
+Server bytes received: 14863058 bytes
+Running A* from 298674240 to 965911896 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1172
+Path length: 196 nodes
+A* total elapsed time: 0.199374 s
+  server queries time: 0.182897 s
+  search-only time: 0.016477 s
+Server bytes received: 14863058 bytes
+Running A* from 297789747 to 1973572553 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 970
+Path length: 134 nodes
+A* total elapsed time: 0.190877 s
+  server queries time: 0.175993 s
+  search-only time: 0.014884 s
+Server bytes received: 14863058 bytes
+-- running journeys of distance 15000...
+Running A* from 4656327090 to 2632303474 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2155
+Path length: 196 nodes
+A* total elapsed time: 0.200971 s
+  server queries time: 0.184441 s
+  search-only time: 0.016529 s
+Server bytes received: 14863058 bytes
+Running A* from 498159102 to 290144765 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3148
+Path length: 219 nodes
+A* total elapsed time: 0.218932 s
+  server queries time: 0.192365 s
+  search-only time: 0.026567 s
+Server bytes received: 14863058 bytes
+Running A* from 301266122 to 576204571 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1240
+Path length: 134 nodes
+A* total elapsed time: 0.209081 s
+  server queries time: 0.193148 s
+  search-only time: 0.015933 s
+Server bytes received: 14863058 bytes
+Running A* from 2324923182 to 277997396 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1311
+Path length: 138 nodes
+A* total elapsed time: 0.213662 s
+  server queries time: 0.196833 s
+  search-only time: 0.016829 s
+Server bytes received: 14863058 bytes
+Running A* from 34484983 to 377097305 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1078
+Path length: 105 nodes
+A* total elapsed time: 0.196005 s
+  server queries time: 0.178961 s
+  search-only time: 0.017044 s
+Server bytes received: 14863058 bytes
+Running A* from 2504901946 to 385696322 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2614
+Path length: 276 nodes
+A* total elapsed time: 0.210902 s
+  server queries time: 0.177671 s
+  search-only time: 0.033230 s
+Server bytes received: 14863058 bytes
+Running A* from 296055708 to 300026424 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 933
+Path length: 106 nodes
+A* total elapsed time: 0.192193 s
+  server queries time: 0.178021 s
+  search-only time: 0.014172 s
+Server bytes received: 14863058 bytes
+Running A* from 445045086 to 1014536256 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1343
+Path length: 147 nodes
+A* total elapsed time: 0.202107 s
+  server queries time: 0.184864 s
+  search-only time: 0.017242 s
+Server bytes received: 14863058 bytes
+Running A* from 294167019 to 1602569149 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2456
+Path length: 290 nodes
+A* total elapsed time: 0.197093 s
+  server queries time: 0.178456 s
+  search-only time: 0.018638 s
+Server bytes received: 14863058 bytes
+Running A* from 386846055 to 288513123 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1411
+Path length: 156 nodes
+A* total elapsed time: 0.195773 s
+  server queries time: 0.180042 s
+  search-only time: 0.015731 s
+Server bytes received: 14863058 bytes
+Running A* from 65206511 to 6036767790 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1247
+Path length: 152 nodes
+A* total elapsed time: 0.192206 s
+  server queries time: 0.176351 s
+  search-only time: 0.015855 s
+Server bytes received: 14863058 bytes
+Running A* from 1354781251 to 322778110 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1202
+Path length: 170 nodes
+A* total elapsed time: 0.196920 s
+  server queries time: 0.181935 s
+  search-only time: 0.014985 s
+Server bytes received: 14863058 bytes
+Running A* from 3782557825 to 8416737454 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1517
+Path length: 139 nodes
+A* total elapsed time: 0.188256 s
+  server queries time: 0.174901 s
+  search-only time: 0.013355 s
+Server bytes received: 14863058 bytes
+Running A* from 746964895 to 1345209709 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1163
+Path length: 176 nodes
+A* total elapsed time: 0.192956 s
+  server queries time: 0.174718 s
+  search-only time: 0.018238 s
+Server bytes received: 14863058 bytes
+Running A* from 122041738 to 663008420 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1353
+Path length: 176 nodes
+A* total elapsed time: 0.210020 s
+  server queries time: 0.187156 s
+  search-only time: 0.022864 s
+Server bytes received: 14863058 bytes
+Running A* from 436367315 to 2266643843 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1133
+Path length: 128 nodes
+A* total elapsed time: 0.205677 s
+  server queries time: 0.189382 s
+  search-only time: 0.016296 s
+Server bytes received: 14863058 bytes
+Running A* from 479751144 to 105393156 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1462
+Path length: 151 nodes
+A* total elapsed time: 0.206908 s
+  server queries time: 0.189920 s
+  search-only time: 0.016988 s
+Server bytes received: 14863058 bytes
+Running A* from 256579856 to 6738167666 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1278
+Path length: 115 nodes
+A* total elapsed time: 0.193014 s
+  server queries time: 0.178358 s
+  search-only time: 0.014657 s
+Server bytes received: 14863058 bytes
+Running A* from 26905286 to 25427030 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 965
+Path length: 114 nodes
+A* total elapsed time: 0.194333 s
+  server queries time: 0.180012 s
+  search-only time: 0.014321 s
+Server bytes received: 14863058 bytes
+Running A* from 311264865 to 29896824 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1704
+Path length: 182 nodes
+A* total elapsed time: 0.198542 s
+  server queries time: 0.178466 s
+  search-only time: 0.020076 s
+Server bytes received: 14863058 bytes
+Running A* from 144728029 to 2503945491 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1422
+Path length: 183 nodes
+A* total elapsed time: 0.207656 s
+  server queries time: 0.183468 s
+  search-only time: 0.024188 s
+Server bytes received: 14863058 bytes
+Running A* from 299449778 to 244998392 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1343
+Path length: 177 nodes
+A* total elapsed time: 0.198840 s
+  server queries time: 0.181254 s
+  search-only time: 0.017586 s
+Server bytes received: 14863058 bytes
+Running A* from 312561304 to 986827968 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1466
+Path length: 196 nodes
+A* total elapsed time: 0.198695 s
+  server queries time: 0.176087 s
+  search-only time: 0.022608 s
+Server bytes received: 14863058 bytes
+Running A* from 324793771 to 837377703 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1453
+Path length: 119 nodes
+A* total elapsed time: 0.193638 s
+  server queries time: 0.179368 s
+  search-only time: 0.014270 s
+Server bytes received: 14863058 bytes
+Running A* from 10821195217 to 1968100215 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1205
+Path length: 154 nodes
+A* total elapsed time: 0.203243 s
+  server queries time: 0.181757 s
+  search-only time: 0.021487 s
+Server bytes received: 14863058 bytes
+Running A* from 93020579 to 4128576433 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1214
+Path length: 139 nodes
+A* total elapsed time: 0.196485 s
+  server queries time: 0.174831 s
+  search-only time: 0.021655 s
+Server bytes received: 14863058 bytes
+Running A* from 96677186 to 317210461 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1241
+Path length: 123 nodes
+A* total elapsed time: 0.191555 s
+  server queries time: 0.173996 s
+  search-only time: 0.017559 s
+Server bytes received: 14863058 bytes
+Running A* from 2041888496 to 11503084389 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1104
+Path length: 96 nodes
+A* total elapsed time: 0.192997 s
+  server queries time: 0.179725 s
+  search-only time: 0.013272 s
+Server bytes received: 14863058 bytes
+Running A* from 371575083 to 35786112 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1209
+Path length: 155 nodes
+A* total elapsed time: 0.207403 s
+  server queries time: 0.190763 s
+  search-only time: 0.016640 s
+Server bytes received: 14863058 bytes
+Running A* from 292225039 to 4416359560 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1617
+Path length: 151 nodes
+A* total elapsed time: 0.208657 s
+  server queries time: 0.188559 s
+  search-only time: 0.020098 s
+Server bytes received: 14863058 bytes
+-- running journeys of distance 20000...
+Running A* from 2465939571 to 1250128207 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1273
+Path length: 153 nodes
+A* total elapsed time: 0.192308 s
+  server queries time: 0.178428 s
+  search-only time: 0.013879 s
+Server bytes received: 14863058 bytes
+Running A* from 454602372 to 1285211603 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1454
+Path length: 223 nodes
+A* total elapsed time: 0.196430 s
+  server queries time: 0.178276 s
+  search-only time: 0.018154 s
+Server bytes received: 14863058 bytes
+Running A* from 321188887 to 10312101391 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1542
+Path length: 199 nodes
+A* total elapsed time: 0.197794 s
+  server queries time: 0.176822 s
+  search-only time: 0.020972 s
+Server bytes received: 14863058 bytes
+Running A* from 1832854376 to 1316396657 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1612
+Path length: 264 nodes
+A* total elapsed time: 0.205120 s
+  server queries time: 0.185662 s
+  search-only time: 0.019458 s
+Server bytes received: 14863058 bytes
+Running A* from 364076191 to 10245729243 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1902
+Path length: 229 nodes
+A* total elapsed time: 0.214786 s
+  server queries time: 0.182842 s
+  search-only time: 0.031944 s
+Server bytes received: 14863058 bytes
+Running A* from 665746636 to 298622476 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1885
+Path length: 179 nodes
+A* total elapsed time: 0.201093 s
+  server queries time: 0.176211 s
+  search-only time: 0.024882 s
+Server bytes received: 14863058 bytes
+Running A* from 414225676 to 321542510 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1523
+Path length: 183 nodes
+A* total elapsed time: 0.201570 s
+  server queries time: 0.181617 s
+  search-only time: 0.019953 s
+Server bytes received: 14863058 bytes
+Running A* from 617820393 to 287027452 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1576
+Path length: 173 nodes
+A* total elapsed time: 0.197196 s
+  server queries time: 0.180320 s
+  search-only time: 0.016876 s
+Server bytes received: 14863058 bytes
+Running A* from 5237692132 to 461144267 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1819
+Path length: 197 nodes
+A* total elapsed time: 0.198504 s
+  server queries time: 0.175895 s
+  search-only time: 0.022609 s
+Server bytes received: 14863058 bytes
+Running A* from 263256888 to 921851357 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1718
+Path length: 186 nodes
+A* total elapsed time: 0.197545 s
+  server queries time: 0.174749 s
+  search-only time: 0.022795 s
+Server bytes received: 14863058 bytes
+Running A* from 490235397 to 1255643819 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1145
+Path length: 75 nodes
+A* total elapsed time: 0.191231 s
+  server queries time: 0.177672 s
+  search-only time: 0.013559 s
+Server bytes received: 14863058 bytes
+Running A* from 1921946055 to 2160691939 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1610
+Path length: 176 nodes
+A* total elapsed time: 0.206053 s
+  server queries time: 0.186597 s
+  search-only time: 0.019456 s
+Server bytes received: 14863058 bytes
+Running A* from 13555579467 to 260395179 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1681
+Path length: 175 nodes
+A* total elapsed time: 0.206363 s
+  server queries time: 0.185504 s
+  search-only time: 0.020859 s
+Server bytes received: 14863058 bytes
+Running A* from 206180945 to 12802395405 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2503
+Path length: 314 nodes
+A* total elapsed time: 0.213043 s
+  server queries time: 0.180146 s
+  search-only time: 0.032897 s
+Server bytes received: 14863058 bytes
+Running A* from 29271871 to 102224930 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1335
+Path length: 133 nodes
+A* total elapsed time: 0.198053 s
+  server queries time: 0.176195 s
+  search-only time: 0.021858 s
+Server bytes received: 14863058 bytes
+Running A* from 745461302 to 1779698014 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1429
+Path length: 144 nodes
+A* total elapsed time: 0.196946 s
+  server queries time: 0.177412 s
+  search-only time: 0.019534 s
+Server bytes received: 14863058 bytes
+Running A* from 296924093 to 2399435020 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1399
+Path length: 179 nodes
+A* total elapsed time: 0.202000 s
+  server queries time: 0.184897 s
+  search-only time: 0.017103 s
+Server bytes received: 14863058 bytes
+Running A* from 327003860 to 4267392379 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1758
+Path length: 265 nodes
+A* total elapsed time: 0.206164 s
+  server queries time: 0.183434 s
+  search-only time: 0.022730 s
+Server bytes received: 14863058 bytes
+Running A* from 10901634553 to 268744936 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1576
+Path length: 209 nodes
+A* total elapsed time: 0.201672 s
+  server queries time: 0.177805 s
+  search-only time: 0.023868 s
+Server bytes received: 14863058 bytes
+Running A* from 1246606021 to 10537151055 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2004
+Path length: 222 nodes
+A* total elapsed time: 0.196786 s
+  server queries time: 0.181023 s
+  search-only time: 0.015763 s
+Server bytes received: 14863058 bytes
+Running A* from 4854922736 to 8117788216 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2098
+Path length: 175 nodes
+A* total elapsed time: 0.213824 s
+  server queries time: 0.180846 s
+  search-only time: 0.032979 s
+Server bytes received: 14863058 bytes
+Running A* from 290818162 to 2993629961 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2184
+Path length: 202 nodes
+A* total elapsed time: 0.201381 s
+  server queries time: 0.175663 s
+  search-only time: 0.025718 s
+Server bytes received: 14863058 bytes
+Running A* from 1651369480 to 10029051 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1356
+Path length: 165 nodes
+A* total elapsed time: 0.187642 s
+  server queries time: 0.174802 s
+  search-only time: 0.012840 s
+Server bytes received: 14863058 bytes
+Running A* from 3100349546 to 2569421829 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1596
+Path length: 167 nodes
+A* total elapsed time: 0.197129 s
+  server queries time: 0.176422 s
+  search-only time: 0.020707 s
+Server bytes received: 14863058 bytes
+Running A* from 1975546350 to 114297630 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1178
+Path length: 137 nodes
+A* total elapsed time: 0.203843 s
+  server queries time: 0.186507 s
+  search-only time: 0.017336 s
+Server bytes received: 14863058 bytes
+Running A* from 825774711 to 298405370 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1596
+Path length: 165 nodes
+A* total elapsed time: 0.207184 s
+  server queries time: 0.186966 s
+  search-only time: 0.020218 s
+Server bytes received: 14863058 bytes
+Running A* from 550114567 to 945873819 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1459
+Path length: 134 nodes
+A* total elapsed time: 0.192925 s
+  server queries time: 0.178436 s
+  search-only time: 0.014488 s
+Server bytes received: 14863058 bytes
+Running A* from 268480848 to 459970929 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1667
+Path length: 171 nodes
+A* total elapsed time: 0.200376 s
+  server queries time: 0.178185 s
+  search-only time: 0.022191 s
+Server bytes received: 14863058 bytes
+Running A* from 1668903242 to 99201149 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1257
+Path length: 169 nodes
+A* total elapsed time: 0.195717 s
+  server queries time: 0.178333 s
+  search-only time: 0.017384 s
+Server bytes received: 14863058 bytes
+Running A* from 929095028 to 280882173 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1368
+Path length: 150 nodes
+A* total elapsed time: 0.203567 s
+  server queries time: 0.184372 s
+  search-only time: 0.019195 s
+Server bytes received: 14863058 bytes
+-- running journeys of distance 30000...
+Running A* from 295440293 to 2470376712 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2262
+Path length: 232 nodes
+A* total elapsed time: 0.219102 s
+  server queries time: 0.185463 s
+  search-only time: 0.033639 s
+Server bytes received: 14863058 bytes
+Running A* from 213057945 to 266595852 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1987
+Path length: 158 nodes
+A* total elapsed time: 0.201648 s
+  server queries time: 0.174769 s
+  search-only time: 0.026880 s
+Server bytes received: 14863058 bytes
+Running A* from 12347704536 to 33186141 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2442
+Path length: 337 nodes
+A* total elapsed time: 0.201020 s
+  server queries time: 0.181291 s
+  search-only time: 0.019728 s
+Server bytes received: 14863058 bytes
+Running A* from 1835857918 to 309308820 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2119
+Path length: 191 nodes
+A* total elapsed time: 0.199323 s
+  server queries time: 0.180978 s
+  search-only time: 0.018345 s
+Server bytes received: 14863058 bytes
+Running A* from 10289892080 to 9609619367 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2020
+Path length: 227 nodes
+A* total elapsed time: 0.199601 s
+  server queries time: 0.176682 s
+  search-only time: 0.022919 s
+Server bytes received: 14863058 bytes
+Running A* from 2228841458 to 298413249 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1694
+Path length: 145 nodes
+A* total elapsed time: 0.194595 s
+  server queries time: 0.176195 s
+  search-only time: 0.018399 s
+Server bytes received: 14863058 bytes
+Running A* from 322835380 to 2365778248 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2964
+Path length: 346 nodes
+A* total elapsed time: 0.223566 s
+  server queries time: 0.182733 s
+  search-only time: 0.040832 s
+Server bytes received: 14863058 bytes
+Running A* from 380486765 to 356727535 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2271
+Path length: 201 nodes
+A* total elapsed time: 0.213782 s
+  server queries time: 0.188444 s
+  search-only time: 0.025338 s
+Server bytes received: 14863058 bytes
+Running A* from 4567570317 to 9210375252 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2677
+Path length: 286 nodes
+A* total elapsed time: 0.247462 s
+  server queries time: 0.191768 s
+  search-only time: 0.055693 s
+Server bytes received: 14863058 bytes
+Running A* from 12969775556 to 5522521093 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1632
+Path length: 189 nodes
+A* total elapsed time: 0.199935 s
+  server queries time: 0.178110 s
+  search-only time: 0.021825 s
+Server bytes received: 14863058 bytes
+Running A* from 11022765559 to 305676394 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2023
+Path length: 212 nodes
+A* total elapsed time: 0.212770 s
+  server queries time: 0.178989 s
+  search-only time: 0.033781 s
+Server bytes received: 14863058 bytes
+Running A* from 280103949 to 401756373 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 4498
+Path length: 331 nodes
+A* total elapsed time: 0.202059 s
+  server queries time: 0.177333 s
+  search-only time: 0.024727 s
+Server bytes received: 14863058 bytes
+Running A* from 14611086 to 2906079784 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 4521
+Path length: 297 nodes
+A* total elapsed time: 0.206959 s
+  server queries time: 0.185654 s
+  search-only time: 0.021305 s
+Server bytes received: 14863058 bytes
+Running A* from 713568664 to 1014462230 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1372
+Path length: 90 nodes
+A* total elapsed time: 0.197564 s
+  server queries time: 0.183016 s
+  search-only time: 0.014548 s
+Server bytes received: 14863058 bytes
+Running A* from 8516142878 to 268958572 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1807
+Path length: 207 nodes
+A* total elapsed time: 0.201838 s
+  server queries time: 0.181735 s
+  search-only time: 0.020103 s
+Server bytes received: 14863058 bytes
+Running A* from 294070928 to 2532328739 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 5317
+Path length: 450 nodes
+A* total elapsed time: 0.213082 s
+  server queries time: 0.176450 s
+  search-only time: 0.036632 s
+Server bytes received: 14863058 bytes
+Running A* from 1803288509 to 12810567471 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2047
+Path length: 263 nodes
+A* total elapsed time: 0.206703 s
+  server queries time: 0.181836 s
+  search-only time: 0.024867 s
+Server bytes received: 14863058 bytes
+Running A* from 413670871 to 12809771714 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2468
+Path length: 339 nodes
+A* total elapsed time: 0.198644 s
+  server queries time: 0.175914 s
+  search-only time: 0.022729 s
+Server bytes received: 14863058 bytes
+Running A* from 3278225899 to 2137656661 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1673
+Path length: 203 nodes
+A* total elapsed time: 0.205489 s
+  server queries time: 0.184538 s
+  search-only time: 0.020951 s
+Server bytes received: 14863058 bytes
+Running A* from 420075590 to 317663781 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2130
+Path length: 276 nodes
+A* total elapsed time: 0.217867 s
+  server queries time: 0.186593 s
+  search-only time: 0.031274 s
+Server bytes received: 14863058 bytes
+Running A* from 2390236945 to 317446076 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2259
+Path length: 282 nodes
+A* total elapsed time: 0.212228 s
+  server queries time: 0.191416 s
+  search-only time: 0.020813 s
+Server bytes received: 14863058 bytes
+Running A* from 5254058388 to 410227819 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1463
+Path length: 153 nodes
+A* total elapsed time: 0.214082 s
+  server queries time: 0.196561 s
+  search-only time: 0.017521 s
+Server bytes received: 14863058 bytes
+Running A* from 443225065 to 249674451 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2283
+Path length: 259 nodes
+A* total elapsed time: 0.213385 s
+  server queries time: 0.183580 s
+  search-only time: 0.029805 s
+Server bytes received: 14863058 bytes
+Running A* from 299510564 to 2919159660 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2490
+Path length: 266 nodes
+A* total elapsed time: 0.218202 s
+  server queries time: 0.180230 s
+  search-only time: 0.037972 s
+Server bytes received: 14863058 bytes
+Running A* from 6355380580 to 676482631 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2352
+Path length: 277 nodes
+A* total elapsed time: 0.210420 s
+  server queries time: 0.176606 s
+  search-only time: 0.033814 s
+Server bytes received: 14863058 bytes
+Running A* from 7080307074 to 315269638 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1412
+Path length: 110 nodes
+A* total elapsed time: 0.201855 s
+  server queries time: 0.185845 s
+  search-only time: 0.016010 s
+Server bytes received: 14863058 bytes
+Running A* from 299083534 to 297950428 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1904
+Path length: 198 nodes
+A* total elapsed time: 0.207746 s
+  server queries time: 0.185962 s
+  search-only time: 0.021784 s
+Server bytes received: 14863058 bytes
+Running A* from 1883505388 to 4112388810 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3233
+Path length: 360 nodes
+A* total elapsed time: 0.210851 s
+  server queries time: 0.178538 s
+  search-only time: 0.032313 s
+Server bytes received: 14863058 bytes
+Running A* from 5287669095 to 772079750 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2067
+Path length: 227 nodes
+A* total elapsed time: 0.198701 s
+  server queries time: 0.175911 s
+  search-only time: 0.022790 s
+Server bytes received: 14863058 bytes
+Running A* from 8222064380 to 116022045 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2004
+Path length: 202 nodes
+A* total elapsed time: 0.203897 s
+  server queries time: 0.183461 s
+  search-only time: 0.020435 s
+Server bytes received: 14863058 bytes
+-- running journeys of distance 40000...
+Running A* from 2097861161 to 1811756393 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2750
+Path length: 290 nodes
+A* total elapsed time: 0.202237 s
+  server queries time: 0.175443 s
+  search-only time: 0.026793 s
+Server bytes received: 14863058 bytes
+Running A* from 341224020 to 3161214469 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2025
+Path length: 154 nodes
+A* total elapsed time: 0.205470 s
+  server queries time: 0.183183 s
+  search-only time: 0.022288 s
+Server bytes received: 14863058 bytes
+Running A* from 312432515 to 2326301513 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3542
+Path length: 281 nodes
+A* total elapsed time: 0.226956 s
+  server queries time: 0.175278 s
+  search-only time: 0.051678 s
+Server bytes received: 14863058 bytes
+Running A* from 1175547941 to 7468147629 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3841
+Path length: 433 nodes
+A* total elapsed time: 0.233829 s
+  server queries time: 0.189458 s
+  search-only time: 0.044371 s
+Server bytes received: 14863058 bytes
+Running A* from 25647254 to 936169467 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2263
+Path length: 257 nodes
+A* total elapsed time: 0.211815 s
+  server queries time: 0.188025 s
+  search-only time: 0.023790 s
+Server bytes received: 14863058 bytes
+Running A* from 253822078 to 1169510988 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2648
+Path length: 251 nodes
+A* total elapsed time: 0.227325 s
+  server queries time: 0.190276 s
+  search-only time: 0.037049 s
+Server bytes received: 14863058 bytes
+Running A* from 309066907 to 2823453689 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3167
+Path length: 272 nodes
+A* total elapsed time: 0.217731 s
+  server queries time: 0.180946 s
+  search-only time: 0.036785 s
+Server bytes received: 14863058 bytes
+Running A* from 296506283 to 493847212 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2257
+Path length: 200 nodes
+A* total elapsed time: 0.202329 s
+  server queries time: 0.178606 s
+  search-only time: 0.023723 s
+Server bytes received: 14863058 bytes
+Running A* from 286696636 to 11036734648 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1951
+Path length: 191 nodes
+A* total elapsed time: 0.209362 s
+  server queries time: 0.187355 s
+  search-only time: 0.022007 s
+Server bytes received: 14863058 bytes
+Running A* from 309835165 to 315263694 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2478
+Path length: 345 nodes
+A* total elapsed time: 0.211690 s
+  server queries time: 0.188176 s
+  search-only time: 0.023515 s
+Server bytes received: 14863058 bytes
+Running A* from 872947730 to 2421090421 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3643
+Path length: 452 nodes
+A* total elapsed time: 0.251286 s
+  server queries time: 0.182089 s
+  search-only time: 0.069196 s
+Server bytes received: 14863058 bytes
+Running A* from 269128012 to 3010327558 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3432
+Path length: 407 nodes
+A* total elapsed time: 0.233667 s
+  server queries time: 0.179988 s
+  search-only time: 0.053679 s
+Server bytes received: 14863058 bytes
+Running A* from 1461950834 to 4031848665 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3254
+Path length: 262 nodes
+A* total elapsed time: 0.220868 s
+  server queries time: 0.184859 s
+  search-only time: 0.036008 s
+Server bytes received: 14863058 bytes
+Running A* from 746308210 to 1685985063 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2155
+Path length: 175 nodes
+A* total elapsed time: 0.200527 s
+  server queries time: 0.182441 s
+  search-only time: 0.018086 s
+Server bytes received: 14863058 bytes
+Running A* from 108197060 to 7143761775 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2453
+Path length: 310 nodes
+A* total elapsed time: 0.215740 s
+  server queries time: 0.176395 s
+  search-only time: 0.039345 s
+Server bytes received: 14863058 bytes
+Running A* from 296962516 to 5699834009 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1926
+Path length: 185 nodes
+A* total elapsed time: 0.194483 s
+  server queries time: 0.175162 s
+  search-only time: 0.019321 s
+Server bytes received: 14863058 bytes
+Running A* from 316876981 to 444007577 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3169
+Path length: 395 nodes
+A* total elapsed time: 0.240797 s
+  server queries time: 0.185727 s
+  search-only time: 0.055069 s
+Server bytes received: 14863058 bytes
+Running A* from 7817299038 to 27443701 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2471
+Path length: 218 nodes
+A* total elapsed time: 0.212852 s
+  server queries time: 0.184901 s
+  search-only time: 0.027951 s
+Server bytes received: 14863058 bytes
+Running A* from 2571441314 to 2178857998 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3693
+Path length: 290 nodes
+A* total elapsed time: 0.193391 s
+  server queries time: 0.177383 s
+  search-only time: 0.016008 s
+Server bytes received: 14863058 bytes
+Running A* from 629556719 to 476017829 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3247
+Path length: 335 nodes
+A* total elapsed time: 0.227558 s
+  server queries time: 0.188995 s
+  search-only time: 0.038563 s
+Server bytes received: 14863058 bytes
+Running A* from 269104291 to 10733196766 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3134
+Path length: 251 nodes
+A* total elapsed time: 0.204259 s
+  server queries time: 0.185937 s
+  search-only time: 0.018322 s
+Server bytes received: 14863058 bytes
+Running A* from 1811567858 to 1972083126 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2868
+Path length: 335 nodes
+A* total elapsed time: 0.213286 s
+  server queries time: 0.184013 s
+  search-only time: 0.029273 s
+Server bytes received: 14863058 bytes
+Running A* from 33475435 to 303807012 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3093
+Path length: 270 nodes
+A* total elapsed time: 0.228879 s
+  server queries time: 0.185155 s
+  search-only time: 0.043724 s
+Server bytes received: 14863058 bytes
+Running A* from 9756375923 to 746727284 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3294
+Path length: 373 nodes
+A* total elapsed time: 0.238104 s
+  server queries time: 0.183217 s
+  search-only time: 0.054886 s
+Server bytes received: 14863058 bytes
+Running A* from 544217411 to 3780777135 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2504
+Path length: 245 nodes
+A* total elapsed time: 0.206179 s
+  server queries time: 0.178144 s
+  search-only time: 0.028034 s
+Server bytes received: 14863058 bytes
+Running A* from 748871503 to 5682917304 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2403
+Path length: 285 nodes
+A* total elapsed time: 0.212696 s
+  server queries time: 0.176206 s
+  search-only time: 0.036490 s
+Server bytes received: 14863058 bytes
+Running A* from 505125197 to 60483843 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2966
+Path length: 347 nodes
+A* total elapsed time: 0.229026 s
+  server queries time: 0.180534 s
+  search-only time: 0.048492 s
+Server bytes received: 14863058 bytes
+Running A* from 13410417849 to 1136197359 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 1888
+Path length: 187 nodes
+A* total elapsed time: 0.193662 s
+  server queries time: 0.175420 s
+  search-only time: 0.018242 s
+Server bytes received: 14863058 bytes
+Running A* from 1479520430 to 307692649 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2907
+Path length: 334 nodes
+A* total elapsed time: 0.213686 s
+  server queries time: 0.188854 s
+  search-only time: 0.024832 s
+Server bytes received: 14863058 bytes
+Running A* from 443876050 to 339009525 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 4130
+Path length: 382 nodes
+A* total elapsed time: 0.209904 s
+  server queries time: 0.189499 s
+  search-only time: 0.020405 s
+Server bytes received: 14863058 bytes
+-- running journeys of distance 50000...
+Running A* from 469708144 to 7978238304 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3625
+Path length: 404 nodes
+A* total elapsed time: 0.223564 s
+  server queries time: 0.179867 s
+  search-only time: 0.043697 s
+Server bytes received: 14863058 bytes
+Running A* from 7090912335 to 35296908 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3031
+Path length: 366 nodes
+A* total elapsed time: 0.206747 s
+  server queries time: 0.179895 s
+  search-only time: 0.026853 s
+Server bytes received: 14863058 bytes
+Running A* from 12573401400 to 2135528058 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3015
+Path length: 310 nodes
+A* total elapsed time: 0.211376 s
+  server queries time: 0.177199 s
+  search-only time: 0.034177 s
+Server bytes received: 14863058 bytes
+Running A* from 1427766316 to 477619411 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3116
+Path length: 363 nodes
+A* total elapsed time: 0.226909 s
+  server queries time: 0.184829 s
+  search-only time: 0.042080 s
+Server bytes received: 14863058 bytes
+Running A* from 2039537986 to 5278614965 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 4143
+Path length: 434 nodes
+A* total elapsed time: 0.229978 s
+  server queries time: 0.180798 s
+  search-only time: 0.049180 s
+Server bytes received: 14863058 bytes
+Running A* from 2434836232 to 1834135246 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2536
+Path length: 244 nodes
+A* total elapsed time: 0.202790 s
+  server queries time: 0.182335 s
+  search-only time: 0.020455 s
+Server bytes received: 14863058 bytes
+Running A* from 1770863429 to 145871887 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2591
+Path length: 290 nodes
+A* total elapsed time: 0.215814 s
+  server queries time: 0.177016 s
+  search-only time: 0.038798 s
+Server bytes received: 14863058 bytes
+Running A* from 360436670 to 2610607822 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3055
+Path length: 310 nodes
+A* total elapsed time: 0.238015 s
+  server queries time: 0.182446 s
+  search-only time: 0.055569 s
+Server bytes received: 14863058 bytes
+Running A* from 1139758641 to 309406754 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3843
+Path length: 404 nodes
+A* total elapsed time: 0.218299 s
+  server queries time: 0.174536 s
+  search-only time: 0.043764 s
+Server bytes received: 14863058 bytes
+Running A* from 663867108 to 4471046714 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3507
+Path length: 348 nodes
+A* total elapsed time: 0.206869 s
+  server queries time: 0.180509 s
+  search-only time: 0.026361 s
+Server bytes received: 14863058 bytes
+Running A* from 299762993 to 344188708 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2966
+Path length: 301 nodes
+A* total elapsed time: 0.217512 s
+  server queries time: 0.176685 s
+  search-only time: 0.040826 s
+Server bytes received: 14863058 bytes
+Running A* from 3003603011 to 1865817207 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3731
+Path length: 404 nodes
+A* total elapsed time: 0.231731 s
+  server queries time: 0.188439 s
+  search-only time: 0.043293 s
+Server bytes received: 14863058 bytes
+Running A* from 890036369 to 8672735174 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2339
+Path length: 178 nodes
+A* total elapsed time: 0.213826 s
+  server queries time: 0.186255 s
+  search-only time: 0.027571 s
+Server bytes received: 14863058 bytes
+Running A* from 459970681 to 4117283257 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3818
+Path length: 376 nodes
+A* total elapsed time: 0.244162 s
+  server queries time: 0.188605 s
+  search-only time: 0.055557 s
+Server bytes received: 14863058 bytes
+Running A* from 33980331 to 3981650745 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3590
+Path length: 366 nodes
+A* total elapsed time: 0.252378 s
+  server queries time: 0.185423 s
+  search-only time: 0.066955 s
+Server bytes received: 14863058 bytes
+Running A* from 1687075786 to 1727225779 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3505
+Path length: 306 nodes
+A* total elapsed time: 0.222502 s
+  server queries time: 0.178201 s
+  search-only time: 0.044301 s
+Server bytes received: 14863058 bytes
+Running A* from 3119287047 to 1678218868 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3268
+Path length: 354 nodes
+A* total elapsed time: 0.230175 s
+  server queries time: 0.186103 s
+  search-only time: 0.044072 s
+Server bytes received: 14863058 bytes
+Running A* from 132118870 to 704742949 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3307
+Path length: 379 nodes
+A* total elapsed time: 0.250644 s
+  server queries time: 0.196091 s
+  search-only time: 0.054554 s
+Server bytes received: 14863058 bytes
+Running A* from 472438499 to 2029120638 in country Switzerland using approach Node0 and architecture Naive ...
+!! No path found between 472438499 and 2029120638
+Running A* from 296891764 to 2383505898 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2382
+Path length: 246 nodes
+A* total elapsed time: 0.203980 s
+  server queries time: 0.177415 s
+  search-only time: 0.026565 s
+Server bytes received: 14863058 bytes
+Running A* from 767860711 to 330171539 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2543
+Path length: 241 nodes
+A* total elapsed time: 0.208394 s
+  server queries time: 0.182797 s
+  search-only time: 0.025597 s
+Server bytes received: 14863058 bytes
+Running A* from 10613957066 to 1547017432 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 4453
+Path length: 467 nodes
+A* total elapsed time: 0.242890 s
+  server queries time: 0.182989 s
+  search-only time: 0.059902 s
+Server bytes received: 14863058 bytes
+Running A* from 1290784110 to 1893811275 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3616
+Path length: 337 nodes
+A* total elapsed time: 0.224254 s
+  server queries time: 0.174799 s
+  search-only time: 0.049455 s
+Server bytes received: 14863058 bytes
+Running A* from 8561138898 to 8728519894 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2518
+Path length: 216 nodes
+A* total elapsed time: 0.196544 s
+  server queries time: 0.174292 s
+  search-only time: 0.022253 s
+Server bytes received: 14863058 bytes
+Running A* from 255564650 to 390933587 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3196
+Path length: 320 nodes
+A* total elapsed time: 0.222220 s
+  server queries time: 0.183443 s
+  search-only time: 0.038777 s
+Server bytes received: 14863058 bytes
+Running A* from 300569441 to 2504915666 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3765
+Path length: 490 nodes
+A* total elapsed time: 0.241566 s
+  server queries time: 0.182439 s
+  search-only time: 0.059127 s
+Server bytes received: 14863058 bytes
+Running A* from 698881825 to 304544856 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2935
+Path length: 314 nodes
+A* total elapsed time: 0.219874 s
+  server queries time: 0.178529 s
+  search-only time: 0.041345 s
+Server bytes received: 14863058 bytes
+Running A* from 11927213642 to 1438424204 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2483
+Path length: 226 nodes
+A* total elapsed time: 0.206644 s
+  server queries time: 0.178394 s
+  search-only time: 0.028250 s
+Server bytes received: 14863058 bytes
+Running A* from 247922799 to 296241024 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3475
+Path length: 329 nodes
+A* total elapsed time: 0.228793 s
+  server queries time: 0.185580 s
+  search-only time: 0.043213 s
+Server bytes received: 14863058 bytes
+Running A* from 94865477 to 3649549291 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2951
+Path length: 336 nodes
+A* total elapsed time: 0.232587 s
+  server queries time: 0.182511 s
+  search-only time: 0.050077 s
+Server bytes received: 14863058 bytes
+-- running journeys of distance 60000...
+Running A* from 1704141402 to 9096926146 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 4636
+Path length: 536 nodes
+A* total elapsed time: 0.269410 s
+  server queries time: 0.177366 s
+  search-only time: 0.092044 s
+Server bytes received: 14863058 bytes
+Running A* from 6960559342 to 271446321 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3082
+Path length: 269 nodes
+A* total elapsed time: 0.221113 s
+  server queries time: 0.176457 s
+  search-only time: 0.044656 s
+Server bytes received: 14863058 bytes
+Running A* from 332558773 to 8062265091 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3478
+Path length: 313 nodes
+A* total elapsed time: 0.231262 s
+  server queries time: 0.181575 s
+  search-only time: 0.049688 s
+Server bytes received: 14863058 bytes
+Running A* from 1075200604 to 5310423103 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3652
+Path length: 367 nodes
+A* total elapsed time: 0.217554 s
+  server queries time: 0.174837 s
+  search-only time: 0.042717 s
+Server bytes received: 14863058 bytes
+Running A* from 10607703415 to 8087274 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 4141
+Path length: 413 nodes
+A* total elapsed time: 0.228674 s
+  server queries time: 0.180076 s
+  search-only time: 0.048598 s
+Server bytes received: 14863058 bytes
+Running A* from 582638772 to 684619659 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 4412
+Path length: 498 nodes
+A* total elapsed time: 0.211254 s
+  server queries time: 0.177015 s
+  search-only time: 0.034239 s
+Server bytes received: 14863058 bytes
+Running A* from 1111071174 to 1304083300 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3022
+Path length: 261 nodes
+A* total elapsed time: 0.217025 s
+  server queries time: 0.188076 s
+  search-only time: 0.028950 s
+Server bytes received: 14863058 bytes
+Running A* from 2705263109 to 304307633 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 6610
+Path length: 502 nodes
+A* total elapsed time: 0.252733 s
+  server queries time: 0.188837 s
+  search-only time: 0.063896 s
+Server bytes received: 14863058 bytes
+Running A* from 2154439985 to 618675984 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 5040
+Path length: 585 nodes
+A* total elapsed time: 0.262722 s
+  server queries time: 0.181665 s
+  search-only time: 0.081057 s
+Server bytes received: 14863058 bytes
+Running A* from 404745769 to 1597316161 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3401
+Path length: 291 nodes
+A* total elapsed time: 0.237218 s
+  server queries time: 0.194894 s
+  search-only time: 0.042324 s
+Server bytes received: 14863058 bytes
+Running A* from 7385691473 to 309287878 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3117
+Path length: 329 nodes
+A* total elapsed time: 0.213189 s
+  server queries time: 0.182165 s
+  search-only time: 0.031024 s
+Server bytes received: 14863058 bytes
+Running A* from 318577407 to 1014424038 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3689
+Path length: 339 nodes
+A* total elapsed time: 0.230294 s
+  server queries time: 0.186077 s
+  search-only time: 0.044217 s
+Server bytes received: 14863058 bytes
+Running A* from 248817211 to 247139632 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3742
+Path length: 350 nodes
+A* total elapsed time: 0.246833 s
+  server queries time: 0.190650 s
+  search-only time: 0.056183 s
+Server bytes received: 14863058 bytes
+Running A* from 331236786 to 12084237935 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2990
+Path length: 304 nodes
+A* total elapsed time: 0.210150 s
+  server queries time: 0.182333 s
+  search-only time: 0.027817 s
+Server bytes received: 14863058 bytes
+Running A* from 3596677668 to 3948186968 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3442
+Path length: 363 nodes
+A* total elapsed time: 0.207278 s
+  server queries time: 0.175150 s
+  search-only time: 0.032128 s
+Server bytes received: 14863058 bytes
+Running A* from 9197426086 to 1849542352 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3056
+Path length: 298 nodes
+A* total elapsed time: 0.202412 s
+  server queries time: 0.176996 s
+  search-only time: 0.025415 s
+Server bytes received: 14863058 bytes
+Running A* from 561177344 to 6220826864 in country Switzerland using approach Node0 and architecture Naive ...
+!! No path found between 561177344 and 6220826864
+Running A* from 557429054 to 8394131195 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3710
+Path length: 420 nodes
+A* total elapsed time: 0.242825 s
+  server queries time: 0.176186 s
+  search-only time: 0.066640 s
+Server bytes received: 14863058 bytes
+Running A* from 3840022060 to 4478893107 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3870
+Path length: 345 nodes
+A* total elapsed time: 0.230948 s
+  server queries time: 0.182797 s
+  search-only time: 0.048151 s
+Server bytes received: 14863058 bytes
+Running A* from 9386512790 to 12802437745 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3282
+Path length: 373 nodes
+A* total elapsed time: 0.227218 s
+  server queries time: 0.187583 s
+  search-only time: 0.039635 s
+Server bytes received: 14863058 bytes
+Running A* from 5809966575 to 290469349 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3468
+Path length: 310 nodes
+A* total elapsed time: 0.231773 s
+  server queries time: 0.178278 s
+  search-only time: 0.053495 s
+Server bytes received: 14863058 bytes
+Running A* from 4459904061 to 5064715595 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3636
+Path length: 291 nodes
+A* total elapsed time: 0.218294 s
+  server queries time: 0.178651 s
+  search-only time: 0.039643 s
+Server bytes received: 14863058 bytes
+Running A* from 2452671170 to 291733816 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 6142
+Path length: 501 nodes
+A* total elapsed time: 0.238733 s
+  server queries time: 0.178196 s
+  search-only time: 0.060537 s
+Server bytes received: 14863058 bytes
+Running A* from 130042898 to 12944710579 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 4346
+Path length: 416 nodes
+A* total elapsed time: 0.263561 s
+  server queries time: 0.186192 s
+  search-only time: 0.077369 s
+Server bytes received: 14863058 bytes
+Running A* from 535889754 to 368971167 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 2838
+Path length: 300 nodes
+A* total elapsed time: 0.220113 s
+  server queries time: 0.183739 s
+  search-only time: 0.036374 s
+Server bytes received: 14863058 bytes
+Running A* from 29684853 to 2119260567 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3174
+Path length: 293 nodes
+A* total elapsed time: 0.204373 s
+  server queries time: 0.175783 s
+  search-only time: 0.028590 s
+Server bytes received: 14863058 bytes
+Running A* from 1152744868 to 307765193 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 4768
+Path length: 442 nodes
+A* total elapsed time: 0.200863 s
+  server queries time: 0.176472 s
+  search-only time: 0.024392 s
+Server bytes received: 14863058 bytes
+Running A* from 256018003 to 302320965 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3151
+Path length: 376 nodes
+A* total elapsed time: 0.210851 s
+  server queries time: 0.183008 s
+  search-only time: 0.027842 s
+Server bytes received: 14863058 bytes
+Running A* from 7695458764 to 12302836938 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3612
+Path length: 371 nodes
+A* total elapsed time: 0.216277 s
+  server queries time: 0.175493 s
+  search-only time: 0.040784 s
+Server bytes received: 14863058 bytes
+Running A* from 1116883051 to 321576449 in country Switzerland using approach Node0 and architecture Naive ...
+A* found a path with cost 3581
+Path length: 409 nodes
+A* total elapsed time: 0.213966 s
+  server queries time: 0.176752 s
+  search-only time: 0.037214 s
+Server bytes received: 14863058 bytes

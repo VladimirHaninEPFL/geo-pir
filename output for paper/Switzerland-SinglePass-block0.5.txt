@@ -1,0 +1,2312 @@
+-- starting benchmarks for Switzerland SinglePass block0.5 --
+-- running journeys of distance 500...
+Running A* from 2967149442 to 5336880755 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 80
+Path length: 14 nodes
+A* total elapsed time: 0.162792 s
+  server queries time: 0.152579 s
+  search-only time: 0.010212 s
+Server bytes received: 30358529 bytes
+Running A* from 1323889417 to 291362851 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 24
+Path length: 2 nodes
+A* total elapsed time: 0.128617 s
+  server queries time: 0.118344 s
+  search-only time: 0.010273 s
+Server bytes received: 30358529 bytes
+Running A* from 441123448 to 158722554 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 62
+Path length: 10 nodes
+A* total elapsed time: 0.134723 s
+  server queries time: 0.124285 s
+  search-only time: 0.010438 s
+Server bytes received: 30358529 bytes
+Running A* from 299985842 to 299986004 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 45
+Path length: 7 nodes
+A* total elapsed time: 0.130981 s
+  server queries time: 0.120637 s
+  search-only time: 0.010344 s
+Server bytes received: 30358529 bytes
+Running A* from 3986836962 to 3986836960 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 50
+Path length: 8 nodes
+A* total elapsed time: 0.130690 s
+  server queries time: 0.120552 s
+  search-only time: 0.010138 s
+Server bytes received: 30358529 bytes
+Running A* from 30064412 to 60118892 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 120
+Path length: 13 nodes
+A* total elapsed time: 0.131006 s
+  server queries time: 0.120689 s
+  search-only time: 0.010317 s
+Server bytes received: 30358529 bytes
+Running A* from 239032816 to 482344258 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 66
+Path length: 12 nodes
+A* total elapsed time: 0.127773 s
+  server queries time: 0.117443 s
+  search-only time: 0.010330 s
+Server bytes received: 30358529 bytes
+Running A* from 1774980917 to 309544510 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 147
+Path length: 11 nodes
+A* total elapsed time: 0.130438 s
+  server queries time: 0.120074 s
+  search-only time: 0.010364 s
+Server bytes received: 30358529 bytes
+Running A* from 8122094033 to 3549093396 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 210
+Path length: 16 nodes
+A* total elapsed time: 0.126458 s
+  server queries time: 0.116143 s
+  search-only time: 0.010315 s
+Server bytes received: 30358529 bytes
+Running A* from 9960645906 to 261681995 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 60
+Path length: 11 nodes
+A* total elapsed time: 0.128816 s
+  server queries time: 0.118507 s
+  search-only time: 0.010309 s
+Server bytes received: 30358529 bytes
+Running A* from 566751128 to 295490106 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 126
+Path length: 25 nodes
+A* total elapsed time: 0.130637 s
+  server queries time: 0.120182 s
+  search-only time: 0.010455 s
+Server bytes received: 30358529 bytes
+Running A* from 1119873627 to 267846228 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 48
+Path length: 13 nodes
+A* total elapsed time: 0.131487 s
+  server queries time: 0.121237 s
+  search-only time: 0.010250 s
+Server bytes received: 30358529 bytes
+Running A* from 34186586 to 1640020542 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 67
+Path length: 9 nodes
+A* total elapsed time: 0.133742 s
+  server queries time: 0.123403 s
+  search-only time: 0.010340 s
+Server bytes received: 30358529 bytes
+Running A* from 856484808 to 11953969583 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 171
+Path length: 22 nodes
+A* total elapsed time: 0.128613 s
+  server queries time: 0.118237 s
+  search-only time: 0.010376 s
+Server bytes received: 30358529 bytes
+Running A* from 385661141 to 11278022869 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 81
+Path length: 19 nodes
+A* total elapsed time: 0.135515 s
+  server queries time: 0.125125 s
+  search-only time: 0.010390 s
+Server bytes received: 30358529 bytes
+Running A* from 10105892902 to 296917811 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 149
+Path length: 13 nodes
+A* total elapsed time: 0.135529 s
+  server queries time: 0.125029 s
+  search-only time: 0.010500 s
+Server bytes received: 30358529 bytes
+Running A* from 1894754826 to 3403699067 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 72
+Path length: 6 nodes
+A* total elapsed time: 0.130881 s
+  server queries time: 0.120551 s
+  search-only time: 0.010331 s
+Server bytes received: 30358529 bytes
+Running A* from 1710470811 to 11278110475 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 125
+Path length: 24 nodes
+A* total elapsed time: 0.135204 s
+  server queries time: 0.124857 s
+  search-only time: 0.010347 s
+Server bytes received: 30358529 bytes
+Running A* from 365290877 to 223260412 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 47
+Path length: 13 nodes
+A* total elapsed time: 0.126889 s
+  server queries time: 0.116712 s
+  search-only time: 0.010178 s
+Server bytes received: 30358529 bytes
+Running A* from 1485039857 to 12141292315 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 94
+Path length: 11 nodes
+A* total elapsed time: 0.135959 s
+  server queries time: 0.125498 s
+  search-only time: 0.010461 s
+Server bytes received: 30358529 bytes
+Running A* from 1458224939 to 21546562 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 501
+Path length: 56 nodes
+A* total elapsed time: 0.134998 s
+  server queries time: 0.124537 s
+  search-only time: 0.010460 s
+Server bytes received: 30358529 bytes
+Running A* from 8465615121 to 303380226 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 75
+Path length: 11 nodes
+A* total elapsed time: 0.131499 s
+  server queries time: 0.121262 s
+  search-only time: 0.010236 s
+Server bytes received: 30358529 bytes
+Running A* from 1543906717 to 402681277 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 137
+Path length: 14 nodes
+A* total elapsed time: 0.135166 s
+  server queries time: 0.124728 s
+  search-only time: 0.010438 s
+Server bytes received: 30358529 bytes
+Running A* from 7650381638 to 476312931 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 87
+Path length: 11 nodes
+A* total elapsed time: 0.240689 s
+  server queries time: 0.230411 s
+  search-only time: 0.010278 s
+Server bytes received: 60717058 bytes
+Running A* from 3056537303 to 2701545866 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 95
+Path length: 19 nodes
+A* total elapsed time: 0.127646 s
+  server queries time: 0.117449 s
+  search-only time: 0.010197 s
+Server bytes received: 30358529 bytes
+Running A* from 316184709 to 412486764 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 99
+Path length: 11 nodes
+A* total elapsed time: 0.125533 s
+  server queries time: 0.115291 s
+  search-only time: 0.010242 s
+Server bytes received: 30358529 bytes
+Running A* from 264544821 to 1752582029 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 74
+Path length: 15 nodes
+A* total elapsed time: 0.132289 s
+  server queries time: 0.121984 s
+  search-only time: 0.010305 s
+Server bytes received: 30358529 bytes
+Running A* from 2078993832 to 2078993843 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 48
+Path length: 7 nodes
+A* total elapsed time: 0.135804 s
+  server queries time: 0.125461 s
+  search-only time: 0.010342 s
+Server bytes received: 30358529 bytes
+Running A* from 423310766 to 2809627279 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 131
+Path length: 24 nodes
+A* total elapsed time: 0.125226 s
+  server queries time: 0.114957 s
+  search-only time: 0.010269 s
+Server bytes received: 30358529 bytes
+Running A* from 25427092 to 25430745 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 78
+Path length: 10 nodes
+A* total elapsed time: 0.132080 s
+  server queries time: 0.121879 s
+  search-only time: 0.010200 s
+Server bytes received: 30358529 bytes
+-- running journeys of distance 1000...
+Running A* from 97981677 to 97980660 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 204
+Path length: 35 nodes
+A* total elapsed time: 0.132770 s
+  server queries time: 0.122283 s
+  search-only time: 0.010487 s
+Server bytes received: 30358529 bytes
+Running A* from 364387222 to 281761716 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 371
+Path length: 25 nodes
+A* total elapsed time: 0.125266 s
+  server queries time: 0.115079 s
+  search-only time: 0.010186 s
+Server bytes received: 30358529 bytes
+Running A* from 952829266 to 6081403641 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 137
+Path length: 31 nodes
+A* total elapsed time: 0.128908 s
+  server queries time: 0.118469 s
+  search-only time: 0.010440 s
+Server bytes received: 30358529 bytes
+Running A* from 5337093507 to 3517000249 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 178
+Path length: 37 nodes
+A* total elapsed time: 0.129093 s
+  server queries time: 0.118526 s
+  search-only time: 0.010566 s
+Server bytes received: 30358529 bytes
+Running A* from 339286871 to 1562043069 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 101
+Path length: 19 nodes
+A* total elapsed time: 0.135152 s
+  server queries time: 0.124851 s
+  search-only time: 0.010301 s
+Server bytes received: 30358529 bytes
+Running A* from 10734432734 to 665097894 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 155
+Path length: 27 nodes
+A* total elapsed time: 0.129094 s
+  server queries time: 0.118717 s
+  search-only time: 0.010377 s
+Server bytes received: 30358529 bytes
+Running A* from 252822573 to 1902515108 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 129
+Path length: 27 nodes
+A* total elapsed time: 0.126295 s
+  server queries time: 0.116014 s
+  search-only time: 0.010281 s
+Server bytes received: 30358529 bytes
+Running A* from 4956927714 to 30825881 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 143
+Path length: 28 nodes
+A* total elapsed time: 0.255584 s
+  server queries time: 0.245085 s
+  search-only time: 0.010499 s
+Server bytes received: 60717058 bytes
+Running A* from 1386836273 to 1611938693 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 147
+Path length: 24 nodes
+A* total elapsed time: 0.132783 s
+  server queries time: 0.122470 s
+  search-only time: 0.010313 s
+Server bytes received: 30358529 bytes
+Running A* from 280883447 to 728635066 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 106
+Path length: 9 nodes
+A* total elapsed time: 0.129132 s
+  server queries time: 0.118933 s
+  search-only time: 0.010200 s
+Server bytes received: 30358529 bytes
+Running A* from 6669811209 to 25426839 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 189
+Path length: 41 nodes
+A* total elapsed time: 0.254471 s
+  server queries time: 0.243867 s
+  search-only time: 0.010604 s
+Server bytes received: 60717058 bytes
+Running A* from 267271851 to 282645402 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 124
+Path length: 30 nodes
+A* total elapsed time: 0.130674 s
+  server queries time: 0.120263 s
+  search-only time: 0.010411 s
+Server bytes received: 30358529 bytes
+Running A* from 275687867 to 31130384 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 157
+Path length: 21 nodes
+A* total elapsed time: 0.130291 s
+  server queries time: 0.119861 s
+  search-only time: 0.010430 s
+Server bytes received: 30358529 bytes
+Running A* from 1195275498 to 3464000032 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 80
+Path length: 16 nodes
+A* total elapsed time: 0.136206 s
+  server queries time: 0.125821 s
+  search-only time: 0.010385 s
+Server bytes received: 30358529 bytes
+Running A* from 2123185634 to 3708419423 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 116
+Path length: 13 nodes
+A* total elapsed time: 0.131839 s
+  server queries time: 0.121647 s
+  search-only time: 0.010192 s
+Server bytes received: 30358529 bytes
+Running A* from 33053378 to 279578480 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 138
+Path length: 19 nodes
+A* total elapsed time: 0.130039 s
+  server queries time: 0.119649 s
+  search-only time: 0.010390 s
+Server bytes received: 30358529 bytes
+Running A* from 413619975 to 302409608 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 125
+Path length: 33 nodes
+A* total elapsed time: 0.136341 s
+  server queries time: 0.125949 s
+  search-only time: 0.010392 s
+Server bytes received: 30358529 bytes
+Running A* from 412517195 to 81533927 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 132
+Path length: 17 nodes
+A* total elapsed time: 0.131406 s
+  server queries time: 0.121073 s
+  search-only time: 0.010333 s
+Server bytes received: 30358529 bytes
+Running A* from 453995 to 60504103 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 543
+Path length: 68 nodes
+A* total elapsed time: 0.132326 s
+  server queries time: 0.121557 s
+  search-only time: 0.010770 s
+Server bytes received: 30358529 bytes
+Running A* from 8548126227 to 30825918 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 169
+Path length: 27 nodes
+A* total elapsed time: 0.133627 s
+  server queries time: 0.123112 s
+  search-only time: 0.010515 s
+Server bytes received: 30358529 bytes
+Running A* from 3454007813 to 364813178 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 124
+Path length: 23 nodes
+A* total elapsed time: 0.127391 s
+  server queries time: 0.117118 s
+  search-only time: 0.010273 s
+Server bytes received: 30358529 bytes
+Running A* from 350321961 to 365980908 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 130
+Path length: 16 nodes
+A* total elapsed time: 0.129556 s
+  server queries time: 0.119216 s
+  search-only time: 0.010340 s
+Server bytes received: 30358529 bytes
+Running A* from 540597602 to 439645110 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 117
+Path length: 24 nodes
+A* total elapsed time: 0.125443 s
+  server queries time: 0.115180 s
+  search-only time: 0.010263 s
+Server bytes received: 30358529 bytes
+Running A* from 484796342 to 9192417252 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 168
+Path length: 15 nodes
+A* total elapsed time: 0.129292 s
+  server queries time: 0.118951 s
+  search-only time: 0.010341 s
+Server bytes received: 30358529 bytes
+Running A* from 60688554 to 6489391906 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 110
+Path length: 11 nodes
+A* total elapsed time: 0.131511 s
+  server queries time: 0.121164 s
+  search-only time: 0.010347 s
+Server bytes received: 30358529 bytes
+Running A* from 5273881350 to 568425338 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 219
+Path length: 36 nodes
+A* total elapsed time: 0.129722 s
+  server queries time: 0.119308 s
+  search-only time: 0.010414 s
+Server bytes received: 30358529 bytes
+Running A* from 957403167 to 767860671 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 131
+Path length: 24 nodes
+A* total elapsed time: 0.127186 s
+  server queries time: 0.116910 s
+  search-only time: 0.010276 s
+Server bytes received: 30358529 bytes
+Running A* from 4626514178 to 390490390 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 119
+Path length: 12 nodes
+A* total elapsed time: 0.127661 s
+  server queries time: 0.117452 s
+  search-only time: 0.010209 s
+Server bytes received: 30358529 bytes
+Running A* from 12412537571 to 81563317 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 134
+Path length: 42 nodes
+A* total elapsed time: 0.132228 s
+  server queries time: 0.121767 s
+  search-only time: 0.010461 s
+Server bytes received: 30358529 bytes
+Running A* from 105451520 to 109634860 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 150
+Path length: 22 nodes
+A* total elapsed time: 0.133269 s
+  server queries time: 0.122877 s
+  search-only time: 0.010391 s
+Server bytes received: 30358529 bytes
+-- running journeys of distance 2000...
+Running A* from 3055053420 to 1164911831 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 189
+Path length: 31 nodes
+A* total elapsed time: 0.126982 s
+  server queries time: 0.116606 s
+  search-only time: 0.010376 s
+Server bytes received: 30358529 bytes
+Running A* from 5976375981 to 66576983 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 172
+Path length: 10 nodes
+A* total elapsed time: 0.131163 s
+  server queries time: 0.121020 s
+  search-only time: 0.010143 s
+Server bytes received: 30358529 bytes
+Running A* from 3281197943 to 3445514799 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 180
+Path length: 17 nodes
+A* total elapsed time: 0.131569 s
+  server queries time: 0.121227 s
+  search-only time: 0.010342 s
+Server bytes received: 30358529 bytes
+Running A* from 310147802 to 12919836160 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 240
+Path length: 23 nodes
+A* total elapsed time: 0.125387 s
+  server queries time: 0.115159 s
+  search-only time: 0.010229 s
+Server bytes received: 30358529 bytes
+Running A* from 371590813 to 2298019027 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 191
+Path length: 19 nodes
+A* total elapsed time: 0.131714 s
+  server queries time: 0.121389 s
+  search-only time: 0.010325 s
+Server bytes received: 30358529 bytes
+Running A* from 767273508 to 3641027818 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 336
+Path length: 47 nodes
+A* total elapsed time: 0.127890 s
+  server queries time: 0.117516 s
+  search-only time: 0.010374 s
+Server bytes received: 30358529 bytes
+Running A* from 1259622212 to 12588346417 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 236
+Path length: 34 nodes
+A* total elapsed time: 0.130029 s
+  server queries time: 0.119715 s
+  search-only time: 0.010315 s
+Server bytes received: 30358529 bytes
+Running A* from 10808377864 to 281736497 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 354
+Path length: 48 nodes
+A* total elapsed time: 0.135331 s
+  server queries time: 0.124666 s
+  search-only time: 0.010666 s
+Server bytes received: 30358529 bytes
+Running A* from 1021253 to 275550728 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 361
+Path length: 52 nodes
+A* total elapsed time: 0.131309 s
+  server queries time: 0.120247 s
+  search-only time: 0.011063 s
+Server bytes received: 30358529 bytes
+Running A* from 12513284457 to 324647944 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 261
+Path length: 83 nodes
+A* total elapsed time: 0.128205 s
+  server queries time: 0.117402 s
+  search-only time: 0.010803 s
+Server bytes received: 30358529 bytes
+Running A* from 1026977717 to 10957866787 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 302
+Path length: 54 nodes
+A* total elapsed time: 0.138429 s
+  server queries time: 0.127874 s
+  search-only time: 0.010554 s
+Server bytes received: 30358529 bytes
+Running A* from 289972307 to 29773864 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 255
+Path length: 44 nodes
+A* total elapsed time: 0.132540 s
+  server queries time: 0.122064 s
+  search-only time: 0.010476 s
+Server bytes received: 30358529 bytes
+Running A* from 6481185553 to 6518802275 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 249
+Path length: 46 nodes
+A* total elapsed time: 0.127663 s
+  server queries time: 0.117200 s
+  search-only time: 0.010462 s
+Server bytes received: 30358529 bytes
+Running A* from 1239360446 to 139719471 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 312
+Path length: 22 nodes
+A* total elapsed time: 0.126772 s
+  server queries time: 0.116067 s
+  search-only time: 0.010705 s
+Server bytes received: 30358529 bytes
+Running A* from 295490078 to 260928031 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 323
+Path length: 67 nodes
+A* total elapsed time: 0.128964 s
+  server queries time: 0.118033 s
+  search-only time: 0.010931 s
+Server bytes received: 30358529 bytes
+Running A* from 1168825714 to 7188336034 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 213
+Path length: 45 nodes
+A* total elapsed time: 0.127084 s
+  server queries time: 0.116742 s
+  search-only time: 0.010342 s
+Server bytes received: 30358529 bytes
+Running A* from 12301211615 to 4633821766 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 197
+Path length: 21 nodes
+A* total elapsed time: 0.125973 s
+  server queries time: 0.115670 s
+  search-only time: 0.010303 s
+Server bytes received: 30358529 bytes
+Running A* from 263040043 to 2447730659 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 208
+Path length: 34 nodes
+A* total elapsed time: 0.128565 s
+  server queries time: 0.118124 s
+  search-only time: 0.010441 s
+Server bytes received: 30358529 bytes
+Running A* from 1051090325 to 11736531166 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 195
+Path length: 15 nodes
+A* total elapsed time: 0.132586 s
+  server queries time: 0.122333 s
+  search-only time: 0.010252 s
+Server bytes received: 30358529 bytes
+Running A* from 3058968106 to 3097796239 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 858
+Path length: 96 nodes
+A* total elapsed time: 0.125870 s
+  server queries time: 0.115558 s
+  search-only time: 0.010312 s
+Server bytes received: 30358529 bytes
+Running A* from 677038139 to 10250560405 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 202
+Path length: 12 nodes
+A* total elapsed time: 0.130471 s
+  server queries time: 0.120100 s
+  search-only time: 0.010371 s
+Server bytes received: 30358529 bytes
+Running A* from 364354666 to 12351254646 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 483
+Path length: 76 nodes
+A* total elapsed time: 0.131048 s
+  server queries time: 0.120231 s
+  search-only time: 0.010817 s
+Server bytes received: 30358529 bytes
+Running A* from 472618375 to 27612605 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 163
+Path length: 25 nodes
+A* total elapsed time: 0.130605 s
+  server queries time: 0.120223 s
+  search-only time: 0.010383 s
+Server bytes received: 30358529 bytes
+Running A* from 8475642843 to 105307149 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 203
+Path length: 35 nodes
+A* total elapsed time: 0.132524 s
+  server queries time: 0.122059 s
+  search-only time: 0.010465 s
+Server bytes received: 30358529 bytes
+Running A* from 8734809632 to 279963017 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 233
+Path length: 29 nodes
+A* total elapsed time: 0.127093 s
+  server queries time: 0.116676 s
+  search-only time: 0.010417 s
+Server bytes received: 30358529 bytes
+Running A* from 1259622143 to 654104263 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 265
+Path length: 35 nodes
+A* total elapsed time: 0.130086 s
+  server queries time: 0.119633 s
+  search-only time: 0.010454 s
+Server bytes received: 30358529 bytes
+Running A* from 259996095 to 364876309 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 268
+Path length: 36 nodes
+A* total elapsed time: 0.125190 s
+  server queries time: 0.114973 s
+  search-only time: 0.010217 s
+Server bytes received: 30358529 bytes
+Running A* from 27612605 to 472618375 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 168
+Path length: 28 nodes
+A* total elapsed time: 0.130898 s
+  server queries time: 0.120593 s
+  search-only time: 0.010305 s
+Server bytes received: 30358529 bytes
+Running A* from 144736441 to 101735749 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 256
+Path length: 30 nodes
+A* total elapsed time: 0.131534 s
+  server queries time: 0.120970 s
+  search-only time: 0.010563 s
+Server bytes received: 30358529 bytes
+Running A* from 660193504 to 360471827 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 291
+Path length: 49 nodes
+A* total elapsed time: 0.130781 s
+  server queries time: 0.120245 s
+  search-only time: 0.010536 s
+Server bytes received: 30358529 bytes
+-- running journeys of distance 5000...
+Running A* from 94814817 to 29687766 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 568
+Path length: 99 nodes
+A* total elapsed time: 0.132838 s
+  server queries time: 0.121416 s
+  search-only time: 0.011423 s
+Server bytes received: 30358529 bytes
+Running A* from 1499154084 to 285235565 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 675
+Path length: 102 nodes
+A* total elapsed time: 0.126231 s
+  server queries time: 0.115977 s
+  search-only time: 0.010254 s
+Server bytes received: 30358529 bytes
+Running A* from 679638727 to 2075426117 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 426
+Path length: 58 nodes
+A* total elapsed time: 0.126592 s
+  server queries time: 0.115947 s
+  search-only time: 0.010645 s
+Server bytes received: 30358529 bytes
+Running A* from 282874875 to 9890731047 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 652
+Path length: 116 nodes
+A* total elapsed time: 0.137422 s
+  server queries time: 0.125653 s
+  search-only time: 0.011770 s
+Server bytes received: 30358529 bytes
+Running A* from 1410065280 to 1338628661 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 437
+Path length: 40 nodes
+A* total elapsed time: 0.135669 s
+  server queries time: 0.124889 s
+  search-only time: 0.010780 s
+Server bytes received: 30358529 bytes
+Running A* from 150556534 to 130233861 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 568
+Path length: 88 nodes
+A* total elapsed time: 0.135110 s
+  server queries time: 0.123488 s
+  search-only time: 0.011621 s
+Server bytes received: 30358529 bytes
+Running A* from 333677198 to 1673911246 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 535
+Path length: 55 nodes
+A* total elapsed time: 0.250810 s
+  server queries time: 0.239704 s
+  search-only time: 0.011106 s
+Server bytes received: 60717058 bytes
+Running A* from 264962896 to 5030114764 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 750
+Path length: 32 nodes
+A* total elapsed time: 0.126681 s
+  server queries time: 0.115840 s
+  search-only time: 0.010841 s
+Server bytes received: 30358529 bytes
+Running A* from 13439174939 to 9050576164 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 653
+Path length: 88 nodes
+A* total elapsed time: 0.135622 s
+  server queries time: 0.124527 s
+  search-only time: 0.011095 s
+Server bytes received: 30358529 bytes
+Running A* from 25430622 to 441855552 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 474
+Path length: 76 nodes
+A* total elapsed time: 0.255020 s
+  server queries time: 0.243711 s
+  search-only time: 0.011309 s
+Server bytes received: 60717058 bytes
+Running A* from 262165755 to 28900650 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 444
+Path length: 56 nodes
+A* total elapsed time: 0.127041 s
+  server queries time: 0.116618 s
+  search-only time: 0.010423 s
+Server bytes received: 30358529 bytes
+Running A* from 11442853766 to 27621238 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 407
+Path length: 61 nodes
+A* total elapsed time: 0.127481 s
+  server queries time: 0.116768 s
+  search-only time: 0.010713 s
+Server bytes received: 30358529 bytes
+Running A* from 1024129389 to 25427498 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 622
+Path length: 81 nodes
+A* total elapsed time: 0.132058 s
+  server queries time: 0.121406 s
+  search-only time: 0.010652 s
+Server bytes received: 30358529 bytes
+Running A* from 1203732883 to 9036272594 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 743
+Path length: 141 nodes
+A* total elapsed time: 0.257201 s
+  server queries time: 0.244941 s
+  search-only time: 0.012260 s
+Server bytes received: 60717058 bytes
+Running A* from 3128267906 to 3824243128 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 488
+Path length: 65 nodes
+A* total elapsed time: 0.243399 s
+  server queries time: 0.233011 s
+  search-only time: 0.010388 s
+Server bytes received: 60717058 bytes
+Running A* from 1165861060 to 9708935710 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1962
+Path length: 151 nodes
+A* total elapsed time: 0.128180 s
+  server queries time: 0.116271 s
+  search-only time: 0.011908 s
+Server bytes received: 30358529 bytes
+Running A* from 150876418 to 8524994609 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1102
+Path length: 138 nodes
+A* total elapsed time: 0.262900 s
+  server queries time: 0.248372 s
+  search-only time: 0.014528 s
+Server bytes received: 60717058 bytes
+Running A* from 269559422 to 408170083 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 673
+Path length: 105 nodes
+A* total elapsed time: 0.248829 s
+  server queries time: 0.236620 s
+  search-only time: 0.012209 s
+Server bytes received: 60717058 bytes
+Running A* from 299336133 to 298658812 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 502
+Path length: 69 nodes
+A* total elapsed time: 0.131407 s
+  server queries time: 0.120499 s
+  search-only time: 0.010909 s
+Server bytes received: 30358529 bytes
+Running A* from 9221436801 to 9529368400 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 836
+Path length: 56 nodes
+A* total elapsed time: 0.126540 s
+  server queries time: 0.115718 s
+  search-only time: 0.010822 s
+Server bytes received: 30358529 bytes
+Running A* from 308898933 to 1249007997 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 570
+Path length: 97 nodes
+A* total elapsed time: 0.253372 s
+  server queries time: 0.241152 s
+  search-only time: 0.012221 s
+Server bytes received: 60717058 bytes
+Running A* from 2068210830 to 2069705435 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 641
+Path length: 90 nodes
+A* total elapsed time: 0.131165 s
+  server queries time: 0.120538 s
+  search-only time: 0.010628 s
+Server bytes received: 30358529 bytes
+Running A* from 289471501 to 355933552 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 461
+Path length: 88 nodes
+A* total elapsed time: 0.130128 s
+  server queries time: 0.118832 s
+  search-only time: 0.011296 s
+Server bytes received: 30358529 bytes
+Running A* from 583387865 to 4095821573 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 460
+Path length: 70 nodes
+A* total elapsed time: 0.126932 s
+  server queries time: 0.116193 s
+  search-only time: 0.010739 s
+Server bytes received: 30358529 bytes
+Running A* from 213302618 to 1126482500 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 524
+Path length: 72 nodes
+A* total elapsed time: 0.262362 s
+  server queries time: 0.251557 s
+  search-only time: 0.010804 s
+Server bytes received: 60717058 bytes
+Running A* from 327315546 to 262271857 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 586
+Path length: 48 nodes
+A* total elapsed time: 0.250543 s
+  server queries time: 0.239110 s
+  search-only time: 0.011433 s
+Server bytes received: 60717058 bytes
+Running A* from 297035896 to 2591159937 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 459
+Path length: 56 nodes
+A* total elapsed time: 0.249139 s
+  server queries time: 0.238473 s
+  search-only time: 0.010666 s
+Server bytes received: 60717058 bytes
+Running A* from 2184615343 to 3159094075 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 612
+Path length: 64 nodes
+A* total elapsed time: 0.249447 s
+  server queries time: 0.239053 s
+  search-only time: 0.010394 s
+Server bytes received: 60717058 bytes
+Running A* from 9543405972 to 2872465819 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 968
+Path length: 135 nodes
+A* total elapsed time: 0.252231 s
+  server queries time: 0.240842 s
+  search-only time: 0.011389 s
+Server bytes received: 60717058 bytes
+Running A* from 9274279052 to 2086435624 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 514
+Path length: 49 nodes
+A* total elapsed time: 0.130560 s
+  server queries time: 0.120218 s
+  search-only time: 0.010342 s
+Server bytes received: 30358529 bytes
+-- running journeys of distance 10000...
+Running A* from 7887892232 to 1387522165 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 716
+Path length: 97 nodes
+A* total elapsed time: 0.248116 s
+  server queries time: 0.235781 s
+  search-only time: 0.012335 s
+Server bytes received: 60717058 bytes
+Running A* from 60503259 to 469705849 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1861
+Path length: 219 nodes
+A* total elapsed time: 0.268885 s
+  server queries time: 0.248112 s
+  search-only time: 0.020773 s
+Server bytes received: 60717058 bytes
+Running A* from 30173181 to 1221505804 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1000
+Path length: 183 nodes
+A* total elapsed time: 0.266387 s
+  server queries time: 0.252196 s
+  search-only time: 0.014191 s
+Server bytes received: 60717058 bytes
+Running A* from 305391250 to 534815561 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 989
+Path length: 181 nodes
+A* total elapsed time: 0.134245 s
+  server queries time: 0.121283 s
+  search-only time: 0.012962 s
+Server bytes received: 30358529 bytes
+Running A* from 2670706445 to 2319220519 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 725
+Path length: 73 nodes
+A* total elapsed time: 0.129679 s
+  server queries time: 0.118689 s
+  search-only time: 0.010989 s
+Server bytes received: 30358529 bytes
+Running A* from 1672733056 to 3046441702 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 877
+Path length: 96 nodes
+A* total elapsed time: 0.131686 s
+  server queries time: 0.120489 s
+  search-only time: 0.011197 s
+Server bytes received: 30358529 bytes
+Running A* from 10095791460 to 9116355457 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 866
+Path length: 114 nodes
+A* total elapsed time: 0.255923 s
+  server queries time: 0.243897 s
+  search-only time: 0.012026 s
+Server bytes received: 60717058 bytes
+Running A* from 94701896 to 114298515 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 977
+Path length: 136 nodes
+A* total elapsed time: 0.262120 s
+  server queries time: 0.247566 s
+  search-only time: 0.014554 s
+Server bytes received: 60717058 bytes
+Running A* from 114310774 to 514434491 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 897
+Path length: 127 nodes
+A* total elapsed time: 0.259112 s
+  server queries time: 0.246647 s
+  search-only time: 0.012464 s
+Server bytes received: 60717058 bytes
+Running A* from 11805500715 to 5352409973 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 966
+Path length: 105 nodes
+A* total elapsed time: 0.255453 s
+  server queries time: 0.241194 s
+  search-only time: 0.014259 s
+Server bytes received: 60717058 bytes
+Running A* from 3451304339 to 412439484 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1043
+Path length: 111 nodes
+A* total elapsed time: 0.366630 s
+  server queries time: 0.354964 s
+  search-only time: 0.011666 s
+Server bytes received: 91075587 bytes
+Running A* from 274989727 to 2016799261 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1010
+Path length: 95 nodes
+A* total elapsed time: 0.506674 s
+  server queries time: 0.491739 s
+  search-only time: 0.014936 s
+Server bytes received: 121434116 bytes
+Running A* from 665688284 to 8492007310 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 674
+Path length: 90 nodes
+A* total elapsed time: 0.251752 s
+  server queries time: 0.240185 s
+  search-only time: 0.011566 s
+Server bytes received: 60717058 bytes
+Running A* from 268484189 to 762678310 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1046
+Path length: 153 nodes
+A* total elapsed time: 0.142586 s
+  server queries time: 0.128369 s
+  search-only time: 0.014217 s
+Server bytes received: 30358529 bytes
+Running A* from 611658079 to 278253114 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 872
+Path length: 90 nodes
+A* total elapsed time: 0.511119 s
+  server queries time: 0.496580 s
+  search-only time: 0.014540 s
+Server bytes received: 121434116 bytes
+Running A* from 1668776867 to 5756016007 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 718
+Path length: 106 nodes
+A* total elapsed time: 0.254059 s
+  server queries time: 0.242769 s
+  search-only time: 0.011290 s
+Server bytes received: 60717058 bytes
+Running A* from 289469565 to 3909924939 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 669
+Path length: 99 nodes
+A* total elapsed time: 0.372384 s
+  server queries time: 0.359860 s
+  search-only time: 0.012524 s
+Server bytes received: 91075587 bytes
+Running A* from 11202836 to 309791713 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1555
+Path length: 217 nodes
+A* total elapsed time: 0.244936 s
+  server queries time: 0.232911 s
+  search-only time: 0.012024 s
+Server bytes received: 60717058 bytes
+Running A* from 2126331710 to 199425977 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1188
+Path length: 74 nodes
+A* total elapsed time: 0.131778 s
+  server queries time: 0.120103 s
+  search-only time: 0.011675 s
+Server bytes received: 30358529 bytes
+Running A* from 4492998800 to 1103974024 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 650
+Path length: 105 nodes
+A* total elapsed time: 0.136537 s
+  server queries time: 0.125029 s
+  search-only time: 0.011508 s
+Server bytes received: 30358529 bytes
+Running A* from 2371706454 to 533735714 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 593
+Path length: 56 nodes
+A* total elapsed time: 0.128469 s
+  server queries time: 0.117708 s
+  search-only time: 0.010761 s
+Server bytes received: 30358529 bytes
+Running A* from 702207145 to 25522776 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 773
+Path length: 63 nodes
+A* total elapsed time: 0.371912 s
+  server queries time: 0.360702 s
+  search-only time: 0.011210 s
+Server bytes received: 91075587 bytes
+Running A* from 374113918 to 107798053 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 873
+Path length: 107 nodes
+A* total elapsed time: 0.252035 s
+  server queries time: 0.240049 s
+  search-only time: 0.011985 s
+Server bytes received: 60717058 bytes
+Running A* from 1485039920 to 292610716 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1281
+Path length: 207 nodes
+A* total elapsed time: 0.257791 s
+  server queries time: 0.242575 s
+  search-only time: 0.015217 s
+Server bytes received: 60717058 bytes
+Running A* from 386846837 to 441597475 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 991
+Path length: 115 nodes
+A* total elapsed time: 0.256535 s
+  server queries time: 0.244730 s
+  search-only time: 0.011805 s
+Server bytes received: 60717058 bytes
+Running A* from 944657441 to 569584464 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 887
+Path length: 100 nodes
+A* total elapsed time: 0.130831 s
+  server queries time: 0.117878 s
+  search-only time: 0.012954 s
+Server bytes received: 30358529 bytes
+Running A* from 308823443 to 349231384 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 726
+Path length: 108 nodes
+A* total elapsed time: 0.254379 s
+  server queries time: 0.242213 s
+  search-only time: 0.012166 s
+Server bytes received: 60717058 bytes
+Running A* from 12342392330 to 9737255488 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 685
+Path length: 48 nodes
+A* total elapsed time: 0.127874 s
+  server queries time: 0.117030 s
+  search-only time: 0.010844 s
+Server bytes received: 30358529 bytes
+Running A* from 298674240 to 965911896 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1172
+Path length: 196 nodes
+A* total elapsed time: 0.262558 s
+  server queries time: 0.248715 s
+  search-only time: 0.013843 s
+Server bytes received: 60717058 bytes
+Running A* from 297789747 to 1973572553 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 970
+Path length: 134 nodes
+A* total elapsed time: 0.381090 s
+  server queries time: 0.368200 s
+  search-only time: 0.012890 s
+Server bytes received: 91075587 bytes
+-- running journeys of distance 15000...
+Running A* from 4656327090 to 2632303474 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2155
+Path length: 196 nodes
+A* total elapsed time: 0.494057 s
+  server queries time: 0.479370 s
+  search-only time: 0.014687 s
+Server bytes received: 121434116 bytes
+Running A* from 498159102 to 290144765 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3148
+Path length: 219 nodes
+A* total elapsed time: 0.264426 s
+  server queries time: 0.243072 s
+  search-only time: 0.021354 s
+Server bytes received: 60717058 bytes
+Running A* from 301266122 to 576204571 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1240
+Path length: 134 nodes
+A* total elapsed time: 0.375480 s
+  server queries time: 0.362019 s
+  search-only time: 0.013461 s
+Server bytes received: 91075587 bytes
+Running A* from 2324923182 to 277997396 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1311
+Path length: 138 nodes
+A* total elapsed time: 0.255488 s
+  server queries time: 0.241857 s
+  search-only time: 0.013631 s
+Server bytes received: 60717058 bytes
+Running A* from 34484983 to 377097305 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1078
+Path length: 105 nodes
+A* total elapsed time: 0.515262 s
+  server queries time: 0.500731 s
+  search-only time: 0.014531 s
+Server bytes received: 121434116 bytes
+Running A* from 2504901946 to 385696322 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2614
+Path length: 276 nodes
+A* total elapsed time: 0.271811 s
+  server queries time: 0.245260 s
+  search-only time: 0.026551 s
+Server bytes received: 60717058 bytes
+Running A* from 296055708 to 300026424 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 933
+Path length: 106 nodes
+A* total elapsed time: 0.250797 s
+  server queries time: 0.238811 s
+  search-only time: 0.011987 s
+Server bytes received: 60717058 bytes
+Running A* from 445045086 to 1014536256 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1343
+Path length: 147 nodes
+A* total elapsed time: 0.265287 s
+  server queries time: 0.250918 s
+  search-only time: 0.014369 s
+Server bytes received: 60717058 bytes
+Running A* from 294167019 to 1602569149 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2456
+Path length: 290 nodes
+A* total elapsed time: 0.366745 s
+  server queries time: 0.351174 s
+  search-only time: 0.015570 s
+Server bytes received: 91075587 bytes
+Running A* from 386846055 to 288513123 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1411
+Path length: 156 nodes
+A* total elapsed time: 0.364386 s
+  server queries time: 0.351207 s
+  search-only time: 0.013179 s
+Server bytes received: 91075587 bytes
+Running A* from 65206511 to 6036767790 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1247
+Path length: 152 nodes
+A* total elapsed time: 0.506394 s
+  server queries time: 0.492436 s
+  search-only time: 0.013959 s
+Server bytes received: 121434116 bytes
+Running A* from 1354781251 to 322778110 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1202
+Path length: 170 nodes
+A* total elapsed time: 0.373905 s
+  server queries time: 0.361112 s
+  search-only time: 0.012793 s
+Server bytes received: 91075587 bytes
+Running A* from 3782557825 to 8416737454 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1517
+Path length: 139 nodes
+A* total elapsed time: 0.128878 s
+  server queries time: 0.117544 s
+  search-only time: 0.011333 s
+Server bytes received: 30358529 bytes
+Running A* from 746964895 to 1345209709 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1163
+Path length: 176 nodes
+A* total elapsed time: 0.139874 s
+  server queries time: 0.125238 s
+  search-only time: 0.014636 s
+Server bytes received: 30358529 bytes
+Running A* from 122041738 to 663008420 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1353
+Path length: 176 nodes
+A* total elapsed time: 0.264590 s
+  server queries time: 0.246556 s
+  search-only time: 0.018034 s
+Server bytes received: 60717058 bytes
+Running A* from 436367315 to 2266643843 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1133
+Path length: 128 nodes
+A* total elapsed time: 0.139327 s
+  server queries time: 0.125899 s
+  search-only time: 0.013428 s
+Server bytes received: 30358529 bytes
+Running A* from 479751144 to 105393156 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1462
+Path length: 151 nodes
+A* total elapsed time: 0.510006 s
+  server queries time: 0.495714 s
+  search-only time: 0.014293 s
+Server bytes received: 121434116 bytes
+Running A* from 256579856 to 6738167666 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1278
+Path length: 115 nodes
+A* total elapsed time: 0.130149 s
+  server queries time: 0.118003 s
+  search-only time: 0.012146 s
+Server bytes received: 30358529 bytes
+Running A* from 26905286 to 25427030 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 965
+Path length: 114 nodes
+A* total elapsed time: 0.256282 s
+  server queries time: 0.243959 s
+  search-only time: 0.012323 s
+Server bytes received: 60717058 bytes
+Running A* from 311264865 to 29896824 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1704
+Path length: 182 nodes
+A* total elapsed time: 0.263001 s
+  server queries time: 0.246561 s
+  search-only time: 0.016440 s
+Server bytes received: 60717058 bytes
+Running A* from 144728029 to 2503945491 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1422
+Path length: 183 nodes
+A* total elapsed time: 0.398251 s
+  server queries time: 0.378446 s
+  search-only time: 0.019805 s
+Server bytes received: 91075587 bytes
+Running A* from 299449778 to 244998392 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1343
+Path length: 177 nodes
+A* total elapsed time: 0.260824 s
+  server queries time: 0.246267 s
+  search-only time: 0.014557 s
+Server bytes received: 60717058 bytes
+Running A* from 312561304 to 986827968 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1466
+Path length: 196 nodes
+A* total elapsed time: 0.394906 s
+  server queries time: 0.374935 s
+  search-only time: 0.019971 s
+Server bytes received: 91075587 bytes
+Running A* from 324793771 to 837377703 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1453
+Path length: 119 nodes
+A* total elapsed time: 0.252665 s
+  server queries time: 0.240207 s
+  search-only time: 0.012459 s
+Server bytes received: 60717058 bytes
+Running A* from 10821195217 to 1968100215 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1205
+Path length: 154 nodes
+A* total elapsed time: 0.264575 s
+  server queries time: 0.247047 s
+  search-only time: 0.017528 s
+Server bytes received: 60717058 bytes
+Running A* from 93020579 to 4128576433 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1214
+Path length: 139 nodes
+A* total elapsed time: 0.514572 s
+  server queries time: 0.495591 s
+  search-only time: 0.018980 s
+Server bytes received: 121434116 bytes
+Running A* from 96677186 to 317210461 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1241
+Path length: 123 nodes
+A* total elapsed time: 0.258904 s
+  server queries time: 0.244039 s
+  search-only time: 0.014865 s
+Server bytes received: 60717058 bytes
+Running A* from 2041888496 to 11503084389 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1104
+Path length: 96 nodes
+A* total elapsed time: 0.253850 s
+  server queries time: 0.242424 s
+  search-only time: 0.011426 s
+Server bytes received: 60717058 bytes
+Running A* from 371575083 to 35786112 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1209
+Path length: 155 nodes
+A* total elapsed time: 0.257171 s
+  server queries time: 0.243350 s
+  search-only time: 0.013821 s
+Server bytes received: 60717058 bytes
+Running A* from 292225039 to 4416359560 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1617
+Path length: 151 nodes
+A* total elapsed time: 0.263194 s
+  server queries time: 0.247192 s
+  search-only time: 0.016001 s
+Server bytes received: 60717058 bytes
+-- running journeys of distance 20000...
+Running A* from 2465939571 to 1250128207 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1273
+Path length: 153 nodes
+A* total elapsed time: 0.246170 s
+  server queries time: 0.234553 s
+  search-only time: 0.011617 s
+Server bytes received: 60717058 bytes
+Running A* from 454602372 to 1285211603 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1454
+Path length: 223 nodes
+A* total elapsed time: 0.268592 s
+  server queries time: 0.253134 s
+  search-only time: 0.015459 s
+Server bytes received: 60717058 bytes
+Running A* from 321188887 to 10312101391 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1542
+Path length: 199 nodes
+A* total elapsed time: 0.392973 s
+  server queries time: 0.374667 s
+  search-only time: 0.018306 s
+Server bytes received: 91075587 bytes
+Running A* from 1832854376 to 1316396657 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1612
+Path length: 264 nodes
+A* total elapsed time: 0.393618 s
+  server queries time: 0.376946 s
+  search-only time: 0.016672 s
+Server bytes received: 91075587 bytes
+Running A* from 364076191 to 10245729243 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1902
+Path length: 229 nodes
+A* total elapsed time: 0.277680 s
+  server queries time: 0.251745 s
+  search-only time: 0.025935 s
+Server bytes received: 60717058 bytes
+Running A* from 665746636 to 298622476 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1885
+Path length: 179 nodes
+A* total elapsed time: 0.387317 s
+  server queries time: 0.366765 s
+  search-only time: 0.020551 s
+Server bytes received: 91075587 bytes
+Running A* from 414225676 to 321542510 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1523
+Path length: 183 nodes
+A* total elapsed time: 0.497859 s
+  server queries time: 0.480463 s
+  search-only time: 0.017397 s
+Server bytes received: 121434116 bytes
+Running A* from 617820393 to 287027452 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1576
+Path length: 173 nodes
+A* total elapsed time: 0.137660 s
+  server queries time: 0.123758 s
+  search-only time: 0.013902 s
+Server bytes received: 30358529 bytes
+Running A* from 5237692132 to 461144267 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1819
+Path length: 197 nodes
+A* total elapsed time: 0.510749 s
+  server queries time: 0.490941 s
+  search-only time: 0.019809 s
+Server bytes received: 121434116 bytes
+Running A* from 263256888 to 921851357 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1718
+Path length: 186 nodes
+A* total elapsed time: 0.497992 s
+  server queries time: 0.478677 s
+  search-only time: 0.019315 s
+Server bytes received: 121434116 bytes
+Running A* from 490235397 to 1255643819 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1145
+Path length: 75 nodes
+A* total elapsed time: 0.129084 s
+  server queries time: 0.117731 s
+  search-only time: 0.011353 s
+Server bytes received: 30358529 bytes
+Running A* from 1921946055 to 2160691939 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1610
+Path length: 176 nodes
+A* total elapsed time: 0.514391 s
+  server queries time: 0.497696 s
+  search-only time: 0.016696 s
+Server bytes received: 121434116 bytes
+Running A* from 13555579467 to 260395179 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1681
+Path length: 175 nodes
+A* total elapsed time: 0.520622 s
+  server queries time: 0.503662 s
+  search-only time: 0.016959 s
+Server bytes received: 121434116 bytes
+Running A* from 206180945 to 12802395405 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2503
+Path length: 314 nodes
+A* total elapsed time: 0.283795 s
+  server queries time: 0.257589 s
+  search-only time: 0.026206 s
+Server bytes received: 60717058 bytes
+Running A* from 29271871 to 102224930 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1335
+Path length: 133 nodes
+A* total elapsed time: 0.507823 s
+  server queries time: 0.489244 s
+  search-only time: 0.018579 s
+Server bytes received: 121434116 bytes
+Running A* from 745461302 to 1779698014 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1429
+Path length: 144 nodes
+A* total elapsed time: 0.517684 s
+  server queries time: 0.500746 s
+  search-only time: 0.016938 s
+Server bytes received: 121434116 bytes
+Running A* from 296924093 to 2399435020 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1399
+Path length: 179 nodes
+A* total elapsed time: 0.371573 s
+  server queries time: 0.356814 s
+  search-only time: 0.014759 s
+Server bytes received: 91075587 bytes
+Running A* from 327003860 to 4267392379 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1758
+Path length: 265 nodes
+A* total elapsed time: 0.502959 s
+  server queries time: 0.483615 s
+  search-only time: 0.019344 s
+Server bytes received: 121434116 bytes
+Running A* from 10901634553 to 268744936 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1576
+Path length: 209 nodes
+A* total elapsed time: 0.393689 s
+  server queries time: 0.373159 s
+  search-only time: 0.020530 s
+Server bytes received: 91075587 bytes
+Running A* from 1246606021 to 10537151055 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2004
+Path length: 222 nodes
+A* total elapsed time: 0.255301 s
+  server queries time: 0.241994 s
+  search-only time: 0.013307 s
+Server bytes received: 60717058 bytes
+Running A* from 4854922736 to 8117788216 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2098
+Path length: 175 nodes
+A* total elapsed time: 0.522176 s
+  server queries time: 0.494445 s
+  search-only time: 0.027731 s
+Server bytes received: 121434116 bytes
+Running A* from 290818162 to 2993629961 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2184
+Path length: 202 nodes
+A* total elapsed time: 0.526864 s
+  server queries time: 0.504956 s
+  search-only time: 0.021908 s
+Server bytes received: 121434116 bytes
+Running A* from 1651369480 to 10029051 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1356
+Path length: 165 nodes
+A* total elapsed time: 0.127500 s
+  server queries time: 0.116466 s
+  search-only time: 0.011034 s
+Server bytes received: 30358529 bytes
+Running A* from 3100349546 to 2569421829 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1596
+Path length: 167 nodes
+A* total elapsed time: 0.372761 s
+  server queries time: 0.356067 s
+  search-only time: 0.016694 s
+Server bytes received: 91075587 bytes
+Running A* from 1975546350 to 114297630 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1178
+Path length: 137 nodes
+A* total elapsed time: 0.380857 s
+  server queries time: 0.365938 s
+  search-only time: 0.014919 s
+Server bytes received: 91075587 bytes
+Running A* from 825774711 to 298405370 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1596
+Path length: 165 nodes
+A* total elapsed time: 0.257307 s
+  server queries time: 0.240754 s
+  search-only time: 0.016553 s
+Server bytes received: 60717058 bytes
+Running A* from 550114567 to 945873819 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1459
+Path length: 134 nodes
+A* total elapsed time: 0.129004 s
+  server queries time: 0.116930 s
+  search-only time: 0.012074 s
+Server bytes received: 30358529 bytes
+Running A* from 268480848 to 459970929 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1667
+Path length: 171 nodes
+A* total elapsed time: 0.512939 s
+  server queries time: 0.493702 s
+  search-only time: 0.019237 s
+Server bytes received: 121434116 bytes
+Running A* from 1668903242 to 99201149 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1257
+Path length: 169 nodes
+A* total elapsed time: 0.262566 s
+  server queries time: 0.247753 s
+  search-only time: 0.014814 s
+Server bytes received: 60717058 bytes
+Running A* from 929095028 to 280882173 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1368
+Path length: 150 nodes
+A* total elapsed time: 0.132854 s
+  server queries time: 0.117856 s
+  search-only time: 0.014998 s
+Server bytes received: 30358529 bytes
+-- running journeys of distance 30000...
+Running A* from 295440293 to 2470376712 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2262
+Path length: 232 nodes
+A* total elapsed time: 0.661958 s
+  server queries time: 0.631760 s
+  search-only time: 0.030197 s
+Server bytes received: 151792645 bytes
+Running A* from 213057945 to 266595852 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1987
+Path length: 158 nodes
+A* total elapsed time: 0.520445 s
+  server queries time: 0.497477 s
+  search-only time: 0.022967 s
+Server bytes received: 121434116 bytes
+Running A* from 12347704536 to 33186141 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2442
+Path length: 334 nodes
+A* total elapsed time: 0.384742 s
+  server queries time: 0.368308 s
+  search-only time: 0.016435 s
+Server bytes received: 91075587 bytes
+Running A* from 1835857918 to 309308820 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2119
+Path length: 191 nodes
+A* total elapsed time: 0.370819 s
+  server queries time: 0.355083 s
+  search-only time: 0.015736 s
+Server bytes received: 91075587 bytes
+Running A* from 10289892080 to 9609619367 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2020
+Path length: 227 nodes
+A* total elapsed time: 0.386943 s
+  server queries time: 0.367030 s
+  search-only time: 0.019913 s
+Server bytes received: 91075587 bytes
+Running A* from 2228841458 to 298413249 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1694
+Path length: 145 nodes
+A* total elapsed time: 0.256165 s
+  server queries time: 0.241081 s
+  search-only time: 0.015085 s
+Server bytes received: 60717058 bytes
+Running A* from 322835380 to 2365778248 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2964
+Path length: 346 nodes
+A* total elapsed time: 0.780695 s
+  server queries time: 0.746663 s
+  search-only time: 0.034032 s
+Server bytes received: 182151174 bytes
+Running A* from 380486765 to 356727535 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2271
+Path length: 201 nodes
+A* total elapsed time: 0.375157 s
+  server queries time: 0.354361 s
+  search-only time: 0.020796 s
+Server bytes received: 91075587 bytes
+Running A* from 4567570317 to 9210375252 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2677
+Path length: 286 nodes
+A* total elapsed time: 0.537693 s
+  server queries time: 0.492777 s
+  search-only time: 0.044917 s
+Server bytes received: 121434116 bytes
+Running A* from 12969775556 to 5522521093 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1632
+Path length: 189 nodes
+A* total elapsed time: 0.529086 s
+  server queries time: 0.509695 s
+  search-only time: 0.019391 s
+Server bytes received: 121434116 bytes
+Running A* from 11022765559 to 305676394 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2023
+Path length: 212 nodes
+A* total elapsed time: 0.533205 s
+  server queries time: 0.503204 s
+  search-only time: 0.030001 s
+Server bytes received: 121434116 bytes
+Running A* from 280103949 to 401756373 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 4498
+Path length: 331 nodes
+A* total elapsed time: 0.625745 s
+  server queries time: 0.604090 s
+  search-only time: 0.021655 s
+Server bytes received: 151792645 bytes
+Running A* from 14611086 to 2906079784 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 4521
+Path length: 297 nodes
+A* total elapsed time: 0.728510 s
+  server queries time: 0.710604 s
+  search-only time: 0.017906 s
+Server bytes received: 182151174 bytes
+Running A* from 713568664 to 1014462230 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1372
+Path length: 90 nodes
+A* total elapsed time: 0.249911 s
+  server queries time: 0.237861 s
+  search-only time: 0.012050 s
+Server bytes received: 60717058 bytes
+Running A* from 8516142878 to 268958572 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1807
+Path length: 207 nodes
+A* total elapsed time: 0.373395 s
+  server queries time: 0.355587 s
+  search-only time: 0.017808 s
+Server bytes received: 91075587 bytes
+Running A* from 294070928 to 2532328739 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 5317
+Path length: 450 nodes
+A* total elapsed time: 0.867929 s
+  server queries time: 0.836207 s
+  search-only time: 0.031722 s
+Server bytes received: 212509703 bytes
+Running A* from 1803288509 to 12810567471 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2047
+Path length: 263 nodes
+A* total elapsed time: 0.510131 s
+  server queries time: 0.489445 s
+  search-only time: 0.020687 s
+Server bytes received: 121434116 bytes
+Running A* from 413670871 to 12809771714 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2468
+Path length: 339 nodes
+A* total elapsed time: 0.636349 s
+  server queries time: 0.615623 s
+  search-only time: 0.020727 s
+Server bytes received: 151792645 bytes
+Running A* from 3278225899 to 2137656661 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1673
+Path length: 203 nodes
+A* total elapsed time: 0.506559 s
+  server queries time: 0.488946 s
+  search-only time: 0.017613 s
+Server bytes received: 121434116 bytes
+Running A* from 420075590 to 317663781 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2130
+Path length: 276 nodes
+A* total elapsed time: 0.523551 s
+  server queries time: 0.497440 s
+  search-only time: 0.026110 s
+Server bytes received: 121434116 bytes
+Running A* from 2390236945 to 317446076 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2259
+Path length: 282 nodes
+A* total elapsed time: 0.257898 s
+  server queries time: 0.241273 s
+  search-only time: 0.016626 s
+Server bytes received: 60717058 bytes
+Running A* from 5254058388 to 410227819 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1463
+Path length: 153 nodes
+A* total elapsed time: 0.260610 s
+  server queries time: 0.246170 s
+  search-only time: 0.014440 s
+Server bytes received: 60717058 bytes
+Running A* from 443225065 to 249674451 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2283
+Path length: 259 nodes
+A* total elapsed time: 0.520908 s
+  server queries time: 0.496337 s
+  search-only time: 0.024571 s
+Server bytes received: 121434116 bytes
+Running A* from 299510564 to 2919159660 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2490
+Path length: 266 nodes
+A* total elapsed time: 0.530506 s
+  server queries time: 0.497283 s
+  search-only time: 0.033223 s
+Server bytes received: 121434116 bytes
+Running A* from 6355380580 to 676482631 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2352
+Path length: 277 nodes
+A* total elapsed time: 0.282516 s
+  server queries time: 0.254387 s
+  search-only time: 0.028128 s
+Server bytes received: 60717058 bytes
+Running A* from 7080307074 to 315269638 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1412
+Path length: 110 nodes
+A* total elapsed time: 0.131679 s
+  server queries time: 0.118777 s
+  search-only time: 0.012902 s
+Server bytes received: 30358529 bytes
+Running A* from 299083534 to 297950428 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1904
+Path length: 198 nodes
+A* total elapsed time: 0.396125 s
+  server queries time: 0.377868 s
+  search-only time: 0.018257 s
+Server bytes received: 91075587 bytes
+Running A* from 1883505388 to 4112388810 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3233
+Path length: 360 nodes
+A* total elapsed time: 0.765302 s
+  server queries time: 0.736565 s
+  search-only time: 0.028737 s
+Server bytes received: 182151174 bytes
+Running A* from 5287669095 to 772079750 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2067
+Path length: 227 nodes
+A* total elapsed time: 0.267652 s
+  server queries time: 0.248840 s
+  search-only time: 0.018812 s
+Server bytes received: 60717058 bytes
+Running A* from 8222064380 to 116022045 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2004
+Path length: 202 nodes
+A* total elapsed time: 0.509502 s
+  server queries time: 0.492105 s
+  search-only time: 0.017397 s
+Server bytes received: 121434116 bytes
+-- running journeys of distance 40000...
+Running A* from 2097861161 to 1811756393 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2750
+Path length: 290 nodes
+A* total elapsed time: 0.635068 s
+  server queries time: 0.610716 s
+  search-only time: 0.024352 s
+Server bytes received: 151792645 bytes
+Running A* from 341224020 to 3161214469 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2025
+Path length: 154 nodes
+A* total elapsed time: 0.260755 s
+  server queries time: 0.242483 s
+  search-only time: 0.018272 s
+Server bytes received: 60717058 bytes
+Running A* from 312432515 to 2326301513 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3542
+Path length: 281 nodes
+A* total elapsed time: 0.674899 s
+  server queries time: 0.629393 s
+  search-only time: 0.045506 s
+Server bytes received: 151792645 bytes
+Running A* from 1175547941 to 7468147629 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3841
+Path length: 433 nodes
+A* total elapsed time: 0.770600 s
+  server queries time: 0.736259 s
+  search-only time: 0.034341 s
+Server bytes received: 182151174 bytes
+Running A* from 25647254 to 936169467 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2263
+Path length: 257 nodes
+A* total elapsed time: 0.253406 s
+  server queries time: 0.234890 s
+  search-only time: 0.018516 s
+Server bytes received: 60717058 bytes
+Running A* from 253822078 to 1169510988 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2648
+Path length: 251 nodes
+A* total elapsed time: 0.650520 s
+  server queries time: 0.618155 s
+  search-only time: 0.032365 s
+Server bytes received: 151792645 bytes
+Running A* from 309066907 to 2823453689 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3167
+Path length: 272 nodes
+A* total elapsed time: 0.654497 s
+  server queries time: 0.625112 s
+  search-only time: 0.029385 s
+Server bytes received: 151792645 bytes
+Running A* from 296506283 to 493847212 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2257
+Path length: 200 nodes
+A* total elapsed time: 0.626395 s
+  server queries time: 0.605995 s
+  search-only time: 0.020400 s
+Server bytes received: 151792645 bytes
+Running A* from 286696636 to 11036734648 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1951
+Path length: 191 nodes
+A* total elapsed time: 0.510923 s
+  server queries time: 0.492603 s
+  search-only time: 0.018320 s
+Server bytes received: 121434116 bytes
+Running A* from 309835165 to 315263694 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2478
+Path length: 345 nodes
+A* total elapsed time: 0.135083 s
+  server queries time: 0.117802 s
+  search-only time: 0.017280 s
+Server bytes received: 30358529 bytes
+Running A* from 872947730 to 2421090421 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3643
+Path length: 452 nodes
+A* total elapsed time: 0.923462 s
+  server queries time: 0.858456 s
+  search-only time: 0.065006 s
+Server bytes received: 212509703 bytes
+Running A* from 269128012 to 3010327558 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3432
+Path length: 407 nodes
+A* total elapsed time: 0.802554 s
+  server queries time: 0.751574 s
+  search-only time: 0.050980 s
+Server bytes received: 182151174 bytes
+Running A* from 1461950834 to 4031848665 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3254
+Path length: 262 nodes
+A* total elapsed time: 0.654701 s
+  server queries time: 0.622650 s
+  search-only time: 0.032051 s
+Server bytes received: 151792645 bytes
+Running A* from 746308210 to 1685985063 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2155
+Path length: 175 nodes
+A* total elapsed time: 0.368801 s
+  server queries time: 0.353907 s
+  search-only time: 0.014894 s
+Server bytes received: 91075587 bytes
+Running A* from 108197060 to 7143761775 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2453
+Path length: 310 nodes
+A* total elapsed time: 0.526165 s
+  server queries time: 0.491125 s
+  search-only time: 0.035040 s
+Server bytes received: 121434116 bytes
+Running A* from 296962516 to 5699834009 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1926
+Path length: 185 nodes
+A* total elapsed time: 0.271414 s
+  server queries time: 0.255479 s
+  search-only time: 0.015936 s
+Server bytes received: 60717058 bytes
+Running A* from 316876981 to 444007577 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3169
+Path length: 395 nodes
+A* total elapsed time: 0.784686 s
+  server queries time: 0.735394 s
+  search-only time: 0.049292 s
+Server bytes received: 182151174 bytes
+Running A* from 7817299038 to 27443701 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2471
+Path length: 218 nodes
+A* total elapsed time: 0.628729 s
+  server queries time: 0.604555 s
+  search-only time: 0.024174 s
+Server bytes received: 151792645 bytes
+Running A* from 2571441314 to 2178857998 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3693
+Path length: 290 nodes
+A* total elapsed time: 0.484030 s
+  server queries time: 0.470766 s
+  search-only time: 0.013264 s
+Server bytes received: 121434116 bytes
+Running A* from 629556719 to 476017829 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3247
+Path length: 335 nodes
+A* total elapsed time: 0.776994 s
+  server queries time: 0.741390 s
+  search-only time: 0.035604 s
+Server bytes received: 182151174 bytes
+Running A* from 269104291 to 10733196766 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3134
+Path length: 251 nodes
+A* total elapsed time: 0.379029 s
+  server queries time: 0.363721 s
+  search-only time: 0.015308 s
+Server bytes received: 91075587 bytes
+Running A* from 1811567858 to 1972083126 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2868
+Path length: 335 nodes
+A* total elapsed time: 0.772075 s
+  server queries time: 0.745987 s
+  search-only time: 0.026087 s
+Server bytes received: 182151174 bytes
+Running A* from 33475435 to 303807012 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3093
+Path length: 270 nodes
+A* total elapsed time: 0.775632 s
+  server queries time: 0.737435 s
+  search-only time: 0.038197 s
+Server bytes received: 182151174 bytes
+Running A* from 9756375923 to 746727284 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3294
+Path length: 373 nodes
+A* total elapsed time: 0.682864 s
+  server queries time: 0.634731 s
+  search-only time: 0.048134 s
+Server bytes received: 151792645 bytes
+Running A* from 544217411 to 3780777135 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2504
+Path length: 245 nodes
+A* total elapsed time: 0.272670 s
+  server queries time: 0.249613 s
+  search-only time: 0.023057 s
+Server bytes received: 60717058 bytes
+Running A* from 748871503 to 5682917304 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2403
+Path length: 285 nodes
+A* total elapsed time: 0.529093 s
+  server queries time: 0.497239 s
+  search-only time: 0.031854 s
+Server bytes received: 121434116 bytes
+Running A* from 505125197 to 60483843 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2966
+Path length: 347 nodes
+A* total elapsed time: 0.780776 s
+  server queries time: 0.736336 s
+  search-only time: 0.044440 s
+Server bytes received: 182151174 bytes
+Running A* from 13410417849 to 1136197359 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 1888
+Path length: 187 nodes
+A* total elapsed time: 0.375454 s
+  server queries time: 0.360309 s
+  search-only time: 0.015146 s
+Server bytes received: 91075587 bytes
+Running A* from 1479520430 to 307692649 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2907
+Path length: 334 nodes
+A* total elapsed time: 0.495638 s
+  server queries time: 0.475154 s
+  search-only time: 0.020484 s
+Server bytes received: 121434116 bytes
+Running A* from 443876050 to 339009525 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 4130
+Path length: 382 nodes
+A* total elapsed time: 0.511253 s
+  server queries time: 0.494291 s
+  search-only time: 0.016962 s
+Server bytes received: 121434116 bytes
+-- running journeys of distance 50000...
+Running A* from 469708144 to 7978238304 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3625
+Path length: 404 nodes
+A* total elapsed time: 0.658130 s
+  server queries time: 0.618278 s
+  search-only time: 0.039852 s
+Server bytes received: 151792645 bytes
+Running A* from 7090912335 to 35296908 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3031
+Path length: 366 nodes
+A* total elapsed time: 0.499043 s
+  server queries time: 0.476217 s
+  search-only time: 0.022826 s
+Server bytes received: 121434116 bytes
+Running A* from 12573401400 to 2135528058 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3015
+Path length: 310 nodes
+A* total elapsed time: 0.647769 s
+  server queries time: 0.617034 s
+  search-only time: 0.030735 s
+Server bytes received: 151792645 bytes
+Running A* from 1427766316 to 477619411 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3116
+Path length: 363 nodes
+A* total elapsed time: 0.522969 s
+  server queries time: 0.489369 s
+  search-only time: 0.033600 s
+Server bytes received: 121434116 bytes
+Running A* from 2039537986 to 5278614965 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 4143
+Path length: 434 nodes
+A* total elapsed time: 0.666360 s
+  server queries time: 0.623308 s
+  search-only time: 0.043052 s
+Server bytes received: 151792645 bytes
+Running A* from 2434836232 to 1834135246 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2536
+Path length: 244 nodes
+A* total elapsed time: 0.624219 s
+  server queries time: 0.605925 s
+  search-only time: 0.018294 s
+Server bytes received: 151792645 bytes
+Running A* from 1770863429 to 145871887 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2591
+Path length: 290 nodes
+A* total elapsed time: 0.535888 s
+  server queries time: 0.503118 s
+  search-only time: 0.032771 s
+Server bytes received: 121434116 bytes
+Running A* from 360436670 to 2610607822 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3055
+Path length: 310 nodes
+A* total elapsed time: 0.549851 s
+  server queries time: 0.502869 s
+  search-only time: 0.046982 s
+Server bytes received: 121434116 bytes
+Running A* from 1139758641 to 309406754 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3843
+Path length: 404 nodes
+A* total elapsed time: 0.650419 s
+  server queries time: 0.611168 s
+  search-only time: 0.039252 s
+Server bytes received: 151792645 bytes
+Running A* from 663867108 to 4471046714 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3507
+Path length: 348 nodes
+A* total elapsed time: 0.386746 s
+  server queries time: 0.364471 s
+  search-only time: 0.022275 s
+Server bytes received: 91075587 bytes
+Running A* from 299762993 to 344188708 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2966
+Path length: 301 nodes
+A* total elapsed time: 0.405286 s
+  server queries time: 0.371458 s
+  search-only time: 0.033828 s
+Server bytes received: 91075587 bytes
+Running A* from 3003603011 to 1865817207 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3731
+Path length: 404 nodes
+A* total elapsed time: 0.652081 s
+  server queries time: 0.618152 s
+  search-only time: 0.033928 s
+Server bytes received: 151792645 bytes
+Running A* from 890036369 to 8672735174 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2339
+Path length: 178 nodes
+A* total elapsed time: 0.516738 s
+  server queries time: 0.494174 s
+  search-only time: 0.022564 s
+Server bytes received: 121434116 bytes
+Running A* from 459970681 to 4117283257 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3818
+Path length: 376 nodes
+A* total elapsed time: 0.935233 s
+  server queries time: 0.886244 s
+  search-only time: 0.048989 s
+Server bytes received: 212509703 bytes
+Running A* from 33980331 to 3981650745 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3590
+Path length: 366 nodes
+A* total elapsed time: 0.681774 s
+  server queries time: 0.628078 s
+  search-only time: 0.053696 s
+Server bytes received: 151792645 bytes
+Running A* from 1687075786 to 1727225779 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3505
+Path length: 306 nodes
+A* total elapsed time: 0.784761 s
+  server queries time: 0.745635 s
+  search-only time: 0.039126 s
+Server bytes received: 182151174 bytes
+Running A* from 3119287047 to 1678218868 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3268
+Path length: 354 nodes
+A* total elapsed time: 0.670625 s
+  server queries time: 0.631498 s
+  search-only time: 0.039127 s
+Server bytes received: 151792645 bytes
+Running A* from 132118870 to 704742949 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3307
+Path length: 379 nodes
+A* total elapsed time: 0.796690 s
+  server queries time: 0.746362 s
+  search-only time: 0.050328 s
+Server bytes received: 182151174 bytes
+Running A* from 472438499 to 2029120638 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+!! No path found between 472438499 and 2029120638
+Running A* from 296891764 to 2383505898 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2382
+Path length: 246 nodes
+A* total elapsed time: 0.401630 s
+  server queries time: 0.378968 s
+  search-only time: 0.022662 s
+Server bytes received: 91075587 bytes
+Running A* from 767860711 to 330171539 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2568
+Path length: 250 nodes
+A* total elapsed time: 0.386372 s
+  server queries time: 0.363860 s
+  search-only time: 0.022512 s
+Server bytes received: 91075587 bytes
+Running A* from 10613957066 to 1547017432 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 4453
+Path length: 467 nodes
+A* total elapsed time: 0.920564 s
+  server queries time: 0.865776 s
+  search-only time: 0.054789 s
+Server bytes received: 212509703 bytes
+Running A* from 1290784110 to 1893811275 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3616
+Path length: 337 nodes
+A* total elapsed time: 0.783529 s
+  server queries time: 0.737409 s
+  search-only time: 0.046120 s
+Server bytes received: 182151174 bytes
+Running A* from 8561138898 to 8728519894 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2518
+Path length: 216 nodes
+A* total elapsed time: 0.387740 s
+  server queries time: 0.369387 s
+  search-only time: 0.018353 s
+Server bytes received: 91075587 bytes
+Running A* from 255564650 to 390933587 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3196
+Path length: 320 nodes
+A* total elapsed time: 0.534178 s
+  server queries time: 0.501929 s
+  search-only time: 0.032249 s
+Server bytes received: 121434116 bytes
+Running A* from 300569441 to 2504915666 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3765
+Path length: 490 nodes
+A* total elapsed time: 0.799657 s
+  server queries time: 0.745515 s
+  search-only time: 0.054142 s
+Server bytes received: 182151174 bytes
+Running A* from 698881825 to 304544856 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2935
+Path length: 314 nodes
+A* total elapsed time: 0.664743 s
+  server queries time: 0.628441 s
+  search-only time: 0.036303 s
+Server bytes received: 151792645 bytes
+Running A* from 11927213642 to 1438424204 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2483
+Path length: 226 nodes
+A* total elapsed time: 0.514805 s
+  server queries time: 0.491201 s
+  search-only time: 0.023604 s
+Server bytes received: 121434116 bytes
+Running A* from 247922799 to 296241024 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3475
+Path length: 329 nodes
+A* total elapsed time: 0.785147 s
+  server queries time: 0.747954 s
+  search-only time: 0.037194 s
+Server bytes received: 182151174 bytes
+Running A* from 94865477 to 3649549291 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2951
+Path length: 336 nodes
+A* total elapsed time: 0.663997 s
+  server queries time: 0.618326 s
+  search-only time: 0.045670 s
+Server bytes received: 151792645 bytes
+-- running journeys of distance 60000...
+Running A* from 1704141402 to 9096926146 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 4636
+Path length: 536 nodes
+A* total elapsed time: 0.946323 s
+  server queries time: 0.862122 s
+  search-only time: 0.084200 s
+Server bytes received: 212509703 bytes
+Running A* from 6960559342 to 271446321 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3082
+Path length: 269 nodes
+A* total elapsed time: 0.781362 s
+  server queries time: 0.738167 s
+  search-only time: 0.043195 s
+Server bytes received: 182151174 bytes
+Running A* from 332558773 to 8062265091 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3478
+Path length: 313 nodes
+A* total elapsed time: 0.779500 s
+  server queries time: 0.736440 s
+  search-only time: 0.043060 s
+Server bytes received: 182151174 bytes
+Running A* from 1075200604 to 5310423103 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3652
+Path length: 367 nodes
+A* total elapsed time: 0.654673 s
+  server queries time: 0.616827 s
+  search-only time: 0.037846 s
+Server bytes received: 151792645 bytes
+Running A* from 10607703415 to 8087274 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 4141
+Path length: 413 nodes
+A* total elapsed time: 0.776200 s
+  server queries time: 0.731844 s
+  search-only time: 0.044356 s
+Server bytes received: 182151174 bytes
+Running A* from 582638772 to 684619659 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 4412
+Path length: 498 nodes
+A* total elapsed time: 0.623476 s
+  server queries time: 0.593202 s
+  search-only time: 0.030274 s
+Server bytes received: 151792645 bytes
+Running A* from 1111071174 to 1304083300 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3022
+Path length: 261 nodes
+A* total elapsed time: 0.378408 s
+  server queries time: 0.356501 s
+  search-only time: 0.021907 s
+Server bytes received: 91075587 bytes
+Running A* from 2705263109 to 304307633 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 6610
+Path length: 502 nodes
+A* total elapsed time: 1.511953 s
+  server queries time: 1.452387 s
+  search-only time: 0.059566 s
+Server bytes received: 364302348 bytes
+Running A* from 2154439985 to 618675984 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 5040
+Path length: 585 nodes
+A* total elapsed time: 1.074438 s
+  server queries time: 0.998369 s
+  search-only time: 0.076069 s
+Server bytes received: 242868232 bytes
+Running A* from 404745769 to 1597316161 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3401
+Path length: 291 nodes
+A* total elapsed time: 0.777166 s
+  server queries time: 0.738564 s
+  search-only time: 0.038602 s
+Server bytes received: 182151174 bytes
+Running A* from 7385691473 to 309287878 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3117
+Path length: 329 nodes
+A* total elapsed time: 0.511101 s
+  server queries time: 0.484417 s
+  search-only time: 0.026684 s
+Server bytes received: 121434116 bytes
+Running A* from 318577407 to 1014424038 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3689
+Path length: 339 nodes
+A* total elapsed time: 0.761679 s
+  server queries time: 0.722965 s
+  search-only time: 0.038714 s
+Server bytes received: 182151174 bytes
+Running A* from 248817211 to 247139632 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3742
+Path length: 350 nodes
+A* total elapsed time: 0.912455 s
+  server queries time: 0.860850 s
+  search-only time: 0.051606 s
+Server bytes received: 212509703 bytes
+Running A* from 331236786 to 12084237935 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2990
+Path length: 304 nodes
+A* total elapsed time: 0.634363 s
+  server queries time: 0.609886 s
+  search-only time: 0.024477 s
+Server bytes received: 151792645 bytes
+Running A* from 3596677668 to 3948186968 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3442
+Path length: 363 nodes
+A* total elapsed time: 0.625405 s
+  server queries time: 0.597037 s
+  search-only time: 0.028368 s
+Server bytes received: 151792645 bytes
+Running A* from 9197426086 to 1849542352 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3056
+Path length: 298 nodes
+A* total elapsed time: 0.625702 s
+  server queries time: 0.603083 s
+  search-only time: 0.022619 s
+Server bytes received: 151792645 bytes
+Running A* from 561177344 to 6220826864 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+!! No path found between 561177344 and 6220826864
+Running A* from 557429054 to 8394131195 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3710
+Path length: 420 nodes
+A* total elapsed time: 0.799433 s
+  server queries time: 0.735214 s
+  search-only time: 0.064219 s
+Server bytes received: 182151174 bytes
+Running A* from 3840022060 to 4478893107 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3870
+Path length: 345 nodes
+A* total elapsed time: 0.900611 s
+  server queries time: 0.856851 s
+  search-only time: 0.043760 s
+Server bytes received: 212509703 bytes
+Running A* from 9386512790 to 12802437745 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3282
+Path length: 373 nodes
+A* total elapsed time: 0.545387 s
+  server queries time: 0.512858 s
+  search-only time: 0.032530 s
+Server bytes received: 121434116 bytes
+Running A* from 5809966575 to 290469349 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3468
+Path length: 310 nodes
+A* total elapsed time: 0.783125 s
+  server queries time: 0.738607 s
+  search-only time: 0.044518 s
+Server bytes received: 182151174 bytes
+Running A* from 4459904061 to 5064715595 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3636
+Path length: 291 nodes
+A* total elapsed time: 0.890286 s
+  server queries time: 0.854363 s
+  search-only time: 0.035922 s
+Server bytes received: 212509703 bytes
+Running A* from 2452671170 to 291733816 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 6142
+Path length: 501 nodes
+A* total elapsed time: 1.146003 s
+  server queries time: 1.089307 s
+  search-only time: 0.056696 s
+Server bytes received: 273226761 bytes
+Running A* from 130042898 to 12944710579 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 4346
+Path length: 416 nodes
+A* total elapsed time: 0.925814 s
+  server queries time: 0.853737 s
+  search-only time: 0.072076 s
+Server bytes received: 212509703 bytes
+Running A* from 535889754 to 368971167 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 2838
+Path length: 300 nodes
+A* total elapsed time: 0.667297 s
+  server queries time: 0.634586 s
+  search-only time: 0.032711 s
+Server bytes received: 151792645 bytes
+Running A* from 29684853 to 2119260567 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3174
+Path length: 293 nodes
+A* total elapsed time: 0.646180 s
+  server queries time: 0.621232 s
+  search-only time: 0.024948 s
+Server bytes received: 151792645 bytes
+Running A* from 1152744868 to 307765193 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 4768
+Path length: 442 nodes
+A* total elapsed time: 0.747032 s
+  server queries time: 0.725829 s
+  search-only time: 0.021203 s
+Server bytes received: 182151174 bytes
+Running A* from 256018003 to 302320965 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3151
+Path length: 376 nodes
+A* total elapsed time: 0.500583 s
+  server queries time: 0.476723 s
+  search-only time: 0.023860 s
+Server bytes received: 121434116 bytes
+Running A* from 7695458764 to 12302836938 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3612
+Path length: 371 nodes
+A* total elapsed time: 1.022712 s
+  server queries time: 0.986228 s
+  search-only time: 0.036484 s
+Server bytes received: 242868232 bytes
+Running A* from 1116883051 to 321576449 in country Switzerland using approach Block(0.5) and architecture SinglePass ...
+A* found a path with cost 3581
+Path length: 409 nodes
+A* total elapsed time: 0.642528 s
+  server queries time: 0.609891 s
+  search-only time: 0.032638 s
+Server bytes received: 151792645 bytes

@@ -1,0 +1,2322 @@
+-- starting benchmarks for France Naive node0 --
+-- running journeys of distance 500...
+Running A* from 7251342218 to 736631130 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 51
+Path length: 4 nodes
+A* total elapsed time: 3.939749 s
+  server queries time: 2.583858 s
+  search-only time: 1.355891 s
+Server bytes received: 166648449 bytes
+Running A* from 2191353924 to 1265211283 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 86
+Path length: 16 nodes
+A* total elapsed time: 2.733187 s
+  server queries time: 2.586087 s
+  search-only time: 0.147100 s
+Server bytes received: 166648449 bytes
+Running A* from 496980752 to 1470846416 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 89
+Path length: 15 nodes
+A* total elapsed time: 2.713157 s
+  server queries time: 2.569962 s
+  search-only time: 0.143195 s
+Server bytes received: 166648449 bytes
+Running A* from 105455016 to 1115017059 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 134
+Path length: 13 nodes
+A* total elapsed time: 2.713286 s
+  server queries time: 2.569594 s
+  search-only time: 0.143692 s
+Server bytes received: 166648449 bytes
+Running A* from 286501429 to 286268455 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 95
+Path length: 20 nodes
+A* total elapsed time: 2.733131 s
+  server queries time: 2.585107 s
+  search-only time: 0.148024 s
+Server bytes received: 166648449 bytes
+Running A* from 618926645 to 1037757745 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 71
+Path length: 18 nodes
+A* total elapsed time: 2.731885 s
+  server queries time: 2.588925 s
+  search-only time: 0.142960 s
+Server bytes received: 166648449 bytes
+Running A* from 412493727 to 397657383 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 59
+Path length: 6 nodes
+A* total elapsed time: 2.718661 s
+  server queries time: 2.575953 s
+  search-only time: 0.142708 s
+Server bytes received: 166648449 bytes
+Running A* from 1398394841 to 278574752 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 52
+Path length: 11 nodes
+A* total elapsed time: 2.726829 s
+  server queries time: 2.584272 s
+  search-only time: 0.142557 s
+Server bytes received: 166648449 bytes
+Running A* from 206339818 to 598396071 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 102
+Path length: 16 nodes
+A* total elapsed time: 2.730088 s
+  server queries time: 2.587006 s
+  search-only time: 0.143082 s
+Server bytes received: 166648449 bytes
+Running A* from 6367769388 to 1621752972 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 57
+Path length: 8 nodes
+A* total elapsed time: 2.739458 s
+  server queries time: 2.596823 s
+  search-only time: 0.142635 s
+Server bytes received: 166648449 bytes
+Running A* from 1949743114 to 1111347752 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 66
+Path length: 7 nodes
+A* total elapsed time: 2.731280 s
+  server queries time: 2.587872 s
+  search-only time: 0.143408 s
+Server bytes received: 166648449 bytes
+Running A* from 538279225 to 3434525432 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 92
+Path length: 15 nodes
+A* total elapsed time: 2.708870 s
+  server queries time: 2.566122 s
+  search-only time: 0.142749 s
+Server bytes received: 166648449 bytes
+Running A* from 4806159449 to 2566236119 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 46
+Path length: 6 nodes
+A* total elapsed time: 2.706778 s
+  server queries time: 2.564410 s
+  search-only time: 0.142368 s
+Server bytes received: 166648449 bytes
+Running A* from 372629988 to 372626663 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 130
+Path length: 17 nodes
+A* total elapsed time: 2.724181 s
+  server queries time: 2.582132 s
+  search-only time: 0.142049 s
+Server bytes received: 166648449 bytes
+Running A* from 283342334 to 283341375 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 62
+Path length: 10 nodes
+A* total elapsed time: 2.711970 s
+  server queries time: 2.570067 s
+  search-only time: 0.141903 s
+Server bytes received: 166648449 bytes
+Running A* from 1936509742 to 1968458543 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 35
+Path length: 2 nodes
+A* total elapsed time: 2.733750 s
+  server queries time: 2.591007 s
+  search-only time: 0.142744 s
+Server bytes received: 166648449 bytes
+Running A* from 694500183 to 13004337371 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 89
+Path length: 30 nodes
+A* total elapsed time: 2.727386 s
+  server queries time: 2.584870 s
+  search-only time: 0.142516 s
+Server bytes received: 166648449 bytes
+Running A* from 1164034288 to 3016570057 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 89
+Path length: 14 nodes
+A* total elapsed time: 2.721783 s
+  server queries time: 2.579451 s
+  search-only time: 0.142332 s
+Server bytes received: 166648449 bytes
+Running A* from 2639780124 to 289109314 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 122
+Path length: 19 nodes
+A* total elapsed time: 2.729784 s
+  server queries time: 2.587423 s
+  search-only time: 0.142361 s
+Server bytes received: 166648449 bytes
+Running A* from 4920343852 to 4920343821 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 28
+Path length: 4 nodes
+A* total elapsed time: 2.726304 s
+  server queries time: 2.583821 s
+  search-only time: 0.142483 s
+Server bytes received: 166648449 bytes
+Running A* from 6106065584 to 1499078067 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 78
+Path length: 6 nodes
+A* total elapsed time: 2.712987 s
+  server queries time: 2.570910 s
+  search-only time: 0.142077 s
+Server bytes received: 166648449 bytes
+Running A* from 6906939948 to 648670842 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 63
+Path length: 8 nodes
+A* total elapsed time: 2.714839 s
+  server queries time: 2.571936 s
+  search-only time: 0.142903 s
+Server bytes received: 166648449 bytes
+Running A* from 6819828963 to 1425057838 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 111
+Path length: 12 nodes
+A* total elapsed time: 2.704134 s
+  server queries time: 2.561979 s
+  search-only time: 0.142155 s
+Server bytes received: 166648449 bytes
+Running A* from 4056045038 to 706205617 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 52
+Path length: 10 nodes
+A* total elapsed time: 2.713892 s
+  server queries time: 2.570923 s
+  search-only time: 0.142969 s
+Server bytes received: 166648449 bytes
+Running A* from 1310191101 to 514123401 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 65
+Path length: 10 nodes
+A* total elapsed time: 2.463165 s
+  server queries time: 2.321838 s
+  search-only time: 0.141327 s
+Server bytes received: 166648449 bytes
+Running A* from 254439871 to 2422172162 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 60
+Path length: 16 nodes
+A* total elapsed time: 2.478915 s
+  server queries time: 2.337559 s
+  search-only time: 0.141356 s
+Server bytes received: 166648449 bytes
+Running A* from 762629780 to 3320604317 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 108
+Path length: 14 nodes
+A* total elapsed time: 2.464658 s
+  server queries time: 2.323806 s
+  search-only time: 0.140852 s
+Server bytes received: 166648449 bytes
+Running A* from 303469444 to 303060979 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 73
+Path length: 11 nodes
+A* total elapsed time: 2.485675 s
+  server queries time: 2.342365 s
+  search-only time: 0.143311 s
+Server bytes received: 166648449 bytes
+Running A* from 417667586 to 293849029 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 57
+Path length: 7 nodes
+A* total elapsed time: 2.483501 s
+  server queries time: 2.339217 s
+  search-only time: 0.144284 s
+Server bytes received: 166648449 bytes
+Running A* from 283629000 to 2262114139 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 62
+Path length: 8 nodes
+A* total elapsed time: 2.469907 s
+  server queries time: 2.329137 s
+  search-only time: 0.140769 s
+Server bytes received: 166648449 bytes
+-- running journeys of distance 1000...
+Running A* from 915309455 to 915349063 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 103
+Path length: 4 nodes
+A* total elapsed time: 2.442964 s
+  server queries time: 2.301009 s
+  search-only time: 0.141955 s
+Server bytes received: 166648449 bytes
+Running A* from 9358027076 to 1038252317 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 141
+Path length: 22 nodes
+A* total elapsed time: 2.433581 s
+  server queries time: 2.292976 s
+  search-only time: 0.140606 s
+Server bytes received: 166648449 bytes
+Running A* from 4935552371 to 5024953247 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 223
+Path length: 29 nodes
+A* total elapsed time: 2.486213 s
+  server queries time: 2.344521 s
+  search-only time: 0.141692 s
+Server bytes received: 166648449 bytes
+Running A* from 379688172 to 705489862 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 116
+Path length: 7 nodes
+A* total elapsed time: 2.486941 s
+  server queries time: 2.341671 s
+  search-only time: 0.145270 s
+Server bytes received: 166648449 bytes
+Running A* from 4611385379 to 269182155 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 196
+Path length: 42 nodes
+A* total elapsed time: 2.483991 s
+  server queries time: 2.341689 s
+  search-only time: 0.142303 s
+Server bytes received: 166648449 bytes
+Running A* from 1290799697 to 1305175968 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 253
+Path length: 15 nodes
+A* total elapsed time: 2.444817 s
+  server queries time: 2.304086 s
+  search-only time: 0.140731 s
+Server bytes received: 166648449 bytes
+Running A* from 250123267 to 11005859303 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 256
+Path length: 47 nodes
+A* total elapsed time: 2.497905 s
+  server queries time: 2.354539 s
+  search-only time: 0.143365 s
+Server bytes received: 166648449 bytes
+Running A* from 3357956392 to 738816505 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 112
+Path length: 7 nodes
+A* total elapsed time: 2.435759 s
+  server queries time: 2.294507 s
+  search-only time: 0.141252 s
+Server bytes received: 166648449 bytes
+Running A* from 3384569126 to 460449868 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 168
+Path length: 19 nodes
+A* total elapsed time: 2.474344 s
+  server queries time: 2.333096 s
+  search-only time: 0.141248 s
+Server bytes received: 166648449 bytes
+Running A* from 457835044 to 1887955128 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 606
+Path length: 60 nodes
+A* total elapsed time: 2.429488 s
+  server queries time: 2.287068 s
+  search-only time: 0.142421 s
+Server bytes received: 166648449 bytes
+Running A* from 3806773658 to 274390008 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 158
+Path length: 25 nodes
+A* total elapsed time: 2.485687 s
+  server queries time: 2.343446 s
+  search-only time: 0.142241 s
+Server bytes received: 166648449 bytes
+Running A* from 762193917 to 762758475 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 208
+Path length: 21 nodes
+A* total elapsed time: 2.472492 s
+  server queries time: 2.330903 s
+  search-only time: 0.141589 s
+Server bytes received: 166648449 bytes
+Running A* from 3824912882 to 428236129 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 163
+Path length: 21 nodes
+A* total elapsed time: 2.457822 s
+  server queries time: 2.317273 s
+  search-only time: 0.140549 s
+Server bytes received: 166648449 bytes
+Running A* from 1122812350 to 1119275769 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 308
+Path length: 46 nodes
+A* total elapsed time: 2.459460 s
+  server queries time: 2.317559 s
+  search-only time: 0.141901 s
+Server bytes received: 166648449 bytes
+Running A* from 5631306845 to 797793718 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 314
+Path length: 46 nodes
+A* total elapsed time: 2.446075 s
+  server queries time: 2.305115 s
+  search-only time: 0.140960 s
+Server bytes received: 166648449 bytes
+Running A* from 32559462 to 1528805570 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 139
+Path length: 30 nodes
+A* total elapsed time: 2.492098 s
+  server queries time: 2.350456 s
+  search-only time: 0.141642 s
+Server bytes received: 166648449 bytes
+Running A* from 1241375688 to 1785449437 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 91
+Path length: 11 nodes
+A* total elapsed time: 2.449864 s
+  server queries time: 2.308185 s
+  search-only time: 0.141678 s
+Server bytes received: 166648449 bytes
+Running A* from 3875860318 to 13448622441 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 250
+Path length: 12 nodes
+A* total elapsed time: 2.453058 s
+  server queries time: 2.311834 s
+  search-only time: 0.141224 s
+Server bytes received: 166648449 bytes
+Running A* from 10962567131 to 247274282 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 170
+Path length: 17 nodes
+A* total elapsed time: 2.434923 s
+  server queries time: 2.293906 s
+  search-only time: 0.141017 s
+Server bytes received: 166648449 bytes
+Running A* from 270323566 to 7758184953 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 309
+Path length: 36 nodes
+A* total elapsed time: 2.438630 s
+  server queries time: 2.297007 s
+  search-only time: 0.141624 s
+Server bytes received: 166648449 bytes
+Running A* from 1828568407 to 26353406 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 174
+Path length: 44 nodes
+A* total elapsed time: 2.446330 s
+  server queries time: 2.305781 s
+  search-only time: 0.140548 s
+Server bytes received: 166648449 bytes
+Running A* from 842220933 to 1832530303 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 160
+Path length: 31 nodes
+A* total elapsed time: 2.469150 s
+  server queries time: 2.326778 s
+  search-only time: 0.142372 s
+Server bytes received: 166648449 bytes
+Running A* from 13577572798 to 2257891006 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 156
+Path length: 16 nodes
+A* total elapsed time: 2.439807 s
+  server queries time: 2.298659 s
+  search-only time: 0.141148 s
+Server bytes received: 166648449 bytes
+Running A* from 7004544308 to 29331860 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 156
+Path length: 34 nodes
+A* total elapsed time: 2.455145 s
+  server queries time: 2.314362 s
+  search-only time: 0.140783 s
+Server bytes received: 166648449 bytes
+Running A* from 1204300928 to 9628991808 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 334
+Path length: 27 nodes
+A* total elapsed time: 2.453787 s
+  server queries time: 2.313222 s
+  search-only time: 0.140565 s
+Server bytes received: 166648449 bytes
+Running A* from 3647896665 to 2940386091 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 191
+Path length: 22 nodes
+A* total elapsed time: 2.467790 s
+  server queries time: 2.326839 s
+  search-only time: 0.140951 s
+Server bytes received: 166648449 bytes
+Running A* from 934843697 to 8069411785 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 419
+Path length: 39 nodes
+A* total elapsed time: 2.459955 s
+  server queries time: 2.320087 s
+  search-only time: 0.139868 s
+Server bytes received: 166648449 bytes
+Running A* from 6083337001 to 3245131571 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 124
+Path length: 17 nodes
+A* total elapsed time: 2.484217 s
+  server queries time: 2.342243 s
+  search-only time: 0.141974 s
+Server bytes received: 166648449 bytes
+Running A* from 1305740760 to 2457639872 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 73
+Path length: 10 nodes
+A* total elapsed time: 2.452196 s
+  server queries time: 2.311133 s
+  search-only time: 0.141063 s
+Server bytes received: 166648449 bytes
+Running A* from 504012213 to 8066862127 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 204
+Path length: 18 nodes
+A* total elapsed time: 2.451098 s
+  server queries time: 2.311312 s
+  search-only time: 0.139786 s
+Server bytes received: 166648449 bytes
+-- running journeys of distance 2000...
+Running A* from 311586112 to 266016129 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 287
+Path length: 40 nodes
+A* total elapsed time: 2.483044 s
+  server queries time: 2.340799 s
+  search-only time: 0.142244 s
+Server bytes received: 166648449 bytes
+Running A* from 402920612 to 8477308258 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 266
+Path length: 33 nodes
+A* total elapsed time: 2.458586 s
+  server queries time: 2.316649 s
+  search-only time: 0.141937 s
+Server bytes received: 166648449 bytes
+Running A* from 13795263 to 1264262785 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 479
+Path length: 47 nodes
+A* total elapsed time: 2.449529 s
+  server queries time: 2.307337 s
+  search-only time: 0.142192 s
+Server bytes received: 166648449 bytes
+Running A* from 1476075680 to 1888024765 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 189
+Path length: 28 nodes
+A* total elapsed time: 2.454785 s
+  server queries time: 2.313958 s
+  search-only time: 0.140827 s
+Server bytes received: 166648449 bytes
+Running A* from 498794353 to 1230552018 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 201
+Path length: 30 nodes
+A* total elapsed time: 2.438675 s
+  server queries time: 2.297966 s
+  search-only time: 0.140708 s
+Server bytes received: 166648449 bytes
+Running A* from 8481249263 to 288408121 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 252
+Path length: 22 nodes
+A* total elapsed time: 2.461389 s
+  server queries time: 2.319814 s
+  search-only time: 0.141575 s
+Server bytes received: 166648449 bytes
+Running A* from 1511486985 to 6352191508 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 204
+Path length: 25 nodes
+A* total elapsed time: 2.439396 s
+  server queries time: 2.298378 s
+  search-only time: 0.141018 s
+Server bytes received: 166648449 bytes
+Running A* from 10993972275 to 11920476597 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 501
+Path length: 94 nodes
+A* total elapsed time: 2.457959 s
+  server queries time: 2.315983 s
+  search-only time: 0.141976 s
+Server bytes received: 166648449 bytes
+Running A* from 1151139193 to 614442019 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 233
+Path length: 47 nodes
+A* total elapsed time: 2.451076 s
+  server queries time: 2.310207 s
+  search-only time: 0.140870 s
+Server bytes received: 166648449 bytes
+Running A* from 12649554445 to 191988295 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 449
+Path length: 48 nodes
+A* total elapsed time: 2.446633 s
+  server queries time: 2.305000 s
+  search-only time: 0.141633 s
+Server bytes received: 166648449 bytes
+Running A* from 135383386 to 2541877498 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 201
+Path length: 32 nodes
+A* total elapsed time: 2.457437 s
+  server queries time: 2.316078 s
+  search-only time: 0.141359 s
+Server bytes received: 166648449 bytes
+Running A* from 13333336448 to 1004511703 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 252
+Path length: 52 nodes
+A* total elapsed time: 2.457887 s
+  server queries time: 2.315544 s
+  search-only time: 0.142343 s
+Server bytes received: 166648449 bytes
+Running A* from 316517389 to 282350954 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 292
+Path length: 55 nodes
+A* total elapsed time: 2.440288 s
+  server queries time: 2.299231 s
+  search-only time: 0.141057 s
+Server bytes received: 166648449 bytes
+Running A* from 335480653 to 333627171 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 380
+Path length: 44 nodes
+A* total elapsed time: 2.458080 s
+  server queries time: 2.314980 s
+  search-only time: 0.143100 s
+Server bytes received: 166648449 bytes
+Running A* from 255072993 to 13655088450 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 343
+Path length: 58 nodes
+A* total elapsed time: 2.453306 s
+  server queries time: 2.311291 s
+  search-only time: 0.142014 s
+Server bytes received: 166648449 bytes
+Running A* from 4348180998 to 633486092 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 149
+Path length: 29 nodes
+A* total elapsed time: 2.458258 s
+  server queries time: 2.317169 s
+  search-only time: 0.141089 s
+Server bytes received: 166648449 bytes
+Running A* from 1638936350 to 799200406 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 212
+Path length: 31 nodes
+A* total elapsed time: 2.506868 s
+  server queries time: 2.350539 s
+  search-only time: 0.156329 s
+Server bytes received: 166648449 bytes
+Running A* from 3869715124 to 2282296368 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 184
+Path length: 9 nodes
+A* total elapsed time: 2.464778 s
+  server queries time: 2.322920 s
+  search-only time: 0.141858 s
+Server bytes received: 166648449 bytes
+Running A* from 6210276248 to 276007144 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 656
+Path length: 55 nodes
+A* total elapsed time: 2.476536 s
+  server queries time: 2.333751 s
+  search-only time: 0.142784 s
+Server bytes received: 166648449 bytes
+Running A* from 10093546853 to 281131677 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 293
+Path length: 49 nodes
+A* total elapsed time: 2.419099 s
+  server queries time: 2.278412 s
+  search-only time: 0.140687 s
+Server bytes received: 166648449 bytes
+Running A* from 1015881277 to 3779361081 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 327
+Path length: 62 nodes
+A* total elapsed time: 2.481511 s
+  server queries time: 2.339594 s
+  search-only time: 0.141917 s
+Server bytes received: 166648449 bytes
+Running A* from 784080474 to 1293201570 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 187
+Path length: 28 nodes
+A* total elapsed time: 2.430186 s
+  server queries time: 2.289517 s
+  search-only time: 0.140669 s
+Server bytes received: 166648449 bytes
+Running A* from 11302230542 to 95132468 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 496
+Path length: 71 nodes
+A* total elapsed time: 2.479474 s
+  server queries time: 2.336468 s
+  search-only time: 0.143007 s
+Server bytes received: 166648449 bytes
+Running A* from 281108037 to 11438477636 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 288
+Path length: 50 nodes
+A* total elapsed time: 2.419496 s
+  server queries time: 2.278518 s
+  search-only time: 0.140979 s
+Server bytes received: 166648449 bytes
+Running A* from 3440503594 to 327481275 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 248
+Path length: 54 nodes
+A* total elapsed time: 2.422406 s
+  server queries time: 2.279733 s
+  search-only time: 0.142673 s
+Server bytes received: 166648449 bytes
+Running A* from 1590815746 to 7526543987 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 257
+Path length: 27 nodes
+A* total elapsed time: 2.458441 s
+  server queries time: 2.316880 s
+  search-only time: 0.141561 s
+Server bytes received: 166648449 bytes
+Running A* from 9370450517 to 498612412 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 276
+Path length: 36 nodes
+A* total elapsed time: 2.432986 s
+  server queries time: 2.291039 s
+  search-only time: 0.141948 s
+Server bytes received: 166648449 bytes
+Running A* from 1921408470 to 11673355023 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 227
+Path length: 44 nodes
+A* total elapsed time: 2.482682 s
+  server queries time: 2.340829 s
+  search-only time: 0.141853 s
+Server bytes received: 166648449 bytes
+Running A* from 2850488407 to 1716869353 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 192
+Path length: 22 nodes
+A* total elapsed time: 2.427013 s
+  server queries time: 2.284803 s
+  search-only time: 0.142210 s
+Server bytes received: 166648449 bytes
+Running A* from 3079425041 to 1866360581 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 188
+Path length: 15 nodes
+A* total elapsed time: 2.472798 s
+  server queries time: 2.331248 s
+  search-only time: 0.141550 s
+Server bytes received: 166648449 bytes
+-- running journeys of distance 5000...
+Running A* from 1240468959 to 4496637769 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 663
+Path length: 85 nodes
+A* total elapsed time: 2.466561 s
+  server queries time: 2.324341 s
+  search-only time: 0.142220 s
+Server bytes received: 166648449 bytes
+Running A* from 322883732 to 1196790008 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 708
+Path length: 71 nodes
+A* total elapsed time: 2.458738 s
+  server queries time: 2.315235 s
+  search-only time: 0.143503 s
+Server bytes received: 166648449 bytes
+Running A* from 1197776947 to 1196652872 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 544
+Path length: 21 nodes
+A* total elapsed time: 2.426343 s
+  server queries time: 2.285249 s
+  search-only time: 0.141093 s
+Server bytes received: 166648449 bytes
+Running A* from 919795864 to 1374849213 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 697
+Path length: 79 nodes
+A* total elapsed time: 2.465841 s
+  server queries time: 2.323514 s
+  search-only time: 0.142327 s
+Server bytes received: 166648449 bytes
+Running A* from 7968663230 to 609219819 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 580
+Path length: 79 nodes
+A* total elapsed time: 2.457561 s
+  server queries time: 2.313387 s
+  search-only time: 0.144174 s
+Server bytes received: 166648449 bytes
+Running A* from 1987116823 to 2838229168 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 437
+Path length: 47 nodes
+A* total elapsed time: 2.487457 s
+  server queries time: 2.344647 s
+  search-only time: 0.142810 s
+Server bytes received: 166648449 bytes
+Running A* from 300499971 to 5859064320 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 576
+Path length: 86 nodes
+A* total elapsed time: 2.457072 s
+  server queries time: 2.313544 s
+  search-only time: 0.143528 s
+Server bytes received: 166648449 bytes
+Running A* from 1659679137 to 1123943374 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 345
+Path length: 37 nodes
+A* total elapsed time: 2.446062 s
+  server queries time: 2.305322 s
+  search-only time: 0.140741 s
+Server bytes received: 166648449 bytes
+Running A* from 11472838383 to 1160038792 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 496
+Path length: 89 nodes
+A* total elapsed time: 2.476676 s
+  server queries time: 2.332667 s
+  search-only time: 0.144009 s
+Server bytes received: 166648449 bytes
+Running A* from 1478199670 to 450947345 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 446
+Path length: 42 nodes
+A* total elapsed time: 2.430522 s
+  server queries time: 2.289638 s
+  search-only time: 0.140885 s
+Server bytes received: 166648449 bytes
+Running A* from 451099655 to 12174313082 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 768
+Path length: 104 nodes
+A* total elapsed time: 2.478093 s
+  server queries time: 2.331360 s
+  search-only time: 0.146733 s
+Server bytes received: 166648449 bytes
+Running A* from 2475815095 to 1838950837 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 478
+Path length: 40 nodes
+A* total elapsed time: 2.436324 s
+  server queries time: 2.295212 s
+  search-only time: 0.141112 s
+Server bytes received: 166648449 bytes
+Running A* from 2126568903 to 1204339484 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 531
+Path length: 48 nodes
+A* total elapsed time: 2.474936 s
+  server queries time: 2.332178 s
+  search-only time: 0.142757 s
+Server bytes received: 166648449 bytes
+Running A* from 651540501 to 1974283252 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 536
+Path length: 69 nodes
+A* total elapsed time: 2.434239 s
+  server queries time: 2.291859 s
+  search-only time: 0.142381 s
+Server bytes received: 166648449 bytes
+Running A* from 338492437 to 394994200 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 551
+Path length: 111 nodes
+A* total elapsed time: 2.496619 s
+  server queries time: 2.351451 s
+  search-only time: 0.145168 s
+Server bytes received: 166648449 bytes
+Running A* from 2106946006 to 2426642933 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 803
+Path length: 67 nodes
+A* total elapsed time: 2.426313 s
+  server queries time: 2.284246 s
+  search-only time: 0.142067 s
+Server bytes received: 166648449 bytes
+Running A* from 6862630059 to 1509994799 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 737
+Path length: 131 nodes
+A* total elapsed time: 2.471697 s
+  server queries time: 2.326728 s
+  search-only time: 0.144969 s
+Server bytes received: 166648449 bytes
+Running A* from 2843450952 to 283459265 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 395
+Path length: 52 nodes
+A* total elapsed time: 2.484906 s
+  server queries time: 2.341652 s
+  search-only time: 0.143253 s
+Server bytes received: 166648449 bytes
+Running A* from 700399937 to 748867083 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 599
+Path length: 90 nodes
+A* total elapsed time: 2.421182 s
+  server queries time: 2.277034 s
+  search-only time: 0.144148 s
+Server bytes received: 166648449 bytes
+Running A* from 360463160 to 367677757 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 576
+Path length: 99 nodes
+A* total elapsed time: 2.479777 s
+  server queries time: 2.335307 s
+  search-only time: 0.144470 s
+Server bytes received: 166648449 bytes
+Running A* from 560803579 to 1651535028 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 440
+Path length: 74 nodes
+A* total elapsed time: 2.441659 s
+  server queries time: 2.298294 s
+  search-only time: 0.143365 s
+Server bytes received: 166648449 bytes
+Running A* from 4717517420 to 1743350073 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 535
+Path length: 34 nodes
+A* total elapsed time: 2.456879 s
+  server queries time: 2.314789 s
+  search-only time: 0.142090 s
+Server bytes received: 166648449 bytes
+Running A* from 6391614710 to 819180423 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 549
+Path length: 51 nodes
+A* total elapsed time: 2.431038 s
+  server queries time: 2.288941 s
+  search-only time: 0.142097 s
+Server bytes received: 166648449 bytes
+Running A* from 11989571125 to 24959188 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 717
+Path length: 114 nodes
+A* total elapsed time: 2.467531 s
+  server queries time: 2.320071 s
+  search-only time: 0.147460 s
+Server bytes received: 166648449 bytes
+Running A* from 2107138083 to 11552853936 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 508
+Path length: 62 nodes
+A* total elapsed time: 2.439517 s
+  server queries time: 2.297772 s
+  search-only time: 0.141744 s
+Server bytes received: 166648449 bytes
+Running A* from 365373640 to 25244985 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 562
+Path length: 83 nodes
+A* total elapsed time: 2.462750 s
+  server queries time: 2.318601 s
+  search-only time: 0.144148 s
+Server bytes received: 166648449 bytes
+Running A* from 246546719 to 5966270133 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 590
+Path length: 80 nodes
+A* total elapsed time: 2.438023 s
+  server queries time: 2.295370 s
+  search-only time: 0.142653 s
+Server bytes received: 166648449 bytes
+Running A* from 7826262898 to 2136839972 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 547
+Path length: 69 nodes
+A* total elapsed time: 2.462102 s
+  server queries time: 2.319763 s
+  search-only time: 0.142339 s
+Server bytes received: 166648449 bytes
+Running A* from 1345715607 to 2262766901 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 610
+Path length: 82 nodes
+A* total elapsed time: 2.444624 s
+  server queries time: 2.301095 s
+  search-only time: 0.143529 s
+Server bytes received: 166648449 bytes
+Running A* from 251837217 to 57199750 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 679
+Path length: 123 nodes
+A* total elapsed time: 2.484984 s
+  server queries time: 2.335846 s
+  search-only time: 0.149139 s
+Server bytes received: 166648449 bytes
+-- running journeys of distance 10000...
+Running A* from 3854556831 to 7997255579 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1033
+Path length: 139 nodes
+A* total elapsed time: 2.477575 s
+  server queries time: 2.322560 s
+  search-only time: 0.155015 s
+Server bytes received: 166648449 bytes
+Running A* from 2265931986 to 3182727258 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 990
+Path length: 113 nodes
+A* total elapsed time: 2.492716 s
+  server queries time: 2.348231 s
+  search-only time: 0.144485 s
+Server bytes received: 166648449 bytes
+Running A* from 958712467 to 2954740808 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 973
+Path length: 91 nodes
+A* total elapsed time: 2.431313 s
+  server queries time: 2.288120 s
+  search-only time: 0.143193 s
+Server bytes received: 166648449 bytes
+Running A* from 1744045661 to 288865069 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 752
+Path length: 61 nodes
+A* total elapsed time: 2.477664 s
+  server queries time: 2.334815 s
+  search-only time: 0.142849 s
+Server bytes received: 166648449 bytes
+Running A* from 663705652 to 8375534581 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 817
+Path length: 112 nodes
+A* total elapsed time: 2.430998 s
+  server queries time: 2.282207 s
+  search-only time: 0.148791 s
+Server bytes received: 166648449 bytes
+Running A* from 8121006207 to 3692663689 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1023
+Path length: 69 nodes
+A* total elapsed time: 2.465806 s
+  server queries time: 2.322619 s
+  search-only time: 0.143186 s
+Server bytes received: 166648449 bytes
+Running A* from 4010995143 to 1773568983 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 872
+Path length: 105 nodes
+A* total elapsed time: 2.443868 s
+  server queries time: 2.296162 s
+  search-only time: 0.147706 s
+Server bytes received: 166648449 bytes
+Running A* from 294775435 to 3613498841 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 902
+Path length: 120 nodes
+A* total elapsed time: 2.493643 s
+  server queries time: 2.350176 s
+  search-only time: 0.143467 s
+Server bytes received: 166648449 bytes
+Running A* from 481467475 to 1952159244 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 892
+Path length: 56 nodes
+A* total elapsed time: 2.477698 s
+  server queries time: 2.334929 s
+  search-only time: 0.142769 s
+Server bytes received: 166648449 bytes
+Running A* from 267486869 to 469936983 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 899
+Path length: 107 nodes
+A* total elapsed time: 2.477477 s
+  server queries time: 2.326944 s
+  search-only time: 0.150533 s
+Server bytes received: 166648449 bytes
+Running A* from 8827279714 to 416818004 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1239
+Path length: 142 nodes
+A* total elapsed time: 2.443244 s
+  server queries time: 2.291789 s
+  search-only time: 0.151455 s
+Server bytes received: 166648449 bytes
+Running A* from 1804825761 to 5242855121 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 648
+Path length: 81 nodes
+A* total elapsed time: 2.454191 s
+  server queries time: 2.311075 s
+  search-only time: 0.143116 s
+Server bytes received: 166648449 bytes
+Running A* from 480707432 to 477005965 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 810
+Path length: 116 nodes
+A* total elapsed time: 2.431163 s
+  server queries time: 2.289655 s
+  search-only time: 0.141508 s
+Server bytes received: 166648449 bytes
+Running A* from 12361597805 to 1272873672 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 823
+Path length: 88 nodes
+A* total elapsed time: 2.461665 s
+  server queries time: 2.318487 s
+  search-only time: 0.143178 s
+Server bytes received: 166648449 bytes
+Running A* from 371880176 to 9383784371 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 933
+Path length: 95 nodes
+A* total elapsed time: 2.434632 s
+  server queries time: 2.292352 s
+  search-only time: 0.142280 s
+Server bytes received: 166648449 bytes
+Running A* from 1612868378 to 8287705483 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 902
+Path length: 113 nodes
+A* total elapsed time: 2.471700 s
+  server queries time: 2.327850 s
+  search-only time: 0.143850 s
+Server bytes received: 166648449 bytes
+Running A* from 2138561876 to 12841659817 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1056
+Path length: 133 nodes
+A* total elapsed time: 2.438916 s
+  server queries time: 2.295007 s
+  search-only time: 0.143909 s
+Server bytes received: 166648449 bytes
+Running A* from 7054259455 to 7164620931 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1146
+Path length: 104 nodes
+A* total elapsed time: 2.495391 s
+  server queries time: 2.350575 s
+  search-only time: 0.144816 s
+Server bytes received: 166648449 bytes
+Running A* from 33985899 to 976654296 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 856
+Path length: 125 nodes
+A* total elapsed time: 2.450637 s
+  server queries time: 2.304668 s
+  search-only time: 0.145969 s
+Server bytes received: 166648449 bytes
+Running A* from 2751033159 to 360701332 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 858
+Path length: 60 nodes
+A* total elapsed time: 2.458001 s
+  server queries time: 2.315416 s
+  search-only time: 0.142584 s
+Server bytes received: 166648449 bytes
+Running A* from 1662772689 to 859312566 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1339
+Path length: 44 nodes
+A* total elapsed time: 2.430926 s
+  server queries time: 2.288835 s
+  search-only time: 0.142091 s
+Server bytes received: 166648449 bytes
+Running A* from 180160858 to 1881415571 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 845
+Path length: 89 nodes
+A* total elapsed time: 2.473665 s
+  server queries time: 2.326854 s
+  search-only time: 0.146811 s
+Server bytes received: 166648449 bytes
+Running A* from 2193237137 to 1719396494 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 745
+Path length: 28 nodes
+A* total elapsed time: 2.439264 s
+  server queries time: 2.298502 s
+  search-only time: 0.140762 s
+Server bytes received: 166648449 bytes
+Running A* from 3070147359 to 10007397903 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1046
+Path length: 159 nodes
+A* total elapsed time: 2.458731 s
+  server queries time: 2.314831 s
+  search-only time: 0.143901 s
+Server bytes received: 166648449 bytes
+Running A* from 695592949 to 1146882873 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1135
+Path length: 146 nodes
+A* total elapsed time: 2.434797 s
+  server queries time: 2.288494 s
+  search-only time: 0.146303 s
+Server bytes received: 166648449 bytes
+Running A* from 8627045248 to 748991295 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 994
+Path length: 126 nodes
+A* total elapsed time: 2.478768 s
+  server queries time: 2.327564 s
+  search-only time: 0.151204 s
+Server bytes received: 166648449 bytes
+Running A* from 1678237731 to 10048677614 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1265
+Path length: 136 nodes
+A* total elapsed time: 2.454693 s
+  server queries time: 2.298465 s
+  search-only time: 0.156228 s
+Server bytes received: 166648449 bytes
+Running A* from 9574702862 to 485615446 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1193
+Path length: 117 nodes
+A* total elapsed time: 2.487505 s
+  server queries time: 2.343313 s
+  search-only time: 0.144191 s
+Server bytes received: 166648449 bytes
+Running A* from 4736588746 to 922624519 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1122
+Path length: 137 nodes
+A* total elapsed time: 2.483913 s
+  server queries time: 2.334500 s
+  search-only time: 0.149413 s
+Server bytes received: 166648449 bytes
+Running A* from 315466048 to 2376864696 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1113
+Path length: 128 nodes
+A* total elapsed time: 2.464284 s
+  server queries time: 2.312288 s
+  search-only time: 0.151996 s
+Server bytes received: 166648449 bytes
+-- running journeys of distance 15000...
+Running A* from 494455345 to 1351865850 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1343
+Path length: 135 nodes
+A* total elapsed time: 2.462434 s
+  server queries time: 2.317250 s
+  search-only time: 0.145184 s
+Server bytes received: 166648449 bytes
+Running A* from 4489018021 to 1361269393 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1148
+Path length: 118 nodes
+A* total elapsed time: 2.469122 s
+  server queries time: 2.322077 s
+  search-only time: 0.147045 s
+Server bytes received: 166648449 bytes
+Running A* from 33983382 to 7758325453 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1326
+Path length: 121 nodes
+A* total elapsed time: 2.457555 s
+  server queries time: 2.305858 s
+  search-only time: 0.151697 s
+Server bytes received: 166648449 bytes
+Running A* from 1952742304 to 826262346 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1361
+Path length: 96 nodes
+A* total elapsed time: 2.476459 s
+  server queries time: 2.329786 s
+  search-only time: 0.146673 s
+Server bytes received: 166648449 bytes
+Running A* from 1557125338 to 506533220 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1304
+Path length: 181 nodes
+A* total elapsed time: 2.485451 s
+  server queries time: 2.329527 s
+  search-only time: 0.155924 s
+Server bytes received: 166648449 bytes
+Running A* from 9088682829 to 2083409022 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1157
+Path length: 93 nodes
+A* total elapsed time: 2.493249 s
+  server queries time: 2.344435 s
+  search-only time: 0.148814 s
+Server bytes received: 166648449 bytes
+Running A* from 2286170913 to 5039117255 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1280
+Path length: 97 nodes
+A* total elapsed time: 2.459160 s
+  server queries time: 2.315774 s
+  search-only time: 0.143386 s
+Server bytes received: 166648449 bytes
+Running A* from 856464486 to 25392911 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1127
+Path length: 129 nodes
+A* total elapsed time: 2.454450 s
+  server queries time: 2.303390 s
+  search-only time: 0.151061 s
+Server bytes received: 166648449 bytes
+Running A* from 2038359083 to 1587686424 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1254
+Path length: 61 nodes
+A* total elapsed time: 2.464878 s
+  server queries time: 2.321936 s
+  search-only time: 0.142943 s
+Server bytes received: 166648449 bytes
+Running A* from 4828452150 to 1834850765 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1530
+Path length: 178 nodes
+A* total elapsed time: 2.478377 s
+  server queries time: 2.331826 s
+  search-only time: 0.146551 s
+Server bytes received: 166648449 bytes
+Running A* from 309756720 to 4351247454 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1460
+Path length: 115 nodes
+A* total elapsed time: 2.445330 s
+  server queries time: 2.296278 s
+  search-only time: 0.149052 s
+Server bytes received: 166648449 bytes
+Running A* from 4853189342 to 3089732739 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1406
+Path length: 177 nodes
+A* total elapsed time: 2.484378 s
+  server queries time: 2.338423 s
+  search-only time: 0.145955 s
+Server bytes received: 166648449 bytes
+Running A* from 30823473 to 2690773826 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 879
+Path length: 65 nodes
+A* total elapsed time: 2.484658 s
+  server queries time: 2.341095 s
+  search-only time: 0.143563 s
+Server bytes received: 166648449 bytes
+Running A* from 1451722464 to 4102270633 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1449
+Path length: 172 nodes
+A* total elapsed time: 2.467647 s
+  server queries time: 2.319989 s
+  search-only time: 0.147658 s
+Server bytes received: 166648449 bytes
+Running A* from 5416905564 to 611166580 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1463
+Path length: 153 nodes
+A* total elapsed time: 2.441523 s
+  server queries time: 2.289648 s
+  search-only time: 0.151875 s
+Server bytes received: 166648449 bytes
+Running A* from 877347118 to 21486430 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1253
+Path length: 155 nodes
+A* total elapsed time: 2.481974 s
+  server queries time: 2.330055 s
+  search-only time: 0.151919 s
+Server bytes received: 166648449 bytes
+Running A* from 817833658 to 1731765792 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1305
+Path length: 59 nodes
+A* total elapsed time: 2.474560 s
+  server queries time: 2.331571 s
+  search-only time: 0.142989 s
+Server bytes received: 166648449 bytes
+Running A* from 1583270498 to 413741722 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1115
+Path length: 159 nodes
+A* total elapsed time: 2.444675 s
+  server queries time: 2.297495 s
+  search-only time: 0.147180 s
+Server bytes received: 166648449 bytes
+Running A* from 331606643 to 346349043 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1434
+Path length: 190 nodes
+A* total elapsed time: 2.485351 s
+  server queries time: 2.326023 s
+  search-only time: 0.159327 s
+Server bytes received: 166648449 bytes
+Running A* from 2684715103 to 1363546477 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1274
+Path length: 143 nodes
+A* total elapsed time: 2.475761 s
+  server queries time: 2.323334 s
+  search-only time: 0.152428 s
+Server bytes received: 166648449 bytes
+Running A* from 346895562 to 3942369579 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1160
+Path length: 175 nodes
+A* total elapsed time: 2.425428 s
+  server queries time: 2.278304 s
+  search-only time: 0.147124 s
+Server bytes received: 166648449 bytes
+Running A* from 12785207388 to 1490752132 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 921
+Path length: 113 nodes
+A* total elapsed time: 2.463965 s
+  server queries time: 2.319173 s
+  search-only time: 0.144792 s
+Server bytes received: 166648449 bytes
+Running A* from 59649417 to 1661693121 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3169
+Path length: 363 nodes
+A* total elapsed time: 2.446019 s
+  server queries time: 2.295768 s
+  search-only time: 0.150251 s
+Server bytes received: 166648449 bytes
+Running A* from 3521993900 to 3779583613 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 889
+Path length: 128 nodes
+A* total elapsed time: 2.492008 s
+  server queries time: 2.345051 s
+  search-only time: 0.146957 s
+Server bytes received: 166648449 bytes
+Running A* from 516974000 to 4879885637 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1321
+Path length: 94 nodes
+A* total elapsed time: 2.419911 s
+  server queries time: 2.276582 s
+  search-only time: 0.143330 s
+Server bytes received: 166648449 bytes
+Running A* from 1188974186 to 1236569171 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1106
+Path length: 144 nodes
+A* total elapsed time: 2.480131 s
+  server queries time: 2.328286 s
+  search-only time: 0.151845 s
+Server bytes received: 166648449 bytes
+Running A* from 2990296369 to 1196451003 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1100
+Path length: 123 nodes
+A* total elapsed time: 2.485096 s
+  server queries time: 2.332874 s
+  search-only time: 0.152222 s
+Server bytes received: 166648449 bytes
+Running A* from 250318846 to 6162119113 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1175
+Path length: 112 nodes
+A* total elapsed time: 2.491146 s
+  server queries time: 2.342480 s
+  search-only time: 0.148667 s
+Server bytes received: 166648449 bytes
+Running A* from 282935021 to 1628084651 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1551
+Path length: 147 nodes
+A* total elapsed time: 2.473449 s
+  server queries time: 2.303834 s
+  search-only time: 0.169614 s
+Server bytes received: 166648449 bytes
+Running A* from 893273644 to 88257491 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1042
+Path length: 96 nodes
+A* total elapsed time: 2.488874 s
+  server queries time: 2.343343 s
+  search-only time: 0.145530 s
+Server bytes received: 166648449 bytes
+-- running journeys of distance 20000...
+Running A* from 757441965 to 2089831074 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1738
+Path length: 170 nodes
+A* total elapsed time: 2.457984 s
+  server queries time: 2.301011 s
+  search-only time: 0.156973 s
+Server bytes received: 166648449 bytes
+Running A* from 643569005 to 2161906287 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1427
+Path length: 130 nodes
+A* total elapsed time: 2.477457 s
+  server queries time: 2.332853 s
+  search-only time: 0.144605 s
+Server bytes received: 166648449 bytes
+Running A* from 10212961293 to 9404958458 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2088
+Path length: 168 nodes
+A* total elapsed time: 2.462732 s
+  server queries time: 2.317197 s
+  search-only time: 0.145535 s
+Server bytes received: 166648449 bytes
+Running A* from 12177327674 to 1250343715 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1621
+Path length: 155 nodes
+A* total elapsed time: 2.434195 s
+  server queries time: 2.282016 s
+  search-only time: 0.152179 s
+Server bytes received: 166648449 bytes
+Running A* from 705015629 to 1792392946 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1530
+Path length: 90 nodes
+A* total elapsed time: 2.481830 s
+  server queries time: 2.336564 s
+  search-only time: 0.145267 s
+Server bytes received: 166648449 bytes
+Running A* from 265372415 to 428733908 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1420
+Path length: 137 nodes
+A* total elapsed time: 2.493243 s
+  server queries time: 2.319720 s
+  search-only time: 0.173523 s
+Server bytes received: 166648449 bytes
+Running A* from 4573568704 to 1625795737 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1581
+Path length: 172 nodes
+A* total elapsed time: 2.442356 s
+  server queries time: 2.296144 s
+  search-only time: 0.146213 s
+Server bytes received: 166648449 bytes
+Running A* from 1564201723 to 2107762105 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1586
+Path length: 155 nodes
+A* total elapsed time: 2.454441 s
+  server queries time: 2.305251 s
+  search-only time: 0.149189 s
+Server bytes received: 166648449 bytes
+Running A* from 6427928491 to 6489485609 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1419
+Path length: 135 nodes
+A* total elapsed time: 2.474263 s
+  server queries time: 2.315027 s
+  search-only time: 0.159237 s
+Server bytes received: 166648449 bytes
+Running A* from 243208062 to 344786638 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1616
+Path length: 174 nodes
+A* total elapsed time: 2.456166 s
+  server queries time: 2.293310 s
+  search-only time: 0.162855 s
+Server bytes received: 166648449 bytes
+Running A* from 11030845478 to 1885411179 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1339
+Path length: 153 nodes
+A* total elapsed time: 2.439210 s
+  server queries time: 2.290733 s
+  search-only time: 0.148477 s
+Server bytes received: 166648449 bytes
+Running A* from 564445367 to 2151832900 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1593
+Path length: 183 nodes
+A* total elapsed time: 2.461661 s
+  server queries time: 2.313544 s
+  search-only time: 0.148117 s
+Server bytes received: 166648449 bytes
+Running A* from 3704457706 to 2349783076 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1882
+Path length: 145 nodes
+A* total elapsed time: 2.474398 s
+  server queries time: 2.308343 s
+  search-only time: 0.166055 s
+Server bytes received: 166648449 bytes
+Running A* from 2519918539 to 378243721 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1648
+Path length: 132 nodes
+A* total elapsed time: 2.470482 s
+  server queries time: 2.316244 s
+  search-only time: 0.154239 s
+Server bytes received: 166648449 bytes
+Running A* from 526817465 to 874148263 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1714
+Path length: 168 nodes
+A* total elapsed time: 2.466746 s
+  server queries time: 2.312783 s
+  search-only time: 0.153962 s
+Server bytes received: 166648449 bytes
+Running A* from 1670612548 to 8866889853 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1510
+Path length: 125 nodes
+A* total elapsed time: 2.460066 s
+  server queries time: 2.312098 s
+  search-only time: 0.147968 s
+Server bytes received: 166648449 bytes
+Running A* from 2218256625 to 4570543268 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1519
+Path length: 155 nodes
+A* total elapsed time: 2.432887 s
+  server queries time: 2.287506 s
+  search-only time: 0.145381 s
+Server bytes received: 166648449 bytes
+Running A* from 659602946 to 677671987 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1242
+Path length: 88 nodes
+A* total elapsed time: 2.459160 s
+  server queries time: 2.312216 s
+  search-only time: 0.146944 s
+Server bytes received: 166648449 bytes
+Running A* from 94620433 to 2284417382 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1251
+Path length: 126 nodes
+A* total elapsed time: 2.434022 s
+  server queries time: 2.290426 s
+  search-only time: 0.143596 s
+Server bytes received: 166648449 bytes
+Running A* from 2508027742 to 2339206883 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1246
+Path length: 154 nodes
+A* total elapsed time: 2.455512 s
+  server queries time: 2.305210 s
+  search-only time: 0.150302 s
+Server bytes received: 166648449 bytes
+Running A* from 1387228354 to 1509840590 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2148
+Path length: 176 nodes
+A* total elapsed time: 2.457366 s
+  server queries time: 2.304389 s
+  search-only time: 0.152978 s
+Server bytes received: 166648449 bytes
+Running A* from 278781536 to 1973583195 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1117
+Path length: 93 nodes
+A* total elapsed time: 2.448082 s
+  server queries time: 2.299612 s
+  search-only time: 0.148470 s
+Server bytes received: 166648449 bytes
+Running A* from 395478621 to 6329686733 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1506
+Path length: 140 nodes
+A* total elapsed time: 2.446858 s
+  server queries time: 2.293265 s
+  search-only time: 0.153594 s
+Server bytes received: 166648449 bytes
+Running A* from 1026900149 to 5283007671 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1218
+Path length: 169 nodes
+A* total elapsed time: 2.447482 s
+  server queries time: 2.297021 s
+  search-only time: 0.150461 s
+Server bytes received: 166648449 bytes
+Running A* from 37596839 to 1605774533 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1733
+Path length: 125 nodes
+A* total elapsed time: 2.469229 s
+  server queries time: 2.315882 s
+  search-only time: 0.153347 s
+Server bytes received: 166648449 bytes
+Running A* from 1107848872 to 2189064515 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1466
+Path length: 102 nodes
+A* total elapsed time: 2.493959 s
+  server queries time: 2.339196 s
+  search-only time: 0.154763 s
+Server bytes received: 166648449 bytes
+Running A* from 2617753076 to 2161624260 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1477
+Path length: 164 nodes
+A* total elapsed time: 2.484498 s
+  server queries time: 2.314272 s
+  search-only time: 0.170226 s
+Server bytes received: 166648449 bytes
+Running A* from 679717596 to 5340517665 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1920
+Path length: 152 nodes
+A* total elapsed time: 2.440142 s
+  server queries time: 2.278055 s
+  search-only time: 0.162087 s
+Server bytes received: 166648449 bytes
+Running A* from 600397818 to 731115057 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1594
+Path length: 134 nodes
+A* total elapsed time: 2.468812 s
+  server queries time: 2.322939 s
+  search-only time: 0.145872 s
+Server bytes received: 166648449 bytes
+Running A* from 3295217688 to 10616948810 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1855
+Path length: 175 nodes
+A* total elapsed time: 2.456657 s
+  server queries time: 2.302842 s
+  search-only time: 0.153814 s
+Server bytes received: 166648449 bytes
+-- running journeys of distance 30000...
+Running A* from 11093523431 to 3638931916 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1947
+Path length: 162 nodes
+A* total elapsed time: 2.459086 s
+  server queries time: 2.307803 s
+  search-only time: 0.151283 s
+Server bytes received: 166648449 bytes
+Running A* from 7703219813 to 4707383530 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2114
+Path length: 255 nodes
+A* total elapsed time: 2.469627 s
+  server queries time: 2.318983 s
+  search-only time: 0.150644 s
+Server bytes received: 166648449 bytes
+Running A* from 1184915201 to 418813246 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1759
+Path length: 166 nodes
+A* total elapsed time: 2.425576 s
+  server queries time: 2.278632 s
+  search-only time: 0.146945 s
+Server bytes received: 166648449 bytes
+Running A* from 5167904424 to 2020177751 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1695
+Path length: 113 nodes
+A* total elapsed time: 2.496539 s
+  server queries time: 2.343188 s
+  search-only time: 0.153351 s
+Server bytes received: 166648449 bytes
+Running A* from 5614669203 to 3381313142 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1667
+Path length: 137 nodes
+A* total elapsed time: 2.467431 s
+  server queries time: 2.318422 s
+  search-only time: 0.149009 s
+Server bytes received: 166648449 bytes
+Running A* from 2282260112 to 2332331369 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2232
+Path length: 131 nodes
+A* total elapsed time: 2.437026 s
+  server queries time: 2.291286 s
+  search-only time: 0.145740 s
+Server bytes received: 166648449 bytes
+Running A* from 13619310818 to 2604883730 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2300
+Path length: 135 nodes
+A* total elapsed time: 2.471625 s
+  server queries time: 2.323476 s
+  search-only time: 0.148149 s
+Server bytes received: 166648449 bytes
+Running A* from 1230004801 to 1289906626 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2492
+Path length: 256 nodes
+A* total elapsed time: 3.017749 s
+  server queries time: 2.782836 s
+  search-only time: 0.234913 s
+Server bytes received: 166648449 bytes
+Running A* from 366682812 to 1237490779 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2221
+Path length: 217 nodes
+A* total elapsed time: 2.517352 s
+  server queries time: 2.319033 s
+  search-only time: 0.198319 s
+Server bytes received: 166648449 bytes
+Running A* from 2134982843 to 1018920140 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2705
+Path length: 188 nodes
+A* total elapsed time: 2.427644 s
+  server queries time: 2.282253 s
+  search-only time: 0.145391 s
+Server bytes received: 166648449 bytes
+Running A* from 277465604 to 3011338670 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2003
+Path length: 167 nodes
+A* total elapsed time: 2.484409 s
+  server queries time: 2.323145 s
+  search-only time: 0.161264 s
+Server bytes received: 166648449 bytes
+Running A* from 11352517090 to 8323831340 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1798
+Path length: 131 nodes
+A* total elapsed time: 2.475624 s
+  server queries time: 2.319458 s
+  search-only time: 0.156166 s
+Server bytes received: 166648449 bytes
+Running A* from 11764835395 to 1634932764 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1564
+Path length: 100 nodes
+A* total elapsed time: 2.480903 s
+  server queries time: 2.336670 s
+  search-only time: 0.144234 s
+Server bytes received: 166648449 bytes
+Running A* from 311739561 to 4557691341 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1672
+Path length: 124 nodes
+A* total elapsed time: 2.479361 s
+  server queries time: 2.328029 s
+  search-only time: 0.151332 s
+Server bytes received: 166648449 bytes
+Running A* from 2999998000 to 2278786342 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2348
+Path length: 200 nodes
+A* total elapsed time: 2.456405 s
+  server queries time: 2.299190 s
+  search-only time: 0.157215 s
+Server bytes received: 166648449 bytes
+Running A* from 5909656638 to 12620187294 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2196
+Path length: 182 nodes
+A* total elapsed time: 2.510706 s
+  server queries time: 2.337225 s
+  search-only time: 0.173481 s
+Server bytes received: 166648449 bytes
+Running A* from 410133367 to 417381778 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2273
+Path length: 110 nodes
+A* total elapsed time: 2.479304 s
+  server queries time: 2.333981 s
+  search-only time: 0.145323 s
+Server bytes received: 166648449 bytes
+Running A* from 1344934915 to 12760202875 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1963
+Path length: 172 nodes
+A* total elapsed time: 2.429502 s
+  server queries time: 2.280891 s
+  search-only time: 0.148611 s
+Server bytes received: 166648449 bytes
+Running A* from 3528576691 to 7216108072 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2337
+Path length: 166 nodes
+A* total elapsed time: 2.495930 s
+  server queries time: 2.336567 s
+  search-only time: 0.159363 s
+Server bytes received: 166648449 bytes
+Running A* from 8338846148 to 773942167 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2565
+Path length: 290 nodes
+A* total elapsed time: 2.476864 s
+  server queries time: 2.314341 s
+  search-only time: 0.162522 s
+Server bytes received: 166648449 bytes
+Running A* from 518110048 to 598151842 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1836
+Path length: 174 nodes
+A* total elapsed time: 2.512041 s
+  server queries time: 2.336570 s
+  search-only time: 0.175470 s
+Server bytes received: 166648449 bytes
+Running A* from 7272131117 to 2714608967 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1732
+Path length: 155 nodes
+A* total elapsed time: 2.495433 s
+  server queries time: 2.344583 s
+  search-only time: 0.150850 s
+Server bytes received: 166648449 bytes
+Running A* from 11953335718 to 24911945 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2613
+Path length: 304 nodes
+A* total elapsed time: 2.527864 s
+  server queries time: 2.304959 s
+  search-only time: 0.222905 s
+Server bytes received: 166648449 bytes
+Running A* from 275034248 to 7040652334 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1572
+Path length: 129 nodes
+A* total elapsed time: 2.468392 s
+  server queries time: 2.319785 s
+  search-only time: 0.148607 s
+Server bytes received: 166648449 bytes
+Running A* from 829017295 to 4416553017 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3214
+Path length: 152 nodes
+A* total elapsed time: 2.428569 s
+  server queries time: 2.274624 s
+  search-only time: 0.153945 s
+Server bytes received: 166648449 bytes
+Running A* from 367926170 to 7351216185 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2552
+Path length: 274 nodes
+A* total elapsed time: 2.551985 s
+  server queries time: 2.322857 s
+  search-only time: 0.229128 s
+Server bytes received: 166648449 bytes
+Running A* from 897559276 to 1672138537 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1565
+Path length: 137 nodes
+A* total elapsed time: 2.442342 s
+  server queries time: 2.295426 s
+  search-only time: 0.146916 s
+Server bytes received: 166648449 bytes
+Running A* from 281938525 to 1149065971 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1965
+Path length: 173 nodes
+A* total elapsed time: 2.486750 s
+  server queries time: 2.326971 s
+  search-only time: 0.159779 s
+Server bytes received: 166648449 bytes
+Running A* from 3053038181 to 11495455271 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2523
+Path length: 280 nodes
+A* total elapsed time: 2.432159 s
+  server queries time: 2.283583 s
+  search-only time: 0.148575 s
+Server bytes received: 166648449 bytes
+Running A* from 288593484 to 345033897 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2494
+Path length: 186 nodes
+A* total elapsed time: 2.509299 s
+  server queries time: 2.336667 s
+  search-only time: 0.172633 s
+Server bytes received: 166648449 bytes
+-- running journeys of distance 40000...
+Running A* from 2649512639 to 3502501076 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2545
+Path length: 243 nodes
+A* total elapsed time: 2.444905 s
+  server queries time: 2.291825 s
+  search-only time: 0.153080 s
+Server bytes received: 166648449 bytes
+Running A* from 352783699 to 1438113984 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2802
+Path length: 225 nodes
+A* total elapsed time: 2.501597 s
+  server queries time: 2.337411 s
+  search-only time: 0.164186 s
+Server bytes received: 166648449 bytes
+Running A* from 2357840848 to 13429031493 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2980
+Path length: 185 nodes
+A* total elapsed time: 2.467630 s
+  server queries time: 2.298692 s
+  search-only time: 0.168937 s
+Server bytes received: 166648449 bytes
+Running A* from 736716160 to 8153766447 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2335
+Path length: 158 nodes
+A* total elapsed time: 2.478802 s
+  server queries time: 2.318858 s
+  search-only time: 0.159944 s
+Server bytes received: 166648449 bytes
+Running A* from 6110522513 to 11154396653 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3280
+Path length: 224 nodes
+A* total elapsed time: 2.508268 s
+  server queries time: 2.315538 s
+  search-only time: 0.192730 s
+Server bytes received: 166648449 bytes
+Running A* from 13041228598 to 2054344880 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2161
+Path length: 181 nodes
+A* total elapsed time: 2.448749 s
+  server queries time: 2.297567 s
+  search-only time: 0.151181 s
+Server bytes received: 166648449 bytes
+Running A* from 13005937873 to 3103277932 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2016
+Path length: 178 nodes
+A* total elapsed time: 2.464413 s
+  server queries time: 2.314611 s
+  search-only time: 0.149802 s
+Server bytes received: 166648449 bytes
+Running A* from 13169251232 to 7815224687 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2941
+Path length: 267 nodes
+A* total elapsed time: 2.492971 s
+  server queries time: 2.317483 s
+  search-only time: 0.175488 s
+Server bytes received: 166648449 bytes
+Running A* from 332220420 to 410560047 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2549
+Path length: 213 nodes
+A* total elapsed time: 2.447497 s
+  server queries time: 2.277987 s
+  search-only time: 0.169510 s
+Server bytes received: 166648449 bytes
+Running A* from 1129685694 to 2115856067 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3208
+Path length: 221 nodes
+A* total elapsed time: 2.509776 s
+  server queries time: 2.347460 s
+  search-only time: 0.162316 s
+Server bytes received: 166648449 bytes
+Running A* from 1148791228 to 6270088837 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3443
+Path length: 395 nodes
+A* total elapsed time: 2.445863 s
+  server queries time: 2.271936 s
+  search-only time: 0.173927 s
+Server bytes received: 166648449 bytes
+Running A* from 416885105 to 4294997930 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2744
+Path length: 229 nodes
+A* total elapsed time: 2.524280 s
+  server queries time: 2.338955 s
+  search-only time: 0.185325 s
+Server bytes received: 166648449 bytes
+Running A* from 9062018977 to 2272356756 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2876
+Path length: 197 nodes
+A* total elapsed time: 2.457641 s
+  server queries time: 2.292250 s
+  search-only time: 0.165391 s
+Server bytes received: 166648449 bytes
+Running A* from 9339759238 to 320125022 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3089
+Path length: 350 nodes
+A* total elapsed time: 2.480618 s
+  server queries time: 2.325732 s
+  search-only time: 0.154886 s
+Server bytes received: 166648449 bytes
+Running A* from 1705248223 to 1011189202 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3000
+Path length: 214 nodes
+A* total elapsed time: 2.437979 s
+  server queries time: 2.271968 s
+  search-only time: 0.166011 s
+Server bytes received: 166648449 bytes
+Running A* from 6481646797 to 3525076142 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2479
+Path length: 201 nodes
+A* total elapsed time: 2.488801 s
+  server queries time: 2.332730 s
+  search-only time: 0.156072 s
+Server bytes received: 166648449 bytes
+Running A* from 250400573 to 8694797800 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2602
+Path length: 266 nodes
+A* total elapsed time: 2.524723 s
+  server queries time: 2.333102 s
+  search-only time: 0.191621 s
+Server bytes received: 166648449 bytes
+Running A* from 9809955744 to 2039739671 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2730
+Path length: 115 nodes
+A* total elapsed time: 2.481513 s
+  server queries time: 2.330853 s
+  search-only time: 0.150660 s
+Server bytes received: 166648449 bytes
+Running A* from 11217135734 to 497823060 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3284
+Path length: 224 nodes
+A* total elapsed time: 2.485478 s
+  server queries time: 2.302229 s
+  search-only time: 0.183248 s
+Server bytes received: 166648449 bytes
+Running A* from 6898971174 to 308510628 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2986
+Path length: 210 nodes
+A* total elapsed time: 2.464791 s
+  server queries time: 2.314974 s
+  search-only time: 0.149817 s
+Server bytes received: 166648449 bytes
+Running A* from 283636383 to 4011729578 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2506
+Path length: 213 nodes
+A* total elapsed time: 2.480425 s
+  server queries time: 2.324479 s
+  search-only time: 0.155946 s
+Server bytes received: 166648449 bytes
+Running A* from 1922881025 to 2528653986 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3014
+Path length: 210 nodes
+A* total elapsed time: 2.470788 s
+  server queries time: 2.326437 s
+  search-only time: 0.144350 s
+Server bytes received: 166648449 bytes
+Running A* from 532212656 to 690476655 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2967
+Path length: 253 nodes
+A* total elapsed time: 2.458405 s
+  server queries time: 2.291925 s
+  search-only time: 0.166480 s
+Server bytes received: 166648449 bytes
+Running A* from 250232297 to 1900555533 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2476
+Path length: 180 nodes
+A* total elapsed time: 2.487520 s
+  server queries time: 2.317507 s
+  search-only time: 0.170013 s
+Server bytes received: 166648449 bytes
+Running A* from 1593458085 to 1603469255 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2710
+Path length: 237 nodes
+A* total elapsed time: 2.503024 s
+  server queries time: 2.272665 s
+  search-only time: 0.230359 s
+Server bytes received: 166648449 bytes
+Running A* from 13353742453 to 1567321708 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2260
+Path length: 212 nodes
+A* total elapsed time: 2.481361 s
+  server queries time: 2.322293 s
+  search-only time: 0.159068 s
+Server bytes received: 166648449 bytes
+Running A* from 9282421653 to 10860398620 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1809
+Path length: 185 nodes
+A* total elapsed time: 2.430215 s
+  server queries time: 2.285876 s
+  search-only time: 0.144339 s
+Server bytes received: 166648449 bytes
+Running A* from 1594501744 to 2175215395 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3088
+Path length: 330 nodes
+A* total elapsed time: 2.493583 s
+  server queries time: 2.324740 s
+  search-only time: 0.168843 s
+Server bytes received: 166648449 bytes
+Running A* from 11893185591 to 322804592 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2638
+Path length: 240 nodes
+A* total elapsed time: 2.511867 s
+  server queries time: 2.286429 s
+  search-only time: 0.225438 s
+Server bytes received: 166648449 bytes
+Running A* from 1149044368 to 1508821763 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2628
+Path length: 282 nodes
+A* total elapsed time: 2.493909 s
+  server queries time: 2.333552 s
+  search-only time: 0.160357 s
+Server bytes received: 166648449 bytes
+-- running journeys of distance 50000...
+Running A* from 338595503 to 1769267603 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 6411
+Path length: 460 nodes
+A* total elapsed time: 2.528383 s
+  server queries time: 2.352117 s
+  search-only time: 0.176266 s
+Server bytes received: 166648449 bytes
+Running A* from 264997084 to 663036479 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3025
+Path length: 213 nodes
+A* total elapsed time: 2.517080 s
+  server queries time: 2.352863 s
+  search-only time: 0.164218 s
+Server bytes received: 166648449 bytes
+Running A* from 1305576744 to 1789640512 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2382
+Path length: 183 nodes
+A* total elapsed time: 2.504100 s
+  server queries time: 2.341570 s
+  search-only time: 0.162530 s
+Server bytes received: 166648449 bytes
+Running A* from 4664200795 to 3824873007 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2315
+Path length: 116 nodes
+A* total elapsed time: 2.438950 s
+  server queries time: 2.293964 s
+  search-only time: 0.144986 s
+Server bytes received: 166648449 bytes
+Running A* from 602336172 to 1338110624 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2524
+Path length: 203 nodes
+A* total elapsed time: 2.496239 s
+  server queries time: 2.339269 s
+  search-only time: 0.156971 s
+Server bytes received: 166648449 bytes
+Running A* from 248311429 to 9850802470 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3649
+Path length: 374 nodes
+A* total elapsed time: 2.601364 s
+  server queries time: 2.315833 s
+  search-only time: 0.285531 s
+Server bytes received: 166648449 bytes
+Running A* from 2632447263 to 413456215 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3561
+Path length: 302 nodes
+A* total elapsed time: 2.512923 s
+  server queries time: 2.341501 s
+  search-only time: 0.171422 s
+Server bytes received: 166648449 bytes
+Running A* from 300994676 to 1632693601 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3164
+Path length: 234 nodes
+A* total elapsed time: 2.459420 s
+  server queries time: 2.301363 s
+  search-only time: 0.158058 s
+Server bytes received: 166648449 bytes
+Running A* from 988590179 to 3044021019 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3025
+Path length: 261 nodes
+A* total elapsed time: 2.469892 s
+  server queries time: 2.321971 s
+  search-only time: 0.147921 s
+Server bytes received: 166648449 bytes
+Running A* from 10021342964 to 322102149 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2764
+Path length: 165 nodes
+A* total elapsed time: 2.446300 s
+  server queries time: 2.294348 s
+  search-only time: 0.151952 s
+Server bytes received: 166648449 bytes
+Running A* from 620502293 to 1618077657 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2873
+Path length: 282 nodes
+A* total elapsed time: 2.508670 s
+  server queries time: 2.332307 s
+  search-only time: 0.176363 s
+Server bytes received: 166648449 bytes
+Running A* from 2159717577 to 1412977416 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2700
+Path length: 119 nodes
+A* total elapsed time: 2.447432 s
+  server queries time: 2.298951 s
+  search-only time: 0.148481 s
+Server bytes received: 166648449 bytes
+Running A* from 494002822 to 1948668995 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2922
+Path length: 236 nodes
+A* total elapsed time: 2.465484 s
+  server queries time: 2.311952 s
+  search-only time: 0.153532 s
+Server bytes received: 166648449 bytes
+Running A* from 2423480506 to 2495383796 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2305
+Path length: 124 nodes
+A* total elapsed time: 2.474499 s
+  server queries time: 2.312444 s
+  search-only time: 0.162054 s
+Server bytes received: 166648449 bytes
+Running A* from 6847382010 to 2591676797 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3801
+Path length: 362 nodes
+A* total elapsed time: 2.599877 s
+  server queries time: 2.316329 s
+  search-only time: 0.283548 s
+Server bytes received: 166648449 bytes
+Running A* from 304010730 to 246013355 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2209
+Path length: 164 nodes
+A* total elapsed time: 2.469633 s
+  server queries time: 2.316833 s
+  search-only time: 0.152800 s
+Server bytes received: 166648449 bytes
+Running A* from 11411612162 to 842301654 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2840
+Path length: 226 nodes
+A* total elapsed time: 2.497343 s
+  server queries time: 2.315136 s
+  search-only time: 0.182207 s
+Server bytes received: 166648449 bytes
+Running A* from 920284723 to 959167342 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2556
+Path length: 174 nodes
+A* total elapsed time: 2.475570 s
+  server queries time: 2.324205 s
+  search-only time: 0.151365 s
+Server bytes received: 166648449 bytes
+Running A* from 70913540 to 411306818 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2623
+Path length: 164 nodes
+A* total elapsed time: 2.457735 s
+  server queries time: 2.294345 s
+  search-only time: 0.163390 s
+Server bytes received: 166648449 bytes
+Running A* from 2128175853 to 3404657003 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2972
+Path length: 204 nodes
+A* total elapsed time: 2.450943 s
+  server queries time: 2.301659 s
+  search-only time: 0.149284 s
+Server bytes received: 166648449 bytes
+Running A* from 474616564 to 501839731 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3613
+Path length: 296 nodes
+A* total elapsed time: 2.486597 s
+  server queries time: 2.303713 s
+  search-only time: 0.182884 s
+Server bytes received: 166648449 bytes
+Running A* from 1912322095 to 5489800584 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 1966
+Path length: 85 nodes
+A* total elapsed time: 2.468780 s
+  server queries time: 2.320666 s
+  search-only time: 0.148115 s
+Server bytes received: 166648449 bytes
+Running A* from 292008685 to 3595941086 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3119
+Path length: 267 nodes
+A* total elapsed time: 2.478914 s
+  server queries time: 2.304176 s
+  search-only time: 0.174738 s
+Server bytes received: 166648449 bytes
+Running A* from 450116456 to 866870949 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3230
+Path length: 234 nodes
+A* total elapsed time: 2.470199 s
+  server queries time: 2.304292 s
+  search-only time: 0.165907 s
+Server bytes received: 166648449 bytes
+Running A* from 6937930137 to 1276971426 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3058
+Path length: 211 nodes
+A* total elapsed time: 2.491643 s
+  server queries time: 2.324566 s
+  search-only time: 0.167077 s
+Server bytes received: 166648449 bytes
+Running A* from 3934583227 to 3997628919 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3376
+Path length: 292 nodes
+A* total elapsed time: 2.477608 s
+  server queries time: 2.314575 s
+  search-only time: 0.163033 s
+Server bytes received: 166648449 bytes
+Running A* from 2691522197 to 5064432696 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3298
+Path length: 291 nodes
+A* total elapsed time: 2.459774 s
+  server queries time: 2.287581 s
+  search-only time: 0.172192 s
+Server bytes received: 166648449 bytes
+Running A* from 350497118 to 2407137352 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2300
+Path length: 154 nodes
+A* total elapsed time: 2.468431 s
+  server queries time: 2.317002 s
+  search-only time: 0.151428 s
+Server bytes received: 166648449 bytes
+Running A* from 5102112664 to 2959961421 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3602
+Path length: 273 nodes
+A* total elapsed time: 2.454299 s
+  server queries time: 2.298700 s
+  search-only time: 0.155599 s
+Server bytes received: 166648449 bytes
+Running A* from 365012662 to 1494083979 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2451
+Path length: 143 nodes
+A* total elapsed time: 2.469543 s
+  server queries time: 2.298181 s
+  search-only time: 0.171363 s
+Server bytes received: 166648449 bytes
+-- running journeys of distance 60000...
+Running A* from 1826149704 to 3452648081 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3913
+Path length: 254 nodes
+A* total elapsed time: 2.506639 s
+  server queries time: 2.333019 s
+  search-only time: 0.173620 s
+Server bytes received: 166648449 bytes
+Running A* from 461743344 to 1028587568 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3183
+Path length: 195 nodes
+A* total elapsed time: 2.484942 s
+  server queries time: 2.318581 s
+  search-only time: 0.166360 s
+Server bytes received: 166648449 bytes
+Running A* from 810262723 to 6881230248 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 4553
+Path length: 247 nodes
+A* total elapsed time: 2.467439 s
+  server queries time: 2.298653 s
+  search-only time: 0.168786 s
+Server bytes received: 166648449 bytes
+Running A* from 6203810862 to 1557323111 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2390
+Path length: 165 nodes
+A* total elapsed time: 2.465020 s
+  server queries time: 2.315280 s
+  search-only time: 0.149741 s
+Server bytes received: 166648449 bytes
+Running A* from 7040195391 to 596351624 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3583
+Path length: 345 nodes
+A* total elapsed time: 2.559475 s
+  server queries time: 2.305678 s
+  search-only time: 0.253797 s
+Server bytes received: 166648449 bytes
+Running A* from 429711507 to 334393059 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3715
+Path length: 295 nodes
+A* total elapsed time: 2.488698 s
+  server queries time: 2.302449 s
+  search-only time: 0.186249 s
+Server bytes received: 166648449 bytes
+Running A* from 1439104790 to 4185217327 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3129
+Path length: 304 nodes
+A* total elapsed time: 2.490152 s
+  server queries time: 2.307481 s
+  search-only time: 0.182671 s
+Server bytes received: 166648449 bytes
+Running A* from 260667628 to 961804771 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 4270
+Path length: 242 nodes
+A* total elapsed time: 2.490038 s
+  server queries time: 2.311092 s
+  search-only time: 0.178946 s
+Server bytes received: 166648449 bytes
+Running A* from 289793053 to 455556966 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3669
+Path length: 283 nodes
+A* total elapsed time: 2.467067 s
+  server queries time: 2.301394 s
+  search-only time: 0.165673 s
+Server bytes received: 166648449 bytes
+Running A* from 1192550006 to 6469454180 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 4497
+Path length: 428 nodes
+A* total elapsed time: 2.484124 s
+  server queries time: 2.294845 s
+  search-only time: 0.189279 s
+Server bytes received: 166648449 bytes
+Running A* from 1639892138 to 173297177 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 4063
+Path length: 203 nodes
+A* total elapsed time: 2.496436 s
+  server queries time: 2.299978 s
+  search-only time: 0.196457 s
+Server bytes received: 166648449 bytes
+Running A* from 288794407 to 1824828504 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3849
+Path length: 215 nodes
+A* total elapsed time: 2.479591 s
+  server queries time: 2.302640 s
+  search-only time: 0.176952 s
+Server bytes received: 166648449 bytes
+Running A* from 470829133 to 455560429 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 5141
+Path length: 426 nodes
+A* total elapsed time: 2.496288 s
+  server queries time: 2.313293 s
+  search-only time: 0.182995 s
+Server bytes received: 166648449 bytes
+Running A* from 1075339620 to 1987706422 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3829
+Path length: 275 nodes
+A* total elapsed time: 2.531049 s
+  server queries time: 2.297729 s
+  search-only time: 0.233320 s
+Server bytes received: 166648449 bytes
+Running A* from 26759478 to 3162965652 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3581
+Path length: 257 nodes
+A* total elapsed time: 2.491808 s
+  server queries time: 2.296198 s
+  search-only time: 0.195610 s
+Server bytes received: 166648449 bytes
+Running A* from 281788642 to 1830818074 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2724
+Path length: 132 nodes
+A* total elapsed time: 2.469204 s
+  server queries time: 2.314272 s
+  search-only time: 0.154932 s
+Server bytes received: 166648449 bytes
+Running A* from 2536145608 to 5311866794 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2771
+Path length: 145 nodes
+A* total elapsed time: 2.453573 s
+  server queries time: 2.304580 s
+  search-only time: 0.148992 s
+Server bytes received: 166648449 bytes
+Running A* from 8867495392 to 1510768640 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3135
+Path length: 238 nodes
+A* total elapsed time: 2.529888 s
+  server queries time: 2.337257 s
+  search-only time: 0.192630 s
+Server bytes received: 166648449 bytes
+Running A* from 250880651 to 1408683024 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3534
+Path length: 177 nodes
+A* total elapsed time: 2.490771 s
+  server queries time: 2.297611 s
+  search-only time: 0.193160 s
+Server bytes received: 166648449 bytes
+Running A* from 1033199795 to 1947250138 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3892
+Path length: 214 nodes
+A* total elapsed time: 2.478543 s
+  server queries time: 2.304622 s
+  search-only time: 0.173920 s
+Server bytes received: 166648449 bytes
+Running A* from 1192611187 to 3011363599 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 4004
+Path length: 253 nodes
+A* total elapsed time: 2.477194 s
+  server queries time: 2.305546 s
+  search-only time: 0.171648 s
+Server bytes received: 166648449 bytes
+Running A* from 7310476418 to 2801894764 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3555
+Path length: 259 nodes
+A* total elapsed time: 2.469896 s
+  server queries time: 2.300388 s
+  search-only time: 0.169508 s
+Server bytes received: 166648449 bytes
+Running A* from 237818262 to 75292866 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3815
+Path length: 344 nodes
+A* total elapsed time: 2.550450 s
+  server queries time: 2.282927 s
+  search-only time: 0.267523 s
+Server bytes received: 166648449 bytes
+Running A* from 262123703 to 723169681 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 4749
+Path length: 324 nodes
+A* total elapsed time: 2.500836 s
+  server queries time: 2.299125 s
+  search-only time: 0.201711 s
+Server bytes received: 166648449 bytes
+Running A* from 286592926 to 2867377854 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 4192
+Path length: 358 nodes
+A* total elapsed time: 2.476290 s
+  server queries time: 2.301348 s
+  search-only time: 0.174941 s
+Server bytes received: 166648449 bytes
+Running A* from 11399472306 to 4002427994 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3582
+Path length: 308 nodes
+A* total elapsed time: 2.480189 s
+  server queries time: 2.303954 s
+  search-only time: 0.176235 s
+Server bytes received: 166648449 bytes
+Running A* from 248585341 to 434134728 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 3287
+Path length: 277 nodes
+A* total elapsed time: 2.509368 s
+  server queries time: 2.284220 s
+  search-only time: 0.225149 s
+Server bytes received: 166648449 bytes
+Running A* from 224271991 to 3255192841 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 2982
+Path length: 225 nodes
+A* total elapsed time: 2.471535 s
+  server queries time: 2.316247 s
+  search-only time: 0.155287 s
+Server bytes received: 166648449 bytes
+Running A* from 2574969062 to 7502992138 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 4111
+Path length: 298 nodes
+A* total elapsed time: 2.491539 s
+  server queries time: 2.322040 s
+  search-only time: 0.169499 s
+Server bytes received: 166648449 bytes
+Running A* from 1269247206 to 2435853718 in country France using approach Node0 and architecture Naive ...
+A* found a path with cost 5079
+Path length: 303 nodes
+A* total elapsed time: 2.506547 s
+  server queries time: 2.308183 s
+  search-only time: 0.198364 s
+Server bytes received: 166648449 bytes

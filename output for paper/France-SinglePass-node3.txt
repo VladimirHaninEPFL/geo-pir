@@ -1,0 +1,2322 @@
+-- starting benchmarks for France SinglePass node3 --
+-- running journeys of distance 500...
+Running A* from 7251342218 to 736631130 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 51
+Path length: 4 nodes
+A* total elapsed time: 1.290978 s
+  server queries time: 1.144331 s
+  search-only time: 0.146647 s
+Server bytes received: 31008226 bytes
+Running A* from 2191353924 to 1265211283 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 86
+Path length: 16 nodes
+A* total elapsed time: 2.129089 s
+  server queries time: 1.984757 s
+  search-only time: 0.144332 s
+Server bytes received: 620164520 bytes
+Running A* from 496980752 to 1470846416 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 89
+Path length: 15 nodes
+A* total elapsed time: 1.121126 s
+  server queries time: 0.976027 s
+  search-only time: 0.145099 s
+Server bytes received: 294578147 bytes
+Running A* from 105455016 to 1115017059 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 134
+Path length: 13 nodes
+A* total elapsed time: 0.585918 s
+  server queries time: 0.442165 s
+  search-only time: 0.143753 s
+Server bytes received: 139537017 bytes
+Running A* from 286501429 to 286268455 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 95
+Path length: 20 nodes
+A* total elapsed time: 1.728642 s
+  server queries time: 1.585089 s
+  search-only time: 0.143553 s
+Server bytes received: 496131616 bytes
+Running A* from 618926645 to 1037757745 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 71
+Path length: 18 nodes
+A* total elapsed time: 1.024345 s
+  server queries time: 0.880679 s
+  search-only time: 0.143666 s
+Server bytes received: 279074034 bytes
+Running A* from 412493727 to 397657383 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 59
+Path length: 6 nodes
+A* total elapsed time: 0.548947 s
+  server queries time: 0.405466 s
+  search-only time: 0.143481 s
+Server bytes received: 124032904 bytes
+Running A* from 1398394841 to 278574752 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 52
+Path length: 11 nodes
+A* total elapsed time: 0.840942 s
+  server queries time: 0.697805 s
+  search-only time: 0.143137 s
+Server bytes received: 217057582 bytes
+Running A* from 206339818 to 598396071 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 102
+Path length: 16 nodes
+A* total elapsed time: 1.915945 s
+  server queries time: 1.772207 s
+  search-only time: 0.143738 s
+Server bytes received: 558148068 bytes
+Running A* from 6367769388 to 1621752972 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 57
+Path length: 8 nodes
+A* total elapsed time: 0.445621 s
+  server queries time: 0.296999 s
+  search-only time: 0.148622 s
+Server bytes received: 93024678 bytes
+Running A* from 1949743114 to 1111347752 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 66
+Path length: 7 nodes
+A* total elapsed time: 3.825622 s
+  server queries time: 3.673664 s
+  search-only time: 0.151958 s
+Server bytes received: 201553469 bytes
+Running A* from 538279225 to 3434525432 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 92
+Path length: 15 nodes
+A* total elapsed time: 0.742514 s
+  server queries time: 0.598309 s
+  search-only time: 0.144205 s
+Server bytes received: 186049356 bytes
+Running A* from 4806159449 to 2566236119 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 46
+Path length: 6 nodes
+A* total elapsed time: 0.346186 s
+  server queries time: 0.201436 s
+  search-only time: 0.144750 s
+Server bytes received: 62016452 bytes
+Running A* from 372629988 to 372626663 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 130
+Path length: 17 nodes
+A* total elapsed time: 2.111387 s
+  server queries time: 1.966500 s
+  search-only time: 0.144888 s
+Server bytes received: 604660407 bytes
+Running A* from 283342334 to 283341375 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 62
+Path length: 10 nodes
+A* total elapsed time: 0.715614 s
+  server queries time: 0.563617 s
+  search-only time: 0.151997 s
+Server bytes received: 170545243 bytes
+Running A* from 1936509742 to 1968458543 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 35
+Path length: 2 nodes
+A* total elapsed time: 0.246690 s
+  server queries time: 0.101941 s
+  search-only time: 0.144749 s
+Server bytes received: 31008226 bytes
+Running A* from 694500183 to 13004337371 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 89
+Path length: 30 nodes
+A* total elapsed time: 2.125799 s
+  server queries time: 1.982117 s
+  search-only time: 0.143682 s
+Server bytes received: 604660407 bytes
+Running A* from 1164034288 to 3016570057 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 89
+Path length: 14 nodes
+A* total elapsed time: 1.163730 s
+  server queries time: 1.011684 s
+  search-only time: 0.152046 s
+Server bytes received: 310082260 bytes
+Running A* from 2639780124 to 289109314 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 122
+Path length: 19 nodes
+A* total elapsed time: 1.916744 s
+  server queries time: 1.771751 s
+  search-only time: 0.144993 s
+Server bytes received: 542643955 bytes
+Running A* from 4920343852 to 4920343821 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 28
+Path length: 4 nodes
+A* total elapsed time: 0.198043 s
+  server queries time: 0.052690 s
+  search-only time: 0.145353 s
+Server bytes received: 15504113 bytes
+Running A* from 6106065584 to 1499078067 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 78
+Path length: 6 nodes
+A* total elapsed time: 0.351089 s
+  server queries time: 0.206860 s
+  search-only time: 0.144229 s
+Server bytes received: 62016452 bytes
+Running A* from 6906939948 to 648670842 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 63
+Path length: 8 nodes
+A* total elapsed time: 0.527251 s
+  server queries time: 0.382913 s
+  search-only time: 0.144338 s
+Server bytes received: 124032904 bytes
+Running A* from 6819828963 to 1425057838 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 111
+Path length: 12 nodes
+A* total elapsed time: 1.073967 s
+  server queries time: 0.929395 s
+  search-only time: 0.144572 s
+Server bytes received: 310082260 bytes
+Running A* from 4056045038 to 706205617 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 52
+Path length: 10 nodes
+A* total elapsed time: 0.374174 s
+  server queries time: 0.230863 s
+  search-only time: 0.143311 s
+Server bytes received: 77520565 bytes
+Running A* from 1310191101 to 514123401 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 65
+Path length: 10 nodes
+A* total elapsed time: 0.705018 s
+  server queries time: 0.560718 s
+  search-only time: 0.144300 s
+Server bytes received: 186049356 bytes
+Running A* from 254439871 to 2422172162 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 60
+Path length: 16 nodes
+A* total elapsed time: 0.867771 s
+  server queries time: 0.723928 s
+  search-only time: 0.143843 s
+Server bytes received: 232561695 bytes
+Running A* from 762629780 to 3320604317 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 108
+Path length: 14 nodes
+A* total elapsed time: 0.795047 s
+  server queries time: 0.649633 s
+  search-only time: 0.145414 s
+Server bytes received: 217057582 bytes
+Running A* from 303469444 to 303060979 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 73
+Path length: 11 nodes
+A* total elapsed time: 0.935455 s
+  server queries time: 0.792050 s
+  search-only time: 0.143405 s
+Server bytes received: 263569921 bytes
+Running A* from 417667586 to 293849029 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 57
+Path length: 7 nodes
+A* total elapsed time: 0.435789 s
+  server queries time: 0.292005 s
+  search-only time: 0.143784 s
+Server bytes received: 93024678 bytes
+Running A* from 283629000 to 2262114139 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 62
+Path length: 8 nodes
+A* total elapsed time: 0.712832 s
+  server queries time: 0.568455 s
+  search-only time: 0.144377 s
+Server bytes received: 186049356 bytes
+-- running journeys of distance 1000...
+Running A* from 915309455 to 915349063 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 103
+Path length: 4 nodes
+A* total elapsed time: 0.493112 s
+  server queries time: 0.345081 s
+  search-only time: 0.148030 s
+Server bytes received: 108528791 bytes
+Running A* from 9358027076 to 1038252317 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 141
+Path length: 22 nodes
+A* total elapsed time: 3.538277 s
+  server queries time: 3.394649 s
+  search-only time: 0.143628 s
+Server bytes received: 1116296136 bytes
+Running A* from 4935552371 to 5024953247 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 223
+Path length: 29 nodes
+A* total elapsed time: 1.945864 s
+  server queries time: 1.791679 s
+  search-only time: 0.154185 s
+Server bytes received: 573652181 bytes
+Running A* from 379688172 to 705489862 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 116
+Path length: 7 nodes
+A* total elapsed time: 0.393341 s
+  server queries time: 0.247153 s
+  search-only time: 0.146188 s
+Server bytes received: 77520565 bytes
+Running A* from 4611385379 to 269182155 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 196
+Path length: 42 nodes
+A* total elapsed time: 4.860147 s
+  server queries time: 4.715903 s
+  search-only time: 0.144244 s
+Server bytes received: 1519403074 bytes
+Running A* from 1290799697 to 1305175968 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 253
+Path length: 15 nodes
+A* total elapsed time: 1.140521 s
+  server queries time: 0.997383 s
+  search-only time: 0.143139 s
+Server bytes received: 325586373 bytes
+Running A* from 250123267 to 11005859303 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 256
+Path length: 47 nodes
+A* total elapsed time: 3.918799 s
+  server queries time: 3.772301 s
+  search-only time: 0.146498 s
+Server bytes received: 1147304362 bytes
+Running A* from 3357956392 to 738816505 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 112
+Path length: 7 nodes
+A* total elapsed time: 0.390972 s
+  server queries time: 0.246420 s
+  search-only time: 0.144552 s
+Server bytes received: 77520565 bytes
+Running A* from 3384569126 to 460449868 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 168
+Path length: 19 nodes
+A* total elapsed time: 1.017274 s
+  server queries time: 0.873528 s
+  search-only time: 0.143746 s
+Server bytes received: 263569921 bytes
+Running A* from 457835044 to 1887955128 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 606
+Path length: 60 nodes
+A* total elapsed time: 21.653704 s
+  server queries time: 21.497475 s
+  search-only time: 0.156229 s
+Server bytes received: 6186141087 bytes
+Running A* from 3806773658 to 274390008 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 158
+Path length: 25 nodes
+A* total elapsed time: 2.738930 s
+  server queries time: 2.592433 s
+  search-only time: 0.146497 s
+Server bytes received: 852726215 bytes
+Running A* from 762193917 to 762758475 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 208
+Path length: 21 nodes
+A* total elapsed time: 1.649804 s
+  server queries time: 1.506335 s
+  search-only time: 0.143469 s
+Server bytes received: 496131616 bytes
+Running A* from 3824912882 to 428236129 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 163
+Path length: 21 nodes
+A* total elapsed time: 1.830822 s
+  server queries time: 1.686154 s
+  search-only time: 0.144668 s
+Server bytes received: 496131616 bytes
+Running A* from 1122812350 to 1119275769 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 308
+Path length: 46 nodes
+A* total elapsed time: 7.097836 s
+  server queries time: 6.951408 s
+  search-only time: 0.146428 s
+Server bytes received: 2046542916 bytes
+Running A* from 5631306845 to 797793718 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 314
+Path length: 46 nodes
+A* total elapsed time: 2.729843 s
+  server queries time: 2.584788 s
+  search-only time: 0.145055 s
+Server bytes received: 821717989 bytes
+Running A* from 32559462 to 1528805570 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 139
+Path length: 30 nodes
+A* total elapsed time: 2.948171 s
+  server queries time: 2.804337 s
+  search-only time: 0.143834 s
+Server bytes received: 899238554 bytes
+Running A* from 1241375688 to 1785449437 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 91
+Path length: 11 nodes
+A* total elapsed time: 0.486919 s
+  server queries time: 0.342591 s
+  search-only time: 0.144328 s
+Server bytes received: 108528791 bytes
+Running A* from 3875860318 to 13448622441 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 250
+Path length: 12 nodes
+A* total elapsed time: 1.735963 s
+  server queries time: 1.593478 s
+  search-only time: 0.142486 s
+Server bytes received: 511635729 bytes
+Running A* from 10962567131 to 247274282 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 170
+Path length: 17 nodes
+A* total elapsed time: 4.524443 s
+  server queries time: 4.374093 s
+  search-only time: 0.150351 s
+Server bytes received: 1379866057 bytes
+Running A* from 270323566 to 7758184953 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 309
+Path length: 36 nodes
+A* total elapsed time: 3.994497 s
+  server queries time: 3.848571 s
+  search-only time: 0.145926 s
+Server bytes received: 1271337266 bytes
+Running A* from 1828568407 to 26353406 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 174
+Path length: 44 nodes
+A* total elapsed time: 4.982298 s
+  server queries time: 4.835729 s
+  search-only time: 0.146569 s
+Server bytes received: 1596923639 bytes
+Running A* from 842220933 to 1832530303 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 160
+Path length: 31 nodes
+A* total elapsed time: 3.557168 s
+  server queries time: 3.412325 s
+  search-only time: 0.144843 s
+Server bytes received: 1100792023 bytes
+Running A* from 13577572798 to 2257891006 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 156
+Path length: 16 nodes
+A* total elapsed time: 1.443576 s
+  server queries time: 1.299733 s
+  search-only time: 0.143842 s
+Server bytes received: 418611051 bytes
+Running A* from 7004544308 to 29331860 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 156
+Path length: 34 nodes
+A* total elapsed time: 4.664802 s
+  server queries time: 4.517642 s
+  search-only time: 0.147160 s
+Server bytes received: 1426378396 bytes
+Running A* from 1204300928 to 9628991808 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 334
+Path length: 27 nodes
+A* total elapsed time: 2.700054 s
+  server queries time: 2.554930 s
+  search-only time: 0.145124 s
+Server bytes received: 837222102 bytes
+Running A* from 3647896665 to 2940386091 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 191
+Path length: 22 nodes
+A* total elapsed time: 3.096253 s
+  server queries time: 2.952278 s
+  search-only time: 0.143975 s
+Server bytes received: 976759119 bytes
+Running A* from 934843697 to 8069411785 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 419
+Path length: 39 nodes
+A* total elapsed time: 3.393617 s
+  server queries time: 3.248044 s
+  search-only time: 0.145573 s
+Server bytes received: 1069783797 bytes
+Running A* from 6083337001 to 3245131571 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 124
+Path length: 17 nodes
+A* total elapsed time: 2.170305 s
+  server queries time: 2.015241 s
+  search-only time: 0.155064 s
+Server bytes received: 651172746 bytes
+Running A* from 1305740760 to 2457639872 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 73
+Path length: 10 nodes
+A* total elapsed time: 0.378237 s
+  server queries time: 0.232018 s
+  search-only time: 0.146218 s
+Server bytes received: 77520565 bytes
+Running A* from 504012213 to 8066862127 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 204
+Path length: 18 nodes
+A* total elapsed time: 3.153101 s
+  server queries time: 3.008948 s
+  search-only time: 0.144154 s
+Server bytes received: 1007767345 bytes
+-- running journeys of distance 2000...
+Running A* from 311586112 to 266016129 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 287
+Path length: 40 nodes
+A* total elapsed time: 10.428847 s
+  server queries time: 10.280745 s
+  search-only time: 0.148102 s
+Server bytes received: 3348888408 bytes
+Running A* from 402920612 to 8477308258 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 266
+Path length: 33 nodes
+A* total elapsed time: 9.037824 s
+  server queries time: 8.890759 s
+  search-only time: 0.147065 s
+Server bytes received: 2868260905 bytes
+Running A* from 13795263 to 1264262785 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 479
+Path length: 47 nodes
+A* total elapsed time: 19.655554 s
+  server queries time: 19.504482 s
+  search-only time: 0.151071 s
+Server bytes received: 6294669878 bytes
+Running A* from 1476075680 to 1888024765 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 189
+Path length: 28 nodes
+A* total elapsed time: 1.512339 s
+  server queries time: 1.365347 s
+  search-only time: 0.146992 s
+Server bytes received: 434115164 bytes
+Running A* from 498794353 to 1230552018 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 201
+Path length: 30 nodes
+A* total elapsed time: 2.213890 s
+  server queries time: 2.067762 s
+  search-only time: 0.146127 s
+Server bytes received: 651172746 bytes
+Running A* from 8481249263 to 288408121 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 252
+Path length: 22 nodes
+A* total elapsed time: 6.656306 s
+  server queries time: 6.511023 s
+  search-only time: 0.145282 s
+Server bytes received: 2031038803 bytes
+Running A* from 1511486985 to 6352191508 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 204
+Path length: 25 nodes
+A* total elapsed time: 0.952999 s
+  server queries time: 0.804920 s
+  search-only time: 0.148080 s
+Server bytes received: 248065808 bytes
+Running A* from 10993972275 to 11920476597 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 501
+Path length: 94 nodes
+A* total elapsed time: 23.361585 s
+  server queries time: 23.205817 s
+  search-only time: 0.155768 s
+Server bytes received: 7550503031 bytes
+Running A* from 1151139193 to 614442019 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 233
+Path length: 47 nodes
+A* total elapsed time: 7.006904 s
+  server queries time: 6.857864 s
+  search-only time: 0.149040 s
+Server bytes received: 2263600498 bytes
+Running A* from 12649554445 to 191988295 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 813
+Path length: 96 nodes
+A* total elapsed time: 48.548932 s
+  server queries time: 48.384136 s
+  search-only time: 0.164796 s
+Server bytes received: 14108742830 bytes
+Running A* from 135383386 to 2541877498 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 201
+Path length: 32 nodes
+A* total elapsed time: 6.759096 s
+  server queries time: 6.612052 s
+  search-only time: 0.147044 s
+Server bytes received: 1938014125 bytes
+Running A* from 13333336448 to 1004511703 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 252
+Path length: 52 nodes
+A* total elapsed time: 7.499142 s
+  server queries time: 7.343227 s
+  search-only time: 0.155915 s
+Server bytes received: 2325616950 bytes
+Running A* from 316517389 to 282350954 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 292
+Path length: 55 nodes
+A* total elapsed time: 5.240632 s
+  server queries time: 5.095319 s
+  search-only time: 0.145312 s
+Server bytes received: 1643435978 bytes
+Running A* from 335480653 to 333627171 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 380
+Path length: 44 nodes
+A* total elapsed time: 24.404875 s
+  server queries time: 24.253910 s
+  search-only time: 0.150965 s
+Server bytes received: 7783064726 bytes
+Running A* from 255072993 to 13655088450 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 343
+Path length: 58 nodes
+A* total elapsed time: 13.715650 s
+  server queries time: 13.563603 s
+  search-only time: 0.152047 s
+Server bytes received: 4387663979 bytes
+Running A* from 4348180998 to 633486092 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 149
+Path length: 29 nodes
+A* total elapsed time: 1.047203 s
+  server queries time: 0.895741 s
+  search-only time: 0.151463 s
+Server bytes received: 294578147 bytes
+Running A* from 1638936350 to 799200406 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 212
+Path length: 31 nodes
+A* total elapsed time: 5.638950 s
+  server queries time: 5.491698 s
+  search-only time: 0.147252 s
+Server bytes received: 1829485334 bytes
+Running A* from 3869715124 to 2282296368 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 184
+Path length: 9 nodes
+A* total elapsed time: 1.482771 s
+  server queries time: 1.335120 s
+  search-only time: 0.147651 s
+Server bytes received: 434115164 bytes
+Running A* from 6210276248 to 276007144 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 656
+Path length: 55 nodes
+A* total elapsed time: 24.761693 s
+  server queries time: 24.608981 s
+  search-only time: 0.152711 s
+Server bytes received: 8201675777 bytes
+Running A* from 10093546853 to 281131677 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 293
+Path length: 49 nodes
+A* total elapsed time: 10.257109 s
+  server queries time: 10.108413 s
+  search-only time: 0.148696 s
+Server bytes received: 3333384295 bytes
+Running A* from 1015881277 to 3779361081 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 327
+Path length: 62 nodes
+A* total elapsed time: 7.955363 s
+  server queries time: 7.806341 s
+  search-only time: 0.149022 s
+Server bytes received: 2511666306 bytes
+Running A* from 784080474 to 1293201570 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 187
+Path length: 28 nodes
+A* total elapsed time: 0.943922 s
+  server queries time: 0.798494 s
+  search-only time: 0.145428 s
+Server bytes received: 263569921 bytes
+Running A* from 11302230542 to 95132468 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 496
+Path length: 71 nodes
+A* total elapsed time: 13.903928 s
+  server queries time: 13.754323 s
+  search-only time: 0.149604 s
+Server bytes received: 4542705109 bytes
+Running A* from 281108037 to 11438477636 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 288
+Path length: 50 nodes
+A* total elapsed time: 6.928024 s
+  server queries time: 6.775035 s
+  search-only time: 0.152990 s
+Server bytes received: 2217088159 bytes
+Running A* from 3440503594 to 327481275 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 248
+Path length: 54 nodes
+A* total elapsed time: 11.509407 s
+  server queries time: 11.357719 s
+  search-only time: 0.151688 s
+Server bytes received: 3658970668 bytes
+Running A* from 1590815746 to 7526543987 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 257
+Path length: 27 nodes
+A* total elapsed time: 1.388805 s
+  server queries time: 1.237834 s
+  search-only time: 0.150971 s
+Server bytes received: 403106938 bytes
+Running A* from 9370450517 to 498612412 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 276
+Path length: 36 nodes
+A* total elapsed time: 13.762091 s
+  server queries time: 13.613475 s
+  search-only time: 0.148617 s
+Server bytes received: 4434176318 bytes
+Running A* from 1921408470 to 11673355023 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 227
+Path length: 44 nodes
+A* total elapsed time: 4.928248 s
+  server queries time: 4.778016 s
+  search-only time: 0.150232 s
+Server bytes received: 1565915413 bytes
+Running A* from 2850488407 to 1716869353 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 192
+Path length: 22 nodes
+A* total elapsed time: 1.312376 s
+  server queries time: 1.162899 s
+  search-only time: 0.149476 s
+Server bytes received: 372098712 bytes
+Running A* from 3079425041 to 1866360581 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 188
+Path length: 15 nodes
+A* total elapsed time: 2.111945 s
+  server queries time: 1.966480 s
+  search-only time: 0.145465 s
+Server bytes received: 635668633 bytes
+-- running journeys of distance 5000...
+Running A* from 1240468959 to 4496637769 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 663
+Path length: 85 nodes
+A* total elapsed time: 16.217866 s
+  server queries time: 16.059156 s
+  search-only time: 0.158710 s
+Server bytes received: 5255894307 bytes
+Running A* from 322883732 to 1196790008 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 708
+Path length: 71 nodes
+A* total elapsed time: 22.915231 s
+  server queries time: 22.758429 s
+  search-only time: 0.156801 s
+Server bytes received: 7286933110 bytes
+Running A* from 1197776947 to 1196652872 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 544
+Path length: 21 nodes
+A* total elapsed time: 8.363150 s
+  server queries time: 8.215186 s
+  search-only time: 0.147964 s
+Server bytes received: 2666707436 bytes
+Running A* from 919795864 to 1374849213 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 697
+Path length: 79 nodes
+A* total elapsed time: 9.498519 s
+  server queries time: 9.345798 s
+  search-only time: 0.152721 s
+Server bytes received: 3038806148 bytes
+Running A* from 7968663230 to 609219819 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 580
+Path length: 79 nodes
+A* total elapsed time: 47.419759 s
+  server queries time: 47.252255 s
+  search-only time: 0.167504 s
+Server bytes received: 15240543079 bytes
+Running A* from 1987116823 to 2838229168 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 437
+Path length: 47 nodes
+A* total elapsed time: 11.437593 s
+  server queries time: 11.285069 s
+  search-only time: 0.152525 s
+Server bytes received: 3736491233 bytes
+Running A* from 300499971 to 5859064320 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 576
+Path length: 86 nodes
+A* total elapsed time: 30.866005 s
+  server queries time: 30.708128 s
+  search-only time: 0.157877 s
+Server bytes received: 10124185789 bytes
+Running A* from 1659679137 to 1123943374 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 345
+Path length: 37 nodes
+A* total elapsed time: 2.821415 s
+  server queries time: 2.674112 s
+  search-only time: 0.147303 s
+Server bytes received: 868230328 bytes
+Running A* from 11472838383 to 1160038792 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 496
+Path length: 89 nodes
+A* total elapsed time: 30.799025 s
+  server queries time: 30.639862 s
+  search-only time: 0.159163 s
+Server bytes received: 9442004817 bytes
+Running A* from 1478199670 to 450947345 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 446
+Path length: 42 nodes
+A* total elapsed time: 5.256504 s
+  server queries time: 5.108137 s
+  search-only time: 0.148367 s
+Server bytes received: 1596923639 bytes
+Running A* from 451099655 to 12174313082 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 768
+Path length: 104 nodes
+A* total elapsed time: 71.621717 s
+  server queries time: 71.433606 s
+  search-only time: 0.188111 s
+Server bytes received: 23566251760 bytes
+Running A* from 2475815095 to 1838950837 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 478
+Path length: 40 nodes
+A* total elapsed time: 2.325240 s
+  server queries time: 2.181456 s
+  search-only time: 0.143784 s
+Server bytes received: 728693311 bytes
+Running A* from 2126568903 to 1204339484 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 531
+Path length: 48 nodes
+A* total elapsed time: 13.197462 s
+  server queries time: 13.046667 s
+  search-only time: 0.150794 s
+Server bytes received: 4217118736 bytes
+Running A* from 651540501 to 1974283252 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 536
+Path length: 69 nodes
+A* total elapsed time: 19.634039 s
+  server queries time: 19.480197 s
+  search-only time: 0.153842 s
+Server bytes received: 6403198669 bytes
+Running A* from 338492437 to 394994200 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 551
+Path length: 111 nodes
+A* total elapsed time: 14.068210 s
+  server queries time: 13.918012 s
+  search-only time: 0.150198 s
+Server bytes received: 4651233900 bytes
+Running A* from 2106946006 to 2426642933 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1201
+Path length: 87 nodes
+A* total elapsed time: 26.324437 s
+  server queries time: 26.166869 s
+  search-only time: 0.157568 s
+Server bytes received: 8759823845 bytes
+Running A* from 6862630059 to 1509994799 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 737
+Path length: 131 nodes
+A* total elapsed time: 45.842353 s
+  server queries time: 45.677328 s
+  search-only time: 0.165025 s
+Server bytes received: 14945964932 bytes
+Running A* from 2843450952 to 283459265 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 395
+Path length: 52 nodes
+A* total elapsed time: 14.416722 s
+  server queries time: 14.262933 s
+  search-only time: 0.153789 s
+Server bytes received: 4682242126 bytes
+Running A* from 700399937 to 748867083 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 599
+Path length: 90 nodes
+A* total elapsed time: 45.317405 s
+  server queries time: 45.154474 s
+  search-only time: 0.162931 s
+Server bytes received: 14434329203 bytes
+Running A* from 360463160 to 367677757 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 582
+Path length: 90 nodes
+A* total elapsed time: 35.209459 s
+  server queries time: 35.048074 s
+  search-only time: 0.161385 s
+Server bytes received: 11333506603 bytes
+Running A* from 560803579 to 1651535028 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 440
+Path length: 74 nodes
+A* total elapsed time: 27.208930 s
+  server queries time: 27.053940 s
+  search-only time: 0.154990 s
+Server bytes received: 8930369088 bytes
+Running A* from 4717517420 to 1743350073 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 535
+Path length: 34 nodes
+A* total elapsed time: 7.091490 s
+  server queries time: 6.945196 s
+  search-only time: 0.146294 s
+Server bytes received: 2248096385 bytes
+Running A* from 6391614710 to 819180423 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 549
+Path length: 51 nodes
+A* total elapsed time: 5.263146 s
+  server queries time: 5.116964 s
+  search-only time: 0.146182 s
+Server bytes received: 1674444204 bytes
+Running A* from 11989571125 to 24959188 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 717
+Path length: 114 nodes
+A* total elapsed time: 87.079393 s
+  server queries time: 86.891024 s
+  search-only time: 0.188368 s
+Server bytes received: 28139965095 bytes
+Running A* from 2107138083 to 11552853936 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 508
+Path length: 62 nodes
+A* total elapsed time: 17.380980 s
+  server queries time: 17.226017 s
+  search-only time: 0.154963 s
+Server bytes received: 5643497132 bytes
+Running A* from 365373640 to 25244985 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 562
+Path length: 83 nodes
+A* total elapsed time: 38.900565 s
+  server queries time: 38.734580 s
+  search-only time: 0.165985 s
+Server bytes received: 12775389112 bytes
+Running A* from 246546719 to 5966270133 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 590
+Path length: 80 nodes
+A* total elapsed time: 31.058693 s
+  server queries time: 30.898247 s
+  search-only time: 0.160446 s
+Server bytes received: 10000152885 bytes
+Running A* from 7826262898 to 2136839972 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 547
+Path length: 69 nodes
+A* total elapsed time: 10.058514 s
+  server queries time: 9.906038 s
+  search-only time: 0.152476 s
+Server bytes received: 3178343165 bytes
+Running A* from 1345715607 to 2262766901 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 610
+Path length: 82 nodes
+A* total elapsed time: 39.908070 s
+  server queries time: 39.743727 s
+  search-only time: 0.164344 s
+Server bytes received: 13007950807 bytes
+Running A* from 251837217 to 57199750 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 679
+Path length: 123 nodes
+A* total elapsed time: 68.492343 s
+  server queries time: 68.309505 s
+  search-only time: 0.182838 s
+Server bytes received: 22217393929 bytes
+-- running journeys of distance 10000...
+Running A* from 3854556831 to 7997255579 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1033
+Path length: 139 nodes
+A* total elapsed time: 150.833198 s
+  server queries time: 150.583815 s
+  search-only time: 0.249383 s
+Server bytes received: 49008501193 bytes
+Running A* from 2265931986 to 3182727258 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 990
+Path length: 113 nodes
+A* total elapsed time: 35.079576 s
+  server queries time: 34.907150 s
+  search-only time: 0.172426 s
+Server bytes received: 10914895552 bytes
+Running A* from 958712467 to 2954740808 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 973
+Path length: 91 nodes
+A* total elapsed time: 36.969353 s
+  server queries time: 36.798722 s
+  search-only time: 0.170631 s
+Server bytes received: 11891654671 bytes
+Running A* from 1744045661 to 288865069 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 752
+Path length: 61 nodes
+A* total elapsed time: 15.551834 s
+  server queries time: 15.395597 s
+  search-only time: 0.156237 s
+Server bytes received: 4961316160 bytes
+Running A* from 663705652 to 8375534581 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 817
+Path length: 112 nodes
+A* total elapsed time: 126.373109 s
+  server queries time: 126.144407 s
+  search-only time: 0.228702 s
+Server bytes received: 41023882998 bytes
+Running A* from 8121006207 to 3692663689 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1023
+Path length: 69 nodes
+A* total elapsed time: 18.195717 s
+  server queries time: 18.037955 s
+  search-only time: 0.157762 s
+Server bytes received: 5783034149 bytes
+Running A* from 4010995143 to 1773568983 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 872
+Path length: 105 nodes
+A* total elapsed time: 96.506300 s
+  server queries time: 96.312068 s
+  search-only time: 0.194233 s
+Server bytes received: 31488853503 bytes
+Running A* from 294775435 to 3613498841 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 902
+Path length: 120 nodes
+A* total elapsed time: 27.323992 s
+  server queries time: 27.165545 s
+  search-only time: 0.158447 s
+Server bytes received: 8108651099 bytes
+Running A* from 481467475 to 1952159244 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 892
+Path length: 56 nodes
+A* total elapsed time: 12.324988 s
+  server queries time: 12.173644 s
+  search-only time: 0.151344 s
+Server bytes received: 4015565267 bytes
+Running A* from 267486869 to 469936983 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 899
+Path length: 107 nodes
+A* total elapsed time: 138.302748 s
+  server queries time: 138.057537 s
+  search-only time: 0.245211 s
+Server bytes received: 45101464717 bytes
+Running A* from 8827279714 to 416818004 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1239
+Path length: 142 nodes
+A* total elapsed time: 144.162313 s
+  server queries time: 143.927373 s
+  search-only time: 0.234940 s
+Server bytes received: 48527873690 bytes
+Running A* from 1804825761 to 5242855121 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 648
+Path length: 81 nodes
+A* total elapsed time: 21.139829 s
+  server queries time: 20.987706 s
+  search-only time: 0.152123 s
+Server bytes received: 6651264477 bytes
+Running A* from 480707432 to 477005965 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 810
+Path length: 116 nodes
+A* total elapsed time: 18.843132 s
+  server queries time: 18.690174 s
+  search-only time: 0.152958 s
+Server bytes received: 6093116409 bytes
+Running A* from 12361597805 to 1272873672 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 823
+Path length: 88 nodes
+A* total elapsed time: 25.393231 s
+  server queries time: 25.231791 s
+  search-only time: 0.161440 s
+Server bytes received: 8139659325 bytes
+Running A* from 371880176 to 9383784371 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 933
+Path length: 95 nodes
+A* total elapsed time: 24.779212 s
+  server queries time: 24.625008 s
+  search-only time: 0.154204 s
+Server bytes received: 7969114082 bytes
+Running A* from 1612868378 to 8287705483 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 902
+Path length: 113 nodes
+A* total elapsed time: 32.321934 s
+  server queries time: 32.162349 s
+  search-only time: 0.159585 s
+Server bytes received: 10744350309 bytes
+Running A* from 2138561876 to 12841659817 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1056
+Path length: 133 nodes
+A* total elapsed time: 49.747110 s
+  server queries time: 49.579342 s
+  search-only time: 0.167767 s
+Server bytes received: 16155285746 bytes
+Running A* from 7054259455 to 7164620931 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1146
+Path length: 104 nodes
+A* total elapsed time: 45.753897 s
+  server queries time: 45.582486 s
+  search-only time: 0.171411 s
+Server bytes received: 14775419689 bytes
+Running A* from 33985899 to 976654296 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 856
+Path length: 125 nodes
+A* total elapsed time: 54.977375 s
+  server queries time: 54.809194 s
+  search-only time: 0.168181 s
+Server bytes received: 17705697046 bytes
+Running A* from 2751033159 to 360701332 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 858
+Path length: 60 nodes
+A* total elapsed time: 17.259371 s
+  server queries time: 17.099397 s
+  search-only time: 0.159974 s
+Server bytes received: 5674505358 bytes
+Running A* from 1662772689 to 859312566 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1339
+Path length: 44 nodes
+A* total elapsed time: 18.855993 s
+  server queries time: 18.698483 s
+  search-only time: 0.157510 s
+Server bytes received: 6124124635 bytes
+Running A* from 180160858 to 1881415571 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 845
+Path length: 89 nodes
+A* total elapsed time: 71.051010 s
+  server queries time: 70.859460 s
+  search-only time: 0.191550 s
+Server bytes received: 23318185952 bytes
+Running A* from 2193237137 to 1719396494 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 745
+Path length: 28 nodes
+A* total elapsed time: 1.212905 s
+  server queries time: 1.062715 s
+  search-only time: 0.150190 s
+Server bytes received: 356594599 bytes
+Running A* from 3070147359 to 10007397903 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1046
+Path length: 159 nodes
+A* total elapsed time: 32.383141 s
+  server queries time: 32.216409 s
+  search-only time: 0.166733 s
+Server bytes received: 10573805066 bytes
+Running A* from 695592949 to 1146882873 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1135
+Path length: 146 nodes
+A* total elapsed time: 72.943232 s
+  server queries time: 72.763638 s
+  search-only time: 0.179593 s
+Server bytes received: 24170912167 bytes
+Running A* from 8627045248 to 748991295 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 994
+Path length: 126 nodes
+A* total elapsed time: 121.497270 s
+  server queries time: 121.286172 s
+  search-only time: 0.211098 s
+Server bytes received: 40915354207 bytes
+Running A* from 1678237731 to 10048677614 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1265
+Path length: 136 nodes
+A* total elapsed time: 216.004701 s
+  server queries time: 215.646282 s
+  search-only time: 0.358420 s
+Server bytes received: 71442952704 bytes
+Running A* from 9574702862 to 485615446 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1193
+Path length: 117 nodes
+A* total elapsed time: 35.185922 s
+  server queries time: 35.022985 s
+  search-only time: 0.162936 s
+Server bytes received: 11550564185 bytes
+Running A* from 4736588746 to 922624519 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1122
+Path length: 137 nodes
+A* total elapsed time: 108.097809 s
+  server queries time: 107.895550 s
+  search-only time: 0.202259 s
+Server bytes received: 36310632646 bytes
+Running A* from 315466048 to 2376864696 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1113
+Path length: 128 nodes
+A* total elapsed time: 132.668734 s
+  server queries time: 132.452393 s
+  search-only time: 0.216341 s
+Server bytes received: 43969664468 bytes
+-- running journeys of distance 15000...
+Running A* from 494455345 to 1351865850 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1343
+Path length: 135 nodes
+A* total elapsed time: 35.554941 s
+  server queries time: 35.390912 s
+  search-only time: 0.164029 s
+Server bytes received: 11535060072 bytes
+Running A* from 4489018021 to 1361269393 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1148
+Path length: 118 nodes
+A* total elapsed time: 44.639704 s
+  server queries time: 44.472611 s
+  search-only time: 0.167093 s
+Server bytes received: 15132014288 bytes
+Running A* from 33983382 to 7758325453 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1326
+Path length: 121 nodes
+A* total elapsed time: 131.639194 s
+  server queries time: 131.393989 s
+  search-only time: 0.245205 s
+Server bytes received: 43396012287 bytes
+Running A* from 1952742304 to 826262346 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1361
+Path length: 96 nodes
+A* total elapsed time: 65.100996 s
+  server queries time: 64.910934 s
+  search-only time: 0.190062 s
+Server bytes received: 21504204731 bytes
+Running A* from 1557125338 to 506533220 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1304
+Path length: 181 nodes
+A* total elapsed time: 154.991534 s
+  server queries time: 154.749621 s
+  search-only time: 0.241914 s
+Server bytes received: 50884498866 bytes
+Running A* from 9088682829 to 2083409022 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1157
+Path length: 93 nodes
+A* total elapsed time: 75.064751 s
+  server queries time: 74.878029 s
+  search-only time: 0.186722 s
+Server bytes received: 24806580800 bytes
+Running A* from 2286170913 to 5039117255 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1280
+Path length: 97 nodes
+A* total elapsed time: 24.820620 s
+  server queries time: 24.665669 s
+  search-only time: 0.154951 s
+Server bytes received: 8248188116 bytes
+Running A* from 856464486 to 25392911 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1127
+Path length: 129 nodes
+A* total elapsed time: 130.298381 s
+  server queries time: 130.069234 s
+  search-only time: 0.229147 s
+Server bytes received: 42760343654 bytes
+Running A* from 2038359083 to 1587686424 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1254
+Path length: 61 nodes
+A* total elapsed time: 10.852057 s
+  server queries time: 10.700069 s
+  search-only time: 0.151988 s
+Server bytes received: 3457417199 bytes
+Running A* from 4828452150 to 1834850765 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1530
+Path length: 178 nodes
+A* total elapsed time: 65.858966 s
+  server queries time: 65.678484 s
+  search-only time: 0.180482 s
+Server bytes received: 22294914494 bytes
+Running A* from 309756720 to 4351247454 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1460
+Path length: 115 nodes
+A* total elapsed time: 109.397690 s
+  server queries time: 109.190539 s
+  search-only time: 0.207151 s
+Server bytes received: 35690468126 bytes
+Running A* from 4853189342 to 3089732739 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1406
+Path length: 177 nodes
+A* total elapsed time: 47.001915 s
+  server queries time: 46.830290 s
+  search-only time: 0.171626 s
+Server bytes received: 15504113000 bytes
+Running A* from 30823473 to 2690773826 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 879
+Path length: 65 nodes
+A* total elapsed time: 27.381263 s
+  server queries time: 27.222587 s
+  search-only time: 0.158677 s
+Server bytes received: 8790832071 bytes
+Running A* from 1451722464 to 4102270633 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1449
+Path length: 172 nodes
+A* total elapsed time: 70.973508 s
+  server queries time: 70.791367 s
+  search-only time: 0.182140 s
+Server bytes received: 23209657161 bytes
+Running A* from 5416905564 to 611166580 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1463
+Path length: 153 nodes
+A* total elapsed time: 150.167845 s
+  server queries time: 149.926292 s
+  search-only time: 0.241553 s
+Server bytes received: 50124797329 bytes
+Running A* from 877347118 to 21486430 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1253
+Path length: 155 nodes
+A* total elapsed time: 136.566318 s
+  server queries time: 136.327887 s
+  search-only time: 0.238431 s
+Server bytes received: 43504541078 bytes
+Running A* from 817833658 to 1731765792 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1305
+Path length: 59 nodes
+A* total elapsed time: 16.606319 s
+  server queries time: 16.453649 s
+  search-only time: 0.152670 s
+Server bytes received: 5441943663 bytes
+Running A* from 1583270498 to 413741722 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1115
+Path length: 159 nodes
+A* total elapsed time: 93.667450 s
+  server queries time: 93.469939 s
+  search-only time: 0.197511 s
+Server bytes received: 31380324712 bytes
+Running A* from 331606643 to 346349043 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1434
+Path length: 190 nodes
+A* total elapsed time: 239.258600 s
+  server queries time: 238.949922 s
+  search-only time: 0.308678 s
+Server bytes received: 77024433384 bytes
+Running A* from 2684715103 to 1363546477 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1274
+Path length: 143 nodes
+A* total elapsed time: 139.854772 s
+  server queries time: 139.614689 s
+  search-only time: 0.240083 s
+Server bytes received: 46388306096 bytes
+Running A* from 346895562 to 3942369579 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1160
+Path length: 175 nodes
+A* total elapsed time: 94.110760 s
+  server queries time: 93.911895 s
+  search-only time: 0.198866 s
+Server bytes received: 30899697209 bytes
+Running A* from 12785207388 to 1490752132 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 921
+Path length: 113 nodes
+A* total elapsed time: 39.694362 s
+  server queries time: 39.528885 s
+  search-only time: 0.165477 s
+Server bytes received: 13038959033 bytes
+Running A* from 59649417 to 1661693121 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3169
+Path length: 363 nodes
+A* total elapsed time: 134.968563 s
+  server queries time: 134.718225 s
+  search-only time: 0.250337 s
+Server bytes received: 44062689146 bytes
+Running A* from 3521993900 to 3779583613 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 889
+Path length: 128 nodes
+A* total elapsed time: 74.056981 s
+  server queries time: 73.866606 s
+  search-only time: 0.190375 s
+Server bytes received: 23876334020 bytes
+Running A* from 516974000 to 4879885637 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1321
+Path length: 94 nodes
+A* total elapsed time: 36.303278 s
+  server queries time: 36.136336 s
+  search-only time: 0.166942 s
+Server bytes received: 11566068298 bytes
+Running A* from 1188974186 to 1236569171 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1106
+Path length: 144 nodes
+A* total elapsed time: 97.847696 s
+  server queries time: 97.637333 s
+  search-only time: 0.210363 s
+Server bytes received: 32124522136 bytes
+Running A* from 2990296369 to 1196451003 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1100
+Path length: 123 nodes
+A* total elapsed time: 136.062895 s
+  server queries time: 135.829398 s
+  search-only time: 0.233497 s
+Server bytes received: 44171217937 bytes
+Running A* from 250318846 to 6162119113 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1175
+Path length: 112 nodes
+A* total elapsed time: 90.753204 s
+  server queries time: 90.540813 s
+  search-only time: 0.212391 s
+Server bytes received: 30093483333 bytes
+Running A* from 282935021 to 1628084651 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1551
+Path length: 147 nodes
+A* total elapsed time: 410.723126 s
+  server queries time: 410.229195 s
+  search-only time: 0.493931 s
+Server bytes received: 134064065111 bytes
+Running A* from 893273644 to 88257491 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1042
+Path length: 96 nodes
+A* total elapsed time: 56.287250 s
+  server queries time: 56.107931 s
+  search-only time: 0.179319 s
+Server bytes received: 18046787532 bytes
+-- running journeys of distance 20000...
+Running A* from 757441965 to 2089831074 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1738
+Path length: 170 nodes
+A* total elapsed time: 212.074932 s
+  server queries time: 211.785595 s
+  search-only time: 0.289337 s
+Server bytes received: 69566955031 bytes
+Running A* from 643569005 to 2161906287 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1427
+Path length: 130 nodes
+A* total elapsed time: 27.376428 s
+  server queries time: 27.213464 s
+  search-only time: 0.162964 s
+Server bytes received: 8992385540 bytes
+Running A* from 10212961293 to 9404958458 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2088
+Path length: 168 nodes
+A* total elapsed time: 45.043260 s
+  server queries time: 44.873981 s
+  search-only time: 0.169279 s
+Server bytes received: 14744411463 bytes
+Running A* from 12177327674 to 1250343715 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1621
+Path length: 155 nodes
+A* total elapsed time: 146.396272 s
+  server queries time: 146.154491 s
+  search-only time: 0.241781 s
+Server bytes received: 48047246187 bytes
+Running A* from 705015629 to 1792392946 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1530
+Path length: 90 nodes
+A* total elapsed time: 50.015635 s
+  server queries time: 49.853221 s
+  search-only time: 0.162414 s
+Server bytes received: 16620409136 bytes
+Running A* from 265372415 to 428733908 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1420
+Path length: 137 nodes
+A* total elapsed time: 170.303931 s
+  server queries time: 170.050365 s
+  search-only time: 0.253566 s
+Server bytes received: 55876823252 bytes
+Running A* from 4573568704 to 1625795737 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1581
+Path length: 172 nodes
+A* total elapsed time: 69.107566 s
+  server queries time: 68.929444 s
+  search-only time: 0.178122 s
+Server bytes received: 23070120144 bytes
+Running A* from 1564201723 to 2107762105 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1586
+Path length: 155 nodes
+A* total elapsed time: 111.228608 s
+  server queries time: 111.012747 s
+  search-only time: 0.215862 s
+Server bytes received: 36326136759 bytes
+Running A* from 6427928491 to 6489485609 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1419
+Path length: 135 nodes
+A* total elapsed time: 239.730151 s
+  server queries time: 239.427546 s
+  search-only time: 0.302605 s
+Server bytes received: 80667899939 bytes
+Running A* from 243208062 to 344786638 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1616
+Path length: 174 nodes
+A* total elapsed time: 290.554187 s
+  server queries time: 290.241431 s
+  search-only time: 0.312756 s
+Server bytes received: 97102259719 bytes
+Running A* from 11030845478 to 1885411179 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1339
+Path length: 153 nodes
+A* total elapsed time: 107.496128 s
+  server queries time: 107.294845 s
+  search-only time: 0.201283 s
+Server bytes received: 35550931109 bytes
+Running A* from 564445367 to 2151832900 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1593
+Path length: 183 nodes
+A* total elapsed time: 91.141426 s
+  server queries time: 90.955984 s
+  search-only time: 0.185442 s
+Server bytes received: 30667135514 bytes
+Running A* from 3704457706 to 2349783076 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1882
+Path length: 145 nodes
+A* total elapsed time: 331.070241 s
+  server queries time: 330.747831 s
+  search-only time: 0.322410 s
+Server bytes received: 110947432628 bytes
+Running A* from 2519918539 to 378243721 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1648
+Path length: 132 nodes
+A* total elapsed time: 162.402444 s
+  server queries time: 162.184405 s
+  search-only time: 0.218039 s
+Server bytes received: 54016329692 bytes
+Running A* from 526817465 to 874148263 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1714
+Path length: 168 nodes
+A* total elapsed time: 188.121392 s
+  server queries time: 187.824970 s
+  search-only time: 0.296422 s
+Server bytes received: 61365279254 bytes
+Running A* from 1670612548 to 8866889853 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1510
+Path length: 125 nodes
+A* total elapsed time: 88.182968 s
+  server queries time: 87.986065 s
+  search-only time: 0.196903 s
+Server bytes received: 29519831152 bytes
+Running A* from 2218256625 to 4570543268 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1519
+Path length: 155 nodes
+A* total elapsed time: 51.966324 s
+  server queries time: 51.789557 s
+  search-only time: 0.176767 s
+Server bytes received: 17178557204 bytes
+Running A* from 659602946 to 677671987 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1242
+Path length: 88 nodes
+A* total elapsed time: 72.267737 s
+  server queries time: 72.089878 s
+  search-only time: 0.177859 s
+Server bytes received: 24077887489 bytes
+Running A* from 94620433 to 2284417382 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1251
+Path length: 126 nodes
+A* total elapsed time: 42.137970 s
+  server queries time: 41.976196 s
+  search-only time: 0.161774 s
+Server bytes received: 14217271621 bytes
+Running A* from 2508027742 to 2339206883 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1246
+Path length: 154 nodes
+A* total elapsed time: 122.494610 s
+  server queries time: 122.282315 s
+  search-only time: 0.212294 s
+Server bytes received: 40977370659 bytes
+Running A* from 1387228354 to 1509840590 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2148
+Path length: 176 nodes
+A* total elapsed time: 148.090829 s
+  server queries time: 147.843715 s
+  search-only time: 0.247114 s
+Server bytes received: 49489128696 bytes
+Running A* from 278781536 to 1973583195 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1117
+Path length: 93 nodes
+A* total elapsed time: 98.396039 s
+  server queries time: 98.193942 s
+  search-only time: 0.202098 s
+Server bytes received: 32062505684 bytes
+Running A* from 395478621 to 6329686733 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1506
+Path length: 140 nodes
+A* total elapsed time: 176.519094 s
+  server queries time: 176.274859 s
+  search-only time: 0.244235 s
+Server bytes received: 58931133513 bytes
+Running A* from 1026900149 to 5283007671 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1218
+Path length: 169 nodes
+A* total elapsed time: 122.526557 s
+  server queries time: 122.314966 s
+  search-only time: 0.211591 s
+Server bytes received: 40667288399 bytes
+Running A* from 37596839 to 1605774533 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1733
+Path length: 125 nodes
+A* total elapsed time: 139.591588 s
+  server queries time: 139.343374 s
+  search-only time: 0.248214 s
+Server bytes received: 46217760853 bytes
+Running A* from 1107848872 to 2189064515 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1466
+Path length: 102 nodes
+A* total elapsed time: 56.628794 s
+  server queries time: 56.450973 s
+  search-only time: 0.177822 s
+Server bytes received: 18465398583 bytes
+Running A* from 2617753076 to 2161624260 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1477
+Path length: 164 nodes
+A* total elapsed time: 159.176883 s
+  server queries time: 158.951457 s
+  search-only time: 0.225426 s
+Server bytes received: 53752759771 bytes
+Running A* from 679717596 to 5340517665 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1920
+Path length: 152 nodes
+A* total elapsed time: 302.176254 s
+  server queries time: 301.883335 s
+  search-only time: 0.292919 s
+Server bytes received: 100730222161 bytes
+Running A* from 600397818 to 731115057 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1594
+Path length: 134 nodes
+A* total elapsed time: 57.041686 s
+  server queries time: 56.865142 s
+  search-only time: 0.176544 s
+Server bytes received: 18806489069 bytes
+Running A* from 3295217688 to 10616948810 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1855
+Path length: 175 nodes
+A* total elapsed time: 175.976394 s
+  server queries time: 175.704296 s
+  search-only time: 0.272098 s
+Server bytes received: 57473746891 bytes
+-- running journeys of distance 30000...
+Running A* from 11093523431 to 3638931916 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1947
+Path length: 162 nodes
+A* total elapsed time: 130.026563 s
+  server queries time: 129.796919 s
+  search-only time: 0.229644 s
+Server bytes received: 42202195586 bytes
+Running A* from 7703219813 to 4707383530 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2114
+Path length: 255 nodes
+A* total elapsed time: 133.326605 s
+  server queries time: 133.069616 s
+  search-only time: 0.256989 s
+Server bytes received: 43411516400 bytes
+Running A* from 1184915201 to 418813246 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1759
+Path length: 166 nodes
+A* total elapsed time: 88.449019 s
+  server queries time: 88.253580 s
+  search-only time: 0.195439 s
+Server bytes received: 29194244779 bytes
+Running A* from 5167904424 to 2020177751 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1696
+Path length: 113 nodes
+A* total elapsed time: 160.549803 s
+  server queries time: 160.315527 s
+  search-only time: 0.234276 s
+Server bytes received: 53132595251 bytes
+Running A* from 5614669203 to 3381313142 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1667
+Path length: 137 nodes
+A* total elapsed time: 92.107173 s
+  server queries time: 91.896532 s
+  search-only time: 0.210641 s
+Server bytes received: 30077979220 bytes
+Running A* from 2282260112 to 2332331369 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2232
+Path length: 131 nodes
+A* total elapsed time: 70.512361 s
+  server queries time: 70.315278 s
+  search-only time: 0.197083 s
+Server bytes received: 22868566675 bytes
+Running A* from 13619310818 to 2604883730 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2300
+Path length: 135 nodes
+A* total elapsed time: 65.979388 s
+  server queries time: 65.793504 s
+  search-only time: 0.185883 s
+Server bytes received: 21271643036 bytes
+Running A* from 1230004801 to 1289906626 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2492
+Path length: 256 nodes
+A* total elapsed time: 997.074904 s
+  server queries time: 996.133002 s
+  search-only time: 0.941902 s
+Server bytes received: 336873367264 bytes
+Running A* from 366682812 to 1237490779 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2221
+Path length: 217 nodes
+A* total elapsed time: 744.969479 s
+  server queries time: 744.047117 s
+  search-only time: 0.922361 s
+Server bytes received: 245089018304 bytes
+Running A* from 2134982843 to 1018920140 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2782
+Path length: 190 nodes
+A* total elapsed time: 62.383497 s
+  server queries time: 62.196496 s
+  search-only time: 0.187001 s
+Server bytes received: 20232867465 bytes
+Running A* from 277465604 to 3011338670 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2003
+Path length: 167 nodes
+A* total elapsed time: 251.369456 s
+  server queries time: 251.065107 s
+  search-only time: 0.304349 s
+Server bytes received: 83086541567 bytes
+Running A* from 11352517090 to 8323831340 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1798
+Path length: 131 nodes
+A* total elapsed time: 189.433629 s
+  server queries time: 189.164696 s
+  search-only time: 0.268933 s
+Server bytes received: 61318766915 bytes
+Running A* from 11764835395 to 1634932764 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1564
+Path length: 100 nodes
+A* total elapsed time: 34.769478 s
+  server queries time: 34.603779 s
+  search-only time: 0.165699 s
+Server bytes received: 11659092976 bytes
+Running A* from 311739561 to 4557691341 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1672
+Path length: 124 nodes
+A* total elapsed time: 128.546342 s
+  server queries time: 128.297988 s
+  search-only time: 0.248354 s
+Server bytes received: 41659551631 bytes
+Running A* from 2999998000 to 2278786342 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2348
+Path length: 200 nodes
+A* total elapsed time: 203.138480 s
+  server queries time: 202.840886 s
+  search-only time: 0.297594 s
+Server bytes received: 68078560183 bytes
+Running A* from 5909656638 to 12620187294 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2196
+Path length: 182 nodes
+A* total elapsed time: 435.958843 s
+  server queries time: 435.493118 s
+  search-only time: 0.465725 s
+Server bytes received: 145537108731 bytes
+Running A* from 410133367 to 417381778 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2273
+Path length: 110 nodes
+A* total elapsed time: 55.511963 s
+  server queries time: 55.332170 s
+  search-only time: 0.179793 s
+Server bytes received: 18139812210 bytes
+Running A* from 1344934915 to 12760202875 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1963
+Path length: 172 nodes
+A* total elapsed time: 113.071189 s
+  server queries time: 112.863186 s
+  search-only time: 0.208003 s
+Server bytes received: 37535457573 bytes
+Running A* from 3528576691 to 7216108072 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2337
+Path length: 166 nodes
+A* total elapsed time: 250.320282 s
+  server queries time: 250.018587 s
+  search-only time: 0.301695 s
+Server bytes received: 83396623827 bytes
+Running A* from 8338846148 to 773942167 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2565
+Path length: 290 nodes
+A* total elapsed time: 276.455444 s
+  server queries time: 276.140555 s
+  search-only time: 0.314889 s
+Server bytes received: 91086663875 bytes
+Running A* from 518110048 to 598151842 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1836
+Path length: 174 nodes
+A* total elapsed time: 449.540599 s
+  server queries time: 449.014554 s
+  search-only time: 0.526045 s
+Server bytes received: 151676737479 bytes
+Running A* from 7272131117 to 2714608967 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1732
+Path length: 155 nodes
+A* total elapsed time: 118.025954 s
+  server queries time: 117.816846 s
+  search-only time: 0.209108 s
+Server bytes received: 38992844195 bytes
+Running A* from 11953335718 to 24911945 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2613
+Path length: 304 nodes
+A* total elapsed time: 1050.534985 s
+  server queries time: 1049.719708 s
+  search-only time: 0.815277 s
+Server bytes received: 351369712919 bytes
+Running A* from 275034248 to 7040652334 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1572
+Path length: 129 nodes
+A* total elapsed time: 87.610526 s
+  server queries time: 87.415115 s
+  search-only time: 0.195411 s
+Server bytes received: 28357022677 bytes
+Running A* from 829017295 to 4416553017 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3214
+Path length: 152 nodes
+A* total elapsed time: 179.523215 s
+  server queries time: 179.255429 s
+  search-only time: 0.267786 s
+Server bytes received: 59690835050 bytes
+Running A* from 367926170 to 7351216185 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2552
+Path length: 274 nodes
+A* total elapsed time: 1109.746140 s
+  server queries time: 1108.706106 s
+  search-only time: 1.040035 s
+Server bytes received: 371261489898 bytes
+Running A* from 897559276 to 1672138537 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1565
+Path length: 137 nodes
+A* total elapsed time: 95.454753 s
+  server queries time: 95.260011 s
+  search-only time: 0.194742 s
+Server bytes received: 31380324712 bytes
+Running A* from 281938525 to 1149065971 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1965
+Path length: 173 nodes
+A* total elapsed time: 244.438067 s
+  server queries time: 244.140376 s
+  search-only time: 0.297691 s
+Server bytes received: 81815204301 bytes
+Running A* from 3053038181 to 11495455271 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2523
+Path length: 280 nodes
+A* total elapsed time: 106.909539 s
+  server queries time: 106.712366 s
+  search-only time: 0.197173 s
+Server bytes received: 36031558612 bytes
+Running A* from 288593484 to 345033897 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2494
+Path length: 186 nodes
+A* total elapsed time: 390.200186 s
+  server queries time: 389.850646 s
+  search-only time: 0.349540 s
+Server bytes received: 129567872341 bytes
+-- running journeys of distance 40000...
+Running A* from 2649512639 to 3502501076 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2545
+Path length: 243 nodes
+A* total elapsed time: 182.631023 s
+  server queries time: 182.315846 s
+  search-only time: 0.315177 s
+Server bytes received: 60186966666 bytes
+Running A* from 352783699 to 1438113984 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2802
+Path length: 225 nodes
+A* total elapsed time: 276.208800 s
+  server queries time: 275.864376 s
+  search-only time: 0.344424 s
+Server bytes received: 91923885977 bytes
+Running A* from 2357840848 to 13429031493 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2980
+Path length: 185 nodes
+A* total elapsed time: 379.521493 s
+  server queries time: 379.062799 s
+  search-only time: 0.458694 s
+Server bytes received: 125738356430 bytes
+Running A* from 736716160 to 8153766447 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2335
+Path length: 158 nodes
+A* total elapsed time: 247.637896 s
+  server queries time: 247.273778 s
+  search-only time: 0.364118 s
+Server bytes received: 83179566245 bytes
+Running A* from 6110522513 to 11154396653 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3280
+Path length: 224 nodes
+A* total elapsed time: 665.488411 s
+  server queries time: 664.951529 s
+  search-only time: 0.536882 s
+Server bytes received: 225848414071 bytes
+Running A* from 13041228598 to 2054344880 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2161
+Path length: 181 nodes
+A* total elapsed time: 146.518109 s
+  server queries time: 146.203241 s
+  search-only time: 0.314867 s
+Server bytes received: 47101495294 bytes
+Running A* from 13005937873 to 3103277932 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2016
+Path length: 178 nodes
+A* total elapsed time: 112.347922 s
+  server queries time: 112.134112 s
+  search-only time: 0.213810 s
+Server bytes received: 37938564511 bytes
+Running A* from 13169251232 to 7815224687 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2941
+Path length: 267 nodes
+A* total elapsed time: 431.788230 s
+  server queries time: 431.233920 s
+  search-only time: 0.554309 s
+Server bytes received: 143537078154 bytes
+Running A* from 332220420 to 410560047 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2549
+Path length: 213 nodes
+A* total elapsed time: 384.813353 s
+  server queries time: 384.398521 s
+  search-only time: 0.414832 s
+Server bytes received: 129319806533 bytes
+Running A* from 1129685694 to 2115856067 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3208
+Path length: 221 nodes
+A* total elapsed time: 248.868502 s
+  server queries time: 248.512101 s
+  search-only time: 0.356401 s
+Server bytes received: 82853979872 bytes
+Running A* from 1148791228 to 6270088837 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3443
+Path length: 395 nodes
+A* total elapsed time: 438.052177 s
+  server queries time: 437.505823 s
+  search-only time: 0.546354 s
+Server bytes received: 146482859624 bytes
+Running A* from 416885105 to 4294997930 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2744
+Path length: 229 nodes
+A* total elapsed time: 548.002490 s
+  server queries time: 547.552812 s
+  search-only time: 0.449678 s
+Server bytes received: 185785786079 bytes
+Running A* from 9062018977 to 2272356756 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2876
+Path length: 197 nodes
+A* total elapsed time: 324.049246 s
+  server queries time: 323.716259 s
+  search-only time: 0.332987 s
+Server bytes received: 108776856808 bytes
+Running A* from 9339759238 to 320125022 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3089
+Path length: 350 nodes
+A* total elapsed time: 153.104034 s
+  server queries time: 152.852931 s
+  search-only time: 0.251103 s
+Server bytes received: 51396134595 bytes
+Running A* from 1705248223 to 1011189202 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3000
+Path length: 214 nodes
+A* total elapsed time: 345.752012 s
+  server queries time: 345.173216 s
+  search-only time: 0.578796 s
+Server bytes received: 113939726437 bytes
+Running A* from 6481646797 to 3525076142 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2479
+Path length: 201 nodes
+A* total elapsed time: 201.766528 s
+  server queries time: 201.467777 s
+  search-only time: 0.298751 s
+Server bytes received: 67706461471 bytes
+Running A* from 250400573 to 8694797800 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2602
+Path length: 266 nodes
+A* total elapsed time: 669.480662 s
+  server queries time: 668.367454 s
+  search-only time: 1.113208 s
+Server bytes received: 221708815900 bytes
+Running A* from 9809955744 to 2039739671 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2730
+Path length: 115 nodes
+A* total elapsed time: 120.798883 s
+  server queries time: 120.585004 s
+  search-only time: 0.213879 s
+Server bytes received: 40977370659 bytes
+Running A* from 11217135734 to 497823060 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3284
+Path length: 224 nodes
+A* total elapsed time: 552.352918 s
+  server queries time: 551.970206 s
+  search-only time: 0.382713 s
+Server bytes received: 185444695593 bytes
+Running A* from 6898971174 to 308510628 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2986
+Path length: 210 nodes
+A* total elapsed time: 116.956319 s
+  server queries time: 116.705010 s
+  search-only time: 0.251310 s
+Server bytes received: 38481208466 bytes
+Running A* from 283636383 to 4011729578 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2506
+Path length: 213 nodes
+A* total elapsed time: 176.482037 s
+  server queries time: 176.168541 s
+  search-only time: 0.313496 s
+Server bytes received: 57830341490 bytes
+Running A* from 1922881025 to 2528653986 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3014
+Path length: 210 nodes
+A* total elapsed time: 47.377070 s
+  server queries time: 47.211721 s
+  search-only time: 0.165349 s
+Server bytes received: 15845203486 bytes
+Running A* from 532212656 to 690476655 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2967
+Path length: 253 nodes
+A* total elapsed time: 334.491409 s
+  server queries time: 334.108775 s
+  search-only time: 0.382635 s
+Server bytes received: 113598635951 bytes
+Running A* from 250232297 to 1900555533 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2476
+Path length: 180 nodes
+A* total elapsed time: 349.186793 s
+  server queries time: 348.559914 s
+  search-only time: 0.626880 s
+Server bytes received: 116265343387 bytes
+Running A* from 1593458085 to 1603469255 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2710
+Path length: 237 nodes
+A* total elapsed time: 1170.068349 s
+  server queries time: 1169.346490 s
+  search-only time: 0.721859 s
+Server bytes received: 397494449094 bytes
+Running A* from 13353742453 to 1567321708 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2260
+Path length: 212 nodes
+A* total elapsed time: 231.794404 s
+  server queries time: 231.467113 s
+  search-only time: 0.327290 s
+Server bytes received: 77039937497 bytes
+Running A* from 9282421653 to 10860398620 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1809
+Path length: 185 nodes
+A* total elapsed time: 56.245581 s
+  server queries time: 56.069709 s
+  search-only time: 0.175872 s
+Server bytes received: 18806489069 bytes
+Running A* from 1594501744 to 2175215395 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3088
+Path length: 330 nodes
+A* total elapsed time: 350.371972 s
+  server queries time: 350.004887 s
+  search-only time: 0.367085 s
+Server bytes received: 117025044924 bytes
+Running A* from 11893185591 to 322804592 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2638
+Path length: 240 nodes
+A* total elapsed time: 1150.191216 s
+  server queries time: 1148.557337 s
+  search-only time: 1.633880 s
+Server bytes received: 370982415864 bytes
+Running A* from 1149044368 to 1508821763 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2628
+Path length: 282 nodes
+A* total elapsed time: 234.434794 s
+  server queries time: 234.095359 s
+  search-only time: 0.339435 s
+Server bytes received: 78915935170 bytes
+-- running journeys of distance 50000...
+Running A* from 338595503 to 1769267603 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 6412
+Path length: 463 nodes
+A* total elapsed time: 413.960513 s
+  server queries time: 413.423056 s
+  search-only time: 0.537457 s
+Server bytes received: 137319928841 bytes
+Running A* from 264997084 to 663036479 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3025
+Path length: 213 nodes
+A* total elapsed time: 226.836389 s
+  server queries time: 226.405820 s
+  search-only time: 0.430569 s
+Server bytes received: 74233693044 bytes
+Running A* from 1305576744 to 1789640512 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2382
+Path length: 183 nodes
+A* total elapsed time: 269.195157 s
+  server queries time: 268.828563 s
+  search-only time: 0.366594 s
+Server bytes received: 89210666202 bytes
+Running A* from 4664200795 to 3824873007 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2315
+Path length: 116 nodes
+A* total elapsed time: 59.936767 s
+  server queries time: 59.760154 s
+  search-only time: 0.176613 s
+Server bytes received: 19922785205 bytes
+Running A* from 602336172 to 1338110624 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2524
+Path length: 203 nodes
+A* total elapsed time: 185.460908 s
+  server queries time: 185.194325 s
+  search-only time: 0.266583 s
+Server bytes received: 62698632972 bytes
+Running A* from 248311429 to 9850802470 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3649
+Path length: 374 nodes
+A* total elapsed time: 1808.821604 s
+  server queries time: 1807.226774 s
+  search-only time: 1.594830 s
+Server bytes received: 606986023950 bytes
+Running A* from 2632447263 to 413456215 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3561
+Path length: 302 nodes
+A* total elapsed time: 361.145628 s
+  server queries time: 360.770408 s
+  search-only time: 0.375220 s
+Server bytes received: 123614292949 bytes
+Running A* from 300994676 to 1632693601 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3164
+Path length: 234 nodes
+A* total elapsed time: 216.138529 s
+  server queries time: 215.863684 s
+  search-only time: 0.274845 s
+Server bytes received: 73985627236 bytes
+Running A* from 988590179 to 3044021019 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3025
+Path length: 261 nodes
+A* total elapsed time: 77.294035 s
+  server queries time: 77.110039 s
+  search-only time: 0.183996 s
+Server bytes received: 26356992100 bytes
+Running A* from 10021342964 to 322102149 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2764
+Path length: 165 nodes
+A* total elapsed time: 147.151939 s
+  server queries time: 146.920483 s
+  search-only time: 0.231455 s
+Server bytes received: 50388367250 bytes
+Running A* from 620502293 to 1618077657 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2873
+Path length: 282 nodes
+A* total elapsed time: 445.153164 s
+  server queries time: 444.765727 s
+  search-only time: 0.387437 s
+Server bytes received: 152219381434 bytes
+Running A* from 2159717577 to 1412977416 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2700
+Path length: 119 nodes
+A* total elapsed time: 80.560044 s
+  server queries time: 80.343040 s
+  search-only time: 0.217004 s
+Server bytes received: 27442280010 bytes
+Running A* from 494002822 to 1948668995 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2922
+Path length: 236 nodes
+A* total elapsed time: 145.136462 s
+  server queries time: 144.881057 s
+  search-only time: 0.255405 s
+Server bytes received: 49768202730 bytes
+Running A* from 2423480506 to 2495383796 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2305
+Path length: 124 nodes
+A* total elapsed time: 262.785566 s
+  server queries time: 262.468802 s
+  search-only time: 0.316764 s
+Server bytes received: 89877343061 bytes
+Running A* from 6847382010 to 2591676797 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3801
+Path length: 362 nodes
+A* total elapsed time: 1826.060734 s
+  server queries time: 1824.414346 s
+  search-only time: 1.646388 s
+Server bytes received: 622428120498 bytes
+Running A* from 304010730 to 246013355 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2209
+Path length: 164 nodes
+A* total elapsed time: 161.664490 s
+  server queries time: 161.411842 s
+  search-only time: 0.252648 s
+Server bytes received: 55520228653 bytes
+Running A* from 11411612162 to 842301654 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2840
+Path length: 226 nodes
+A* total elapsed time: 507.389538 s
+  server queries time: 506.760582 s
+  search-only time: 0.628957 s
+Server bytes received: 174064676651 bytes
+Running A* from 920284723 to 959167342 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2556
+Path length: 174 nodes
+A* total elapsed time: 130.015027 s
+  server queries time: 129.801097 s
+  search-only time: 0.213930 s
+Server bytes received: 44667349553 bytes
+Running A* from 70913540 to 411306818 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2623
+Path length: 164 nodes
+A* total elapsed time: 292.274507 s
+  server queries time: 291.955526 s
+  search-only time: 0.318981 s
+Server bytes received: 100079049415 bytes
+Running A* from 2128175853 to 3404657003 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2972
+Path length: 204 nodes
+A* total elapsed time: 96.713372 s
+  server queries time: 96.477894 s
+  search-only time: 0.235478 s
+Server bytes received: 33147793594 bytes
+Running A* from 474616564 to 501839731 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3613
+Path length: 296 nodes
+A* total elapsed time: 511.431950 s
+  server queries time: 510.984476 s
+  search-only time: 0.447474 s
+Server bytes received: 174529800041 bytes
+Running A* from 1912322095 to 5489800584 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 1966
+Path length: 85 nodes
+A* total elapsed time: 107.081926 s
+  server queries time: 106.883253 s
+  search-only time: 0.198673 s
+Server bytes received: 36806764262 bytes
+Running A* from 292008685 to 3595941086 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3119
+Path length: 267 nodes
+A* total elapsed time: 415.456342 s
+  server queries time: 415.089119 s
+  search-only time: 0.367223 s
+Server bytes received: 142730864278 bytes
+Running A* from 450116456 to 866870949 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3230
+Path length: 234 nodes
+A* total elapsed time: 306.160562 s
+  server queries time: 305.780081 s
+  search-only time: 0.380481 s
+Server bytes received: 104792299767 bytes
+Running A* from 6937930137 to 1276971426 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3058
+Path length: 211 nodes
+A* total elapsed time: 328.081775 s
+  server queries time: 327.683371 s
+  search-only time: 0.398404 s
+Server bytes received: 112823430301 bytes
+Running A* from 3934583227 to 3997628919 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3376
+Path length: 292 nodes
+A* total elapsed time: 257.303949 s
+  server queries time: 257.010182 s
+  search-only time: 0.293766 s
+Server bytes received: 88869575716 bytes
+Running A* from 2691522197 to 5064432696 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3298
+Path length: 291 nodes
+A* total elapsed time: 426.230973 s
+  server queries time: 425.831323 s
+  search-only time: 0.399650 s
+Server bytes received: 146839454223 bytes
+Running A* from 350497118 to 2407137352 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2300
+Path length: 154 nodes
+A* total elapsed time: 118.870882 s
+  server queries time: 118.644774 s
+  search-only time: 0.226108 s
+Server bytes received: 40744808964 bytes
+Running A* from 5102112664 to 2959961421 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3602
+Path length: 273 nodes
+A* total elapsed time: 183.488682 s
+  server queries time: 183.206966 s
+  search-only time: 0.281716 s
+Server bytes received: 62698632972 bytes
+Running A* from 365012662 to 1494083979 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2451
+Path length: 143 nodes
+A* total elapsed time: 395.334907 s
+  server queries time: 394.909118 s
+  search-only time: 0.425789 s
+Server bytes received: 136017583349 bytes
+-- running journeys of distance 60000...
+Running A* from 1826149704 to 3452648081 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3913
+Path length: 254 nodes
+A* total elapsed time: 397.007788 s
+  server queries time: 396.616701 s
+  search-only time: 0.391087 s
+Server bytes received: 136653251982 bytes
+Running A* from 461743344 to 1028587568 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3183
+Path length: 195 nodes
+A* total elapsed time: 286.775747 s
+  server queries time: 286.430970 s
+  search-only time: 0.344778 s
+Server bytes received: 97350325527 bytes
+Running A* from 810262723 to 6881230248 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 4553
+Path length: 247 nodes
+A* total elapsed time: 321.921881 s
+  server queries time: 321.532188 s
+  search-only time: 0.389693 s
+Server bytes received: 109877648831 bytes
+Running A* from 6203810862 to 1557323111 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2390
+Path length: 165 nodes
+A* total elapsed time: 114.192506 s
+  server queries time: 113.984571 s
+  search-only time: 0.207935 s
+Server bytes received: 38636249596 bytes
+Running A* from 7040195391 to 596351624 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3583
+Path length: 345 nodes
+A* total elapsed time: 1441.255212 s
+  server queries time: 1439.922446 s
+  search-only time: 1.332766 s
+Server bytes received: 490286565399 bytes
+Running A* from 429711507 to 334393059 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3715
+Path length: 295 nodes
+A* total elapsed time: 560.097848 s
+  server queries time: 559.564906 s
+  search-only time: 0.532942 s
+Server bytes received: 188995137470 bytes
+Running A* from 1439104790 to 4185217327 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3129
+Path length: 304 nodes
+A* total elapsed time: 506.773726 s
+  server queries time: 506.281361 s
+  search-only time: 0.492365 s
+Server bytes received: 172808843498 bytes
+Running A* from 260667628 to 961804771 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 4270
+Path length: 242 nodes
+A* total elapsed time: 451.994178 s
+  server queries time: 451.591951 s
+  search-only time: 0.402226 s
+Server bytes received: 153103115875 bytes
+Running A* from 289793053 to 455556966 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3669
+Path length: 283 nodes
+A* total elapsed time: 302.184705 s
+  server queries time: 301.813721 s
+  search-only time: 0.370984 s
+Server bytes received: 102482186930 bytes
+Running A* from 1192550006 to 6469454180 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 4497
+Path length: 428 nodes
+A* total elapsed time: 620.529957 s
+  server queries time: 619.454753 s
+  search-only time: 1.075204 s
+Server bytes received: 206390752256 bytes
+Running A* from 1639892138 to 173297177 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 4063
+Path length: 203 nodes
+A* total elapsed time: 674.479818 s
+  server queries time: 673.917839 s
+  search-only time: 0.561979 s
+Server bytes received: 228049998117 bytes
+Running A* from 288794407 to 1824828504 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3849
+Path length: 215 nodes
+A* total elapsed time: 459.767386 s
+  server queries time: 459.339307 s
+  search-only time: 0.428078 s
+Server bytes received: 156700070091 bytes
+Running A* from 470829133 to 455560429 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 5141
+Path length: 426 nodes
+A* total elapsed time: 490.510696 s
+  server queries time: 489.972116 s
+  search-only time: 0.538579 s
+Server bytes received: 165661447405 bytes
+Running A* from 1075339620 to 1987706422 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3829
+Path length: 275 nodes
+A* total elapsed time: 1100.580397 s
+  server queries time: 1099.615363 s
+  search-only time: 0.965034 s
+Server bytes received: 372439802486 bytes
+Running A* from 26759478 to 3162965652 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3581
+Path length: 257 nodes
+A* total elapsed time: 664.581238 s
+  server queries time: 663.967201 s
+  search-only time: 0.614037 s
+Server bytes received: 224235986319 bytes
+Running A* from 281788642 to 1830818074 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2724
+Path length: 132 nodes
+A* total elapsed time: 163.760827 s
+  server queries time: 163.505817 s
+  search-only time: 0.255010 s
+Server bytes received: 54574477760 bytes
+Running A* from 2536145608 to 5311866794 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2771
+Path length: 145 nodes
+A* total elapsed time: 94.408644 s
+  server queries time: 94.198440 s
+  search-only time: 0.210205 s
+Server bytes received: 31411332938 bytes
+Running A* from 8867495392 to 1510768640 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3135
+Path length: 238 nodes
+A* total elapsed time: 634.040672 s
+  server queries time: 633.521304 s
+  search-only time: 0.519369 s
+Server bytes received: 214980030858 bytes
+Running A* from 250880651 to 1408683024 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3534
+Path length: 177 nodes
+A* total elapsed time: 671.151242 s
+  server queries time: 670.027688 s
+  search-only time: 1.123554 s
+Server bytes received: 221569278883 bytes
+Running A* from 1033199795 to 1947250138 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3892
+Path length: 214 nodes
+A* total elapsed time: 405.167531 s
+  server queries time: 404.650184 s
+  search-only time: 0.517348 s
+Server bytes received: 134823766648 bytes
+Running A* from 1192611187 to 3011363599 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 4004
+Path length: 253 nodes
+A* total elapsed time: 364.672484 s
+  server queries time: 364.325756 s
+  search-only time: 0.346729 s
+Server bytes received: 123350723028 bytes
+Running A* from 7310476418 to 2801894764 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3555
+Path length: 259 nodes
+A* total elapsed time: 362.362559 s
+  server queries time: 361.692720 s
+  search-only time: 0.669839 s
+Server bytes received: 119691752360 bytes
+Running A* from 237818262 to 75292866 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3815
+Path length: 344 nodes
+A* total elapsed time: 1606.484969 s
+  server queries time: 1605.139626 s
+  search-only time: 1.345342 s
+Server bytes received: 537186507224 bytes
+Running A* from 262123703 to 723169681 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 4749
+Path length: 324 nodes
+A* total elapsed time: 800.121528 s
+  server queries time: 799.477616 s
+  search-only time: 0.643912 s
+Server bytes received: 263771474469 bytes
+Running A* from 286592926 to 2867377854 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 4192
+Path length: 358 nodes
+A* total elapsed time: 458.593011 s
+  server queries time: 458.194133 s
+  search-only time: 0.398877 s
+Server bytes received: 152079844417 bytes
+Running A* from 11399472306 to 4002427994 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3582
+Path length: 308 nodes
+A* total elapsed time: 443.717052 s
+  server queries time: 443.210389 s
+  search-only time: 0.506663 s
+Server bytes received: 148296840845 bytes
+Running A* from 248585341 to 434134728 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 3287
+Path length: 277 nodes
+A* total elapsed time: 1055.093602 s
+  server queries time: 1054.151002 s
+  search-only time: 0.942600 s
+Server bytes received: 348687501370 bytes
+Running A* from 224271991 to 3255192841 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 2982
+Path length: 225 nodes
+A* total elapsed time: 183.693045 s
+  server queries time: 183.427935 s
+  search-only time: 0.265110 s
+Server bytes received: 60884651751 bytes
+Running A* from 2574969062 to 7502992138 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 4111
+Path length: 298 nodes
+A* total elapsed time: 335.145492 s
+  server queries time: 334.827764 s
+  search-only time: 0.317728 s
+Server bytes received: 113645148290 bytes
+Running A* from 1269247206 to 2435853718 in country France using approach Node3 and architecture SinglePass ...
+A* found a path with cost 5079
+Path length: 303 nodes
+A* total elapsed time: 769.552655 s
+  server queries time: 768.865427 s
+  search-only time: 0.687228 s
+Server bytes received: 258484571936 bytes
