@@ -9,7 +9,7 @@ import sys
 import pickle as pk
 import re
 
-def visualiseAStarSearch(G, params, outputPath=None):
+def visualiseAStarSearch(G, params, approach, outputPath=None):
     pos = {n: (d["lon"], d["lat"]) for n, d in G.nodes(data=True)}
     number_cached_nodes = len(params["cached_nodes"])
 
@@ -19,27 +19,69 @@ def visualiseAStarSearch(G, params, outputPath=None):
     cached_nodes    = [n for n in G if n in params["cached_nodes"] and n not in params["path"] and n not in start_end_nodes]
     other_nodes     = [n for n in G if n not in params["cached_nodes"] and n not in params["path"] and n not in start_end_nodes]
 
-    plt.figure(figsize=(12, 10), dpi=300)
+    plt.figure(figsize=(6, 4), dpi=600)
     ax = plt.gca()
 
-    # Draw edges first
-    nx.draw_networkx_edges(G, pos=pos, arrows=False, edge_color="blue", ax=ax)
-
-    # Draw nodes back-to-front so important ones are never buried
-    nx.draw_networkx_nodes(G, pos=pos, nodelist=other_nodes,     node_size=1,  node_color="red",    ax=ax)
-    nx.draw_networkx_nodes(G, pos=pos, nodelist=cached_nodes,    node_size=1,  node_color="orange", ax=ax)
-    nx.draw_networkx_nodes(G, pos=pos, nodelist=path_nodes,      node_size=1, node_color="green",  ax=ax)
-    nx.draw_networkx_nodes(G, pos=pos, nodelist=start_end_nodes, node_size=1, node_color="black",  ax=ax)
+    nx.draw(
+        G,
+        pos=pos,
+        node_size=1,
+        nodelist=other_nodes,
+        node_color="red",
+        edgelist=[],
+        width=0.5,
+        with_labels=False,
+        ax=ax,
+    )
+    nx.draw(
+        G,
+        pos=pos,
+        node_size=1,
+        nodelist=cached_nodes,
+        node_color="orange",
+        edgelist=[],
+        width=0.5,
+        with_labels=False,
+        ax=ax,
+    )
+    nx.draw(
+        G,
+        pos=pos,
+        node_size=1,
+        nodelist=path_nodes,
+        node_color="green",
+        edgelist=[],
+        width=0.5,
+        with_labels=False,
+        ax=ax,
+    )
+    nx.draw(
+        G,
+        pos=pos,
+        node_size=1,
+        nodelist=start_end_nodes,
+        node_color="black",
+        edgelist=[],
+        width=0.5,
+        with_labels=False,
+        ax=ax,
+    )
 
     legend_elements = [
-        Line2D([0], [0], marker="o", color="w", label="Start / End", markerfacecolor="black", markersize=6),
-        Line2D([0], [0], marker="o", color="w", label="Best path", markerfacecolor="green", markersize=6),
-        Line2D([0], [0], marker="o", color="w", label=f"Cached nodes ({number_cached_nodes})", markerfacecolor="orange", markersize=6),
-        Line2D([0], [0], marker="o", color="w", label="Not cached", markerfacecolor="red", markersize=6),
+        Line2D([0], [0], marker="o", color="w", label="Start & End nodes", markerfacecolor="black", markersize=6),
+        Line2D([0], [0], marker="o", color="w", label="Nodes on best path", markerfacecolor="green", markersize=6),
+        Line2D([0], [0], marker="o", color="w", label=f"Client cached nodes ({number_cached_nodes})", markerfacecolor="orange", markersize=6),
+        Line2D([0], [0], marker="o", color="w", label="Nodes not downloaded", markerfacecolor="red", markersize=6),
     ]
-    plt.legend(handles=legend_elements, loc="upper right")
-    plt.title("Road network")
-    plt.axis("equal")
+    plt.legend(handles=legend_elements, loc="lower left", prop={"size": 9})
+    plt.title(f"Client state after A* using {approach}")
+    ax.axis("equal")
+    plt.tight_layout()                          # ← remove outer whitespace
+
+    # ax.spines["top"].set_visible(False)
+    # ax.spines["right"].set_visible(False)
+    # ax.spines["bottom"].set_visible(False)
+    # ax.spines["left"].set_visible(False)
 
     if outputPath is None:
         plt.show()
@@ -82,7 +124,9 @@ def main():
     G = pk.load(open(pathPickelFile, "rb"))
 
     outputPath = sys.argv[3]
-    visualiseAStarSearch(G, params, outputPath=outputPath)
+
+    approachName = sys.argv[4]
+    visualiseAStarSearch(G, params, approachName, outputPath=outputPath)
 
 if __name__ == "__main__":
     main()

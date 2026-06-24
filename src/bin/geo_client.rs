@@ -46,14 +46,14 @@ fn main() -> GraphResult<()> {
         Some(result) => {
             println!("A* found a path with cost {:.6}", result.cost);
             println!("Path length: {} nodes", result.path.len());
-            // println!(
-            //     "Path: {:?}",
-            //     result
-            //         .path
-            //         .iter()
-            //         .map(|graph_idx| context.idx_osmid_map.get(&(graph_idx.index() as u32)).unwrap())
-            //         .collect::<Vec<_>>()
-            // );
+            println!(
+                "Path: {:?}",
+                result
+                    .path
+                    .iter()
+                    .map(|graph_idx| context.idx_osmid_map.get(&(graph_idx.index() as u32)).unwrap())
+                    .collect::<Vec<_>>()
+            );
 
             // println!(
             //     "Cached nodes: {:?}",

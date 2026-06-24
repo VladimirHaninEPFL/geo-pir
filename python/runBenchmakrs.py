@@ -14,7 +14,7 @@ import time
 def startBenchmarks() -> None:
 
     # clean output directory
-    # subprocess.run(["rm ./output/*"], shell=True)
+    subprocess.run(["rm ./output/*"], shell=True)
 
     # compile the go code of singlepass !
     subprocess.run(["go", "build", "-o", "singlepass-client", "./cmd/singlepass_demo_node/client/client.go"], cwd="./../SinglePass")
@@ -30,8 +30,8 @@ def startBenchmarks() -> None:
     
     journeys = {}
     for country in countries:
-        journeys[country] = pk.load(open(f"./data/{country}-journeys.pickle", "rb"))
-        # journeys[country] = {10000: [(2324923182, 277997396)] }
+        # journeys[country] = pk.load(open(f"./data/{country}-journeys.pickle", "rb"))
+        journeys[country] = {10000: [(3920998 , 5133741935)] }
     
     for country in countries:
         for archi in architectures:

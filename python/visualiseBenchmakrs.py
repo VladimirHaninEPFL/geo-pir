@@ -134,7 +134,7 @@ def plot_metric(
     locLegend="lower right",
 ):
 
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(6, 4), dpi=600)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     ax.set_axisbelow(True)
@@ -225,7 +225,7 @@ def plot_comp_metric(
     locLegend="lower right",
 ):
 
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(6, 4), dpi=600)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     ax.set_axisbelow(True)
@@ -351,14 +351,14 @@ def getQueryTimes(countryName, archi):
     byte_per_approach = {}
     for approach in approaches:
 
-        filepath = f"./output/{countryName}-{archi}-{approach}.txt"
+        filepath = f"./output for paper/{countryName}-{archi}-{approach}.txt"
         timePerDistance, serverTimePerDistance, bytePerDistance = parse_output_file(filepath)
 
         time_per_approach[approach] = timePerDistance
         server_time_per_approach[approach] = serverTimePerDistance
         byte_per_approach[approach] = bytePerDistance
             
-    filepath = f"./output/{countryName}-Naive-node0.txt"
+    filepath = f"./output for paper/{countryName}-Naive-node0.txt"
     timePerDistanceNaive, serverTimePerDistanceNaive, bytePerDistanceNaive = parse_output_file(filepath)
 
     return time_per_approach, server_time_per_approach, byte_per_approach, timePerDistanceNaive, serverTimePerDistanceNaive, bytePerDistanceNaive
